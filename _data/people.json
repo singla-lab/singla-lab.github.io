@@ -50,33 +50,42 @@
     },
     {
       "id": "ug-thesis",
-      "title": "Undergraduate Thesis — 2026",
+      "title": "Undergraduate Thesis",
       "blurb": "B.Tech. thesis students working with the lab this year.",
       "compact": true,
       "members": [
-        { "name": "Aman Bawane",  "dept": "CSE Department" },
-        { "name": "Meet Sindhav", "dept": "CSE Department" },
-        { "name": "Ayush",        "dept": "CSE Department" },
-        { "name": "Raman Sharma", "dept": "CSE Department" },
-        { "name": "Kshitij Shah", "dept": "CSE Department" },
-        { "name": "Aryan Dhas",   "dept": "CSE Department" }
+        { "name": "Aryan", "dept": "CSE Department" },
+        { "name": "Ansh",  "dept": "CSE Department" }
       ]
     }
   ],
 
   "collaborators": [
-    { "name": "Pravindra Kumar",        "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "pravindra-kumar" },
-    { "name": "Sugata Gangopadhyay",    "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "CSE Department",  "photo": "sugata-gangopadhyay" },
-    { "name": "Ashwani Sharma",         "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "ashwani-sharma" },
-    { "name": "Shailly Tomar",          "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "shailly-tomar" },
-    { "name": "Vishvendra Singh Poonia","suffix": "PhD",       "org": "IIT Roorkee",  "dept": "ECE Department",  "photo": "vishvendra-poonia" },
-    { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering", "photo": "parikshit-pareek" },
-    { "name": "Venkataseshan Sundaram", "suffix": "MD",        "org": "PGIMER Chandigarh", "photo": "venkataseshan-sundaram" },
-    { "name": "Parag Singla",           "suffix": "PhD",       "org": "IIT Delhi", "photo": "parag-singla" },
-    { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles", "photo": "frank-alber" },
-    { "name": "Helen Berman",           "suffix": "PhD",       "org": "Rutgers University &amp; University of Southern California", "photo": "helen-berman" },
-    { "name": "Kate White",             "suffix": "PhD",       "org": "University of Southern California", "photo": "kate-white" },
-    { "name": "Brinda Vallat",          "suffix": "PhD",       "org": "Rutgers University", "photo": "brinda-vallat" },
-    { "name": "Alex McDowell",          "suffix": "R.D.I.",    "org": "World Building Media Lab, USC School of Cinematic Arts", "photo": "alex-mcdowell" }
+    { "name": "Pravindra Kumar",        "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "pravindra-kumar",
+      "link": "https://iitr.ac.in/Departments/Biosciences%20and%20Bioengineering%20Department/People/Faculty/100441.html" },
+    { "name": "Sugata Gangopadhyay",    "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "CSE Department",  "photo": "sugata-gangopadhyay",
+      "link": "https://www.iitr.ac.in/~CSE/Gangopadhyay_Sugata" },
+    { "name": "Ashwani Sharma",         "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "ashwani-sharma",
+      "link": "https://iitr.ac.in/Departments/Biosciences%20and%20Bioengineering%20Department/People/Faculty/100334.html" },
+    { "name": "Shailly Tomar",          "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "shailly-tomar",
+      "link": "https://iitr.ac.in/Departments/Biosciences%20and%20Bioengineering%20Department/People/Faculty/100475.html" },
+    { "name": "Vishvendra Singh Poonia","suffix": "PhD",       "org": "IIT Roorkee",  "dept": "ECE Department",  "photo": "vishvendra-poonia",
+      "link": "http://ece.iitr.ac.in/vishvendra" },
+    { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering", "photo": "parikshit-pareek",
+      "link": "https://psquare-lab.github.io/" },
+    { "name": "Venkataseshan Sundaram", "suffix": "MD",        "org": "PGIMER Chandigarh", "photo": "venkataseshan-sundaram",
+      "link": "http://www.pginicu.org/frontend/web/index.php?r=individualprofiles%2Findex&id=46" },
+    { "name": "Parag Singla",           "suffix": "PhD",       "org": "IIT Delhi", "photo": "parag-singla",
+      "link": "https://www.cse.iitd.ac.in/~parags/" },
+    { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles", "photo": "frank-alber",
+      "link": "https://www.mimg.ucla.edu/people/frank-alber-ph-d-2/" },
+    { "name": "Helen Berman",           "suffix": "PhD",       "org": "Rutgers University &amp; University of Southern California", "photo": "helen-berman",
+      "link": "https://chem.rutgers.edu/people/faculty-bio/120-berman-helen" },
+    { "name": "Kate White",             "suffix": "PhD",       "org": "University of Southern California", "photo": "kate-white",
+      "link": "https://www.katewhitelab.com/" },
+    { "name": "Brinda Vallat",          "suffix": "PhD",       "org": "Rutgers University", "photo": "brinda-vallat",
+      "link": "https://www.linkedin.com/in/brindavallat/" },
+    { "name": "Alex McDowell",          "suffix": "R.D.I.",    "org": "World Building Media Lab, USC School of Cinematic Arts", "photo": "alex-mcdowell",
+      "link": "https://worldbuilding.usc.edu/people/bio/alex-mcdowell/" }
   ]
 }

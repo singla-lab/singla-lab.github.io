@@ -74,6 +74,10 @@ ampersands are escaped for you, so `Biosciences & Bioengineering` is fine as-is.
 
 Omit `"photo"` and the card shows tidy initials instead — no broken image.
 
+Add `"link": "https://…"` and the name becomes a link to that person's own page —
+a faculty profile, a lab site, a LinkedIn profile. It opens in a new tab. Works
+in both the photo cards and the compact name lists.
+
 **Add the photo** — drop any size or shape of image in and let the script crop it:
 
 ```powershell
@@ -81,7 +85,12 @@ Omit `"photo"` and the card shows tidy initials instead — no broken image.
 ```
 
 It writes a 480×480 JPEG to `assets/img/people/ravi-kumar.jpg`. If the crop cuts
-off a face, pass `-TopBias 0.05` (crop higher) or `-TopBias 0.4` (lower).
+off a face, pass `-TopBias 0.05` (crop higher) or `-TopBias 0.4` (lower). When
+the subject is small in a wide frame, give an explicit square instead:
+`-CropSide 360 -CropX 70 -CropY 60`, in source pixels.
+
+Portraits are displayed as circles, so keep the face near the middle — the
+corners of the square get clipped.
 
 **Move someone to alumni** — cut their entry from `people.json` and paste it into
 the matching group in `alumni.json`. Alumni portraits render in greyscale and

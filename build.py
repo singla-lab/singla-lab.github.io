@@ -213,6 +213,13 @@ def page_head(eyebrow, title, lede=None, extra=''):
                      extra=extra)
 
 
+def outbound(p, text):
+    """Wrap text in a link to the person's own page, when we have one."""
+    if not p.get('link'):
+        return text
+    return '<a href="{0}" target="_blank" rel="noopener">{1}</a>'.format(attr(p['link']), text)
+
+
 def person_card(p, alum=False):
     name = p['name']
     display = name + (', ' + p['suffix'] if p.get('suffix') else '')
@@ -226,7 +233,7 @@ def person_card(p, alum=False):
 
     bits = ['<div class="person">',
             '<div class="person-img">{0}</div>'.format(img),
-            '<p class="person-name">{0}</p>'.format(a(display))]
+            '<p class="person-name">{0}</p>'.format(outbound(p, a(display)))]
 
     # primary line: the role, or the year when there is no role
     role = p.get('role') or (p.get('year') if not p.get('org') else None)
@@ -569,7 +576,8 @@ def build_team():
     for g in d['groups']:
         cls = 'people people-sm' if g.get('compact') else 'people'
         if g.get('compact'):
-            items = ''.join('<li>{0} <span>{1}</span></li>'.format(a(m['name']), a(m.get('dept', ''))) for m in g['members'])
+            items = ''.join('<li>{0} <span>{1}</span></li>'.format(
+                outbound(m, a(m['name'])), a(m.get('dept', ''))) for m in g['members'])
             grid = '<ul class="namelist">{0}</ul>'.format(items)
         else:
             grid = '<div class="{0}">{1}</div>'.format(cls, ''.join(person_card(m) for m in g['members']))
@@ -646,7 +654,7 @@ def build_alumni():
     for g in d['groups']:
         if g.get('compact'):
             items = ''.join('<li>{0} <span>{1}{2}</span></li>'.format(
-                a(m['name']), a(m.get('year', '')),
+                outbound(m, a(m['name'])), a(m.get('year', '')),
                 ' &middot; ' + a(m['dept']) if m.get('dept') else '') for m in g['members'])
             grid = '<ul class="namelist">{0}</ul>'.format(items)
         else:
