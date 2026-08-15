@@ -54,6 +54,19 @@ def attr(s):
     return a(s).replace('"', '&quot;')
 
 
+_LINK = re.compile(r'\[([^\]]+)\]\(([^)\s]+)\)')
+
+
+def rich(s):
+    """Escape, then expand [label](url) into a link. Outbound links open in a
+    new tab; mailto and same-site links do not."""
+    def repl(m):
+        text, href = m.group(1), m.group(2)
+        out = ' target="_blank" rel="noopener"' if href.startswith('http') else ''
+        return '<a href="{0}"{1}>{2}</a>'.format(href, out, text)
+    return _LINK.sub(repl, a(s))
+
+
 def initials(name):
     parts = [p for p in re.split(r'[\s.]+', name.replace('Dr. ', '').replace('Prof. ', '')) if p]
     if not parts:
@@ -152,7 +165,8 @@ def footer():
                     phone=a(c['phone']))
 
 
-def page(slug, title, desc, body, body_class=''):
+def page(slug, title, desc, body, body_class='', nav=None):
+    """nav lets a sub-page (a course, say) keep its parent lit in the header."""
     full = title if title == SITE['name'] else '{0} — {1}'.format(title, SITE['name'])
     html = """<!doctype html>
 <html lang="en">
@@ -186,7 +200,7 @@ def page(slug, title, desc, body, body_class=''):
 """
     return html.format(title=attr(full), desc=attr(desc), base=BASE, slug=slug,
                        name=attr(SITE['name']), favicon=FAVICON, fonts=FONTS,
-                       header=header(slug), body=body, footer=footer(),
+                       header=header(nav or slug), body=body, footer=footer(),
                        cls=(' class="' + body_class + '"') if body_class else '')
 
 
@@ -675,31 +689,237 @@ def build_alumni():
 
 def build_teaching():
     d = load('teaching')
+    pages = {(c['code'], c['term']): course_slug(c) for c in load('courses')['courses']}
+
     terms = []
     for t in d['terms']:
-        courses = ''.join("""<div class="course">
-  <span class="course-c">{code}</span>
+        courses = []
+        for c in t['courses']:
+            href = pages.get((c['code'], t['term']))
+            row = """<span class="course-c">{code}</span>
   <span class="course-n">{name}</span>
-  {note}
-</div>""".format(code=a(c['code']), name=a(c['name']),
-                 note='<span class="course-note">{0}</span>'.format(a(c['note'])) if c.get('note') else '')
-            for c in t['courses'])
+  {note}""".format(code=a(c['code']), name=a(c['name']),
+                   note='<span class="course-note">{0}</span>'.format(a(c['note'])) if c.get('note') else '')
+            if href:
+                courses.append('<a class="course course-link" href="{0}">{1}<span class="course-go">{2}</span></a>'.format(
+                    href, row, ICON['arrow']))
+            else:
+                courses.append('<div class="course">{0}</div>'.format(row))
         terms.append('<div class="term rv"><div class="term-l {0}">{1}</div><div>{2}</div></div>'.format(
-            'term-now' if t.get('current') else '', a(t['term']), courses))
+            'term-now' if t.get('current') else '', a(t['term']), ''.join(courses)))
+
+    cards = []
+    for c in load('courses')['courses']:
+        cards.append("""<a class="crs-card rv" href="{href}">
+  <span class="crs-code">{code}</span>
+  <span class="crs-card-n">{name}</span>
+  <span class="crs-card-t">{term}{now}</span>
+  <span class="crs-card-b">{blurb}</span>
+</a>""".format(href=course_slug(c), code=a(c['code']), name=a(c['name']), term=a(c['term']),
+               now=' &middot; running now' if c.get('current') else '', blurb=a(c['blurb'])))
+    cards.append("""<a class="crs-card crs-card-alt rv" href="self-learning.html">
+  <span class="crs-code">&#8734;</span>
+  <span class="crs-card-n">Self-learning</span>
+  <span class="crs-card-t">No enrolment, no deadline</span>
+  <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
+</a>""")
 
     body = page_head('Teaching', 'Courses', d['intro']) + """
 <section class="section-tight">
-  <div class="wrap">{terms}</div>
+  <div class="wrap">
+    <p class="eyebrow rv">Course pages</p>
+    <div class="crs-cards">{cards}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow rv">Everything taught, term by term</p>
+    <div style="margin-top:1.2rem">{terms}</div>
+  </div>
 </section>
 <section class="section quote-band">
   <div class="wrap">
     <p class="q" style="font-family:'Noto Sans Devanagari',serif;font-style:normal">{sk}</p>
     <p class="attr">{tr}</p>
   </div>
-</section>""".format(terms=''.join(terms), sk=d['quote']['text'], tr=a(d['quote']['translation']))
+</section>""".format(cards=''.join(cards), terms=''.join(terms),
+                     sk=d['quote']['text'], tr=a(d['quote']['translation']))
 
     return write('teaching.html', page('teaching.html', 'Teaching',
                                        'Courses taught by Jitin Singla at IIT Roorkee in machine learning, deep learning, algorithms and computational biology.', body))
+
+
+# --------------------------------------------------------------------------
+# course pages
+# --------------------------------------------------------------------------
+
+def course_slug(c):
+    return 'course-{0}.html'.format(c['slug'])
+
+
+def verse(v):
+    if not v:
+        return ''
+    lines = '<br>'.join(a(l) for l in v['lines'])
+    tr = '<p class="verse-tl">{0}</p>'.format(a(v['transliteration'])) if v.get('transliteration') else ''
+    return """<div class="verse rv">
+  <p class="verse-sa">{lines}</p>
+  {tr}
+  <p class="verse-en">{en}</p>
+</div>""".format(lines=lines, tr=tr, en=a(v['translation']))
+
+
+def crs_section(sid, label, inner, alt=False):
+    return """<section class="section-tight{alt}" id="{sid}">
+  <div class="wrap">
+    <p class="eyebrow rv">{label}</p>
+    {inner}
+  </div>
+</section>""".format(sid=sid, label=a(label), inner=inner, alt=' section-alt' if alt else '')
+
+
+def bullets(items, cls='crs-list'):
+    return '<ul class="{0} rv">{1}</ul>'.format(
+        cls, ''.join('<li>{0}</li>'.format(rich(i)) for i in items))
+
+
+def schedule_table(s):
+    head = ''.join('<th scope="col">{0}</th>'.format(a(c)) for c in s['columns'])
+    rows = []
+    for r in s['rows']:
+        cells = []
+        for i, cell in enumerate(r):
+            body = rich(cell) if cell else '<span class="tbl-none">&mdash;</span>'
+            if i == 0:
+                cells.append('<th scope="row">{0}</th>'.format(body))
+            else:
+                cells.append('<td>{0}</td>'.format(body))
+        rows.append('<tr>{0}</tr>'.format(''.join(cells)))
+    return """<div class="tbl-wrap rv" tabindex="0" role="region" aria-label="Course schedule">
+  <table class="tbl">
+    <thead><tr>{head}</tr></thead>
+    <tbody>{rows}</tbody>
+  </table>
+</div>""".format(head=head, rows=''.join(rows))
+
+
+def build_course(c):
+    slug = course_slug(c)
+    blocks = []
+    jump = []
+
+    def add(sid, label, inner, alt=False):
+        jump.append('<a href="#{0}">{1}</a>'.format(sid, a(label)))
+        blocks.append(crs_section(sid, label, inner, alt))
+
+    # who, when, where
+    info = ''.join("""<div class="crs-cell">
+  <p class="crs-k">{k}</p>
+  <p class="crs-v">{v}</p>
+</div>""".format(k=a(i['label']), v=rich(i['value'])) for i in c['info'])
+    add('info', 'Course information',
+        '<div class="crs-info rv">{0}</div>'.format(info))
+
+    if c.get('announcements'):
+        items = ''.join("""<div class="tl-item rv">
+  <p class="tl-date">{d}</p>
+  <p class="tl-body" style="margin-top:.3rem">{b}</p>
+</div>""".format(d=a(n['date']), b=rich(n['body'])) for n in c['announcements'])
+        add('news', 'Announcements', '<div class="tl">{0}</div>'.format(items), alt=True)
+
+    aims = ''
+    if c.get('intro'):
+        aims += '<p class="lede measure rv" style="margin-bottom:1.4rem">{0}</p>'.format(a(c['intro']))
+    aims += bullets(c['objectives'], 'crs-list crs-list-lg')
+    aims += '<p class="eyebrow rv" style="margin-top:2.6rem">Prerequisites</p>' + bullets(c['prereqs'])
+    add('aims', 'Objectives', aims)
+
+    add('content', 'Course content',
+        bullets(c['content'], 'crs-list crs-cols'), alt=True)
+
+    add('schedule', 'Schedule', schedule_table(c['schedule']))
+
+    if c.get('assignments'):
+        add('work', 'Assignments', bullets(c['assignments']), alt=True)
+
+    refs = []
+    for group in c['references']:
+        refs.append('<div class="rv"><p class="crs-k">{0}</p>{1}</div>'.format(
+            a(group['heading']), bullets(group['items'])))
+    add('refs', 'References and resources',
+        '<div class="crs-refs">{0}</div>'.format(''.join(refs)))
+
+    ev = ''.join("""<div class="ev-row">
+  <span class="ev-w">{w}</span>
+  <span class="ev-l">{l}{n}</span>
+</div>""".format(w=a(e['weight']), l=a(e['label']),
+                 n='<span class="ev-n">{0}</span>'.format(a(e['note'])) if e.get('note') else '')
+        for e in c['evaluation'])
+    ev = '<div class="ev rv">{0}</div>'.format(ev)
+    if c.get('eval_note'):
+        ev += '<p class="muted small rv" style="margin-top:1rem">{0}</p>'.format(a(c['eval_note']))
+    if c.get('past_papers'):
+        ev += '<p class="eyebrow rv" style="margin-top:2.6rem">Question papers</p>'
+        ev += bullets(['<strong>{0}</strong> &mdash; {1}'.format(a(p['term']), p['links'])
+                       for p in c['past_papers']])
+    add('marks', 'Evaluation', ev, alt=True)
+
+    head = """<section class="section-tight dotgrid">
+  <div class="wrap">
+    <p class="eyebrow"><a href="teaching.html">Teaching</a> &middot; {term}{now}</p>
+    <div class="crs-head">
+      <span class="crs-code">{code}</span>
+      <h1 class="h1">{name}</h1>
+    </div>
+    <p class="lede measure" style="margin-top:1.1rem">{blurb}</p>
+    {verse}
+    <nav class="crs-jump rv" aria-label="On this page">{jump}</nav>
+  </div>
+</section>""".format(term=a(c['term']), code=a(c['code']), name=a(c['name']),
+                     now=' &middot; <span class="crs-now">running now</span>' if c.get('current') else '',
+                     blurb=a(c['blurb']), verse=verse(c.get('sanskrit')), jump=''.join(jump))
+
+    body = head + '\n'.join(blocks) + """
+<section class="section-tight">
+  <div class="wrap">
+    <a class="btn btn-arrow" href="teaching.html">All courses {arrow}</a>
+  </div>
+</section>""".format(arrow=ICON['arrow'])
+
+    desc = '{0} {1}, {2} — course page for {3} at IIT Roorkee: schedule, slides, reading and evaluation.'.format(
+        c['code'], c['name'], c['term'], SITE['name'])
+    return write(slug, page(slug, '{0} {1}'.format(c['code'], c['name']),
+                            desc, body, nav='teaching.html'))
+
+
+def build_self_learning():
+    d = load('courses')['self_learning']
+    cards = []
+    for it in d['items']:
+        by = a(it['author'])
+        if it.get('author_link'):
+            by = '<a href="{0}" target="_blank" rel="noopener">{1}</a>'.format(attr(it['author_link']), by)
+        cards.append("""<div class="sl-card rv">
+  <p class="eyebrow">{title}</p>
+  <h2 class="h2">{label}</h2>
+  <p class="muted small" style="margin-top:.5rem">By {by}</p>
+  <p class="measure" style="margin-top:1.1rem">{body}</p>
+  <div class="hero-cta" style="margin-top:1.5rem">
+    <a class="btn btn-primary btn-arrow" href="{file}" target="_blank" rel="noopener">Open the notes {arrow}</a>
+  </div>
+</div>""".format(title=a(it['title']), label=a(it['label']), by=by, body=a(it['body']),
+                 file=attr(it['file']), arrow=ICON['arrow']))
+
+    body = page_head('Teaching', 'Self-learning', d['intro']) + \
+        '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(cards)) + \
+        """<section class="section-tight">
+  <div class="wrap"><a class="btn btn-arrow" href="teaching.html">All courses {arrow}</a></div>
+</section>""".format(arrow=ICON['arrow'])
+    return write('self-learning.html',
+                 page('self-learning.html', 'Self-learning',
+                      'Material to work through on your own: machine learning notes shared by the Singla Lab at IIT Roorkee.',
+                      body, nav='teaching.html'))
 
 
 def build_news():
@@ -879,6 +1099,7 @@ def build_extras():
     pages = ['index.html', 'research.html', 'publications.html', 'projects.html',
              'team.html', 'alumni.html', 'teaching.html', 'news.html',
              'recommended.html', 'gallery.html', 'contact.html']
+    pages += [course_slug(c) for c in load('courses')['courses']] + ['self-learning.html']
     urls = ''.join('  <url><loc>{0}/{1}</loc><changefreq>monthly</changefreq></url>\n'.format(
         BASE, '' if p == 'index.html' else p) for p in pages)
     written.append(write('sitemap.xml',
@@ -902,6 +1123,8 @@ def main():
         build_team(), build_alumni(), build_teaching(), build_news(),
         build_recommended(), build_gallery(), build_contact(), build_404(),
     ]
+    built += [build_course(c) for c in load('courses')['courses']]
+    built += [build_self_learning()]
     built += build_extras()
 
     print('Built {0} files:'.format(len(built)))

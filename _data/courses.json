@@ -1,0 +1,417 @@
+{
+  "_note": "One object per course page. Text fields accept [label](url) links and inline HTML. Schedule rows are arrays matching the columns array.",
+
+  "courses": [
+    {
+      "slug": "bec351-2026",
+      "code": "BEC-351",
+      "name": "Fundamentals of AI/ML",
+      "term": "Autumn 2026–27",
+      "current": true,
+      "blurb": "Where the field came from, the mathematics underneath it, and how to tell whether a model is any good.",
+      "sanskrit": {
+        "lines": [
+          "मूलं हि शस्यं वर्धते नितान्तं",
+          "मूलं हि विद्या वर्धते नितान्तम्।",
+          "मूलं हि सर्वस्य भवन्ति मूलं",
+          "मूलं न सन्देहकृतं हि लोके॥"
+        ],
+        "translation": "Just as the root is essential for the growth of a plant, the fundamentals of knowledge are crucial for its development. The root is the basis of everything; there is no doubt about this in the world."
+      },
+      "info": [
+        { "label": "Instructor", "value": "Jitin Singla &middot; [jsingla@bt.iitr.ac.in](mailto:jsingla@bt.iitr.ac.in)" },
+        { "label": "Lectures", "value": "Mon &amp; Thu &middot; 4:05–5:00 PM<br>Fri &middot; 5:05–6:00 PM" },
+        { "label": "Venue", "value": "GB-003" },
+        { "label": "Office hours", "value": "To be announced<br>Room 211, BSBE Department" },
+        { "label": "Discussion", "value": "[Piazza](https://piazza.com/iitr.ac.in/other/fundamentalsofaiml)" }
+      ],
+      "objectives": [
+        "Comprehend the historical evolution and foundational concepts of AI/ML.",
+        "Build mathematical intuition for machine learning principles.",
+        "Explore core theoretical frameworks and evaluation strategies."
+      ],
+      "prereqs": ["Python programming"],
+      "content": [
+        "Historical development and evolution of AI/ML",
+        "Key terminology",
+        "Linear algebra and probability review",
+        "Theoretical underpinnings of learning from data",
+        "How energy functions and loss functions guide model training and evaluation",
+        "Various loss functions",
+        "First-order optimization: gradient descent (GD) and stochastic gradient descent (SGD)",
+        "Basics of constrained optimization and its relevance in training",
+        "Hyperparameter tuning strategies",
+        "Validation techniques to assess model generalization",
+        "Evaluation metrics to measure and compare models",
+        "Bayesian inference in machine learning"
+      ],
+      "schedule": {
+        "columns": ["#", "Topic", "Slides / essential reading", "Additional", "Homework"],
+        "rows": [
+          ["1", "Course info",
+           "[Lecture 0](https://drive.google.com/file/d/1wS9K-Ja-khV3B0NQZGIND1McL5gIYcf8/view?usp=sharing)",
+           "[The Imitation Game](https://www.youtube.com/watch?v=nuPZUUED5uk)", ""],
+          ["2", "Intro and history",
+           "[Lecture 1](https://drive.google.com/file/d/18oClXjLm6_JsZT2Hpt8IGcm6aLq4xxbF/view?usp=sharing) &middot; [Trends in compute](https://futuretech.mit.edu/news/what-drives-progress-in-ai-trends-in-compute)",
+           "[AlphaGo](https://www.youtube.com/watch?v=WXuK6gekU1Y)", ""],
+          ["3", "Linear algebra review",
+           "[LA notes](https://drive.google.com/file/d/1uTHVbhQ3kdNEJVjnjEyWEbbtqQBEBUsD/view) &middot; [Norms](https://www.cs.ubc.ca/~schmidtm/Courses/Notes/norms.pdf) &middot; [Quadratic functions](https://drive.google.com/file/d/1vqDZZQjvHUn87Ds8BCmIyZcD3Q5I7SbF/view?usp=sharing)",
+           "[Matrix calculus](https://drive.google.com/file/d/1OSFAQg4pfRDAwS0lshqJKyaVq6tENUDg/view?usp=sharing)", ""]
+        ]
+      },
+      "references": [
+        { "heading": "Recommended text",
+          "items": ["<em>Probabilistic Machine Learning: An Introduction</em>, Kevin Murphy. MIT Press, 2022."] },
+        { "heading": "Supplementary",
+          "items": ["[Machine Learning](https://www.coursera.org/learn/machine-learning) — Andrew Ng, Coursera"] },
+        { "heading": "Watch",
+          "items": ["[The Imitation Game](https://www.imdb.com/title/tt2084970/) (2014)"] }
+      ],
+      "evaluation": [
+        { "label": "Continuous assessment (CWS)", "weight": "30%", "note": "Announced and surprise quizzes" },
+        { "label": "Mid-term exam (MTE)", "weight": "30%" },
+        { "label": "End-term exam (ETE)", "weight": "40%" }
+      ],
+      "eval_note": "Tentative.",
+      "past_papers": [
+        { "term": "Autumn 2025–26",
+          "links": "[MTE](https://drive.google.com/file/d/1y_FNoz6o6es1qa1NzgtgWNJCX1P_PU_t/view?usp=sharing) &middot; [ETE](https://drive.google.com/file/d/11pp_UVMxZTVmPFYoQsOHGV6j_fpj3DEt/view?usp=sharing)" }
+      ]
+    },
+
+    {
+      "slug": "bel483-2026",
+      "code": "BEL-483",
+      "name": "Deep Learning",
+      "term": "Autumn 2026–27",
+      "current": true,
+      "blurb": "From the perceptron to transformers — the architectures, the mathematics that makes them trainable, and the papers that introduced them.",
+      "sanskrit": {
+        "lines": [
+          "आचार्यात् पादमादत्ते पादं शिष्यः स्वमेधया।",
+          "पादं सब्रह्मचारिभ्यः पादं कालक्रमेण च॥"
+        ],
+        "transliteration": "ācāryāt pādam ādatte pādaṃ śiṣyaḥ svamedhayā / pādaṃ sabrahmacāribhyaḥ pādaṃ kālakrameṇa ca",
+        "translation": "A student gains one quarter of knowledge from the teacher, one quarter through their own intellect, one quarter from fellow students, and one quarter in the course of time."
+      },
+      "info": [
+        { "label": "Instructor", "value": "Jitin Singla &middot; [jsingla@bt.iitr.ac.in](mailto:jsingla@bt.iitr.ac.in)" },
+        { "label": "Lectures", "value": "Mon, Wed &amp; Fri &middot; 3:00–3:55 PM<br>GB-002" },
+        { "label": "Tutorial", "value": "Wed &middot; 12:05–1:00 PM<br>Venue to be announced" },
+        { "label": "Office hours", "value": "To be announced" },
+        { "label": "Discussion", "value": "[Piazza](https://piazza.com/iitr.ac.in/fall2026/bel483)" }
+      ],
+      "intro": "An introduction to deep learning, building a solid foundation in one of the most transformative areas of machine learning.",
+      "objectives": [
+        "<strong>Establish mathematical foundations.</strong> The core principles underpinning deep learning models and algorithms.",
+        "<strong>Explore key architectures.</strong> The networks that have become standard in image analysis, language modelling and beyond.",
+        "<strong>Survey recent advances.</strong> Latest breakthroughs and trends, setting the stage for research in advanced topics."
+      ],
+      "prereqs": [
+        "A working understanding of linear algebra and probability. Revision material: [Linear algebra](https://drive.google.com/file/d/1uTHVbhQ3kdNEJVjnjEyWEbbtqQBEBUsD/view?usp=sharing) and [Probability](https://drive.google.com/file/d/1uRRlY5uxk99ymgJU3jL6Tg8mjg0HuvRf/view?usp=sharing).",
+        "Python programming",
+        "A foundational course in AI or ML, covering: loss functions (MSE, negative log likelihood, cross entropy); optimization (GD, SGD, constrained convex optimization with Lagrangians); supervised methods (linear and logistic regression, perceptron, decision trees, random forests, SVMs, naive Bayes, k-NN); unsupervised methods (k-means, GMMs, EM, PCA).",
+        "Chapters 1–5 of [<em>Deep Learning</em>](https://www.deeplearningbook.org/) by Ian Goodfellow"
+      ],
+      "content": [
+        "Introduction and motivation",
+        "Multi-layered perceptrons, neural networks, backpropagation",
+        "Loss functions, regularization: L1–L2 norms",
+        "Optimization: SGD, RMSProp, Adam, Adagrad",
+        "Dropout, batch and layer normalization",
+        "Convolutional networks (CNNs), residual networks",
+        "Recurrent neural networks (RNNs), LSTMs",
+        "Attention: Bahdanau attention, transformers",
+        "Word2Vec embeddings",
+        "Language modelling, BERT",
+        "GPT-1: improving language understanding by generative pre-training",
+        "GPT-2: language models as unsupervised multitask learners",
+        "GPT-3: language models are few-shot learners",
+        "Other LLMs: LLaMA, Mistral, Gemini, DeepSeek",
+        "Vision language models: ViT, CLIP"
+      ],
+      "schedule": {
+        "columns": ["#", "Topic", "Essential reading", "Homework"],
+        "rows": [
+          ["1", "Course info and outline", "Chapters 1–5, [<em>Deep Learning</em>](https://www.deeplearningbook.org/)", ""],
+          ["2", "Basics of the perceptron, feedforward network notation", "Chapter 6, <em>Deep Learning</em>", ""],
+          ["3", "XOR network and hidden layer transformation", "Chapter 6", "HW-1"],
+          ["4", "Output units and loss functions", "Chapter 6", ""],
+          ["5", "Backpropagation", "Chapter 6", ""],
+          ["6", "Regularization", "Chapter 7", "HW-2"]
+        ]
+      },
+      "assignments": [
+        "Python is the default programming language for the course.",
+        "Submit via Moodle or GitHub, as specified in each assignment.",
+        "<strong>Honour code.</strong> Any case of copying is awarded a zero on the assignment. More severe penalties may follow.",
+        "Late submissions incur penalties, as announced with the assignment."
+      ],
+      "references": [
+        { "heading": "Text",
+          "items": [
+            "[<em>Deep Learning</em>](https://www.deeplearningbook.org/) — Ian Goodfellow, Yoshua Bengio and Aaron Courville",
+            "Chapter 6 — multi-layered perceptrons, backpropagation",
+            "Chapter 7 — regularization: L1/L2 and other techniques",
+            "Chapter 8 — optimization techniques, normalization",
+            "Chapter 9 — deep learning for vision, basic models (CNNs)",
+            "Chapter 10 — deep learning for NLP, basic models (RNNs, LSTM)"
+          ] },
+        { "heading": "Papers",
+          "items": [
+            "[Batch normalization](https://arxiv.org/abs/1502.03167)",
+            "[AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)",
+            "[Residual networks](https://arxiv.org/abs/1512.03385)",
+            "[LSTMs](https://www.bioinf.jku.at/publications/older/2604.pdf)",
+            "[Bahdanau attention](https://arxiv.org/abs/1409.0473)",
+            "[Transformers](https://arxiv.org/abs/1706.03762)",
+            "[Word2Vec](https://arxiv.org/pdf/1301.3781.pdf)",
+            "[BERT](https://arxiv.org/abs/1810.04805)",
+            "[GPT-1](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf) &middot; [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) &middot; [GPT-3](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)"
+          ] }
+      ],
+      "evaluation": [
+        { "label": "Continuous assessment (CWS)", "weight": "30%", "note": "Quizzes and assignments" },
+        { "label": "Mid-term exam (MTE)", "weight": "30%" },
+        { "label": "End-term exam (ETE)", "weight": "40%" }
+      ],
+      "eval_note": "Tentative."
+    },
+
+    {
+      "slug": "bec351-2025",
+      "code": "BEC-351",
+      "name": "Fundamentals of AI/ML",
+      "term": "Autumn 2025–26",
+      "blurb": "The completed 2025–26 run: eight topics from the history of the field through learning theory to linear and logistic regression.",
+      "sanskrit": {
+        "lines": [
+          "मूलं हि शस्यं वर्धते नितान्तं",
+          "मूलं हि विद्या वर्धते नितान्तम्।",
+          "मूलं हि सर्वस्य भवन्ति मूलं",
+          "मूलं न सन्देहकृतं हि लोके॥"
+        ],
+        "translation": "Just as the root is essential for the growth of a plant, the fundamentals of knowledge are crucial for its development. The root is the basis of everything; there is no doubt about this in the world."
+      },
+      "info": [
+        { "label": "Instructor", "value": "Jitin Singla &middot; [jsingla@bt.iitr.ac.in](mailto:jsingla@bt.iitr.ac.in)" },
+        { "label": "Lectures", "value": "Thu &middot; 3:00–3:55 PM<br>Fri &middot; 4:05–5:00 PM" },
+        { "label": "Venue", "value": "GB-003" },
+        { "label": "Office hours", "value": "Tue &middot; 4:05–5:00 PM<br>Room 211, BSBE Department" },
+        { "label": "Discussion", "value": "[Piazza](https://piazza.com/iitr.ac.in/fall2025/bec351)" }
+      ],
+      "announcements": [
+        { "date": "6 Oct 2025", "body": "Re-MTE on 6 October, 5:00–6:30 PM, Room 211, BSBE Department." },
+        { "date": "1 Sep 2025", "body": "Additional class on 1 September, 4:00–5:00 PM, APJ AKB-502." },
+        { "date": "18 Aug 2025", "body": "Additional class on 19 August." },
+        { "date": "4 Aug 2025", "body": "Friday's class (8 August) is rescheduled to 5 August in the available course slot." },
+        { "date": "22 Jul 2025", "body": "HW-1 and essential reading material uploaded." },
+        { "date": "18 Jul 2025", "body": "Today's class is rescheduled to Tuesday 22 July, 4:00–5:00 PM." },
+        { "date": "15 Jul 2025", "body": "Course announcements will be posted here regularly. Email notifications will only be sent if the information is urgent." }
+      ],
+      "objectives": [
+        "Comprehend the historical evolution and foundational concepts of AI/ML.",
+        "Build mathematical intuition for machine learning principles.",
+        "Explore core theoretical frameworks and evaluation strategies."
+      ],
+      "prereqs": [
+        "Python programming",
+        "Basics of linear algebra and probability (reviewed in class as well)"
+      ],
+      "content": [
+        "Historical development and evolution of AI/ML",
+        "Key terminology",
+        "Linear algebra and probability review",
+        "Theoretical underpinnings of learning from data",
+        "How energy functions and loss functions guide model training and evaluation",
+        "Various loss functions",
+        "First-order optimization: gradient descent (GD) and stochastic gradient descent (SGD)",
+        "Basics of constrained optimization and its relevance in training",
+        "Hyperparameter tuning strategies",
+        "Validation techniques to assess model generalization",
+        "Evaluation metrics to measure and compare models",
+        "Bayesian inference in machine learning"
+      ],
+      "schedule": {
+        "columns": ["#", "Topic", "Slides / essential reading", "Additional", "Homework"],
+        "rows": [
+          ["1", "Course info",
+           "[Lecture 0](https://drive.google.com/file/d/1HQNPE_iT47jgRoPjKtS6GcptkFaUG5kp/view?usp=sharing)",
+           "[The Imitation Game](https://www.youtube.com/watch?v=nuPZUUED5uk)",
+           "[HW-1](https://drive.google.com/file/d/1B-ixroXOBRalDiLNXK9AI6ctzv73WwkO/view?usp=sharing)"],
+          ["2", "Introduction and history",
+           "[Lecture 1](https://drive.google.com/file/d/1_kxnKCVUgxCFtNe6gkHtPqsC-ALQx-KH/view?usp=sharing) &middot; [Trends in compute](https://futuretech.mit.edu/news/what-drives-progress-in-ai-trends-in-compute)",
+           "[AlphaGo](https://www.youtube.com/watch?v=WXuK6gekU1Y)", ""],
+          ["3", "Linear algebra review",
+           "[LA notes](https://drive.google.com/file/d/1uTHVbhQ3kdNEJVjnjEyWEbbtqQBEBUsD/view) &middot; [Norms](https://www.cs.ubc.ca/~schmidtm/Courses/Notes/norms.pdf) &middot; [Quadratic functions](https://drive.google.com/file/d/1vqDZZQjvHUn87Ds8BCmIyZcD3Q5I7SbF/view?usp=sharing)",
+           "[Matrix calculus](https://drive.google.com/file/d/1OSFAQg4pfRDAwS0lshqJKyaVq6tENUDg/view?usp=sharing)",
+           "[HW-2](https://drive.google.com/file/d/1upNk0lLBHgEU_Wd6j1LVdxjQP4FEl-Ab/view?usp=sharing)"],
+          ["4", "Probability review (self study)",
+           "[Prob notes](https://drive.google.com/file/d/1uRRlY5uxk99ymgJU3jL6Tg8mjg0HuvRf/view?usp=sharing)", "", ""],
+          ["5", "Learning theory",
+           "[Learning theory](https://drive.google.com/file/d/192THaVcquTqKliPIEXt-UsTpOOyfIOil/view?usp=sharing) &middot; [More notes](https://drive.google.com/file/d/1LZJHIMCWn4hZDC2KLdeSuPo2JewSC8QP/view?usp=sharing) &middot; [Inequalities](https://drive.google.com/file/d/1euW_m5WJfGGm0mOMUgE6zATGlDBTBGLc/view?usp=sharing)",
+           "",
+           "[HW-3](https://drive.google.com/file/d/1PTMXrzCS9kLTQog7GuJXnw4CQAuTgcA5/view?usp=sharing)"],
+          ["6", "Energy and loss functions",
+           "[Energy-based learning](https://drive.google.com/file/d/1vUEnriRv0n1hll8c5OMh3m7OIRidSc_O/view?usp=sharing)", "", ""],
+          ["7", "Perceptron learning algorithm",
+           "[PLA notes](https://drive.google.com/file/d/1PL6bxrP7fg-sascIRxKVyNJZZYOB4DEl/view?usp=sharing)", "", ""],
+          ["8", "Linear and logistic regression",
+           "[Notes](https://drive.google.com/file/d/1zIGaZytJm7KGJk-l1TO2BOx8zX0iLjjA/view?usp=sharing)",
+           "[Convex optimization](https://drive.google.com/file/d/1zIGaZytJm7KGJk-l1TO2BOx8zX0iLjjA/view?usp=sharing)", ""]
+        ]
+      },
+      "assignments": [
+        "[Assignment 1](https://drive.google.com/file/d/16Mqo8LGLUpPvo1vMFLyJ2wnnBIaJMDTj/view?usp=sharing) &middot; [boilerplate code](https://drive.google.com/file/d/1ntZfkFXL85mhNYp8Y0oKRe4EiqkBbYhB/view?usp=sharing) — due Thursday 9 October, 5 PM. Read the instructions carefully; the required links are embedded in the PDF. Explore the resources and troubleshoot thoroughly before contacting the instructor or TA.",
+        "Python is the default programming language for the course. Use it unless another language is explicitly allowed.",
+        "Submit via Moodle or GitHub, as specified in each assignment.",
+        "<strong>Honour code.</strong> Any case of copying is awarded a zero on the assignment. More severe penalties may follow.",
+        "Late submissions incur penalties, as announced with the assignment."
+      ],
+      "references": [
+        { "heading": "Recommended text",
+          "items": ["<em>Probabilistic Machine Learning: An Introduction</em>, Kevin Murphy. MIT Press, 2022."] },
+        { "heading": "Supplementary",
+          "items": ["[Machine Learning](https://www.coursera.org/learn/machine-learning) — Andrew Ng, Coursera"] },
+        { "heading": "Watch",
+          "items": ["[The Imitation Game](https://www.imdb.com/title/tt2084970/) (2014)"] }
+      ],
+      "evaluation": [
+        { "label": "Continuous assessment (CWS)", "weight": "30%", "note": "Quizzes and assignments" },
+        { "label": "Mid-term exam (MTE)", "weight": "30%" },
+        { "label": "End-term exam (ETE)", "weight": "40%" }
+      ],
+      "past_papers": [
+        { "term": "Papers from this run",
+          "links": "[MTE](https://drive.google.com/file/d/1y_FNoz6o6es1qa1NzgtgWNJCX1P_PU_t/view?usp=sharing) &middot; [ETE](https://drive.google.com/file/d/11pp_UVMxZTVmPFYoQsOHGV6j_fpj3DEt/view?usp=sharing)" }
+      ]
+    },
+
+    {
+      "slug": "csl537-2025",
+      "code": "CSL-537",
+      "name": "Deep Learning",
+      "term": "Autumn 2025–26",
+      "blurb": "The completed 2025–26 run: nineteen lectures from the perceptron through CNNs and transformers to variational autoencoders.",
+      "sanskrit": {
+        "lines": ["विद्या नाम नरस्य रूपमधिकं"],
+        "translation": "Knowledge is the greatest attribute of a person."
+      },
+      "info": [
+        { "label": "Instructor", "value": "Jitin Singla &middot; [jsingla@bt.iitr.ac.in](mailto:jsingla@bt.iitr.ac.in)" },
+        { "label": "Lectures", "value": "Tue &middot; 11:05 AM–12:00 PM<br>Wed &amp; Fri &middot; 12:05–1:00 PM<br>GB-105" },
+        { "label": "Tutorial", "value": "Wed &middot; 3:00–3:55 PM<br>GB-004" },
+        { "label": "Office hours", "value": "Tue &middot; 4:00–5:00 PM<br>Room 211, BSBE Department" },
+        { "label": "Discussion", "value": "[Piazza](https://piazza.com/iitr.ac.in/fall2025/csl537) &middot; [Microsoft Teams](https://teams.microsoft.com/l/team/19%3AePZa9RthWW4qGCiaJCMAw3oSt9m7nrjpDhcdXGD87mE1%40thread.tacv2/conversations?groupId=286ed6e0-41b7-4270-b7c5-5d0dbdf51094&tenantId=38f62926-7559-4aef-84ae-cb5e172406fb)" }
+      ],
+      "announcements": [
+        { "date": "8 Aug 2025", "body": "HW-2 is available now." },
+        { "date": "30 Jul 2025", "body": "Venue changed to Room GB-105." },
+        { "date": "23 Jul 2025", "body": "Venue changed to Room GB-006." },
+        { "date": "20 Jul 2025", "body": "Venue changed to Room APJAKB-302." },
+        { "date": "15 Jul 2025", "body": "Course announcements will be posted here regularly. Email notifications will only be sent if the information is urgent." }
+      ],
+      "intro": "An introduction to deep learning, building a solid foundation in one of the most transformative areas of machine learning.",
+      "objectives": [
+        "<strong>Establish mathematical foundations.</strong> The core principles underpinning deep learning models and algorithms.",
+        "<strong>Explore key architectures.</strong> The networks that have become standard in image analysis, language modelling and beyond.",
+        "<strong>Survey recent advances.</strong> Latest breakthroughs and trends, setting the stage for research in advanced topics."
+      ],
+      "prereqs": [
+        "A working understanding of linear algebra and probability. Revision material: [Linear algebra](https://drive.google.com/file/d/1uTHVbhQ3kdNEJVjnjEyWEbbtqQBEBUsD/view?usp=sharing) and [Probability](https://drive.google.com/file/d/1uRRlY5uxk99ymgJU3jL6Tg8mjg0HuvRf/view?usp=sharing).",
+        "Python programming",
+        "A foundational course in AI or ML, covering: loss functions (MSE, negative log likelihood, cross entropy); optimization (GD, SGD, constrained convex optimization with Lagrangians); supervised methods (linear and logistic regression, perceptron, decision trees, random forests, SVMs, naive Bayes, k-NN); unsupervised methods (k-means, GMMs, EM, PCA).",
+        "Chapters 1–5 of [<em>Deep Learning</em>](https://www.deeplearningbook.org/) by Ian Goodfellow"
+      ],
+      "content": [
+        "Introduction and motivation",
+        "Multi-layered perceptrons, neural networks, backpropagation",
+        "Loss functions, regularization: L1–L2 norms",
+        "Optimization: SGD, RMSProp, Adam, Adagrad",
+        "Dropout, batch and layer normalization",
+        "Convolutional networks (CNNs), residual networks",
+        "Recurrent neural networks (RNNs), LSTMs",
+        "Attention: Bahdanau attention, transformers",
+        "Word2Vec embeddings",
+        "Language modelling, BERT",
+        "GPT-1, GPT-2, GPT-3",
+        "Other LLMs: LLaMA, Mistral, Gemini, DeepSeek",
+        "Vision language models: ViT, CLIP"
+      ],
+      "schedule": {
+        "columns": ["#", "Topic", "Essential reading", "Homework"],
+        "rows": [
+          ["1", "Course info and outline", "Chapters 1–5, [<em>Deep Learning</em>](https://www.deeplearningbook.org/)",
+           "[HW-1](https://drive.google.com/file/d/1lD0uzXYiRHQzxT8svh6TKWnOeVKmRRvo/view?usp=sharing)"],
+          ["2", "Deep learning applications", "[Inspirational applications](https://machinelearningmastery.com/inspirational-applications-deep-learning/)", ""],
+          ["3", "Basics of the perceptron, feedforward network notation", "Chapter 6", ""],
+          ["4", "XOR network and hidden layer transformation", "Chapter 6", ""],
+          ["5", "Output units and loss functions", "Chapter 6", ""],
+          ["6", "Backpropagation", "Chapter 6", "[HW-2](https://drive.google.com/file/d/1cP4bAndV8NEmZigBWh0azjVhzIfX0q1O/view?usp=sharing)"],
+          ["7", "Regularization", "Chapter 7", ""],
+          ["8", "L2 and L1 regularization", "Section 7.1 &middot; additional reading 7.2–7.5", ""],
+          ["9", "Early stopping", "Section 7.8", "[HW-3](https://drive.google.com/file/d/1JSzGnRxC1ShF5KpaJuttQ4CpyRD-DkIy/view?usp=sharing)"],
+          ["10", "Dropout", "Sections 7.10–7.12", ""],
+          ["11", "Optimization basics", "Sections 8.1–8.2", ""],
+          ["12", "Batch normalization", "Section 8.7.1 &middot; [BN paper](https://arxiv.org/abs/1502.03167)", ""],
+          ["13", "CNN basics and backpropagation", "Sections 9.1–9.2 &middot; [AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)", ""],
+          ["14", "ResNets", "[ResNet paper](https://arxiv.org/abs/1512.03385)", ""],
+          ["15", "Recurrent neural networks (RNNs)", "", ""],
+          ["16", "GRUs and LSTMs", "[LSTM paper](https://www.bioinf.jku.at/publications/older/2604.pdf) &middot; [Bahdanau attention](https://arxiv.org/abs/1409.0473)", ""],
+          ["17", "Transformers", "[Paper](https://arxiv.org/abs/1706.03762) &middot; [Video 1](https://youtu.be/wjZofJX0v4M?si=tt5NKl-RXXjuP2jc) &middot; [Video 2](https://youtu.be/eMlx5fFNoYc?si=iHaD4clY6uJrE3TN)", ""],
+          ["18", "Word2Vec, BERT", "[Word2Vec](https://arxiv.org/pdf/1301.3781) &middot; [BERT](https://arxiv.org/abs/1810.04805)", ""],
+          ["19", "Variational autoencoders (VAEs)", "[Paper](https://arxiv.org/abs/1312.6114) &middot; [Video 1](https://www.youtube.com/watch?v=qJeaCHQ1k2w&t=380s) &middot; [Video 2](https://www.youtube.com/watch?v=HBYQvKlaE0A&t=569s)", ""]
+        ]
+      },
+      "assignments": [
+        "[Assignment 1](https://drive.google.com/file/d/1SN5lA3mfX11Xnf3TikoXntfZT4-N8tdw/view?usp=sharing) — due 31 October 2025.",
+        "Python is the default programming language for the course.",
+        "Submit via Moodle or GitHub, as specified in each assignment.",
+        "<strong>Honour code.</strong> Any case of copying is awarded a zero on the assignment. More severe penalties may follow.",
+        "Late submissions incur penalties, as announced with the assignment."
+      ],
+      "references": [
+        { "heading": "Text",
+          "items": [
+            "[<em>Deep Learning</em>](https://www.deeplearningbook.org/) — Ian Goodfellow, Yoshua Bengio and Aaron Courville",
+            "Chapter 6 — multi-layered perceptrons, backpropagation",
+            "Chapter 7 — regularization: L1/L2 and other techniques",
+            "Chapter 8 — optimization techniques, normalization",
+            "Chapter 9 — deep learning for vision, basic models (CNNs)",
+            "Chapter 10 — deep learning for NLP, basic models (RNNs, LSTM)"
+          ] },
+        { "heading": "Papers",
+          "items": [
+            "[Batch normalization](https://arxiv.org/abs/1502.03167)",
+            "[AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)",
+            "[Residual networks](https://arxiv.org/abs/1512.03385)",
+            "[LSTMs](https://www.bioinf.jku.at/publications/older/2604.pdf)",
+            "[Bahdanau attention](https://arxiv.org/abs/1409.0473)",
+            "[Transformers](https://arxiv.org/abs/1706.03762)",
+            "[Word2Vec](https://arxiv.org/pdf/1301.3781.pdf)",
+            "[BERT](https://arxiv.org/abs/1810.04805)",
+            "[GPT-1](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf) &middot; [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) &middot; [GPT-3](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)"
+          ] }
+      ],
+      "evaluation": [
+        { "label": "Continuous assessment (CWS)", "weight": "30%", "note": "Quizzes and assignments" },
+        { "label": "Mid-term exam (MTE)", "weight": "30%" },
+        { "label": "End-term exam (ETE)", "weight": "40%" }
+      ]
+    }
+  ],
+
+  "self_learning": {
+    "intro": "Material to work through on your own, at your own pace. No enrolment, no deadline — just the notes.",
+    "items": [
+      {
+        "title": "Machine Learning",
+        "author": "Prof. Parikshit Pareek",
+        "author_link": "https://psquare-lab.github.io/",
+        "body": "A self-contained set of notes for learning machine learning from the ground up, written by Prof. Parikshit Pareek of the Electrical Engineering Department at IIT Roorkee.",
+        "file": "https://drive.google.com/file/d/1fhxXAip6Z9Dz5Az2FbEbqs5mPTpaFuco/view",
+        "label": "Self_ML.pdf"
+      }
+    ]
+  }
+}

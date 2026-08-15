@@ -54,7 +54,8 @@ Requires Python 3.6 or newer. Nothing else — no pip install.
 | `_data/publications.json` | Papers, preprints, posters, talks |
 | `_data/projects.json` | Sponsored projects |
 | `_data/research.json` | Research areas |
-| `_data/teaching.json` | Courses by term |
+| `_data/teaching.json` | The term-by-term course list on Teaching |
+| `_data/courses.json` | Full course pages, and the self-learning page |
 | `_data/news.json` | News timeline |
 | `_data/recommended.json` | Books, channels, people, links, music |
 | `_data/gallery.json` | Gallery figures and captions |
@@ -62,6 +63,10 @@ Requires Python 3.6 or newer. Nothing else — no pip install.
 
 Text fields accept inline HTML — `<em>`, `<strong>`, `<a href="…">`. Bare
 ampersands are escaped for you, so `Biosciences & Bioengineering` is fine as-is.
+
+In `_data/courses.json` you can also write links as `[label](url)`, which is
+shorter than an anchor tag and reads better inside a table cell. Anything
+starting `http` opens in a new tab; `mailto:` links do not.
 
 ### Common edits
 
@@ -95,6 +100,18 @@ corners of the square get clipped.
 **Move someone to alumni** — cut their entry from `people.json` and paste it into
 the matching group in `alumni.json`. Alumni portraits render in greyscale and
 turn to colour on hover; the photo file does not need changing.
+
+**Add a course page** — append an object to `courses` in `_data/courses.json`.
+`slug` decides the filename (`"bec351-2027"` → `course-bec351-2027.html`), and
+`code` + `term` must match the entry in `_data/teaching.json` for the term list
+to link to it. Everything else is optional: leave out `announcements`,
+`assignments`, `past_papers` or `sanskrit` and those sections simply do not
+render. Schedule rows are arrays lining up with `schedule.columns`; an empty
+string becomes an em dash.
+
+**Start a new run of an existing course** — copy the previous year's object,
+change `slug`, `term` and `schedule.rows`, move `"current": true` across, and
+add the old exam papers to the new page's `past_papers`.
 
 **Add a publication** — add an object to the `publications` array in
 `_data/publications.json`. `type` is one of `journal`, `conference`, `preprint`,
