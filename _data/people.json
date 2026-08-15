@@ -52,10 +52,9 @@
       "id": "ug-thesis",
       "title": "Undergraduate Thesis",
       "blurb": "B.Tech. thesis students working with the lab this year.",
-      "compact": true,
       "members": [
-        { "name": "Aryan", "dept": "CSE Department" },
-        { "name": "Ansh",  "dept": "CSE Department" }
+        { "name": "Aryan", "role": "B.Tech. Thesis", "dept": "CSE Department" },
+        { "name": "Ansh",  "role": "B.Tech. Thesis", "dept": "CSE Department" }
       ]
     }
   ],
