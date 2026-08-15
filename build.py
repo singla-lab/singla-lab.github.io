@@ -708,27 +708,50 @@ def build_teaching():
         terms.append('<div class="term rv"><div class="term-l {0}">{1}</div><div>{2}</div></div>'.format(
             'term-now' if t.get('current') else '', a(t['term']), ''.join(courses)))
 
-    cards = []
+    # one block of cards per semester, in the order the courses are listed
+    by_term, order = {}, []
     for c in load('courses')['courses']:
-        cards.append("""<a class="crs-card rv" href="{href}">
+        if c['term'] not in by_term:
+            by_term[c['term']] = []
+            order.append(c['term'])
+        by_term[c['term']].append(c)
+
+    def card_group(title, note, cards, now=False):
+        return """<div class="crs-group rv">
+  <p class="crs-group-t">{title}{note}</p>
+  <div class="crs-cards">{cards}</div>
+</div>""".format(title=a(title), cards=''.join(cards),
+                 note='<span class="crs-group-n{0}">{1}</span>'.format(
+                     ' crs-group-now' if now else '', a(note)) if note else '')
+
+    groups = []
+    for term in order:
+        cards = []
+        running = False
+        for c in by_term[term]:
+            running = running or bool(c.get('current'))
+            cards.append("""<a class="crs-card" href="{href}">
   <span class="crs-code">{code}</span>
   <span class="crs-card-n">{name}</span>
-  <span class="crs-card-t">{term}{now}</span>
+  <span class="crs-card-t">{state}</span>
   <span class="crs-card-b">{blurb}</span>
-</a>""".format(href=course_slug(c), code=a(c['code']), name=a(c['name']), term=a(c['term']),
-               now=' &middot; running now' if c.get('current') else '', blurb=a(c['blurb'])))
-    cards.append("""<a class="crs-card crs-card-alt rv" href="self-learning.html">
+</a>""".format(href=course_slug(c), code=a(c['code']), name=a(c['name']),
+               state='Running now' if c.get('current') else 'Completed',
+               blurb=a(c['blurb'])))
+        groups.append(card_group(term, 'in progress' if running else 'completed', cards, now=running))
+
+    groups.append(card_group('Any time', 'no enrolment, no deadline', ["""<a class="crs-card crs-card-alt" href="self-learning.html">
   <span class="crs-code">&#8734;</span>
   <span class="crs-card-n">Self-learning</span>
-  <span class="crs-card-t">No enrolment, no deadline</span>
+  <span class="crs-card-t">Work at your own pace</span>
   <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
-</a>""")
+</a>"""]))
 
     body = page_head('Teaching', 'Courses', d['intro']) + """
 <section class="section-tight">
   <div class="wrap">
     <p class="eyebrow rv">Course pages</p>
-    <div class="crs-cards">{cards}</div>
+    {groups}
   </div>
 </section>
 
@@ -743,7 +766,7 @@ def build_teaching():
     <p class="q" style="font-family:'Noto Sans Devanagari',serif;font-style:normal">{sk}</p>
     <p class="attr">{tr}</p>
   </div>
-</section>""".format(cards=''.join(cards), terms=''.join(terms),
+</section>""".format(groups=''.join(groups), terms=''.join(terms),
                      sk=d['quote']['text'], tr=a(d['quote']['translation']))
 
     return write('teaching.html', page('teaching.html', 'Teaching',
