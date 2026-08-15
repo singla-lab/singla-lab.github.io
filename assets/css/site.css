@@ -596,6 +596,17 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 @media (max-width: 520px) { .ftr-grid { grid-template-columns: 1fr; } }
 .ftr .brand { color: #fff; }
 .ftr .brand-sub { color: #7D8894; }
+
+/* full ∫LAB lockup */
+.ftr-logo { display: inline-block; width: 210px; max-width: 70%; }
+.ftr-logo svg { width: 100%; height: auto; }
+.ftr-logo:hover { text-decoration: none; }
+.lg-int  { stroke: var(--indigo); }
+.lg-word { fill: var(--ink); }
+.lg-sub  { fill: var(--ink-3); }
+.ftr .lg-int  { stroke: #8FB4EE; }
+.ftr .lg-word { fill: #FFFFFF; }
+.ftr .lg-sub  { fill: #7D8894; }
 .ftr-h { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: #7D8894; margin-bottom: .9rem; }
 .ftr-l li { padding-block: .3rem; font-size: .89rem; }
 .ftr-bottom {

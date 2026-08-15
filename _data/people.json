@@ -70,7 +70,7 @@
     { "name": "Ashwani Sharma",         "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "ashwani-sharma" },
     { "name": "Shailly Tomar",          "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "shailly-tomar" },
     { "name": "Vishvendra Singh Poonia","suffix": "PhD",       "org": "IIT Roorkee",  "dept": "ECE Department",  "photo": "vishvendra-poonia" },
-    { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering" },
+    { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering", "photo": "parikshit-pareek" },
     { "name": "Venkataseshan Sundaram", "suffix": "MD",        "org": "PGIMER Chandigarh", "photo": "venkataseshan-sundaram" },
     { "name": "Parag Singla",           "suffix": "PhD",       "org": "IIT Delhi", "photo": "parag-singla" },
     { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles" },

@@ -135,8 +135,8 @@ def footer():
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="brand" href="index.html">{logo}<span class="brand-txt"><span class="brand-name">{name}</span><span class="brand-sub">IIT Roorkee</span></span></a>
-        <p class="sanskrit-line" style="margin-top:1.5rem">{sans}</p>
+        <a class="ftr-logo" href="index.html" aria-label="{name} — home">{logofull}</a>
+        <p class="sanskrit-line" style="margin-top:1.6rem">{sans}</p>
         <p class="sanskrit-tr">{sanstr}</p>
       </div>
       {cols}
@@ -146,7 +146,7 @@ def footer():
       <span><a href="mailto:{mail}">{mail}</a> &middot; <a href="tel:{tel}">{phone}</a></span>
     </div>
   </div>
-</footer>""".format(logo=svg('logo'), name=a(SITE['name']), cols=''.join(colhtml),
+</footer>""".format(logofull=svg('logo-full'), name=attr(SITE['name']), cols=''.join(colhtml),
                     sans=SITE['sanskrit']['line'], sanstr=a(SITE['sanskrit']['translation']),
                     dept=a(SITE['institution']), mail=c['email'], tel=c['phone_href'],
                     phone=a(c['phone']))
