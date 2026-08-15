@@ -1,0 +1,17 @@
+{
+  "intro": "Figures from our work, and moments from the road.",
+  "items": [
+    { "image": "mitochondria",      "title": "Mitochondrial network",           "caption": "Segmented mitochondrial network reconstructed from a soft X-ray tomogram.", "span": "wide" },
+    { "image": "cryoet",            "title": "Cryo-electron tomography",        "caption": "Cellular structure resolved at molecular scale." },
+    { "image": "subtomogram-align", "title": "Subtomogram alignment",           "caption": "Aligning and clustering 3D subtomograms to recover repeated structure." },
+    { "image": "insulin-design",    "title": "A visual design language",        "caption": "Tetrahedral building blocks composing insulin — from the World in a Cell design language.", "span": "wide" },
+    { "image": "subtomogram-avg",   "title": "Subtomogram averaging",           "caption": "Averaging across particles to lift signal out of noise." },
+    { "image": "cryoet-project",    "title": "Template-free discovery",         "caption": "Pattern mining across heterogeneous particle sets." },
+    { "image": "bilicam",           "title": "Non-invasive bilirubin sensing",  "caption": "Smartphone-based estimation for neonatal jaundice screening." },
+    { "image": "news-scope-iitkgp", "title": "SCOPE workshop, IIT Kharagpur",   "caption": "Capacity building in science communication and public engagement, November 2025.", "span": "wide", "kind": "photo" },
+    { "image": "news-mmttc",        "title": "MMTTC, HNB Garhwal University",   "caption": "Faculty Development Programme on AI in higher education, December 2025.", "kind": "photo" },
+    { "image": "news-joel-sussman", "title": "With Prof. Joel L. Sussman",       "caption": "Computational Biology Conference 2025, RCB Faridabad.", "kind": "photo" },
+    { "image": "gn-ramachandran",   "title": "G. N. Ramachandran",              "caption": "On the lab wall — the plot that named a field.", "kind": "photo" },
+    { "image": "karmarkar",         "title": "Karmarkar's algorithm",           "caption": "Interior-point methods, drawn out.", "span": "wide" }
+  ]
+}

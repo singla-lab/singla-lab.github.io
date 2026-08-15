@@ -1,0 +1,53 @@
+{
+  "name": "Singla Lab",
+  "tagline": "Computational Biology &amp; AI",
+  "long_name": "Singla Lab — Computational Biology &amp; AI",
+  "institution": "Department of Biosciences and Bioengineering, IIT Roorkee",
+  "url": "https://singla-lab.github.io",
+  "description": "The Singla Lab at IIT Roorkee builds computational frameworks that bridge biology, data science and engineering — cellular architecture from tomography, AI for healthcare diagnostics, and Sanskrit language models.",
+  "quote": {
+    "text": "Story telling is essentially a data integration process.",
+    "author": "Jitin Singla"
+  },
+  "sanskrit": {
+    "line": "परं वैभवं नेतुमेतत् स्वराष्ट्रम्",
+    "translation": "May you be empowered to lead Bharat to param vaibhav"
+  },
+  "contact": {
+    "email": "jsingla@bt.iitr.ac.in",
+    "phone": "+91 1332 28 5609",
+    "phone_href": "+911332285609",
+    "room": "Room 204 / 211",
+    "department": "Department of Biosciences and Bioengineering",
+    "institute": "Indian Institute of Technology Roorkee",
+    "city": "Roorkee, Uttarakhand, India — 247667",
+    "map": "https://www.google.com/maps/search/?api=1&query=Department+of+Biosciences+and+Bioengineering+IIT+Roorkee"
+  },
+  "nav": [
+    { "label": "Home", "href": "index.html" },
+    { "label": "Research", "href": "research.html" },
+    { "label": "Publications", "href": "publications.html" },
+    { "label": "Projects", "href": "projects.html" },
+    { "label": "Team", "href": "team.html" },
+    { "label": "Alumni", "href": "alumni.html" },
+    { "label": "Teaching", "href": "teaching.html" },
+    { "label": "News", "href": "news.html" },
+    { "label": "Reading", "href": "recommended.html" },
+    { "label": "Join Us", "href": "contact.html" }
+  ],
+  "stats": [
+    { "value": "40+", "label": "Publications" },
+    { "value": "7", "label": "Doctoral researchers" },
+    { "value": "60+", "label": "Alumni &amp; interns" },
+    { "value": "8", "label": "Sponsored projects" }
+  ],
+  "partners": [
+    "IIT Roorkee",
+    "PGIMER Chandigarh",
+    "IIT Delhi",
+    "UCLA",
+    "University of Southern California",
+    "Rutgers University",
+    "UCSF"
+  ]
+}

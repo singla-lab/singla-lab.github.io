@@ -1,0 +1,82 @@
+{
+  "pi": {
+    "slug": "jitin-singla",
+    "name": "Jitin Singla",
+    "suffix": "PhD",
+    "role": "Assistant Professor",
+    "affil": [
+      "Department of Biosciences and Bioengineering, IIT Roorkee",
+      "Centre for Indian Knowledge System (Associated Faculty)"
+    ],
+    "email": "jsingla@bt.iitr.ac.in",
+    "photo": "jitin-singla",
+    "bio": [
+      "I am an Assistant Professor in the Department of Biosciences and Bioengineering at IIT Roorkee. My research group develops computational frameworks that bridge biology, data science and engineering — specifically, problems in computational biology and AI-driven bioimage analysis for healthcare diagnostics. More recently we have begun an adventure into Sanskrit-AI tools.",
+      "Our current projects span computational characterization of cellular architecture, AI-based jaundice detection, ECG analysis, and AI models for Sanskrit.",
+      "I also serve as Scientific Advisor to the <em>World in a Cell</em> project under the World Building Media Lab, where we contribute to data-driven visualization and modelling of cellular systems.",
+      "Before joining IIT Roorkee I graduated with a doctorate in Computational Biology and Bioinformatics and an M.S. in Computer Science (High-Performance Computing and Simulation) from the University of Southern California, Los Angeles, and a B.Tech. in Computer Science and Engineering from IIT Roorkee."
+    ],
+    "education": [
+      { "degree": "PhD, Computational Biology &amp; Bioinformatics", "org": "University of Southern California" },
+      { "degree": "M.S., Computer Science (HPC &amp; Simulation)", "org": "University of Southern California" },
+      { "degree": "B.Tech., Computer Science &amp; Engineering", "org": "IIT Roorkee" }
+    ]
+  },
+
+  "groups": [
+    {
+      "id": "doctoral",
+      "title": "Doctoral Researchers",
+      "blurb": "PhD students driving the lab's long-horizon questions.",
+      "members": [
+        { "slug": "siddharth-gupta",   "name": "Siddharth Gupta",  "role": "Ph.D. Student", "dept": "BSBE Department", "email": "siddharth_g@bt.iitr.ac.in", "photo": "siddharth-gupta" },
+        { "slug": "anshu-singh",       "name": "Anshu Singh",      "role": "Ph.D. Student", "dept": "BSBE Department", "email": "anshu_s@bt.iitr.ac.in", "photo": "anshu-singh" },
+        { "slug": "harinandan-shukla", "name": "Harinandan Shukla","role": "Ph.D. Student", "dept": "CSE Department",  "email": "harinandan_s@cs.iitr.ac.in", "photo": "harinandan-shukla" },
+        { "slug": "arun-yadav",        "name": "Arun Yadav",       "role": "Ph.D. Student", "dept": "CSE Department",  "email": "arun_y@cs.iitr.ac.in", "photo": "arun-yadav" },
+        { "slug": "divyanshu-bathla",  "name": "Divyanshu Bathla", "role": "Ph.D. Student", "dept": "CSE Department",  "email": "divyanshu_b@cs.iitr.ac.in", "photo": "divyanshu-bathla" },
+        { "slug": "ishani-mishra",     "name": "Ishani Mishra",    "role": "Ph.D. Student", "dept": "BSBE Department", "email": "i_mishra@bt.iitr.ac.in", "photo": "ishani-mishra", "note": "Co-supervised with Prof. Pravindra Kumar" },
+        { "slug": "sandra-kp",         "name": "Sandra K P",       "role": "Ph.D. Student", "dept": "BSBE Department", "email": "s_kp@bt.iitr.ac.in", "photo": "sandra-kp", "note": "Co-supervised with Prof. Ashwani K. Sharma" }
+      ]
+    },
+    {
+      "id": "ug",
+      "title": "Undergraduate Researchers",
+      "blurb": "Current undergraduate research projects.",
+      "members": [
+        { "slug": "swaroop-itkikar", "name": "Swaroop Itkikar", "role": "UG Research Project", "dept": "Meta Department", "photo": "swaroop-itkikar" },
+        { "slug": "raunak",          "name": "Raunak",          "role": "UG Research Project", "dept": "ECE Department",  "photo": "raunak" },
+        { "slug": "anuj-pal",        "name": "Anuj Pal",        "role": "UG Research Project", "dept": "ECE Department" }
+      ]
+    },
+    {
+      "id": "ug-thesis",
+      "title": "Undergraduate Thesis — 2026",
+      "blurb": "B.Tech. thesis students working with the lab this year.",
+      "compact": true,
+      "members": [
+        { "name": "Aman Bawane",  "dept": "CSE Department" },
+        { "name": "Meet Sindhav", "dept": "CSE Department" },
+        { "name": "Ayush",        "dept": "CSE Department" },
+        { "name": "Raman Sharma", "dept": "CSE Department" },
+        { "name": "Kshitij Shah", "dept": "CSE Department" },
+        { "name": "Aryan Dhas",   "dept": "CSE Department" }
+      ]
+    }
+  ],
+
+  "collaborators": [
+    { "name": "Pravindra Kumar",        "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "pravindra-kumar" },
+    { "name": "Sugata Gangopadhyay",    "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "CSE Department",  "photo": "sugata-gangopadhyay" },
+    { "name": "Ashwani Sharma",         "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "ashwani-sharma" },
+    { "name": "Shailly Tomar",          "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "BSBE Department", "photo": "shailly-tomar" },
+    { "name": "Vishvendra Singh Poonia","suffix": "PhD",       "org": "IIT Roorkee",  "dept": "ECE Department",  "photo": "vishvendra-poonia" },
+    { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering" },
+    { "name": "Venkataseshan Sundaram", "suffix": "MD",        "org": "PGIMER Chandigarh", "photo": "venkataseshan-sundaram" },
+    { "name": "Parag Singla",           "suffix": "PhD",       "org": "IIT Delhi", "photo": "parag-singla" },
+    { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles" },
+    { "name": "Helen Berman",           "suffix": "PhD",       "org": "Rutgers University &amp; University of Southern California" },
+    { "name": "Kate White",             "suffix": "PhD",       "org": "University of Southern California" },
+    { "name": "Brinda Vallat",          "suffix": "PhD",       "org": "Rutgers University", "photo": "brinda-vallat" },
+    { "name": "Alex McDowell",          "suffix": "R.D.I.",    "org": "World Building Media Lab, USC School of Cinematic Arts", "photo": "alex-mcdowell" }
+  ]
+}

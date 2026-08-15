@@ -1,0 +1,100 @@
+{
+  "groups": [
+    {
+      "id": "doctoral",
+      "title": "Doctoral",
+      "members": [
+        { "name": "Dr. Shalja Verma", "dept": "BSBE Department", "note": "Co-supervised with Prof. Pravindra Kumar", "photo": "shalja-verma" }
+      ]
+    },
+    {
+      "id": "pg-thesis",
+      "title": "Postgraduate Thesis",
+      "members": [
+        { "name": "Sujit Kumar",      "role": "MSc Thesis",  "year": "2021–22", "dept": "BSBE Department", "photo": "sujit-kumar" },
+        { "name": "Angshuman Mandal", "role": "MSc Thesis",  "year": "2022–23", "dept": "BSBE Department", "photo": "angshuman-mandal" },
+        { "name": "Rishabh Verma",    "role": "MTech Thesis","year": "2023–24", "dept": "CSE Department",  "photo": "rishabh-verma" },
+        { "name": "Gautam Passi",     "role": "MSc Thesis",  "year": "2023–24", "dept": "BSBE Department", "photo": "gautam-passi" },
+        { "name": "Divyansh Verma",   "role": "MSc Thesis",  "dept": "BSBE Department", "photo": "divyansh-verma" },
+        { "name": "Samrik Ray",       "role": "MTech Thesis","dept": "BSBE Department", "photo": "samrik-ray" },
+        { "name": "Youssef Youssef",  "role": "MTech Thesis","dept": "BSBE Department", "photo": "youssef-youssef" }
+      ]
+    },
+    {
+      "id": "staff",
+      "title": "Project Staff",
+      "members": [
+        { "name": "Arjun Singh",      "photo": "arjun-singh" },
+        { "name": "Angshuman Mandal", "photo": "angshuman-mandal" },
+        { "name": "Raghav Passi",     "photo": "raghav-passi" }
+      ]
+    },
+    {
+      "id": "ug-projects",
+      "title": "Undergraduate Projects",
+      "members": [
+        { "name": "Anuj Baliyan",      "photo": "anuj-baliyan" },
+        { "name": "Pushkar Bharadwaj", "photo": "pushkar-bharadwaj" },
+        { "name": "Vikas Dheravath",   "photo": "vikas-dheravath" },
+        { "name": "Ashwini Malviya",   "photo": "ashwini-malviya" },
+        { "name": "Priyanshu Maurya",  "photo": "priyanshu-maurya" },
+        { "name": "Ayush Kumar Poddar","photo": "ayush-poddar" }
+      ]
+    },
+    {
+      "id": "ug-thesis",
+      "title": "Undergraduate Thesis",
+      "members": [
+        { "name": "Amandeep Singh",       "year": "2025", "dept": "CSE Department", "photo": "amandeep-singh" },
+        { "name": "Nishita Singh",        "year": "2025", "dept": "CSE Department", "photo": "nishita-singh" },
+        { "name": "Prerna",               "year": "2025", "dept": "CSE Department", "photo": "prerna" },
+        { "name": "Akshat Singh",         "year": "2025", "dept": "Physics Department", "photo": "akshat-singh" },
+        { "name": "Pranavdeep Singh",     "year": "2025", "dept": "CSE Department", "photo": "pranavdeep-singh" },
+        { "name": "Raiwat Narendra Bapat","year": "2025", "dept": "CSE Department", "photo": "raiwat-bapat" },
+        { "name": "Naqiyah Kagzi",        "year": "2025", "dept": "CSE Department", "photo": "naqiyah-kagzi" },
+        { "name": "Shreyash Singh",       "year": "2025", "dept": "BSBE Department", "photo": "shreyash-singh" },
+        { "name": "Manan Garg",           "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "manan-garg" },
+        { "name": "Tanmay Bakshi",        "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "tanmay-bakshi" },
+        { "name": "Akhil Punia",          "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "akhil-punia" },
+        { "name": "Jyotsna Singh",        "year": "2025", "dept": "Physics Department", "photo": "jyotsna-singh" },
+        { "name": "Roshan Kumar",         "year": "2024", "dept": "BSBE Department", "photo": "roshan-kumar" },
+        { "name": "Surya Prakash",        "year": "2023", "dept": "CSE Department", "photo": "surya-prakash" }
+      ]
+    },
+    {
+      "id": "interns",
+      "title": "Interns",
+      "members": [
+        { "name": "S. Keerthana",     "year": "Summer 2022", "photo": "s-keerthana" },
+        { "name": "Jithin Rajan",     "year": "Summer 2023", "photo": "jithin-rajan" },
+        { "name": "Kamal Kishor",     "year": "Summer 2023", "photo": "kamal-kishor" },
+        { "name": "Shivang Kaushal",  "year": "Summer 2023", "photo": "shivang-kaushal" },
+        { "name": "Arjun Handa",      "year": "Summer 2023", "photo": "arjun-handa" },
+        { "name": "Ramashish Vyas",   "year": "Summer 2025" },
+        { "name": "Shubh Bhateja",    "year": "Summer 2025" },
+        { "name": "Lakshya Khatana",  "year": "Summer 2025" },
+        { "name": "Aishwarya JA",     "year": "Autumn 2025", "photo": "aishwarya-ja" },
+        { "name": "Ananya Dinesh",    "year": "Autumn 2025", "photo": "ananya-dinesh" }
+      ]
+    },
+    {
+      "id": "ug-more",
+      "title": "Undergraduate Researchers",
+      "compact": true,
+      "members": [
+        { "name": "Kushagra Rustagi",   "year": "2022", "dept": "BSBE Department" },
+        { "name": "Sanchit Verma",      "year": "2022", "dept": "BSBE Department" },
+        { "name": "Gayathri K",         "year": "2023", "dept": "BSBE Department" },
+        { "name": "Amitesh Uppal",      "year": "2023", "dept": "BSBE Department" },
+        { "name": "Mayank Garg",        "year": "2024", "dept": "BSBE Department" },
+        { "name": "Ayush Bhateja",      "year": "2024", "dept": "BSBE Department" },
+        { "name": "Aditya Singh Bisht", "year": "2024", "dept": "CSE Department" },
+        { "name": "Alok Raj",           "year": "2024", "dept": "CSE Department" },
+        { "name": "Kumar Devesh",       "year": "2024", "dept": "CSE Department" },
+        { "name": "Aleena M R",         "year": "2024", "dept": "CSE Department" },
+        { "name": "Deepanshu Meena",    "year": "2024", "dept": "CSE Department" },
+        { "name": "Sonali Gupta",       "year": "2024", "dept": "CSE Department" }
+      ]
+    }
+  ]
+}

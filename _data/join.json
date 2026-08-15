@@ -1,0 +1,34 @@
+{
+  "lede": "The lab is not the place for those seeking easy rewards or comfort zones — it's the place for those who dare to build, question, and grow, together.",
+  "philosophy": [
+    "We care about the substance of the research, not the accumulation of credentials. What you have built and what you can reason about matter more than what is listed on your CV.",
+    "The group works collaboratively rather than hierarchically. Projects are shared responsibilities, and the same ethical standards apply to everyone in the room — including the PI.",
+    "We look for people committed to rigorous research, to their own character, and to contributing something back to the community beyond personal advancement."
+  ],
+  "routes": [
+    {
+      "id": "phd",
+      "title": "Prospective PhD &amp; research students",
+      "status": "open",
+      "status_label": "Applications welcome",
+      "body": "Write to the lab with the subject line below. Include your research interests, a CV, and any relevant documents — and please look through the research and publications pages before you write, so we can have a substantive first exchange.",
+      "subject": "Prospective Doctoral/Research Student Application — [Your Name]",
+      "cta": "Email the lab"
+    },
+    {
+      "id": "iitr",
+      "title": "Current IITR students",
+      "status": "open",
+      "status_label": "Come talk to us",
+      "body": "Undergraduate and postgraduate students at IIT Roorkee are welcome to approach directly about project opportunities — provided you understand what the lab expects in terms of commitment and effort. Drop by Room 204/211 or send a note.",
+      "cta": "Get in touch"
+    },
+    {
+      "id": "intern",
+      "title": "External internships",
+      "status": "closed",
+      "status_label": "Closed for Summer 2026",
+      "body": "There are no external internship positions available for Summer 2026. This page is updated when that changes — please check back rather than writing to ask."
+    }
+  ]
+}

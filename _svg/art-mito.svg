@@ -1,0 +1,30 @@
+<svg viewBox="0 0 320 220" role="img" aria-label="Mitochondrial network with morphometric bounding boxes" xmlns="http://www.w3.org/2000/svg">
+  <rect x="12" y="12" width="296" height="196" rx="10" fill="#FFFFFF" stroke="#E5E2DA"/>
+  <g fill="none" stroke="#E5E2DA" stroke-width=".8">
+    <path d="M12 60h296M12 110h296M12 160h296M80 12v196M160 12v196M240 12v196"/>
+  </g>
+  <polyline class="dash-run" points="72,72 128,102 106,158 176,168 226,120 262,66"
+            fill="none" stroke="#1F7A6B" stroke-opacity=".6" stroke-width="1.5"/>
+  <g fill="#E4F2EF" stroke="#1F7A6B" stroke-width="1.8">
+    <rect x="44" y="60" width="58" height="24" rx="12" transform="rotate(-22 73 72)"/>
+    <rect x="106" y="90" width="46" height="22" rx="11" transform="rotate(38 129 101)"/>
+    <rect x="78" y="146" width="56" height="22" rx="11" transform="rotate(8 106 157)"/>
+    <rect x="146" y="157" width="62" height="22" rx="11" transform="rotate(-14 177 168)"/>
+    <rect x="202" y="108" width="48" height="22" rx="11" transform="rotate(56 226 119)"/>
+    <rect x="236" y="55" width="52" height="22" rx="11" transform="rotate(-30 262 66)"/>
+  </g>
+  <g fill="none" stroke="#1F7A6B" stroke-opacity=".4" stroke-width="1">
+    <path d="M52 70l7 8M64 66l7 8M76 62l7 8M88 58l7 8" transform="rotate(-22 73 72)"/>
+    <path d="M90 153l6 8M102 153l6 8M114 153l6 8" transform="rotate(8 106 157)"/>
+  </g>
+  <!-- morphometry callouts -->
+  <g stroke="#C2601F" stroke-width="1.1" fill="none" stroke-dasharray="3 3">
+    <rect x="42" y="52" width="64" height="42" rx="3"/>
+    <rect x="144" y="150" width="68" height="36" rx="3"/>
+  </g>
+  <g fill="#C2601F" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
+    <text x="42" y="46">len 2.4 µm</text>
+    <text x="144" y="144">Ø 0.61</text>
+  </g>
+  <circle class="pulse-o" cx="262" cy="66" r="16" fill="none" stroke="#C2601F" stroke-width="1.2"/>
+</svg>

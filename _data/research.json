@@ -1,0 +1,79 @@
+{
+  "intro": "We build computational frameworks that sit between biology, data science and engineering. Four threads run through the lab — cellular architecture from tomography, template-free molecular discovery, AI for point-of-care diagnostics, and language models for Sanskrit.",
+  "areas": [
+    {
+      "id": "sxt",
+      "num": "01",
+      "graphic": "mito",
+      "title": "Mitochondrial network modelling with soft X-ray tomography",
+      "kicker": "Cellular architecture",
+      "summary": "Soft X-ray tomography (SXT) rapidly maps ultrastructure across whole, intact cells. We build the tools that turn those volumes into measurable biology.",
+      "body": [
+        "SXT is an emerging technique for rapidly mapping ultrastructure in whole cells without fixation or sectioning. The difficulty is downstream: a tomogram is a dense grey volume, and the biology only appears once organelles are segmented, individuated and measured.",
+        "Our group develops robust segmentation and morphological profiling pipelines for mitochondria in these volumes, and uses them to ask how network structure, density and subcellular location are coupled — and how that coupling shifts under drug treatment.",
+        "The work is carried out with collaborators at USC and UCSF, and has appeared in <em>Science Advances</em>, <em>Structure</em> and the <em>Journal of Structural Biology</em>."
+      ],
+      "tags": ["Soft X-ray tomography", "Segmentation", "Morphometry", "β-cells"],
+      "image": "mitochondria"
+    },
+    {
+      "id": "cryoet",
+      "num": "02",
+      "graphic": "lattice",
+      "title": "Template-free macromolecular discovery in cryo-electron tomograms",
+      "kicker": "Visual proteomics",
+      "summary": "Cryo-ET resolves cellular structure at molecular resolution. We look for the complexes nobody knew to search for.",
+      "body": [
+        "Cryo-electron tomography images the cell at molecular resolution, but extracting information about macromolecular complexes from a cellular tomogram is a systematic problem, not a per-particle one. Conventional template matching can only find what you already have a reference for.",
+        "We develop frameworks for template-free, unsupervised discovery of distinct complexes from large, heterogeneous particle sets — including scoring functions that rank the quality of 3D subtomogram clusters, and de novo structural pattern mining across whole tomograms.",
+        "This line of work is pursued in collaboration with researchers at UCLA and has been highlighted in <em>Nature Methods</em> as template-free visual proteomics."
+      ],
+      "tags": ["Cryo-ET", "Subtomogram averaging", "Unsupervised learning", "Pattern mining"],
+      "image": "cryoet"
+    },
+    {
+      "id": "jaundice",
+      "num": "03",
+      "graphic": "pulse",
+      "title": "Non-invasive diagnostics from images and signals",
+      "kicker": "AI for healthcare",
+      "summary": "Jaundice affects 60–80% of newborns worldwide. A phone camera should be enough to triage it.",
+      "body": [
+        "Neonatal jaundice occurs in 60–80% of neonates worldwide and is one of the most common morbidities in both term and preterm neonates. Where a laboratory bilirubin assay is hours or kilometres away, early detection fails for logistical reasons rather than clinical ones.",
+        "We are building smartphone-based, non-invasive bilirubin estimation trained on Indian cohorts, in partnership with PGIMER Chandigarh — explicitly targeting skin-tone distributions and imaging conditions that existing models were not built for.",
+        "A parallel thread works on ECG: patient-independent reconstruction of missing leads using pathology-aware multi-view contrastive learning, so that a reduced-lead recording can still support diagnosis."
+      ],
+      "tags": ["Neonatal jaundice", "ECG reconstruction", "Contrastive learning", "Point-of-care"],
+      "image": "bilicam"
+    },
+    {
+      "id": "sanskrit",
+      "num": "04",
+      "graphic": "devanagari",
+      "title": "AI models for Sanskrit",
+      "kicker": "Low-resource NLP",
+      "summary": "Sanskrit is morphologically rich and data-poor — exactly the regime where modern NLP is weakest.",
+      "body": [
+        "Sanskrit combines dense morphology, free word order and sandhi with a very small parallel corpus. That makes it a genuine stress test for translation methods rather than a benchmark to be saturated.",
+        "We have released <em>Sāmayik</em>, a benchmark and dataset for English–Sanskrit translation, and <em>Samasamayik</em>, a parallel dataset for Hindi–Sanskrit — and we develop training methods such as reconstruction-anchored semi-supervised training built for the low-resource regime.",
+        "The work is carried out with collaborators at IIT Delhi and IIT Roorkee's Centre for Indian Knowledge System."
+      ],
+      "tags": ["Machine translation", "Low-resource NLP", "Datasets", "Indian Knowledge Systems"]
+    },
+    {
+      "id": "vdl",
+      "num": "05",
+      "graphic": "tetra",
+      "title": "A visual design language for biological structure",
+      "kicker": "World in a Cell",
+      "summary": "If you cannot draw the cell, you cannot reason about it. We designed a grammar for drawing it.",
+      "body": [
+        "<em>World in a Cell</em> is an immersive experience built around a model of the pancreatic beta cell. Representing tens of thousands of molecular species inside a real-time environment demanded a representation that was both scientifically honest and cheap to render.",
+        "We developed a new visual design language in which tetrahedral building blocks compose into molecules and organelles, giving a consistent visual grammar across scales — from a single protein to the whole cellular environment — while remaining efficient to animate and interact with.",
+        "The language was published in <em>Structure</em> and underpins the ongoing artscience collaboration with the World Building Media Lab at USC."
+      ],
+      "tags": ["Scientific visualization", "Immersive media", "Design language", "Beta cell"],
+      "image": "insulin-design"
+    }
+  ]
+}

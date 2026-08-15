@@ -1,0 +1,80 @@
+{
+  "intro": "Courses taught at IIT Roorkee across the Biosciences &amp; Bioengineering and Computer Science departments.",
+  "quote": {
+    "text": "स्वाध्यायान्मा प्रमदः",
+    "translation": "Let there be no neglect of self-study."
+  },
+  "terms": [
+    {
+      "term": "Autumn 2026–27",
+      "current": true,
+      "courses": [
+        { "code": "BEC-351", "name": "Fundamentals of ML/AI" },
+        { "code": "BEL-483", "name": "Deep Learning" }
+      ]
+    },
+    {
+      "term": "Spring 2025–26",
+      "courses": [
+        { "code": "BEL-515", "name": "Machine Learning Essentials" }
+      ]
+    },
+    {
+      "term": "Autumn 2025–26",
+      "courses": [
+        { "code": "BEC-351", "name": "Fundamentals of ML/AI" },
+        { "code": "CSL-537", "name": "Deep Learning" }
+      ]
+    },
+    {
+      "term": "Spring 2024–25",
+      "courses": [
+        { "code": "BEL-515", "name": "Probabilistic Machine Learning" }
+      ]
+    },
+    {
+      "term": "Autumn 2024–25",
+      "courses": [
+        { "code": "BE-350", "name": "Machine Learning and Deep Learning" }
+      ]
+    },
+    {
+      "term": "Spring 2023–24",
+      "courses": [
+        { "code": "CSE-101", "name": "Data Structures and Algorithms" }
+      ]
+    },
+    {
+      "term": "Autumn 2023–24",
+      "courses": [
+        { "code": "BE-350", "name": "Machine Learning and Deep Learning" },
+        { "code": "BE-460", "name": "Design and Analysis of Algorithms" }
+      ]
+    },
+    {
+      "term": "Spring 2022–23",
+      "courses": [
+        { "code": "CSN-102", "name": "Data Structures" }
+      ]
+    },
+    {
+      "term": "Autumn 2022–23",
+      "courses": [
+        { "code": "BE-350", "name": "Machine Learning and Deep Learning" }
+      ]
+    },
+    {
+      "term": "Spring 2021–22",
+      "courses": [
+        { "code": "BTN-664", "name": "Computational Biology" }
+      ]
+    },
+    {
+      "term": "Autumn 2021–22",
+      "courses": [
+        { "code": "BE-103",  "name": "Computer Programming", "note": "Jointly taught" },
+        { "code": "BT-506",  "name": "Basic Mathematics and Statistics", "note": "Jointly taught" }
+      ]
+    }
+  ]
+}

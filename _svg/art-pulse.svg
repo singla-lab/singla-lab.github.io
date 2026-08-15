@@ -1,0 +1,38 @@
+<svg viewBox="0 0 320 220" role="img" aria-label="ECG trace with a reconstructed lead, beside a smartphone capturing a non-invasive reading" xmlns="http://www.w3.org/2000/svg">
+  <rect x="12" y="12" width="296" height="196" rx="10" fill="#FFFFFF" stroke="#E5E2DA"/>
+  <!-- ecg graph paper -->
+  <g fill="none" stroke="#F2D9D2" stroke-width=".7">
+    <path d="M12 44h190M12 68h190M12 92h190M12 116h190M12 140h190M12 164h190M12 188h190"/>
+    <path d="M36 12v196M60 12v196M84 12v196M108 12v196M132 12v196M156 12v196M180 12v196"/>
+  </g>
+  <!-- measured lead -->
+  <path d="M16 92 h14 l6 -10 l5 10 h10 l7 26 l8 -60 l8 46 l7 -12 h12 l9 -8 l6 8 h16"
+        fill="none" stroke="#173F8A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M130 92 h14 l6 -10 l5 10 h10 l7 26 l8 -60 l8 46 l7 -12 h5"
+        fill="none" stroke="#173F8A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- reconstructed lead -->
+  <path class="trace" d="M16 168 h16 l5 -7 l4 7 h12 l6 16 l7 -38 l7 28 l6 -8 h14 l7 -5 l5 5 h16 l6 -7 l4 7 h12 l6 16 l7 -38 l7 28 l6 -8 h13"
+        fill="none" stroke="#C2601F" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
+    <text x="18" y="34" fill="#173F8A">lead II · measured</text>
+    <text x="18" y="204" fill="#C2601F">lead V4 · reconstructed</text>
+  </g>
+  <!-- phone -->
+  <rect x="222" y="42" width="66" height="128" rx="11" fill="#FBFAF7" stroke="#414B55" stroke-width="1.8"/>
+  <rect x="228" y="56" width="54" height="94" rx="5" fill="#E8EEF9" stroke="#173F8A" stroke-opacity=".3"/>
+  <path d="M247 48h16" stroke="#414B55" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="255" cy="160" r="4.5" fill="none" stroke="#414B55" stroke-width="1.4"/>
+  <!-- skin-tone read-out swatches -->
+  <g stroke="#173F8A" stroke-opacity=".25">
+    <rect x="236" y="64" width="17" height="17" rx="3" fill="#F6E3C4"/>
+    <rect x="257" y="64" width="17" height="17" rx="3" fill="#E7C79A"/>
+    <rect x="236" y="85" width="17" height="17" rx="3" fill="#C99C6B"/>
+    <rect x="257" y="85" width="17" height="17" rx="3" fill="#9E7248"/>
+  </g>
+  <circle class="pulse-o" cx="255" cy="93" r="30" fill="none" stroke="#C2601F" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="#173F8A">
+    <text x="236" y="122">TcB est.</text>
+    <text x="236" y="136" font-size="11" fill="#C2601F">14.2</text>
+    <text x="264" y="136">mg/dL</text>
+  </g>
+</svg>

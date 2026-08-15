@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singla-lab.github.io/sitemap.xml

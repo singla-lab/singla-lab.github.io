@@ -1,0 +1,63 @@
+{
+  "items": [
+    {
+      "date": "2026",
+      "sort": "2026-06-01",
+      "title": "Two papers accepted in Structure and Journal of Structural Biology",
+      "body": "Morphotype-resolved 3D morphometry of mitochondrial networks accepted in <em>Structure</em>, and robust mitochondria segmentation with soft X-ray tomography published in the <em>Journal of Structural Biology</em>.",
+      "tag": "Research"
+    },
+    {
+      "date": "6 December 2025",
+      "sort": "2025-12-06",
+      "title": "Interaction with participants at MMTTC, HNB Garhwal University",
+      "body": "Prof. Parikshit Pareek and Jitin Singla engaged with attendees at MMTTC as part of a Faculty Development Programme on “Harnessing AI in Higher Education for an Innovative Future”.",
+      "tag": "Outreach",
+      "image": "news-mmttc"
+    },
+    {
+      "date": "14–19 November 2025",
+      "sort": "2025-11-14",
+      "title": "Capacity Building Workshop at SCOPE, IIT Kharagpur",
+      "body": "A five-day workshop on Science Communication, Outreach &amp; Public Engagement.",
+      "tag": "Outreach",
+      "image": "news-scope-iitkgp"
+    },
+    {
+      "date": "19–21 February 2025",
+      "sort": "2025-02-19",
+      "title": "Computational Biology Conference 2025, RCB Faridabad",
+      "body": "Attended the inaugural Computational Biology Conference in Bharat at the Regional Centre for Biotechnology, Faridabad — including a discussion of the tetrahedral visual design language for macromolecules with Prof. Joel L. Sussman.",
+      "tag": "Conference",
+      "image": "news-joel-sussman"
+    },
+    {
+      "date": "27, 30 September &amp; 1 October 2024",
+      "sort": "2024-09-27",
+      "title": "Hands-on workshop on AI/ML applications",
+      "body": "Led instruction on classification techniques in a three-day workshop jointly organised by HRDD, PPEG and the AI/ML Peer Group for scientists and engineers at URSC.",
+      "tag": "Teaching"
+    },
+    {
+      "date": "19 May – 7 July 2024",
+      "sort": "2024-05-19",
+      "title": "Visiting Professor at USC",
+      "body": "Served as Visiting Professor at the University of Southern California, collaborating with Prof. Helen Berman and Prof. Kate White, with visits to Rutgers University and UCLA.",
+      "tag": "Visit"
+    },
+    {
+      "date": "July 2021",
+      "sort": "2021-07-01",
+      "title": "Lab opens at IIT Roorkee",
+      "body": "Commenced as Assistant Professor in the Department of Biosciences and Bioengineering, IIT Roorkee.",
+      "tag": "Milestone"
+    },
+    {
+      "date": "2020",
+      "sort": "2020-01-01",
+      "title": "BEYOND Conference 2020",
+      "body": "Panel participation — “Emergence: World in a Cell, an Artscience Collaboration”.",
+      "tag": "Panel"
+    }
+  ]
+}

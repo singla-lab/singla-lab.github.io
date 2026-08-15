@@ -1,0 +1,409 @@
+{
+  "note": "Author names matching the strings in `highlight_authors` are emphasised automatically at build time.",
+  "highlight_authors": ["Singla, J.", "Singla J.", "Singla, Jitin"],
+  "publications": [
+    {
+      "year": 2026, "type": "conference",
+      "authors": "Bathla, D., Singla, P., & Singla, J.",
+      "title": "RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation",
+      "venue": "Submitted to AAAI-27",
+      "topic": "sanskrit"
+    },
+    {
+      "year": 2026, "type": "preprint",
+      "authors": "Shukla, H., Verma, R., & Singla, J.",
+      "title": "FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2606.29414",
+      "link": "https://arxiv.org/abs/2606.29414",
+      "topic": "ml"
+    },
+    {
+      "year": 2026, "type": "journal",
+      "authors": "Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., & Singla, J.",
+      "title": "Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks",
+      "venue": "Structure",
+      "detail": "Accepted",
+      "topic": "sxt"
+    },
+    {
+      "year": 2026, "type": "preprint",
+      "authors": "Youssef, Y., & Singla, J.",
+      "title": "Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2603.17248",
+      "link": "https://arxiv.org/abs/2603.17248",
+      "topic": "health"
+    },
+    {
+      "year": 2026, "type": "preprint",
+      "authors": "Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., & Gourishetty, A. K.",
+      "title": "Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2603.24307",
+      "link": "https://arxiv.org/abs/2603.24307",
+      "topic": "sanskrit"
+    },
+    {
+      "year": 2026, "type": "journal",
+      "authors": "Verma, S., Aggarwal, D., Ashar, M., Pandey, A. K., Sutradhar, A., Pandey, S., Sircar, D., Singla, J., & Kumar, P.",
+      "title": "Structural and functional characterization of thermostable EstS1 esterase for BHET degradation",
+      "venue": "Journal of Structural Biology",
+      "detail": "108342",
+      "topic": "structbio"
+    },
+    {
+      "year": 2026, "type": "journal",
+      "authors": "Yadav, A., Singh, A., Deshmukh, A., Bharadwaj, P., Baliyan, A., White, K., & Singla, J.",
+      "title": "Robust mitochondria segmentation and morphological profiling using soft X-ray tomography",
+      "venue": "Journal of Structural Biology",
+      "detail": "108291",
+      "topic": "sxt"
+    },
+
+    {
+      "year": 2025, "type": "preprint",
+      "authors": "Gupta, S., & Singla, J.",
+      "title": "YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2509.19166",
+      "link": "https://arxiv.org/abs/2509.19166",
+      "topic": "health"
+    },
+    {
+      "year": 2025, "type": "journal",
+      "authors": "Mahmoud, L., Liyanage, M., Singla, J., & Gangopadhyay, S.",
+      "title": "DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model",
+      "venue": "IEEE Open Journal of the Computer Society",
+      "detail": "1–12",
+      "topic": "ml"
+    },
+    {
+      "year": 2025, "type": "preprint",
+      "authors": "KP, S., Sharma, A. K., & Singla, J.",
+      "title": "In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas",
+      "venue": "bioRxiv",
+      "detail": "2025-04",
+      "topic": "structbio"
+    },
+    {
+      "year": 2025, "type": "journal",
+      "authors": "Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., & Tomar, S.",
+      "title": "Structural Virology: The Key Determinants in Development of Antiviral Therapeutics",
+      "venue": "Viruses",
+      "detail": "17(3), 417",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "journal",
+      "authors": "Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al.",
+      "title": "Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme",
+      "venue": "Structure",
+      "detail": "33(2), 247–261.e3",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "journal",
+      "authors": "Singh, V., Choudhary, S., Bhutkar, M., Nehul, S., Ali, S., Singla, J., et al.",
+      "title": "Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant",
+      "venue": "International Journal of Biological Macromolecules",
+      "detail": "290, 138751",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "journal",
+      "authors": "Singh, V., Bhutkar, M., Choudhary, S., Nehul, S., Kumar, R., Singla, J., et al.",
+      "title": "Structure-guided mutations in CDRs for enhancing the affinity of neutralizing SARS-CoV-2 nanobody",
+      "venue": "Biochemical and Biophysical Research Communications",
+      "detail": "734, 150746",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "journal",
+      "authors": "Verma, S., Singh, A., Kumar, P., & Singla, J.",
+      "title": "In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters",
+      "venue": "International Journal of Biological Macromolecules",
+      "detail": "280, 136006",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "journal",
+      "authors": "Kaur, H., Rode, S., Sandra, K. P., Mahto, J. K., Alam, M. S., Gupta, D. N., et al.",
+      "title": "Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis",
+      "venue": "Archives of Biochemistry and Biophysics",
+      "detail": "753, 109888",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "chapter",
+      "authors": "Singh, A., Dhaka, P., Kumar, P., Tomar, S., & Singla, J.",
+      "title": "Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs",
+      "venue": "Advances in Antiviral Research, Springer Nature Singapore",
+      "detail": "41–71",
+      "topic": "structbio"
+    },
+    {
+      "year": 2024, "type": "conference",
+      "authors": "Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., & Singla, J.",
+      "title": "Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation",
+      "venue": "LREC-COLING 2024",
+      "detail": "14298–14304",
+      "topic": "sanskrit"
+    },
+    {
+      "year": 2023, "type": "conference",
+      "authors": "Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., & Kesselman, C.",
+      "title": "Database Evolution, by Scientists, for Scientists: A Case Study",
+      "venue": "2023 IEEE 19th International Conference on e-Science",
+      "detail": "1–10",
+      "topic": "ml"
+    },
+    {
+      "year": 2023, "type": "preprint",
+      "authors": "Jothishwaran, C. A., Srivastava, B., Singla, J., & Gangopadhyay, S.",
+      "title": "On Learning with LAD",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2309.16630",
+      "link": "https://arxiv.org/abs/2309.16630",
+      "topic": "ml"
+    },
+    {
+      "year": 2022, "type": "journal",
+      "authors": "Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al.",
+      "title": "A New Visual Design Language for Biological Structures in a Cell",
+      "venue": "Structure",
+      "detail": "30(4), 485–497.e3",
+      "topic": "vdl"
+    },
+    {
+      "year": 2022, "type": "journal",
+      "authors": "Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., Sali, A., White, K. L., & Larabell, C. A.",
+      "title": "Soft X-ray tomography to map and quantify organelle interactions at the mesoscale",
+      "venue": "Structure",
+      "detail": "30(4), 510–521.e3",
+      "highlight": "Highlighted in Nature — “Soft X-rays capture the dance of the organelles”",
+      "topic": "sxt"
+    },
+    {
+      "year": 2022, "type": "journal",
+      "authors": "Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.",
+      "title": "Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion",
+      "venue": "PLOS ONE",
+      "detail": "17(3), e0265567",
+      "topic": "sxt"
+    },
+    {
+      "year": 2022, "type": "journal",
+      "authors": "Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., & Sun, L.",
+      "title": "An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms",
+      "venue": "PLOS ONE",
+      "detail": "17(9), e0269887",
+      "topic": "sxt"
+    },
+    {
+      "year": 2021, "type": "journal",
+      "authors": "Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al.",
+      "title": "Bayesian metamodeling of complex biological systems across varying representations",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "detail": "118(35), e2104559118",
+      "topic": "ml"
+    },
+    {
+      "year": 2021, "type": "journal",
+      "authors": "Singla, J., & White, K. L.",
+      "title": "A community approach to whole-cell modeling",
+      "venue": "Current Opinion in Systems Biology",
+      "detail": "26, 33–38",
+      "topic": "vdl"
+    },
+    {
+      "year": 2021, "type": "journal",
+      "authors": "Singla, J., White, K. L., Stevens, R. C., & Alber, F.",
+      "title": "Assessment of scoring functions to rank the quality of 3D subtomogram clusters from cryo-electron tomography",
+      "venue": "Journal of Structural Biology",
+      "detail": "213(2), 107727",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2020, "type": "journal",
+      "authors": "White, K. L., Singla, J., Loconte, V., Chen, J. H., Ekman, A., Sun, L., et al.",
+      "title": "Visualizing subcellular rearrangements in intact β cells using soft X-ray tomography",
+      "venue": "Science Advances",
+      "detail": "6(50), eabc8262",
+      "highlight": "Highlighted in Science — “Subcellular map of vesicle maturation”",
+      "topic": "sxt"
+    },
+    {
+      "year": 2020, "type": "journal",
+      "authors": "Zhang, X., Carter, S. D., Singla, J., White, K. L., Butler, P. C., Stevens, R. C., & Jensen, G. J.",
+      "title": "Visualizing insulin vesicle neighborhoods in β cells by cryo-electron tomography",
+      "venue": "Science Advances",
+      "detail": "6(50), eabc8258",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2019, "type": "journal",
+      "authors": "Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., & Alber, F.",
+      "title": "De novo structural pattern mining in cellular electron cryotomograms",
+      "venue": "Structure",
+      "detail": "27(4), 679–691",
+      "highlight": "Highlighted in Nature Methods — “Template-free visual proteomics”",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2018, "type": "journal",
+      "authors": "Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., & Stevens, R. C.",
+      "title": "Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell",
+      "venue": "Cell",
+      "detail": "173(1), 11–19",
+      "topic": "vdl"
+    },
+    {
+      "year": 2016, "type": "journal",
+      "authors": "Srihari, S., Kalimutho, M., Lal, S., Singla, J., Patel, D., Simpson, P. T., Khanna, K. K., & Ragan, M. A.",
+      "title": "Understanding the functional impact of copy number alterations in breast cancer using a network modeling approach",
+      "venue": "Molecular BioSystems",
+      "detail": "12(3), 963–972",
+      "topic": "ml"
+    },
+    {
+      "year": 2015, "type": "journal",
+      "authors": "Srihari, S., Singla, J., Wong, L., & Ragan, M. A.",
+      "title": "Inferring synthetic lethal interactions from mutual exclusivity of genetic events in cancer",
+      "venue": "Biology Direct",
+      "detail": "10(1), 1–18",
+      "topic": "ml"
+    },
+
+    {
+      "year": 2023, "type": "poster",
+      "authors": "Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., et al.",
+      "title": "Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions",
+      "venue": "Microscopy and Microanalysis",
+      "detail": "29, Supplement 1, p. 1181",
+      "topic": "sxt"
+    },
+    {
+      "year": 2019, "type": "poster",
+      "authors": "White, K. L., Singla, J., Francis, J. P., Chen, J. H., Ekman, A., Xu, M., Alber, F., Larabell, C., & Stevens, R. C.",
+      "title": "Multi-scale architecture of β-cells using soft X-ray and cryo-electron tomography",
+      "venue": "63rd Annual Meeting of the Biophysical Society, Baltimore, Maryland",
+      "detail": "March 2–6, 2019",
+      "topic": "sxt"
+    },
+    {
+      "year": 2018, "type": "poster",
+      "authors": "Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., & Alber, F.",
+      "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
+      "venue": "4th Annual QCBio Retreat, Malibu, California",
+      "detail": "September 25, 2018",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2018, "type": "poster",
+      "authors": "White, K. L., McClary, K. M., Singla, J., & Stevens, R. C.",
+      "title": "Towards Generating Spatiotemporal Multiscale Models of Human Pancreatic Beta Cells",
+      "venue": "American Diabetes Association 78th Scientific Sessions, Orlando, Florida",
+      "detail": "June 22–26, 2018",
+      "topic": "vdl"
+    },
+    {
+      "year": 2017, "type": "poster",
+      "authors": "Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., & Alber, F.",
+      "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
+      "venue": "5th Annual Shanghai iHuman Forum, Shanghai, China",
+      "detail": "November 5–10, 2017",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2017, "type": "poster",
+      "authors": "Elizabeth, V., Watanabe, R., Buschauer, R., Khanna, K., Lam, V., Singla, J., & Alber, F.",
+      "title": "Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography",
+      "venue": "Microscopy and Microanalysis",
+      "detail": "23(S1), 1248–1249",
+      "topic": "cryoet"
+    },
+    {
+      "year": 2015, "type": "poster",
+      "authors": "Srihari, S., Singla, J., Wong, L., Simpson, P. T., Khanna, K. K., & Ragan, M. A.",
+      "title": "Identifying genetic vulnerabilities in cancers driven by defects in DNA-damage response",
+      "venue": "San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research",
+      "detail": "Abstract PD6-05",
+      "topic": "ml"
+    }
+  ],
+
+  "topics": {
+    "sxt": "Soft X-ray tomography",
+    "cryoet": "Cryo-ET",
+    "health": "AI for healthcare",
+    "sanskrit": "Sanskrit AI",
+    "vdl": "Visualization &amp; modelling",
+    "structbio": "Structural biology",
+    "ml": "Machine learning"
+  },
+
+  "types": {
+    "journal": "Journal",
+    "conference": "Conference",
+    "preprint": "Preprint",
+    "chapter": "Book chapter",
+    "poster": "Poster"
+  },
+
+  "talks": [
+    {
+      "year": 2024,
+      "title": "Hands-on workshop on classification techniques",
+      "venue": "AI/ML Applications workshop — HRDD, PPEG and AI/ML Peer Group, for scientists and engineers of URSC",
+      "detail": "September 27, 30 & October 1, 2024"
+    },
+    {
+      "year": 2024,
+      "title": "Algorithms to Architecture: Navigating the Molecular and Mesoscale Landscape of Cells",
+      "venue": "Bridge Institute, University of Southern California, Los Angeles",
+      "detail": "June 19, 2024",
+      "kind": "Invited talk"
+    },
+    {
+      "year": 2024,
+      "title": "Algorithms to Architecture: Navigating the Molecular and Mesoscale Landscape of Cells",
+      "venue": "Department of Biological Sciences and Engineering, IIT Gandhinagar",
+      "detail": "January 22, 2024",
+      "kind": "Invited talk"
+    },
+    {
+      "year": 2024,
+      "title": "Career opportunities in Indian academia",
+      "venue": "Interaction with Indian PhD students, USC Viterbi School of Engineering",
+      "detail": "Focused on opportunities at IIT Roorkee"
+    },
+    {
+      "year": 2019,
+      "title": "New Technologies",
+      "venue": "IndicTeenFest19, organised by IGenPlus, Sonipat, India",
+      "detail": "June 5–9, 2019",
+      "kind": "Invited panel"
+    },
+    {
+      "year": 2018,
+      "title": "Where are we going?",
+      "venue": "Pancreatic Beta Cell Consortium Retreat, Catalina Island, California",
+      "detail": "November 9–11, 2018",
+      "kind": "Panel lead"
+    },
+    {
+      "year": 2017,
+      "title": "From Visual Proteomics to Whole Cell Modeling",
+      "venue": "Dynamo Workshop, University of Basel, Switzerland",
+      "detail": "August 23–25, 2017"
+    },
+    {
+      "year": 2017,
+      "title": "From Visual Proteomics to Whole Cell Modeling",
+      "venue": "2nd Annual da Vinci Convergence Symposium, Santa Monica, California",
+      "detail": "March 9, 2017",
+      "kind": "Invited talk"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "intro": "A standing list of things worth your attention — assembled over the years and offered without apology. Not required reading; just recommended.",
+  "sections": [
+    {
+      "id": "books",
+      "title": "Books",
+      "icon": "book",
+      "kind": "shelves",
+      "shelves": [
+        {
+          "title": "Bharatiya Perspective",
+          "items": [
+            { "title": "Do All Roads Lead to Jerusalem" },
+            { "title": "The Heathen in His Blindness" },
+            { "title": "Being Different" },
+            { "title": "India That Is Bharat" },
+            { "title": "Decolonizing Bharat: The Balu Way" },
+            { "title": "Svayambodha and Shatrubodha" },
+            { "title": "Hints on National Education in India" },
+            { "title": "Small Is Beautiful" }
+          ]
+        },
+        {
+          "title": "Biography &amp; Autobiography",
+          "items": [
+            { "title": "Savarkar" },
+            { "title": "Tipu Sultan" },
+            { "title": "C. V. Raman" },
+            { "title": "When Breath Becomes Air" },
+            { "title": "Autobiography of a Yogi" }
+          ]
+        },
+        {
+          "title": "Itihas",
+          "items": [
+            { "title": "An Era of Darkness" },
+            { "title": "Harappa 3: Battle of Ten Kings" },
+            { "title": "Ocean of Churn" },
+            { "title": "Genocide" },
+            { "title": "Land of the Seven Rivers" },
+            { "title": "The Tragic Story of Partition" }
+          ]
+        },
+        {
+          "title": "Science",
+          "items": [
+            { "title": "Why We Sleep" },
+            { "title": "Parallel Worlds" },
+            { "title": "The Gene" },
+            { "title": "Astrophysics for People in a Hurry" },
+            { "title": "Until the End of Time" },
+            { "title": "The Bird Way" },
+            { "title": "The Tell-Tale Brain" }
+          ]
+        },
+        {
+          "title": "Science, with the author's own interpretation",
+          "items": [
+            { "title": "Sapiens" },
+            { "title": "The Case Against Reality" },
+            { "title": "Origin Story" },
+            { "title": "The Everything Answer Book" },
+            { "title": "Survival of the Friendliest" },
+            { "title": "The Future of Humanity" }
+          ]
+        },
+        {
+          "title": "Science &amp; Philosophy",
+          "items": [
+            { "title": "What Is Life? — with Mind and Matter and Autobiographical Sketches" },
+            { "title": "The Web of Life" },
+            { "title": "The Quantum and the Lotus" },
+            { "title": "The Things You Can See Only When You Slow Down" },
+            { "title": "Two Birds in a Tree" },
+            { "title": "Range" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "channels",
+      "title": "Channels &amp; Videos",
+      "icon": "play",
+      "kind": "chips",
+      "lead": "<strong>Must watch —</strong> <em>Why We Sleep</em>. Beyond that, channels worth subscribing to:",
+      "items": [
+        { "title": "Ganda Berunda" },
+        { "title": "Bharat Varsh Project" },
+        { "title": "Harshit Rautela" },
+        { "title": "21Notes" },
+        { "title": "Virtual Bharat" },
+        { "title": "Hyper Quest" },
+        { "title": "Andrej Karpathy" },
+        { "title": "3Blue1Brown" },
+        { "title": "Journey to the Microcosmos" },
+        { "title": "DUST" }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "People",
+      "icon": "person",
+      "kind": "people",
+      "lead": "Indian engineers whose work quietly reshaped the world.",
+      "items": [
+        {
+          "title": "Narendra Karmarkar",
+          "meta": "IIT Bombay, B.Tech. EE 1978",
+          "body": "Developed Karmarkar's algorithm at Bell Labs in 1984 — a breakthrough polynomial-time interior-point method for linear programming. Fulkerson Prize recipient; his work transformed global logistics, telecommunications and finance.",
+          "link": "https://en.wikipedia.org/wiki/Narendra_Karmarkar"
+        },
+        {
+          "title": "Arun Netravali",
+          "meta": "IIT Bombay, B.Tech. EE 1967",
+          "body": "MS and PhD at Rice; joined Bell Labs in 1972 and became its ninth President. Pioneered the video compression standards that became the foundation of MPEG — digital TV, HDTV and streaming video. Also worked at NASA (1970–72) on space shuttle problems.",
+          "link": "https://en.wikipedia.org/wiki/Arun_Netravali"
+        },
+        {
+          "title": "Vinod Khosla",
+          "meta": "IIT Delhi, B.Tech. EE 1976",
+          "body": "Co-founded Sun Microsystems in 1982 at 27 as founding CEO, pioneering open systems, commercial RISC processors and Java. Founded Khosla Ventures in 2004, managing roughly $16 billion. Early OpenAI investor.",
+          "link": "https://en.wikipedia.org/wiki/Vinod_Khosla"
+        }
+      ]
+    },
+    {
+      "id": "webpages",
+      "title": "Webpages",
+      "icon": "link",
+      "kind": "links",
+      "items": [
+        {
+          "title": "Scale of the Universe",
+          "meta": "Planck length to the observable universe",
+          "link": "https://htwins.net/scale2/"
+        },
+        {
+          "title": "Visualize Cellular Pathways",
+          "meta": "Cell Signaling Technology — RTK landscape",
+          "link": "http://media.cellsignal.com/www/html/science/landscapes/rtk/rtk.html"
+        },
+        {
+          "title": "World in a Cell",
+          "meta": "The immersive beta-cell experience",
+          "link": "https://worldinacell.com/"
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "icon": "music",
+      "kind": "links",
+      "items": [
+        { "title": "Bharat",                  "link": "https://music.youtube.com/watch?v=8TzwTZYhJYk&list=RDAMVM8TzwTZYhJYk" },
+        { "title": "Bolo Kab Pratikar Karoge","link": "https://music.youtube.com/watch?v=CXa_kHbZRts&list=OLAK5uy_k-UMoPanDA70xbO3ZJgt1NRcZ1M-ejXsI" },
+        { "title": "Aya Re Toofan",           "link": "https://music.youtube.com/watch?v=djhFo5tEJ34" }
+      ]
+    }
+  ]
+}

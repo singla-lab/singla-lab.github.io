@@ -1,0 +1,17 @@
+# OS / cloud-sync cruft
+desktop.ini
+Thumbs.db
+ehthumbs.db
+.DS_Store
+._*
+Icon?
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# python
+__pycache__/
+*.pyc
