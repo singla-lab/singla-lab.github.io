@@ -344,7 +344,7 @@ def build_home():
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt" id="pi">
   <div class="wrap">
     <div class="pi-card rv">
       <div class="pi-photo"><img src="assets/img/people/{pislug}.jpg" alt="{piname}" loading="lazy" width="480" height="480"></div>
@@ -563,9 +563,8 @@ def build_team():
     d = load('people')
     pi = d['pi']
 
-    edu = ''.join('<li style="padding:.4rem 0;border-bottom:1px solid var(--rule-2)"><strong>{0}</strong><br><span class="small muted">{1}</span></li>'.format(
-        a(e['degree']), a(e['org'])) for e in pi['education'])
-
+    # The PI's bio and education live on the home page; this page only needs
+    # enough to say who he is, then point there.
     groups = []
     for g in d['groups']:
         cls = 'people people-sm' if g.get('compact') else 'people'
@@ -590,20 +589,16 @@ def build_team():
     body = page_head('Team', 'The people doing the work') + """
 <section class="section-tight">
   <div class="wrap">
-    <div class="pi-card rv" style="padding-bottom:3rem;border-bottom:1px solid var(--rule)">
+    <div class="pi-mini rv" style="padding-bottom:2.4rem;border-bottom:1px solid var(--rule)">
       <div class="pi-photo"><img src="assets/img/people/{slug}.jpg" alt="{name}" width="480" height="480"></div>
       <div>
         <p class="eyebrow">Principal Investigator</p>
         <h2 class="h2">{name}, {suffix}</h2>
-        <p class="muted small" style="margin:.5rem 0 1.4rem">{role}<br>{affil}</p>
-        <div class="measure">{bio}</div>
-        <div style="margin-top:1.6rem">
-          <p class="eyebrow">Education</p>
-          <ul style="max-width:34rem">{edu}</ul>
-        </div>
-        <div class="hero-cta" style="margin-top:1.5rem">
-          <a class="btn btn-sm" href="mailto:{mail}">{mailicon} {mail}</a>
-          <a class="btn btn-sm" href="publications.html">Publications</a>
+        <p class="pi-line" style="margin-top:.3rem">{role}</p>
+        <p class="pi-line">{affil}</p>
+        <a class="person-mail" href="mailto:{mail}">{mail}</a>
+        <div class="hero-cta" style="margin-top:1.1rem">
+          <a class="btn btn-sm btn-arrow" href="index.html#pi">Full profile {arrow}</a>
         </div>
       </div>
     </div>
@@ -638,8 +633,7 @@ def build_team():
   </div>
 </section>""".format(slug=pi['photo'], name=a(pi['name']), suffix=a(pi['suffix']),
                      role=a(pi['role']), affil='<br>'.join(a(x) for x in pi['affil']),
-                     bio=''.join('<p>{0}</p>'.format(a(p)) for p in pi['bio']),
-                     edu=edu, mail=pi['email'], mailicon=ICON['mail'],
+                     mail=pi['email'],
                      groups=''.join(groups), collab=collab, arrow=ICON['arrow'])
 
     return write('team.html', page('team.html', 'Team',
