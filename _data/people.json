@@ -29,12 +29,12 @@
       "title": "Doctoral Researchers",
       "blurb": "PhD students driving the lab's long-horizon questions.",
       "members": [
-        { "slug": "siddharth-gupta",   "name": "Siddharth Gupta",  "role": "Ph.D. Student", "dept": "BSBE Department", "email": "siddharth_g@bt.iitr.ac.in", "photo": "siddharth-gupta" },
-        { "slug": "anshu-singh",       "name": "Anshu Singh",      "role": "Ph.D. Student", "dept": "BSBE Department", "email": "anshu_s@bt.iitr.ac.in", "photo": "anshu-singh" },
-        { "slug": "harinandan-shukla", "name": "Harinandan Shukla","role": "Ph.D. Student", "dept": "CSE Department",  "email": "harinandan_s@cs.iitr.ac.in", "photo": "harinandan-shukla" },
-        { "slug": "arun-yadav",        "name": "Arun Yadav",       "role": "Ph.D. Student", "dept": "CSE Department",  "email": "arun_y@cs.iitr.ac.in", "photo": "arun-yadav" },
-        { "slug": "divyanshu-bathla",  "name": "Divyanshu Bathla", "role": "Ph.D. Student", "dept": "CSE Department",  "email": "divyanshu_b@cs.iitr.ac.in", "photo": "divyanshu-bathla" },
-        { "slug": "ishani-mishra",     "name": "Ishani Mishra",    "role": "Ph.D. Student", "dept": "BSBE Department", "email": "i_mishra@bt.iitr.ac.in", "photo": "ishani-mishra", "note": "Co-supervised with Prof. Pravindra Kumar" },
+        { "slug": "siddharth-gupta",   "name": "Siddharth Gupta",  "role": "Ph.D. Student", "dept": "BSBE Department", "email": "siddharth_g@bt.iitr.ac.in", "photo": "siddharth-gupta", "link": "https://www.linkedin.com/in/siddharth-gupta-652b2149/" },
+        { "slug": "anshu-singh",       "name": "Anshu Singh",      "role": "Ph.D. Student", "dept": "BSBE Department", "email": "anshu_s@bt.iitr.ac.in", "photo": "anshu-singh", "link": "https://www.linkedin.com/in/anshu-singh-83a108232/" },
+        { "slug": "harinandan-shukla", "name": "Harinandan Shukla","role": "Ph.D. Student", "dept": "CSE Department",  "email": "harinandan_s@cs.iitr.ac.in", "photo": "harinandan-shukla", "link": "https://www.linkedin.com/in/-serverless/" },
+        { "slug": "arun-yadav",        "name": "Arun Yadav",       "role": "Ph.D. Student", "dept": "CSE Department",  "email": "arun_y@cs.iitr.ac.in", "photo": "arun-yadav", "link": "https://www.linkedin.com/in/arun-yadav-901730208/" },
+        { "slug": "divyanshu-bathla",  "name": "Divyanshu Bathla", "role": "Ph.D. Student", "dept": "CSE Department",  "email": "divyanshu_b@cs.iitr.ac.in", "photo": "divyanshu-bathla", "link": "https://www.linkedin.com/in/divyanshu-bathla-9b9a51200/" },
+        { "slug": "ishani-mishra",     "name": "Ishani Mishra",    "role": "Ph.D. Student", "dept": "BSBE Department", "email": "i_mishra@bt.iitr.ac.in", "photo": "ishani-mishra", "note": "Co-supervised with Prof. Pravindra Kumar", "link": "https://www.linkedin.com/in/ishani-mishra-810542195/" },
         { "slug": "sandra-kp",         "name": "Sandra K P",       "role": "Ph.D. Student", "dept": "BSBE Department", "email": "s_kp@bt.iitr.ac.in", "photo": "sandra-kp", "note": "Co-supervised with Prof. Ashwani K. Sharma" }
       ]
     },
@@ -43,8 +43,8 @@
       "title": "Undergraduate Researchers",
       "blurb": "Current undergraduate research projects.",
       "members": [
-        { "slug": "swaroop-itkikar", "name": "Swaroop Itkikar", "role": "UG Research Project", "dept": "Meta Department", "photo": "swaroop-itkikar" },
-        { "slug": "raunak",          "name": "Raunak",          "role": "UG Research Project", "dept": "ECE Department",  "photo": "raunak" },
+        { "slug": "swaroop-itkikar", "name": "Swaroop Itkikar", "role": "UG Research Project", "dept": "Meta Department", "photo": "swaroop-itkikar", "link": "https://www.linkedin.com/in/swaroop-itkikar-346790284/" },
+        { "slug": "raunak",          "name": "Raunak",          "role": "UG Research Project", "dept": "ECE Department",  "photo": "raunak", "link": "https://www.linkedin.com/in/raunak-kumar-10b7692a1/" },
         { "slug": "anuj-pal",        "name": "Anuj Pal",        "role": "UG Research Project", "dept": "ECE Department" }
       ]
     },

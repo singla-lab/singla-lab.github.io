@@ -4,41 +4,41 @@
       "id": "doctoral",
       "title": "Doctoral",
       "members": [
-        { "name": "Dr. Shalja Verma", "dept": "BSBE Department", "note": "Co-supervised with Prof. Pravindra Kumar", "photo": "shalja-verma" }
+        { "name": "Dr. Shalja Verma", "dept": "BSBE Department", "note": "Co-supervised with Prof. Pravindra Kumar", "photo": "shalja-verma", "link": "https://www.linkedin.com/in/shalja-verma-51668995/" }
       ]
     },
     {
       "id": "pg-thesis",
       "title": "Postgraduate Thesis",
       "members": [
-        { "name": "Sujit Kumar",      "role": "MSc Thesis",  "year": "2021–22", "dept": "BSBE Department", "photo": "sujit-kumar" },
-        { "name": "Angshuman Mandal", "role": "MSc Thesis",  "year": "2022–23", "dept": "BSBE Department", "photo": "angshuman-mandal" },
-        { "name": "Rishabh Verma",    "role": "MTech Thesis","year": "2023–24", "dept": "CSE Department",  "photo": "rishabh-verma" },
-        { "name": "Gautam Passi",     "role": "MSc Thesis",  "year": "2023–24", "dept": "BSBE Department", "photo": "gautam-passi" },
-        { "name": "Divyansh Verma",   "role": "MSc Thesis",  "dept": "BSBE Department", "photo": "divyansh-verma" },
-        { "name": "Samrik Ray",       "role": "MTech Thesis","dept": "BSBE Department", "photo": "samrik-ray" },
-        { "name": "Youssef Youssef",  "role": "MTech Thesis","dept": "BSBE Department", "photo": "youssef-youssef" }
+        { "name": "Sujit Kumar",      "role": "MSc Thesis",  "year": "2021–22", "dept": "BSBE Department", "photo": "sujit-kumar", "link": "https://www.linkedin.com/in/imsujet/" },
+        { "name": "Angshuman Mandal", "role": "MSc Thesis",  "year": "2022–23", "dept": "BSBE Department", "photo": "angshuman-mandal", "link": "https://www.linkedin.com/in/angshuman-mandal-585130215/" },
+        { "name": "Rishabh Verma",    "role": "MTech Thesis","year": "2023–24", "dept": "CSE Department",  "photo": "rishabh-verma", "link": "https://www.linkedin.com/in/rishverma113/" },
+        { "name": "Gautam Passi",     "role": "MSc Thesis",  "year": "2023–24", "dept": "BSBE Department", "photo": "gautam-passi", "link": "https://www.linkedin.com/in/gautampassi/" },
+        { "name": "Divyansh Verma",   "role": "MSc Thesis",  "dept": "BSBE Department", "photo": "divyansh-verma", "link": "https://www.linkedin.com/in/divyansh-verma-43938b268/" },
+        { "name": "Samrik Ray",       "role": "MTech Thesis","dept": "BSBE Department", "photo": "samrik-ray", "link": "https://www.linkedin.com/in/samrik-ray-a534b631b/" },
+        { "name": "Youssef Youssef",  "role": "MTech Thesis","dept": "BSBE Department", "photo": "youssef-youssef", "link": "https://www.linkedin.com/in/youssef-youssef-694179371/" }
       ]
     },
     {
       "id": "staff",
       "title": "Project Staff",
       "members": [
-        { "name": "Arjun Singh",      "photo": "arjun-singh" },
-        { "name": "Angshuman Mandal", "photo": "angshuman-mandal" },
-        { "name": "Raghav Passi",     "photo": "raghav-passi" }
+        { "name": "Arjun Singh",      "photo": "arjun-singh", "link": "https://www.linkedin.com/in/arjun-singh-/" },
+        { "name": "Angshuman Mandal", "photo": "angshuman-mandal", "link": "https://www.linkedin.com/in/angshuman-mandal-585130215/" },
+        { "name": "Raghav Passi",     "photo": "raghav-passi", "link": "https://www.linkedin.com/in/passiraghav/" }
       ]
     },
     {
       "id": "ug-projects",
       "title": "Undergraduate Projects",
       "members": [
-        { "name": "Anuj Baliyan",      "photo": "anuj-baliyan" },
-        { "name": "Pushkar Bharadwaj", "photo": "pushkar-bharadwaj" },
-        { "name": "Vikas Dheravath",   "photo": "vikas-dheravath" },
+        { "name": "Anuj Baliyan",      "photo": "anuj-baliyan", "link": "https://www.linkedin.com/in/theanujbaliyan/" },
+        { "name": "Pushkar Bharadwaj", "photo": "pushkar-bharadwaj", "link": "https://www.linkedin.com/in/pushkar-bharadwaj-526467202/" },
+        { "name": "Vikas Dheravath",   "photo": "vikas-dheravath", "link": "https://www.linkedin.com/in/vikas-d-1a93b4200/" },
         { "name": "Ashwini Malviya",   "photo": "ashwini-malviya" },
-        { "name": "Priyanshu Maurya",  "photo": "priyanshu-maurya" },
-        { "name": "Ayush Kumar Poddar","photo": "ayush-poddar" }
+        { "name": "Priyanshu Maurya",  "photo": "priyanshu-maurya", "link": "https://www.linkedin.com/in/priyanshu-maurya-70b9291a9/" },
+        { "name": "Ayush Kumar Poddar","photo": "ayush-poddar", "link": "https://www.linkedin.com/in/ayush-kumar-poddar-b09b692a2/" }
       ]
     },
     {
@@ -51,20 +51,20 @@
         { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department" },
         { "name": "Kshitij Shah",         "year": "2026", "dept": "CSE Department" },
         { "name": "Aryan Dhas",           "year": "2026", "dept": "CSE Department" },
-        { "name": "Amandeep Singh",       "year": "2025", "dept": "CSE Department", "photo": "amandeep-singh" },
-        { "name": "Nishita Singh",        "year": "2025", "dept": "CSE Department", "photo": "nishita-singh" },
-        { "name": "Prerna",               "year": "2025", "dept": "CSE Department", "photo": "prerna" },
-        { "name": "Akshat Singh",         "year": "2025", "dept": "Physics Department", "photo": "akshat-singh" },
-        { "name": "Pranavdeep Singh",     "year": "2025", "dept": "CSE Department", "photo": "pranavdeep-singh" },
-        { "name": "Raiwat Narendra Bapat","year": "2025", "dept": "CSE Department", "photo": "raiwat-bapat" },
-        { "name": "Naqiyah Kagzi",        "year": "2025", "dept": "CSE Department", "photo": "naqiyah-kagzi" },
+        { "name": "Amandeep Singh",       "year": "2025", "dept": "CSE Department", "photo": "amandeep-singh", "link": "https://www.linkedin.com/in/aman262225/" },
+        { "name": "Nishita Singh",        "year": "2025", "dept": "CSE Department", "photo": "nishita-singh", "link": "https://www.linkedin.com/in/nishita-singh-837a0020a/" },
+        { "name": "Prerna",               "year": "2025", "dept": "CSE Department", "photo": "prerna", "link": "https://www.linkedin.com/in/prernachandolia/" },
+        { "name": "Akshat Singh",         "year": "2025", "dept": "Physics Department", "photo": "akshat-singh", "link": "https://www.linkedin.com/in/akshat-singh-776b86229/" },
+        { "name": "Pranavdeep Singh",     "year": "2025", "dept": "CSE Department", "photo": "pranavdeep-singh", "link": "https://www.linkedin.com/in/pranavdeep-singh-p121203/" },
+        { "name": "Raiwat Narendra Bapat","year": "2025", "dept": "CSE Department", "photo": "raiwat-bapat", "link": "https://www.linkedin.com/in/raiwat7/" },
+        { "name": "Naqiyah Kagzi",        "year": "2025", "dept": "CSE Department", "photo": "naqiyah-kagzi", "link": "https://www.linkedin.com/in/naqiyah-kagzi/" },
         { "name": "Shreyash Singh",       "year": "2025", "dept": "BSBE Department", "photo": "shreyash-singh" },
-        { "name": "Manan Garg",           "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "manan-garg" },
-        { "name": "Tanmay Bakshi",        "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "tanmay-bakshi" },
-        { "name": "Akhil Punia",          "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "akhil-punia" },
-        { "name": "Jyotsna Singh",        "year": "2025", "dept": "Physics Department", "photo": "jyotsna-singh" },
-        { "name": "Roshan Kumar",         "year": "2024", "dept": "BSBE Department", "photo": "roshan-kumar" },
-        { "name": "Surya Prakash",        "year": "2023", "dept": "CSE Department", "photo": "surya-prakash" }
+        { "name": "Manan Garg",           "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "manan-garg", "link": "https://www.linkedin.com/in/manan-garg-a45732245/" },
+        { "name": "Tanmay Bakshi",        "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "tanmay-bakshi", "link": "https://www.linkedin.com/in/tanmay-bakshi-870a33225/" },
+        { "name": "Akhil Punia",          "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "akhil-punia", "link": "https://www.linkedin.com/in/akhil-216-punia/" },
+        { "name": "Jyotsna Singh",        "year": "2025", "dept": "Physics Department", "photo": "jyotsna-singh", "link": "https://www.linkedin.com/in/jyotsna-singh-072ba4230/" },
+        { "name": "Roshan Kumar",         "year": "2024", "dept": "BSBE Department", "photo": "roshan-kumar", "link": "https://www.linkedin.com/in/roshan-kumar-16a675209/" },
+        { "name": "Surya Prakash",        "year": "2023", "dept": "CSE Department", "photo": "surya-prakash", "link": "https://www.linkedin.com/in/surya-prakash-85b9a7164/" }
       ]
     },
     {
@@ -72,15 +72,15 @@
       "title": "Interns",
       "members": [
         { "name": "S. Keerthana",     "year": "Summer 2022", "photo": "s-keerthana" },
-        { "name": "Jithin Rajan",     "year": "Summer 2023", "photo": "jithin-rajan", "link": "https://www.linkedin.com/in/jithin-rajan-832b40230/" },
+        { "name": "Jithin Rajan",     "year": "Summer 2023", "photo": "jithin-rajan", "link": "https://www.linkedin.com/in/jithinrajan21/" },
         { "name": "Kamal Kishor",     "year": "Summer 2023", "photo": "kamal-kishor", "link": "https://www.linkedin.com/in/kamal-kishor-0432a2228/" },
         { "name": "Shivang Kaushal",  "year": "Summer 2023", "photo": "shivang-kaushal", "link": "https://www.linkedin.com/in/shivang-kaushal-72938b1ba/" },
         { "name": "Arjun Handa",      "year": "Summer 2023", "photo": "arjun-handa", "link": "https://www.linkedin.com/in/arjun-handa/" },
         { "name": "Ramashish Vyas",   "year": "Summer 2025" },
-        { "name": "Shubh Bhateja",    "year": "Summer 2025", "link": "https://www.linkedin.com/in/shubh-bhateja-67703522a/" },
+        { "name": "Shubh Bhateja",    "year": "Summer 2025", "link": "https://www.linkedin.com/in/shubh-bhateja/" },
         { "name": "Lakshya Khatana",  "year": "Summer 2025" },
         { "name": "Aishwarya JA",     "year": "Autumn 2025", "photo": "aishwarya-ja", "link": "https://www.linkedin.com/in/aishwarya-j-a-b2b5a133a/" },
-        { "name": "Ananya Dinesh",    "year": "Autumn 2025", "photo": "ananya-dinesh", "link": "https://www.linkedin.com/in/ananya-dinesh-8a17b1290/" }
+        { "name": "Ananya Dinesh",    "year": "Autumn 2025", "photo": "ananya-dinesh", "link": "https://www.linkedin.com/in/ananya-dinesh-lkdn/" }
       ]
     },
     {
@@ -89,7 +89,7 @@
       "compact": true,
       "members": [
         { "name": "Kushagra Rustagi",   "year": "2022", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/kushagra-rustagi-215284178/" },
-        { "name": "Sanchit Verma",      "year": "2022", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/sanchit-verma-109289177/" },
+        { "name": "Sanchit Verma",      "year": "2022", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/sanchit-verma-ai/" },
         { "name": "Gayathri K",         "year": "2023", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/gayathri-k-ab24991ab/" },
         { "name": "Amitesh Uppal",      "year": "2023", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/amiteshuppal/" },
         { "name": "Mayank Garg",        "year": "2024", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/mayank-garg-16b6411b9/" },
