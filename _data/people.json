@@ -73,9 +73,9 @@
     { "name": "Parikshit Pareek",       "suffix": "PhD",       "org": "IIT Roorkee",  "dept": "Electrical Engineering", "photo": "parikshit-pareek" },
     { "name": "Venkataseshan Sundaram", "suffix": "MD",        "org": "PGIMER Chandigarh", "photo": "venkataseshan-sundaram" },
     { "name": "Parag Singla",           "suffix": "PhD",       "org": "IIT Delhi", "photo": "parag-singla" },
-    { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles" },
-    { "name": "Helen Berman",           "suffix": "PhD",       "org": "Rutgers University &amp; University of Southern California" },
-    { "name": "Kate White",             "suffix": "PhD",       "org": "University of Southern California" },
+    { "name": "Frank Alber",            "suffix": "PhD",       "org": "University of California, Los Angeles", "photo": "frank-alber" },
+    { "name": "Helen Berman",           "suffix": "PhD",       "org": "Rutgers University &amp; University of Southern California", "photo": "helen-berman" },
+    { "name": "Kate White",             "suffix": "PhD",       "org": "University of Southern California", "photo": "kate-white" },
     { "name": "Brinda Vallat",          "suffix": "PhD",       "org": "Rutgers University", "photo": "brinda-vallat" },
     { "name": "Alex McDowell",          "suffix": "R.D.I.",    "org": "World Building Media Lab, USC School of Cinematic Arts", "photo": "alex-mcdowell" }
   ]

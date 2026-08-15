@@ -14,13 +14,22 @@
       { "name": "Ravi Kumar", "role": "Ph.D. Student", "photo": "ravi-kumar" }
   and rebuild:
       python build.py
+
+.EXAMPLE
+  .\tools\add-photo.ps1 -Source "C:\photos\Kate.jpg" -Slug kate-white -CropSide 360 -CropX 70 -CropY 60
+
+  When the subject is small in the frame the automatic square is too wide.
+  Give an explicit crop rectangle in source pixels instead.
 #>
 param(
     [Parameter(Mandatory = $true)][string] $Source,
     [Parameter(Mandatory = $true)][string] $Slug,
     [int]    $Size    = 480,
     [int]    $Quality = 84,
-    [double] $TopBias = 0.18   # 0 = crop from the very top, 0.5 = dead centre
+    [double] $TopBias = 0.18,  # 0 = crop from the very top, 0.5 = dead centre
+    [int]    $CropSide = 0,    # explicit square crop, in source pixels; 0 = automatic
+    [int]    $CropX    = -1,   # left edge of that square; -1 = centred
+    [int]    $CropY    = -1    # top edge of that square;  -1 = use TopBias
 )
 
 Add-Type -AssemblyName System.Drawing
@@ -32,9 +41,18 @@ if (-not (Test-Path -LiteralPath $Source)) { throw "Source image not found: $Sou
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent $dest) | Out-Null
 
 $img  = [System.Drawing.Image]::FromFile((Resolve-Path -LiteralPath $Source))
-$side = [Math]::Min($img.Width, $img.Height)
-$sx   = [int](($img.Width  - $side) / 2)
-$sy   = [int](($img.Height - $side) * $TopBias)
+
+if ($CropSide -gt 0) {
+    $side = [Math]::Min($CropSide, [Math]::Min($img.Width, $img.Height))
+} else {
+    $side = [Math]::Min($img.Width, $img.Height)
+}
+if ($CropX -ge 0) { $sx = $CropX } else { $sx = [int](($img.Width  - $side) / 2) }
+if ($CropY -ge 0) { $sy = $CropY } else { $sy = [int](($img.Height - $side) * $TopBias) }
+
+# keep the rectangle inside the source
+$sx = [Math]::Max(0, [Math]::Min($sx, $img.Width  - $side))
+$sy = [Math]::Max(0, [Math]::Min($sy, $img.Height - $side))
 
 $bmp = New-Object System.Drawing.Bitmap($Size, $Size)
 $bmp.SetResolution(96, 96)
