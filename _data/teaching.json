@@ -1,8 +1,9 @@
 {
   "intro": "Courses taught at IIT Roorkee across the Biosciences &amp; Bioengineering and Computer Science departments.",
-  "quote": {
-    "text": "स्वाध्यायान्मा प्रमदः",
-    "translation": "Let there be no neglect of self-study."
+  "sanskrit": {
+    "lines": ["स्वाध्यायान्मा प्रमदः॥"],
+    "transliteration": "svādhyāyān mā pramadaḥ ||",
+    "translation": "Let there be no neglect of self-study. — Taittirīya Upaniṣad 1.11.1"
   },
   "terms": [
     {

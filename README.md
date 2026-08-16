@@ -230,6 +230,12 @@ To serve this at `www.jitinsingla.in`:
   editor. `hero.svg` is a stylised tomographic slice; the `art-*.svg` files
   illustrate each research area.
 - **Animation** is subtle and always disabled under `prefers-reduced-motion`.
+- **The four numbers on the home page are counted, not typed.** Each entry in
+  `stats` in `_data/site.json` carries a `"count"` naming what to tally —
+  `publications`, `doctoral`, `alumni` or `projects` — and `build.py` counts it
+  from the corresponding JSON file at build time. Add a paper or a grant and the
+  front page follows on the next build. A literal `"value"` still works if you
+  ever need a number that isn't in the data.
 - **Cache busting**: the stylesheet and script are linked with a `?v=` content
   hash, regenerated on every build. GitHub Pages serves them with a ten-minute
   cache and no fingerprint of its own, so without this a returning reader can

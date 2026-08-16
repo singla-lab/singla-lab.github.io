@@ -325,6 +325,22 @@ def cta_band():
 # pages
 # --------------------------------------------------------------------------
 
+def stat_count(key):
+    """The four numbers on the front page, counted from the data rather than
+    typed into site.json -- adding a paper or a grant should not be able to
+    leave the home page quietly saying otherwise."""
+    if key == 'publications':
+        return len(load('publications')['publications'])
+    if key == 'projects':
+        return sum(len(g['projects']) for g in load('projects')['groups'])
+    if key == 'doctoral':
+        return sum(len(g['members']) for g in load('people')['groups']
+                   if g['id'] == 'doctoral')
+    if key == 'alumni':
+        return sum(len(g['members']) for g in load('alumni')['groups'])
+    raise KeyError('no such stat count: ' + key)
+
+
 def build_home():
     research = load('research')
     pubs = load('publications')
@@ -333,7 +349,8 @@ def build_home():
 
     stats = ''.join(
         '<div class="stat"><div class="stat-v">{0}</div><div class="stat-l">{1}</div></div>'.format(
-            a(s['value']), a(s['label'])) for s in SITE['stats'])
+            stat_count(s['count']) if s.get('count') else a(s['value']),
+            a(s['label'])) for s in SITE['stats'])
 
     rows = []
     for area in current_areas(research):
@@ -837,7 +854,9 @@ def build_teaching():
   </span>
 </a>""".format(art=svg('crs-self'))]))
 
-    body = page_head('Teaching', 'Courses', d['intro']) + """
+    # the verse opens the page, the way it opens each course page
+    body = page_head('Teaching', 'Courses', d['intro'],
+                     extra=verse(d.get('sanskrit'))) + """
 <section class="section-tight">
   <div class="wrap">
     <p class="eyebrow rv">Course pages</p>
@@ -850,14 +869,7 @@ def build_teaching():
     <p class="eyebrow rv">Everything taught, term by term</p>
     <div style="margin-top:1.2rem">{terms}</div>
   </div>
-</section>
-<section class="section quote-band">
-  <div class="wrap">
-    <p class="q q-sa">{sk}</p>
-    <p class="attr">{tr}</p>
-  </div>
-</section>""".format(groups=''.join(groups), terms=''.join(terms),
-                     sk=d['quote']['text'], tr=a(d['quote']['translation']))
+</section>""".format(groups=''.join(groups), terms=''.join(terms))
 
     return write('teaching.html', page('teaching.html', 'Teaching',
                                        'Courses taught by Jitin Singla at IIT Roorkee in machine learning, deep learning, algorithms and computational biology.', body))
