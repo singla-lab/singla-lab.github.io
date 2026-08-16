@@ -546,8 +546,6 @@ def pub_item(p, meta):
         venue += ', ' + a(p['detail'])
 
     authors = a(p['authors'])
-    for name in meta['highlight_authors']:
-        authors = authors.replace(a(name), '<b>{0}</b>'.format(a(name)))
 
     pills = ['<span class="pill pill-{0}">{1}</span>'.format(p['type'], a(meta['types'][p['type']]))]
     if p.get('topic') and p['topic'] in meta['topics']:

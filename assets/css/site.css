@@ -478,7 +478,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 
 .pub { padding-block: .95rem; border-bottom: 1px solid var(--rule-2); }
 .pub:last-child { border-bottom: 0; }
-.pub-t { font-size: 1.03rem; font-weight: 550; line-height: 1.4; letter-spacing: -.008em; }
+/* One entry should read as one block. The global p margin was pushing the
+   three lines a full em apart, so each carries its own spacing here. */
+.pub-t { font-size: 1.03rem; font-weight: 550; line-height: 1.38; letter-spacing: -.008em; margin: 0; }
 /* The title is the link, so it keeps the ink colour -- 37 blue headings in a
    row is a wall, not a list -- and the arrow does the signalling instead. */
 .pub-t a { color: var(--ink); }
@@ -488,11 +490,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 }
 .pub-t a:hover, .pub-t a:focus-visible { color: var(--indigo-lit); }
 .pub-t a:hover::after, .pub-t a:focus-visible::after { color: var(--indigo-lit); }
-.pub-a { font-size: .87rem; color: var(--ink-2); margin-top: .3rem; }
-.pub-a b { font-weight: 650; color: var(--ink); }
-.pub-v { font-size: .85rem; color: var(--ink-3); margin-top: .25rem; }
+.pub-a { font-size: .87rem; color: var(--ink-2); line-height: 1.42; margin: .16rem 0 0; }
+.pub-v { font-size: .85rem; color: var(--ink-3); line-height: 1.42; margin: .08rem 0 0; }
 .pub-v em { color: var(--ink-2); font-style: italic; }
-.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: .55rem; }
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-top: .42rem; }
 .pill {
   font-family: var(--f-mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
   padding: .22rem .5rem; border-radius: 5px; background: var(--paper-2); color: var(--ink-3);
@@ -504,7 +505,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 /* Press coverage. Teal, not saffron -- saffron is the accent and reads as a
    warning next to warm paper; and not indigo, which is what a link looks like. */
 .pub-hl {
-  margin-top: .5rem; font-size: .82rem; color: #14604F;
+  margin-top: .4rem; font-size: .82rem; color: #14604F;
   background: var(--teal-soft); border-left: 2px solid var(--teal);
   padding: .45rem .7rem; border-radius: 0 6px 6px 0;
 }

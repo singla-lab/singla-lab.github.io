@@ -1,6 +1,5 @@
 {
-  "note": "Author names matching the strings in `highlight_authors` are emphasised automatically at build time.",
-  "highlight_authors": ["Singla, J.", "Singla J.", "Singla, Jitin"],
+  "note": "Author lists are printed as given, with no name emphasised over the others.",
   "publications": [
     {
       "year": 2026, "type": "conference",
