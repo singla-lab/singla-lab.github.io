@@ -443,7 +443,7 @@ def build_home():
 <section class="section section-alt" id="pi">
   <div class="wrap">
     <div class="pi-card rv">
-      <div class="pi-photo"><img src="assets/img/people/{pislug}.jpg" alt="{piname}" loading="lazy" width="480" height="480"></div>
+      <div class="pi-photo"><div class="pi-photo-c"><img src="assets/img/people/{pislug}.jpg" alt="{piname}" loading="lazy" width="480" height="480"></div></div>
       <div>
         <p class="eyebrow">Principal Investigator</p>
         <h2 class="h2">{piname}, {pisuffix}</h2>
@@ -765,7 +765,7 @@ def build_team():
 <section class="section-tight">
   <div class="wrap">
     <div class="pi-mini rv" style="padding-bottom:2.4rem;border-bottom:1px solid var(--rule)">
-      <div class="pi-photo"><img src="assets/img/people/{slug}.jpg" alt="{name}" width="480" height="480"></div>
+      <div class="pi-photo"><div class="pi-photo-c"><img src="assets/img/people/{slug}.jpg" alt="{name}" width="480" height="480"></div></div>
       <div>
         <p class="eyebrow">Principal Investigator</p>
         <h2 class="h2">{name}, {suffix}</h2>
