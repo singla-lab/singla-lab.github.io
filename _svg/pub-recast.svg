@@ -1,0 +1,63 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a small parallel corpus beside a much larger monolingual one, and a round trip in which a sentence is translated and then reconstructed, the agreement between original and reconstruction standing in for the missing reference" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ============ left: what low-resource actually means ============ -->
+  <text x="12" y="20" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">low-resource</text>
+
+  <text x="12" y="38" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--indigo)">parallel</text>
+  <g stroke="var(--indigo)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".8">
+    <path d="M13 46h51"/><path d="M13 52h43"/><path d="M13 58h49"/>
+  </g>
+
+  <text x="12" y="78" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-3)">monolingual</text>
+  <g stroke="var(--ink-4)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".38">
+    <path d="M13 86h51"/><path d="M13 92h39"/><path d="M13 98h47"/><path d="M13 104h55"/>
+    <path d="M13 110h35"/><path d="M13 116h50"/><path d="M13 122h44"/><path d="M13 128h53"/>
+    <path d="M13 134h38"/><path d="M13 140h48"/><path d="M13 146h42"/><path d="M13 152h51"/>
+  </g>
+
+  <line x1="88" y1="26" x2="88" y2="162" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ============ right: the round trip that stands in for a reference ============ -->
+  <rect x="98" y="34" width="58" height="24" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".45" stroke-width="1.1"/>
+  <text x="127" y="51" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
+        font-size="11" fill="var(--indigo)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
+
+  <rect x="170" y="34" width="64" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="202" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">translate</text>
+
+  <rect x="246" y="34" width="44" height="24" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="268" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">output</text>
+
+  <rect x="200" y="80" width="88" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="244" y="96" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">reconstruct</text>
+
+  <!-- the reconstruction comes back dashed: it is a guess at the input, not the input -->
+  <rect x="98" y="80" width="58" height="24" rx="6" fill="none" stroke="var(--saffron)"
+        stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="127" y="97" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
+        font-size="11" fill="var(--saffron)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 46h10 M164 43l3.5 3-3.5 3"/>
+    <path d="M236 46h8 M240 43l3.5 3-3.5 3"/>
+    <path d="M268 58v20 M265 74l3 4 3-4"/>
+    <path d="M196 92h-38 M162 89l-3.5 3 3.5 3"/>
+  </g>
+
+  <!-- the anchor: with no reference translation, agreement with the input is the signal -->
+  <circle cx="127" cy="69" r="9" fill="var(--surface)" stroke="var(--rule)"/>
+  <text x="127" y="73" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="11" fill="var(--saffron)">&#8776;</text>
+  <text x="143" y="72" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">anchor</text>
+
+  <text x="194" y="128" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">the round trip is the label</text>
+</svg>

@@ -6,7 +6,9 @@
       "authors": "Bathla, D., Singla, P., & Singla, J.",
       "title": "RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation",
       "venue": "Submitted to AAAI-27",
-      "topic": "sanskrit"
+      "topic": "sanskrit",
+      "graphic": "recast",
+      "summary": "Low-resource translation has far more monolingual text than parallel text, so most of the data carries no reference to train against. RECAST translates a sentence and then reconstructs it, and uses the agreement between the original and the reconstruction as the training signal — the round trip stands in for the reference the unlabelled half does not have."
     },
     {
       "year": 2026, "type": "preprint",
@@ -15,7 +17,9 @@
       "venue": "arXiv preprint",
       "detail": "arXiv:2606.29414",
       "link": "https://arxiv.org/abs/2606.29414",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "fire",
+      "summary": "Periodic implicit neural representations such as SIREN give every neuron the same global frequency, which spends the representational budget badly when local signal content varies. FiRe gives each neuron a bounded, input-dependent frequency through a separate low-rank gate, leaving the activation function itself untouched. The gate acts as an implicit preconditioner that improves the conditioning of the problem at initialisation, so optimisation converges sooner at a fixed budget."
     },
     {
       "year": 2026, "type": "journal",
@@ -53,7 +57,9 @@
       "venue": "Journal of Structural Biology",
       "detail": "108342",
       "link": "https://www.sciencedirect.com/science/article/pii/S1047847726000584",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "ests1",
+      "summary": "BHET is the bottleneck intermediate in breaking PET plastic back down to its monomers. Crystal structures of the thermostable esterase EstS1 from <em>Sulfobacillus acidophilus</em> catch BHET and its products in the active-site tunnel, and the biochemistry shows the enzyme carries the reaction through to terephthalate rather than stalling at MHET — a single enzyme for a step usually split between two."
     },
     {
       "year": 2026, "type": "journal",
@@ -74,7 +80,9 @@
       "venue": "arXiv preprint",
       "detail": "arXiv:2509.19166",
       "link": "https://arxiv.org/abs/2509.19166",
-      "topic": "health"
+      "topic": "health",
+      "graphic": "yololan",
+      "summary": "Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present."
     },
     {
       "year": 2025, "type": "journal",
@@ -83,7 +91,9 @@
       "venue": "IEEE Open Journal of the Computer Society",
       "detail": "1–12",
       "link": "https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "dsem",
+      "summary": "A single intrusion detector carries its own bias and variance into every decision, and on traffic at internet scale that shows up as false alarms and missed attacks. DSEM-NIDS stacks several different base models under a nested meta-learner that learns how to combine them, rather than averaging or voting. It is evaluated across four datasets — 5G-NIDD, UNR-IDD, N-BaIoT and NSL-KDD — spanning 5G, enterprise, IoT and classical traffic."
     },
     {
       "year": 2025, "type": "preprint",
