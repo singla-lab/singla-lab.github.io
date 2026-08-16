@@ -1,0 +1,53 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: several cryo-electron tomograms sampled across one beta cell, from the nucleus out to the plasma membrane, in which insulin vesicles become both more numerous and larger toward the membrane" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">cryo-ET, one cell, many tomograms</text>
+  </g>
+
+  <!-- the nucleus at one end, the plasma membrane at the other -->
+  <path d="M14 34 C46 34, 58 60, 58 73 C58 86, 46 112, 14 112 Z"
+        fill="var(--ink-4)" fill-opacity=".12" stroke="var(--rule)" stroke-width="1"/>
+  <text x="20" y="76" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">nucleus</text>
+  <g stroke="var(--ink-3)" stroke-width="1.4">
+    <line x1="276" y1="34" x2="276" y2="112"/><line x1="281" y1="34" x2="281" y2="112"/>
+  </g>
+  <text x="286" y="24" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-4)">plasma membrane</text>
+
+  <!-- each dashed box is one acquisition; the vesicles in it grow and crowd -->
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1" stroke-dasharray="4 3">
+    <rect x="76" y="42" width="58" height="62" rx="3"/>
+    <rect x="146" y="42" width="58" height="62" rx="3"/>
+    <rect x="214" y="42" width="58" height="62" rx="3"/>
+  </g>
+
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <circle cx="92" cy="58" r="4.5"/><circle cx="116" cy="72" r="4.5"/><circle cx="96" cy="90" r="4.5"/>
+    <circle cx="162" cy="56" r="6"/><circle cx="188" cy="68" r="6"/>
+    <circle cx="160" cy="88" r="6"/><circle cx="190" cy="94" r="6"/>
+    <circle cx="230" cy="54" r="7.5"/><circle cx="256" cy="64" r="7.5"/>
+    <circle cx="228" cy="80" r="7.5"/><circle cx="258" cy="90" r="7.5"/><circle cx="240" cy="96" r="7.5"/>
+  </g>
+  <g fill="var(--teal)" fill-opacity=".35">
+    <circle cx="92" cy="58" r="1.8"/><circle cx="116" cy="72" r="1.8"/><circle cx="96" cy="90" r="1.8"/>
+    <circle cx="162" cy="56" r="2.4"/><circle cx="188" cy="68" r="2.4"/>
+    <circle cx="160" cy="88" r="2.4"/><circle cx="190" cy="94" r="2.4"/>
+    <circle cx="230" cy="54" r="3"/><circle cx="256" cy="64" r="3"/>
+    <circle cx="228" cy="80" r="3"/><circle cx="258" cy="90" r="3"/><circle cx="240" cy="96" r="3"/>
+  </g>
+
+  <text x="76" y="116" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">neighborhoods</text>
+
+  <path d="M58 128h218 M272 124.5l4 3.5-4 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="167" y="142" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-4)">toward the plasma membrane</text>
+
+  <line x1="14" y1="152" x2="286" y2="152" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8">
+    <text x="14" y="168" fill="var(--ink-3)">volume fraction and diameter both rise</text>
+    <text x="14" y="184" fill="var(--ink-4)">a gradient of vesicle maturation</text>
+  </g>
+</svg>

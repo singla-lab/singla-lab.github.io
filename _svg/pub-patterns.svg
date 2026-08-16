@@ -1,0 +1,77 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a heterogeneous set of particles picked from a whole cryotomogram is sorted by Multi-Pattern Pursuit into classes and their averages, without any template of a known structure" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <path id="pmpa" d="M-7 -5 h9 a6 6 0 0 1 0 11 h-9 z"/>
+    <path id="pmpb" d="M7 0 L3.5 6.06 L-3.5 6.06 L-7 0 L-3.5 -6.06 L3.5 -6.06 Z"/>
+    <path id="pmpc" d="M0 -7 L6 4 L-6 4 Z"/>
+  </defs>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">one tomogram, many complexes</text>
+    <text x="286" y="24" text-anchor="end">de novo classes</text>
+  </g>
+
+  <!-- ===== picked particles: every shape and every orientation, none of them known ===== -->
+  <rect x="14" y="32" width="80" height="84" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".28" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1.1">
+    <use href="#pmpa" transform="translate(30 46)"/>
+    <use href="#pmpb" transform="translate(56 50) rotate(20)"/>
+    <use href="#pmpc" transform="translate(78 44) rotate(200)"/>
+    <use href="#pmpc" transform="translate(28 72) rotate(40)"/>
+    <use href="#pmpa" transform="translate(54 76) rotate(155)"/>
+    <use href="#pmpb" transform="translate(80 70)"/>
+    <use href="#pmpb" transform="translate(32 100) rotate(70)"/>
+    <use href="#pmpa" transform="translate(58 99) rotate(265)"/>
+    <use href="#pmpc" transform="translate(80 102) rotate(110)"/>
+  </g>
+
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 74h10 M104 70.5l3.5 3.5-3.5 3.5"/>
+    <path d="M184 74h9 M189 70.5l3.5 3.5-3.5 3.5"/>
+  </g>
+
+  <rect x="112" y="56" width="70" height="34" rx="6" fill="var(--surface)" stroke="var(--indigo)"
+        stroke-opacity=".5" stroke-width="1.2"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--indigo)"
+     text-anchor="middle">
+    <text x="147" y="70">Multi-Pattern</text>
+    <text x="147" y="82">Pursuit</text>
+  </g>
+
+  <use href="#pmpb" transform="translate(122 106)" fill="none" stroke="var(--ink-4)"
+       stroke-width="1.1" stroke-dasharray="3 2"/>
+  <path d="M116 111l12 -10" stroke="var(--ink-4)" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="134" y="109" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">no template</text>
+
+  <!-- ===== the same particles, now sorted, each class with its average ===== -->
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
+    <use href="#pmpa" transform="translate(205 50) scale(.7)"/>
+    <use href="#pmpa" transform="translate(223 50) scale(.7)"/>
+    <use href="#pmpa" transform="translate(241 50) scale(.7)"/>
+    <use href="#pmpa" transform="translate(276 50) scale(1.15)"/>
+  </g>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4">
+    <use href="#pmpb" transform="translate(205 76) scale(.7)"/>
+    <use href="#pmpb" transform="translate(223 76) scale(.7)"/>
+    <use href="#pmpb" transform="translate(241 76) scale(.7)"/>
+    <use href="#pmpb" transform="translate(276 76) scale(1.15)"/>
+  </g>
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.4">
+    <use href="#pmpc" transform="translate(205 102) scale(.7)"/>
+    <use href="#pmpc" transform="translate(223 102) scale(.7)"/>
+    <use href="#pmpc" transform="translate(241 102) scale(.7)"/>
+    <use href="#pmpc" transform="translate(276 102) scale(1.15)"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M252 50h8 M256 46.5l3.5 3.5-3.5 3.5"/>
+    <path d="M252 76h8 M256 72.5l3.5 3.5-3.5 3.5"/>
+    <path d="M252 102h8 M256 98.5l3.5 3.5-3.5 3.5"/>
+  </g>
+
+  <line x1="14" y1="126" x2="286" y2="126" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="148" font-size="8.5" fill="var(--ink-3)">the classes come out of the data</text>
+    <text x="14" y="168" font-size="8" fill="var(--ink-4)">tested on simulated and real tomograms</text>
+  </g>
+</svg>

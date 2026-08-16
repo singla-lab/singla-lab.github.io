@@ -1,0 +1,77 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a tomogram is segmented first semantically then into instances without manual tracing, and the resulting organelles are analysed by their radial distribution from the centre of the cell" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="24" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">segmented without hand-tracing</text>
+
+  <!-- ===== semantic first, then instances ===== -->
+  <rect x="14" y="34" width="44" height="40" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".3">
+    <ellipse cx="30" cy="48" rx="9" ry="7"/><ellipse cx="44" cy="62" rx="8" ry="6"/>
+    <ellipse cx="27" cy="64" rx="7" ry="5"/>
+  </g>
+
+  <rect x="72" y="34" width="44" height="40" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <path d="M79 48a9 7 0 0 1 18 0a9 7 0 0 1-18 0 M85 64a7 5 0 0 1 14 0a7 5 0 0 1-14 0"
+        fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.1"/>
+  <rect x="96" y="56" width="16" height="8" rx="4" fill="var(--saffron-soft)" stroke="var(--saffron)"
+        stroke-width="1.1"/>
+
+  <rect x="130" y="34" width="44" height="40" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.3">
+    <ellipse cx="145" cy="48" rx="9" ry="7"/><ellipse cx="149" cy="64" rx="7" ry="5"/>
+  </g>
+  <rect x="154" y="56" width="16" height="8" rx="4" fill="var(--saffron-soft)" stroke="var(--saffron)"
+        stroke-width="1.3"/>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 54h9 M65 50.5l3.5 3.5-3.5 3.5"/>
+    <path d="M118 54h9 M123 50.5l3.5 3.5-3.5 3.5"/>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-4)"
+     text-anchor="middle">
+    <text x="36" y="84">tomogram</text>
+    <text x="94" y="84">semantic</text>
+    <text x="152" y="84">instance</text>
+  </g>
+
+  <rect x="182" y="44" width="104" height="20" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="234" y="58" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-3)">high Dice &amp; Recall</text>
+  <text x="182" y="80" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">glucose, time points</text>
+
+  <line x1="14" y1="96" x2="286" y2="96" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== where the organelles sit, measured outward from the centre ===== -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-4)">
+    <text x="14" y="110">radial shells</text>
+    <text x="128" y="110">organelle localization</text>
+  </g>
+
+  <circle cx="62" cy="146" r="30" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3">
+    <circle cx="62" cy="146" r="15"/><circle cx="62" cy="146" r="23"/>
+  </g>
+  <circle cx="52" cy="136" r="10" fill="var(--ink-4)" fill-opacity=".13"/>
+  <rect x="66" y="156" width="16" height="7" rx="3.5" fill="var(--saffron-soft)"
+        stroke="var(--saffron)" stroke-width="1.1" transform="rotate(-20 74 159.5)"/>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1">
+    <circle cx="76" cy="132" r="2.8"/><circle cx="84" cy="148" r="2.8"/>
+    <circle cx="62" cy="168" r="2.8"/><circle cx="46" cy="158" r="2.8"/>
+  </g>
+
+  <g stroke="var(--rule)" stroke-width="1">
+    <line x1="128" y1="118" x2="128" y2="170"/><line x1="128" y1="170" x2="284" y2="170"/>
+  </g>
+  <path d="M132 166 C144 166, 150 128, 168 126 C186 124, 194 134, 210 134 C234 134, 250 132, 280 132"
+        fill="none" stroke="var(--teal)" stroke-width="1.6"/>
+  <path d="M132 166 C152 166, 160 152, 180 152 C202 152, 210 158, 230 158 C250 158, 262 157, 280 156"
+        fill="none" stroke="var(--saffron)" stroke-width="1.6"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="end">
+    <text x="284" y="122" fill="var(--teal)">insulin vesicles</text>
+    <text x="284" y="146" fill="var(--saffron)">mitochondria</text>
+  </g>
+  <text x="132" y="182" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">distance from cell centre</text>
+</svg>

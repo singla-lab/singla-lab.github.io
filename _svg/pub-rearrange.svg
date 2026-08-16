@@ -1,0 +1,67 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: whole beta cells imaged at rest, after glucose, and after glucose with exendin-4, showing mitochondria enlarging, insulin vesicles moving closer to them, and insulin packing becoming denser" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="24" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">whole cells, one time course</text>
+
+  <!-- ===== at rest ===== -->
+  <circle cx="54" cy="76" r="32" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <circle cx="44" cy="66" r="12" fill="var(--ink-4)" fill-opacity=".13"/>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.1">
+    <rect x="58" y="84" width="16" height="7" rx="3.5" transform="rotate(-15 66 87.5)"/>
+    <rect x="60" y="60" width="14" height="6" rx="3" transform="rotate(25 67 63)"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1">
+    <circle cx="56" cy="52" r="2.8"/><circle cx="48" cy="86" r="2.8"/><circle cx="38" cy="84" r="2.8"/>
+    <circle cx="60" cy="72" r="2.8"/><circle cx="34" cy="90" r="2.8"/>
+  </g>
+
+  <!-- ===== glucose: mitochondria larger, vesicles out and in contact ===== -->
+  <circle cx="150" cy="76" r="32" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <circle cx="140" cy="66" r="12" fill="var(--ink-4)" fill-opacity=".13"/>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2">
+    <rect x="152" y="84" width="22" height="9" rx="4.5" transform="rotate(-15 163 88.5)"/>
+    <rect x="154" y="59" width="18" height="8" rx="4" transform="rotate(25 163 63)"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1">
+    <circle cx="150" cy="48" r="2.8"/><circle cx="172" cy="76" r="2.8"/><circle cx="128" cy="92" r="2.8"/>
+    <circle cx="140" cy="98" r="2.8"/><circle cx="126" cy="60" r="2.8"/><circle cx="156" cy="100" r="2.8"/>
+  </g>
+  <g fill="var(--teal)" fill-opacity=".3">
+    <circle cx="150" cy="48" r="1.3"/><circle cx="172" cy="76" r="1.3"/><circle cx="128" cy="92" r="1.3"/>
+    <circle cx="140" cy="98" r="1.3"/><circle cx="126" cy="60" r="1.3"/><circle cx="156" cy="100" r="1.3"/>
+  </g>
+
+  <!-- ===== with exendin-4 the same changes go further ===== -->
+  <circle cx="246" cy="76" r="32" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <circle cx="236" cy="66" r="12" fill="var(--ink-4)" fill-opacity=".13"/>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.3">
+    <rect x="246" y="83" width="24" height="10" rx="5" transform="rotate(-12 258 88)"/>
+    <rect x="248" y="59" width="20" height="9" rx="4.5" transform="rotate(22 258 63.5)"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.1">
+    <circle cx="246" cy="48" r="3"/><circle cx="270" cy="78" r="3"/><circle cx="224" cy="92" r="3"/>
+    <circle cx="236" cy="100" r="3"/><circle cx="256" cy="50" r="3"/>
+  </g>
+  <g fill="var(--teal)" fill-opacity=".55">
+    <circle cx="246" cy="48" r="1.6"/><circle cx="270" cy="78" r="1.6"/><circle cx="224" cy="92" r="1.6"/>
+    <circle cx="236" cy="100" r="1.6"/><circle cx="256" cy="50" r="1.6"/>
+  </g>
+
+  <g stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.2" fill="none"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 124h256 M272 120.5l4 3.5-4 3.5"/>
+    <path d="M54 120v8 M150 120v8 M246 120v8"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="54" y="140">rest</text>
+    <text x="150" y="140">+ glucose</text>
+    <text x="246" y="140">+ glucose &amp; Ex-4</text>
+  </g>
+
+  <line x1="14" y1="150" x2="286" y2="150" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-3)">
+    <text x="14" y="166"><tspan fill="var(--saffron)">mitochondria</tspan> grow &#183; <tspan fill="var(--teal)">vesicles</tspan> move closer</text>
+    <text x="14" y="182">insulin packs denser &#183; Ex-4 prolongs it</text>
+  </g>
+</svg>
