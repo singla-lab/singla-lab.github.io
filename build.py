@@ -784,8 +784,10 @@ def build_alumni():
   <div class="rv">{grid}</div>
 </div>""".format(title=a(g['title']), n=len(g['members']), grid=grid))
 
+    # the convocation charge, which is what an alumni page is a record of
     body = page_head('Alumni', 'Former members',
-                     'People who built things here and moved on.') + \
+                     'People who built things here and moved on.',
+                     extra=verse(d.get('sanskrit'))) + \
         '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(blocks)) + \
         cta_band()
     return write('alumni.html', page('alumni.html', 'Alumni',

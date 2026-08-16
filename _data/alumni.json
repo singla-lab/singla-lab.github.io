@@ -1,4 +1,10 @@
 {
+  "sanskrit": {
+    "lines": ["यान्यनवद्यानि कर्माणि । तानि सेवितव्यानि । नो इतराणि ॥",
+              "यान्यस्माकं सुचरितानि । तानि त्वयोपास्यानि । नो इतराणि ॥"],
+    "transliteration": "yāny anavadyāni karmāṇi | tāni sevitavyāni | no itarāṇi || yāny asmākaṁ sucaritāni | tāni tvayopāsyāni | no itarāṇi ||",
+    "translation": "Those acts that are blameless — practise those, and not the others. Whatever we did well — take up that, and nothing else. — Taittirīya Upaniṣad, Śikṣāvallī 1.11.2, the charge given to a student on the day they leave"
+  },
   "groups": [
     {
       "id": "doctoral",
@@ -45,12 +51,12 @@
       "id": "ug-thesis",
       "title": "Undergraduate Thesis",
       "members": [
-        { "name": "Aman Bawane",          "year": "2026", "dept": "CSE Department", "photo": "aman-bawane" },
-        { "name": "Meet Sindhav",         "year": "2026", "dept": "CSE Department", "photo": "meet-sindhav" },
+        { "name": "Aman Bawane",          "year": "2026", "dept": "CSE Department", "photo": "aman-bawane", "link": "https://www.linkedin.com/in/aman-bawane-179b1926a/" },
+        { "name": "Meet Sindhav",         "year": "2026", "dept": "CSE Department", "photo": "meet-sindhav", "link": "https://www.linkedin.com/in/meet-sindhav/" },
         { "name": "Ayush",                "year": "2026", "dept": "CSE Department" },
-        { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department" },
-        { "name": "Kshitij Shah",         "year": "2026", "dept": "CSE Department", "photo": "kshitij-shah" },
-        { "name": "Aryan Dhas",           "year": "2026", "dept": "CSE Department", "photo": "aryan-dhas" },
+        { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department", "link": "https://www.linkedin.com/in/raman-sharma-7b7054267/" },
+        { "name": "Kshitij Shah",         "year": "2026", "dept": "CSE Department", "photo": "kshitij-shah", "link": "https://www.linkedin.com/in/kshitij-shah-62406b251/" },
+        { "name": "Aryan Dhas",           "year": "2026", "dept": "CSE Department", "photo": "aryan-dhas", "link": "https://www.linkedin.com/in/aryan-dhas-48070b285/" },
         { "name": "Amandeep Singh",       "year": "2025", "dept": "CSE Department", "photo": "amandeep-singh", "link": "https://www.linkedin.com/in/aman262225/" },
         { "name": "Nishita Singh",        "year": "2025", "dept": "CSE Department", "photo": "nishita-singh", "link": "https://www.linkedin.com/in/nishita-singh-837a0020a/" },
         { "name": "Prerna",               "year": "2025", "dept": "CSE Department", "photo": "prerna", "link": "https://www.linkedin.com/in/prernachandolia/" },
