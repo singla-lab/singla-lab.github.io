@@ -651,6 +651,23 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .pill-conference { background: var(--teal-soft); color: var(--teal-ink); border-color: var(--teal-bd); }
 /* Press coverage. Teal, not saffron -- saffron is the accent and reads as a
    warning next to warm paper; and not indigo, which is what a link looks like. */
+/* A few papers carry a drawn summary. It sits beside the entry once there is
+   room for a second column, and below it otherwise -- never above, so the
+   entry always opens on its title. */
+.pub-fig {
+  margin: .75rem 0 .15rem; border: 1px solid var(--rule); border-radius: var(--r-sm);
+  background: var(--surface); overflow: hidden;
+}
+.pub-fig svg { display: block; width: 100%; height: auto; }
+.pub-fig figcaption {
+  font-size: .72rem; line-height: 1.5; color: var(--ink-3);
+  padding: .5rem .65rem .55rem; border-top: 1px solid var(--rule-2);
+}
+@media (min-width: 900px) {
+  .pub-wide { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 1.6rem; align-items: start; }
+  .pub-wide .pub-fig { margin: .15rem 0 0; }
+}
+
 .pub-hl {
   margin-top: .4rem; font-size: .82rem; color: var(--teal-ink);
   background: var(--teal-soft); border-left: 2px solid var(--teal);

@@ -371,8 +371,11 @@ def build_home():
                title=a(area['title']), summary=a(area['summary']),
                art=svg('art-' + area['graphic'])))
 
+    # the teaser is five one-line entries; a graphical abstract in the middle of
+    # it would tip the whole block over, so the drawn summaries stay on the
+    # publications page where there is room for them
     recent = [p for p in pubs['publications'] if p['type'] != 'poster'][:5]
-    pubhtml = ''.join(pub_item(p, pubs) for p in recent)
+    pubhtml = ''.join(pub_item(p, pubs, figures=False) for p in recent)
 
     newshtml = ''.join("""<div class="tl-item">
   <p class="tl-date">{date}</p>
@@ -574,7 +577,19 @@ def highlight(h):
             .format(a(h['venue']), title))
 
 
-def pub_item(p, meta):
+def pub_fig(p):
+    """A drawn summary of the paper, for the few that have one. The graphic is
+    a schematic of the method and the claim, not a reproduction of a figure,
+    so the caption says as much rather than passing it off as the real thing."""
+    if not p.get('graphic'):
+        return ''
+    cap = ''
+    if p.get('figcap'):
+        cap = '<figcaption>{0}</figcaption>'.format(a(p['figcap']))
+    return '<figure class="pub-fig">{0}{1}</figure>'.format(svg('pub-' + p['graphic']), cap)
+
+
+def pub_item(p, meta, figures=True):
     title = a(p['title'])
     if p.get('link'):
         title = '<a href="{0}" target="_blank" rel="noopener">{1}</a>'.format(p['link'], title)
@@ -593,14 +608,22 @@ def pub_item(p, meta):
 
     hl = highlight(p.get('highlight'))
 
-    return """<article class="pub" data-pub data-type="{type}" data-topic="{topic}">
-  <p class="pub-t">{title}</p>
-  <p class="pub-a">{authors}</p>
-  <p class="pub-v">{venue}</p>
-  {hl}
-  <div class="pub-meta">{pills}</div>
-</article>""".format(type=p['type'], topic=p.get('topic', ''), title=title,
-                     authors=authors, venue=venue, hl=hl, pills=''.join(pills))
+    # the text is wrapped whether or not there is a figure, so that the entry is
+    # one grid item rather than five when pub-wide turns the article into a grid
+    fig = pub_fig(p) if figures else ''
+
+    return """<article class="pub{wide}" data-pub data-type="{type}" data-topic="{topic}">
+  <div class="pub-main">
+    <p class="pub-t">{title}</p>
+    <p class="pub-a">{authors}</p>
+    <p class="pub-v">{venue}</p>
+    {hl}
+    <div class="pub-meta">{pills}</div>
+  </div>
+  {fig}
+</article>""".format(wide=' pub-wide' if fig else '', type=p['type'],
+                     topic=p.get('topic', ''), title=title, authors=authors,
+                     venue=venue, hl=hl, pills=''.join(pills), fig=fig)
 
 
 def build_publications():

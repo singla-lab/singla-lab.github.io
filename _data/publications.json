@@ -24,7 +24,9 @@
       "venue": "Structure",
       "detail": "Accepted",
       "link": "https://www.biorxiv.org/content/10.64898/2026.03.19.712811v1",
-      "topic": "sxt"
+      "topic": "sxt",
+      "graphic": "morphometry",
+      "figcap": "Schematic summary. Mitochondria of three morphotypes are resolved in whole β-cells; structure, density and location are found to move together rather than independently."
     },
     {
       "year": 2026, "type": "preprint",
@@ -60,7 +62,9 @@
       "venue": "Journal of Structural Biology",
       "detail": "108291",
       "link": "https://www.sciencedirect.com/science/article/pii/S1047847726000079",
-      "topic": "sxt"
+      "topic": "sxt",
+      "graphic": "segmentation",
+      "figcap": "Schematic summary. Soft X-ray tomograms are segmented into a mitochondrial mask, the mask is split into individual organelles, and each one is measured."
     },
 
     {

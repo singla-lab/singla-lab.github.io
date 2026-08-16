@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400..600&amp;family=Newsreader:ital,wght@0,300..600;1,300..600&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;family=Noto+Serif+Devanagari:wght@400..600&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=2e29d977">
+<link rel="stylesheet" href="assets/css/site.css?v=f4eb9d57">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -59,279 +59,580 @@
   </div>
 </section><section class="section-tight"><div class="wrap"><div class="pub-year" data-year-block>
   <div class="pub-year-n">2026</div>
-  <div><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://www.biorxiv.org/content/10.64898/2026.03.19.712811v1" target="_blank" rel="noopener">Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks</a></p>
-  <p class="pub-a">Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., &amp; Singla, J.</p>
-  <p class="pub-v"><em>Structure</em>, Accepted</p>
-  
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.biorxiv.org/content/10.64898/2026.03.19.712811v1" target="_blank" rel="noopener">Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks</a></p>
+    <p class="pub-a">Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Structure</em>, Accepted</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
+  <figure class="pub-fig">﻿<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: mitochondria of three morphotypes segmented in a whole beta cell, beside a triangle joining structure, density and location to show the three are coupled rather than independent" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ============ left: what is measured ============ -->
+  <text x="14" y="22" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">SXT &#183; &#946;-cell</text>
+
+  <!-- whole intact cell: SXT needs no fixation and no sectioning -->
+  <circle cx="74" cy="100" r="52" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".45"
+          stroke-width="1.2" stroke-dasharray="2 4"/>
+  <circle cx="74" cy="96" r="20" fill="var(--indigo-soft)" stroke="var(--indigo)"
+          stroke-opacity=".4" stroke-width="1.1"/>
+  <text x="74" y="99" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--indigo)" fill-opacity=".7">N</text>
+
+  <!-- morphotype I, punctate -->
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
+    <circle cx="50" cy="62" r="3.6"/><circle cx="64" cy="54" r="3"/>
+    <circle cx="36" cy="76" r="3.2"/><circle cx="98" cy="62" r="3.4"/>
+  </g>
+  <!-- morphotype II, discrete rods -->
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4">
+    <rect x="30" y="110" width="22" height="8" rx="4" transform="rotate(-30 41 114)"/>
+    <rect x="46" y="132" width="24" height="8" rx="4" transform="rotate(12 58 136)"/>
+    <rect x="91" y="120" width="22" height="8" rx="4" transform="rotate(-42 102 124)"/>
+  </g>
+  <!-- morphotype III, connected network -->
+  <g fill="none" stroke="var(--indigo)" stroke-width="4.5" stroke-linecap="round"
+     stroke-linejoin="round" stroke-opacity=".85">
+    <path d="M104 88 C116 96, 114 110, 106 118 M106 118 L114 124"/>
+    <path d="M54 140 C66 146, 76 142, 84 146"/>
+  </g>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round">
+    <path d="M20 162h24"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="48" y="165">2 &#181;m</text>
+    <text x="20" y="180">three morphotypes</text>
+  </g>
+
+  <line x1="146" y1="28" x2="146" y2="168" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ============ right: the result, as the title states it ============ -->
+  <!-- the edges go behind the three nodes, which are opaque -->
+  <g stroke="var(--ink-4)" stroke-opacity=".45" stroke-width="1.4">
+    <path d="M222 60 L178 138 M222 60 L266 138 M178 138 L266 138"/>
+  </g>
+  <text x="222" y="107" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">coupled</text>
+
+  <!-- node: structure -->
+  <rect x="192" y="44" width="60" height="32" rx="9" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <circle cx="206" cy="55" r="3" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.3"/>
+  <rect x="214.5" y="52.5" width="11" height="5" rx="2.5" transform="rotate(-12 220 55)"
+        fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.3"/>
+  <path d="M230 51 L234 55 L239 53 M234 55 L233 60" fill="none" stroke="var(--indigo)"
+        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="222" y="70" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">structure</text>
+
+  <!-- node: density -->
+  <rect x="148" y="122" width="60" height="32" rx="9" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--teal)" fill-opacity=".8">
+    <circle cx="163" cy="129" r="2.2"/><circle cx="167" cy="133" r="2.2"/>
+    <circle cx="162" cy="136" r="2.2"/><circle cx="170" cy="128" r="2.2"/>
+    <circle cx="169" cy="137" r="2.2"/>
+    <circle cx="181" cy="130" r="2.2"/><circle cx="191" cy="135" r="2.2"/>
+  </g>
+  <text x="178" y="148" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">density</text>
+
+  <!-- node: location, read as distance out from the nucleus -->
+  <rect x="236" y="122" width="60" height="32" rx="9" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <circle cx="259" cy="133" r="3.5" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1" stroke-dasharray="2 2.5">
+    <path d="M259 125 A8 8 0 0 1 259 141"/>
+    <path d="M259 122 A11 11 0 0 1 259 144"/>
+  </g>
+  <circle cx="266" cy="128" r="2.6" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2"/>
+  <circle cx="272" cy="138" r="2.6" fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2"/>
+  <text x="266" y="148" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">location</text>
+</svg><figcaption>Schematic summary. Mitochondria of three morphotypes are resolved in whole β-cells; structure, density and location are found to move together rather than independently.</figcaption></figure>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847726000584" target="_blank" rel="noopener">Structural and functional characterization of thermostable EstS1 esterase for BHET degradation</a></p>
-  <p class="pub-a">Verma, S., Aggarwal, D., Ashar, M., Pandey, A. K., Sutradhar, A., Pandey, S., Sircar, D., Singla, J., &amp; Kumar, P.</p>
-  <p class="pub-v"><em>Journal of Structural Biology</em>, 108342</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847726000584" target="_blank" rel="noopener">Structural and functional characterization of thermostable EstS1 esterase for BHET degradation</a></p>
+    <p class="pub-a">Verma, S., Aggarwal, D., Ashar, M., Pandey, A. K., Sutradhar, A., Pandey, S., Sircar, D., Singla, J., &amp; Kumar, P.</p>
+    <p class="pub-v"><em>Journal of Structural Biology</em>, 108342</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
-</article><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847726000079" target="_blank" rel="noopener">Robust mitochondria segmentation and morphological profiling using soft X-ray tomography</a></p>
-  <p class="pub-a">Yadav, A., Singh, A., Deshmukh, A., Bharadwaj, P., Baliyan, A., White, K., &amp; Singla, J.</p>
-  <p class="pub-v"><em>Journal of Structural Biology</em>, 108291</p>
-  
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847726000079" target="_blank" rel="noopener">Robust mitochondria segmentation and morphological profiling using soft X-ray tomography</a></p>
+    <p class="pub-a">Yadav, A., Singh, A., Deshmukh, A., Bharadwaj, P., Baliyan, A., White, K., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Journal of Structural Biology</em>, 108291</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary of a pipeline: a stack of soft X-ray tomograms is segmented into a mitochondrial mask, the mask is split into individual organelles, and each organelle is profiled for volume, surface, sphericity and branching" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- the same three organelles are carried through all three panels, so the
+         reader can see they are the same objects being segmented and split -->
+    <ellipse id="pmsb1" cx="44" cy="52" rx="13" ry="6" transform="rotate(-24 44 52)"/>
+    <ellipse id="pmsb2" cx="72" cy="74" rx="9" ry="5.5" transform="rotate(26 72 74)"/>
+    <path id="pmsb3" d="M34 74 C42 80, 52 74, 60 82 M46 77 L44 88" fill="none"
+          stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </defs>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="57" y="20">SXT volumes</text>
+    <text x="150" y="20">segmentation</text>
+    <text x="243" y="20">instances</text>
+  </g>
+
+  <!-- panel 1: several raw tomograms, grey and unlabelled -->
+  <g fill="var(--paper-2)" stroke="var(--rule)">
+    <rect x="14" y="24" width="74" height="66" rx="4"/>
+    <rect x="17" y="27" width="74" height="66" rx="4"/>
+    <rect x="20" y="30" width="74" height="66" rx="4"/>
+  </g>
+  <g fill="var(--ink-4)">
+    <ellipse cx="30" cy="40" rx="3.4" ry="2.4" opacity=".22"/>
+    <ellipse cx="45" cy="37" rx="2.6" ry="3.2" opacity=".16"/>
+    <ellipse cx="60" cy="42" rx="4" ry="2.2" opacity=".2"/>
+    <ellipse cx="76" cy="38" rx="2.8" ry="2.8" opacity=".14"/>
+    <ellipse cx="86" cy="46" rx="3.2" ry="2.4" opacity=".2"/>
+    <ellipse cx="27" cy="55" rx="2.4" ry="3.4" opacity=".17"/>
+    <ellipse cx="58" cy="62" rx="3.6" ry="2.2" opacity=".15"/>
+    <ellipse cx="84" cy="60" rx="2.6" ry="3" opacity=".19"/>
+    <ellipse cx="31" cy="90" rx="3.8" ry="2.2" opacity=".18"/>
+    <ellipse cx="52" cy="92" rx="2.6" ry="2.6" opacity=".14"/>
+    <ellipse cx="70" cy="88" rx="3.2" ry="2.4" opacity=".2"/>
+    <ellipse cx="86" cy="80" rx="2.4" ry="3.2" opacity=".16"/>
+    <ellipse cx="40" cy="66" rx="2.4" ry="2.4" opacity=".13"/>
+    <ellipse cx="66" cy="52" rx="2.6" ry="2.2" opacity=".12"/>
+  </g>
+  <g opacity=".3" fill="var(--ink-3)" stroke="var(--ink-3)" stroke-width="1">
+    <use href="#pmsb1"/><use href="#pmsb2"/>
+  </g>
+  <use href="#pmsb3" stroke="var(--ink-3)" opacity=".3"/>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 63h9 M104 60l3.5 3-3.5 3"/>
+    <path d="M191 63h9 M197 60l3.5 3-3.5 3"/>
+  </g>
+
+  <!-- panel 2: one class, cleanly separated from the background -->
+  <rect x="113" y="30" width="74" height="66" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g transform="translate(93 0)" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
+    <use href="#pmsb1"/><use href="#pmsb2"/>
+  </g>
+  <use href="#pmsb3" transform="translate(93 0)" stroke="var(--teal)" stroke-opacity=".85"/>
+
+  <!-- panel 3: the mask split into individual organelles -->
+  <rect x="206" y="30" width="74" height="66" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g transform="translate(186 0)">
+    <use href="#pmsb1" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4"/>
+    <use href="#pmsb2" fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4"/>
+    <use href="#pmsb3" stroke="var(--indigo)" stroke-opacity=".85"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="230" y="54" fill="var(--teal)">1</text>
+    <text x="258" y="77" fill="var(--saffron)">2</text>
+    <text x="232" y="93" fill="var(--indigo)">3</text>
+  </g>
+
+  <!-- what each individuated organelle is then measured for -->
+  <line x1="20" y1="110" x2="280" y2="110" stroke="var(--rule)" stroke-width="1"/>
+  <text x="20" y="124" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9"
+        fill="var(--ink-4)">morphological profiling</text>
+
+  <ellipse cx="52" cy="147" rx="12" ry="7.5" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.3"/>
+
+  <ellipse cx="117" cy="147" rx="9" ry="5.5" fill="none" stroke="var(--saffron)" stroke-width="1.6"/>
+  <ellipse cx="117" cy="147" rx="13" ry="9" fill="none" stroke="var(--saffron)" stroke-width="1"
+           stroke-opacity=".55" stroke-dasharray="2 2.5"/>
+
+  <circle cx="182" cy="147" r="11" fill="none" stroke="var(--indigo)" stroke-opacity=".5"
+          stroke-width="1" stroke-dasharray="2 2.5"/>
+  <path d="M175 145 C177 138, 187 138, 189 145 C191 152, 179 155, 175 145 Z"
+        fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.3"/>
+
+  <g fill="none" stroke="var(--indigo)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M239 155 L247 148 L255 142 M247 148 L255 154"/>
+  </g>
+  <g fill="var(--indigo)">
+    <circle cx="239" cy="155" r="2.2"/><circle cx="255" cy="142" r="2.2"/><circle cx="255" cy="154" r="2.2"/>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="52" y="174">volume</text>
+    <text x="117" y="174">surface</text>
+    <text x="182" y="174">sphericity</text>
+    <text x="247" y="174">branching</text>
+  </g>
+</svg><figcaption>Schematic summary. Soft X-ray tomograms are segmented into a mitochondrial mask, the mask is split into individual organelles, and each one is measured.</figcaption></figure>
 </article><article class="pub" data-pub data-type="conference" data-topic="sanskrit">
-  <p class="pub-t">RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation</p>
-  <p class="pub-a">Bathla, D., Singla, P., &amp; Singla, J.</p>
-  <p class="pub-v"><em>Submitted to AAAI-27</em></p>
+  <div class="pub-main">
+    <p class="pub-t">RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation</p>
+    <p class="pub-a">Bathla, D., Singla, P., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Submitted to AAAI-27</em></p>
+    
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="ml">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2606.29414" target="_blank" rel="noopener">FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations</a></p>
-  <p class="pub-a">Shukla, H., Verma, R., &amp; Singla, J.</p>
-  <p class="pub-v"><em>arXiv preprint</em>, arXiv:2606.29414</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2606.29414" target="_blank" rel="noopener">FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations</a></p>
+    <p class="pub-a">Shukla, H., Verma, R., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2606.29414</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="health">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2603.17248" target="_blank" rel="noopener">Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction</a></p>
-  <p class="pub-a">Youssef, Y., &amp; Singla, J.</p>
-  <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.17248</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2603.17248" target="_blank" rel="noopener">Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction</a></p>
+    <p class="pub-a">Youssef, Y., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.17248</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="sanskrit">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2603.24307" target="_blank" rel="noopener">Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation</a></p>
-  <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
-  <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2603.24307" target="_blank" rel="noopener">Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation</a></p>
+    <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2025</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="ml">
-  <p class="pub-t"><a href="https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC" target="_blank" rel="noopener">DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model</a></p>
-  <p class="pub-a">Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S.</p>
-  <p class="pub-v"><em>IEEE Open Journal of the Computer Society</em>, 1–12</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC" target="_blank" rel="noopener">DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model</a></p>
+    <p class="pub-a">Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S.</p>
+    <p class="pub-v"><em>IEEE Open Journal of the Computer Society</em>, 1–12</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.mdpi.com/1999-4915/17/3/417" target="_blank" rel="noopener">Structural Virology: The Key Determinants in Development of Antiviral Therapeutics</a></p>
-  <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
-  <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.mdpi.com/1999-4915/17/3/417" target="_blank" rel="noopener">Structural Virology: The Key Determinants in Development of Antiviral Therapeutics</a></p>
+    <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
+    <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="health">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
-  <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
-  <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
+    <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2" target="_blank" rel="noopener">In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas</a></p>
-  <p class="pub-a">KP, S., Sharma, A. K., &amp; Singla, J.</p>
-  <p class="pub-v"><em>bioRxiv</em>, 2025-04</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2" target="_blank" rel="noopener">In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas</a></p>
+    <p class="pub-a">KP, S., Sharma, A. K., &amp; Singla, J.</p>
+    <p class="pub-v"><em>bioRxiv</em>, 2025-04</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Structural biology</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2024</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9" target="_blank" rel="noopener">Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme</a></p>
-  <p class="pub-a">Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al.</p>
-  <p class="pub-v"><em>Structure</em>, 33(2), 247–261.e3</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9" target="_blank" rel="noopener">Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme</a></p>
+    <p class="pub-a">Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al.</p>
+    <p class="pub-v"><em>Structure</em>, 33(2), 247–261.e3</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S014181302409562X" target="_blank" rel="noopener">Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant</a></p>
-  <p class="pub-a">Singh, V., Choudhary, S., Bhutkar, M., Nehul, S., Ali, S., Singla, J., et al.</p>
-  <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 290, 138751</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S014181302409562X" target="_blank" rel="noopener">Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant</a></p>
+    <p class="pub-a">Singh, V., Choudhary, S., Bhutkar, M., Nehul, S., Ali, S., Singla, J., et al.</p>
+    <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 290, 138751</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0006291X24012828" target="_blank" rel="noopener">Structure-guided mutations in CDRs for enhancing the affinity of neutralizing SARS-CoV-2 nanobody</a></p>
-  <p class="pub-a">Singh, V., Bhutkar, M., Choudhary, S., Nehul, S., Kumar, R., Singla, J., et al.</p>
-  <p class="pub-v"><em>Biochemical and Biophysical Research Communications</em>, 734, 150746</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0006291X24012828" target="_blank" rel="noopener">Structure-guided mutations in CDRs for enhancing the affinity of neutralizing SARS-CoV-2 nanobody</a></p>
+    <p class="pub-a">Singh, V., Bhutkar, M., Choudhary, S., Nehul, S., Kumar, R., Singla, J., et al.</p>
+    <p class="pub-v"><em>Biochemical and Biophysical Research Communications</em>, 734, 150746</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0141813024068156" target="_blank" rel="noopener">In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters</a></p>
-  <p class="pub-a">Verma, S., Singh, A., Kumar, P., &amp; Singla, J.</p>
-  <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 280, 136006</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0141813024068156" target="_blank" rel="noopener">In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters</a></p>
+    <p class="pub-a">Verma, S., Singh, A., Kumar, P., &amp; Singla, J.</p>
+    <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 280, 136006</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0003986124000079" target="_blank" rel="noopener">Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis</a></p>
-  <p class="pub-a">Kaur, H., Rode, S., Sandra, K. P., Mahto, J. K., Alam, M. S., Gupta, D. N., et al.</p>
-  <p class="pub-v"><em>Archives of Biochemistry and Biophysics</em>, 753, 109888</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0003986124000079" target="_blank" rel="noopener">Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis</a></p>
+    <p class="pub-a">Kaur, H., Rode, S., Sandra, K. P., Mahto, J. K., Alam, M. S., Gupta, D. N., et al.</p>
+    <p class="pub-v"><em>Archives of Biochemistry and Biophysics</em>, 753, 109888</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
 </article><article class="pub" data-pub data-type="conference" data-topic="sanskrit">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2305.14004" target="_blank" rel="noopener">Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation</a></p>
-  <p class="pub-a">Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., &amp; Singla, J.</p>
-  <p class="pub-v"><em>LREC-COLING 2024</em>, 14298–14304</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2305.14004" target="_blank" rel="noopener">Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation</a></p>
+    <p class="pub-a">Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., &amp; Singla, J.</p>
+    <p class="pub-v"><em>LREC-COLING 2024</em>, 14298–14304</p>
+    
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
 </article><article class="pub" data-pub data-type="chapter" data-topic="structbio">
-  <p class="pub-t"><a href="https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" target="_blank" rel="noopener">Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs</a></p>
-  <p class="pub-a">Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J.</p>
-  <p class="pub-v"><em>Advances in Antiviral Research, Springer Nature Singapore</em>, 41–71</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" target="_blank" rel="noopener">Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs</a></p>
+    <p class="pub-a">Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Advances in Antiviral Research, Springer Nature Singapore</em>, 41–71</p>
+    
+    <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2023</div>
   <div><article class="pub" data-pub data-type="conference" data-topic="ml">
-  <p class="pub-t"><a href="https://ieeexplore.ieee.org/abstract/document/10254872" target="_blank" rel="noopener">Database Evolution, by Scientists, for Scientists: A Case Study</a></p>
-  <p class="pub-a">Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., &amp; Kesselman, C.</p>
-  <p class="pub-v"><em>2023 IEEE 19th International Conference on e-Science</em>, 1–10</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://ieeexplore.ieee.org/abstract/document/10254872" target="_blank" rel="noopener">Database Evolution, by Scientists, for Scientists: A Case Study</a></p>
+    <p class="pub-a">Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., &amp; Kesselman, C.</p>
+    <p class="pub-v"><em>2023 IEEE 19th International Conference on e-Science</em>, 1–10</p>
+    
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="preprint" data-topic="ml">
-  <p class="pub-t"><a href="https://arxiv.org/abs/2309.16630" target="_blank" rel="noopener">On Learning with LAD</a></p>
-  <p class="pub-a">Jothishwaran, C. A., Srivastava, B., Singla, J., &amp; Gangopadhyay, S.</p>
-  <p class="pub-v"><em>arXiv preprint</em>, arXiv:2309.16630</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2309.16630" target="_blank" rel="noopener">On Learning with LAD</a></p>
+    <p class="pub-a">Jothishwaran, C. A., Srivastava, B., Singla, J., &amp; Gangopadhyay, S.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2309.16630</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="poster" data-topic="sxt">
-  <p class="pub-t"><a href="https://academic.oup.com/mam/article/29/Supplement_1/1181/7228625" target="_blank" rel="noopener">Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions</a></p>
-  <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., et al.</p>
-  <p class="pub-v"><em>Microscopy and Microanalysis</em>, 29, Supplement 1, p. 1181</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://academic.oup.com/mam/article/29/Supplement_1/1181/7228625" target="_blank" rel="noopener">Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions</a></p>
+    <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., et al.</p>
+    <p class="pub-v"><em>Microscopy and Microanalysis</em>, 29, Supplement 1, p. 1181</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2022</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="vdl">
-  <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8" target="_blank" rel="noopener">A New Visual Design Language for Biological Structures in a Cell</a></p>
-  <p class="pub-a">Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al.</p>
-  <p class="pub-v"><em>Structure</em>, 30(4), 485–497.e3</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8" target="_blank" rel="noopener">A New Visual Design Language for Biological Structures in a Cell</a></p>
+    <p class="pub-a">Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al.</p>
+    <p class="pub-v"><em>Structure</em>, 30(4), 485–497.e3</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5" target="_blank" rel="noopener">Soft X-ray tomography to map and quantify organelle interactions at the mesoscale</a></p>
-  <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., Sali, A., White, K. L., &amp; Larabell, C. A.</p>
-  <p class="pub-v"><em>Structure</em>, 30(4), 510–521.e3</p>
-  <p class="pub-hl">Highlighted in <b>Nature</b> &mdash; <a href="https://www.nature.com/articles/d41586-022-00420-z" target="_blank" rel="noopener">&ldquo;Soft X-rays capture the dance of the organelles&rdquo;</a></p>
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
-</article><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567" target="_blank" rel="noopener">Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion</a></p>
-  <p class="pub-a">Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.</p>
-  <p class="pub-v"><em>PLOS ONE</em>, 17(3), e0265567</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5" target="_blank" rel="noopener">Soft X-ray tomography to map and quantify organelle interactions at the mesoscale</a></p>
+    <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., Sali, A., White, K. L., &amp; Larabell, C. A.</p>
+    <p class="pub-v"><em>Structure</em>, 30(4), 510–521.e3</p>
+    <p class="pub-hl">Highlighted in <b>Nature</b> &mdash; <a href="https://www.nature.com/articles/d41586-022-00420-z" target="_blank" rel="noopener">&ldquo;Soft X-rays capture the dance of the organelles&rdquo;</a></p>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" target="_blank" rel="noopener">An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms</a></p>
-  <p class="pub-a">Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L.</p>
-  <p class="pub-v"><em>PLOS ONE</em>, 17(9), e0269887</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567" target="_blank" rel="noopener">Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion</a></p>
+    <p class="pub-a">Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.</p>
+    <p class="pub-v"><em>PLOS ONE</em>, 17(3), e0265567</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+</article><article class="pub" data-pub data-type="journal" data-topic="sxt">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" target="_blank" rel="noopener">An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms</a></p>
+    <p class="pub-a">Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L.</p>
+    <p class="pub-v"><em>PLOS ONE</em>, 17(9), e0269887</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
+  
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2021</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="ml">
-  <p class="pub-t"><a href="https://www.pnas.org/doi/10.1073/pnas.2104559118" target="_blank" rel="noopener">Bayesian metamodeling of complex biological systems across varying representations</a></p>
-  <p class="pub-a">Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al.</p>
-  <p class="pub-v"><em>Proceedings of the National Academy of Sciences</em>, 118(35), e2104559118</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.pnas.org/doi/10.1073/pnas.2104559118" target="_blank" rel="noopener">Bayesian metamodeling of complex biological systems across varying representations</a></p>
+    <p class="pub-a">Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al.</p>
+    <p class="pub-v"><em>Proceedings of the National Academy of Sciences</em>, 118(35), e2104559118</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="vdl">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S2452310021000111" target="_blank" rel="noopener">A community approach to whole-cell modeling</a></p>
-  <p class="pub-a">Singla, J., &amp; White, K. L.</p>
-  <p class="pub-v"><em>Current Opinion in Systems Biology</em>, 26, 33–38</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S2452310021000111" target="_blank" rel="noopener">A community approach to whole-cell modeling</a></p>
+    <p class="pub-a">Singla, J., &amp; White, K. L.</p>
+    <p class="pub-v"><em>Current Opinion in Systems Biology</em>, 26, 33–38</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
 </article><article class="pub" data-pub data-type="journal" data-topic="cryoet">
-  <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847721000320" target="_blank" rel="noopener">Assessment of scoring functions to rank the quality of 3D subtomogram clusters from cryo-electron tomography</a></p>
-  <p class="pub-a">Singla, J., White, K. L., Stevens, R. C., &amp; Alber, F.</p>
-  <p class="pub-v"><em>Journal of Structural Biology</em>, 213(2), 107727</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S1047847721000320" target="_blank" rel="noopener">Assessment of scoring functions to rank the quality of 3D subtomogram clusters from cryo-electron tomography</a></p>
+    <p class="pub-a">Singla, J., White, K. L., Stevens, R. C., &amp; Alber, F.</p>
+    <p class="pub-v"><em>Journal of Structural Biology</em>, 213(2), 107727</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2020</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="sxt">
-  <p class="pub-t"><a href="https://advances.sciencemag.org/content/6/50/eabc8262" target="_blank" rel="noopener">Visualizing subcellular rearrangements in intact β cells using soft X-ray tomography</a></p>
-  <p class="pub-a">White, K. L., Singla, J., Loconte, V., Chen, J. H., Ekman, A., Sun, L., et al.</p>
-  <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8262</p>
-  <p class="pub-hl">Highlighted in <b>Science</b> &mdash; <a href="https://science.sciencemag.org/content/370/6522/twis" target="_blank" rel="noopener">&ldquo;Subcellular map of vesicle maturation&rdquo;</a></p>
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
-</article><article class="pub" data-pub data-type="journal" data-topic="cryoet">
-  <p class="pub-t"><a href="https://advances.sciencemag.org/content/6/50/eabc8258.full" target="_blank" rel="noopener">Visualizing insulin vesicle neighborhoods in β cells by cryo-electron tomography</a></p>
-  <p class="pub-a">Zhang, X., Carter, S. D., Singla, J., White, K. L., Butler, P. C., Stevens, R. C., &amp; Jensen, G. J.</p>
-  <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8258</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://advances.sciencemag.org/content/6/50/eabc8262" target="_blank" rel="noopener">Visualizing subcellular rearrangements in intact β cells using soft X-ray tomography</a></p>
+    <p class="pub-a">White, K. L., Singla, J., Loconte, V., Chen, J. H., Ekman, A., Sun, L., et al.</p>
+    <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8262</p>
+    <p class="pub-hl">Highlighted in <b>Science</b> &mdash; <a href="https://science.sciencemag.org/content/370/6522/twis" target="_blank" rel="noopener">&ldquo;Subcellular map of vesicle maturation&rdquo;</a></p>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+</article><article class="pub" data-pub data-type="journal" data-topic="cryoet">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://advances.sciencemag.org/content/6/50/eabc8258.full" target="_blank" rel="noopener">Visualizing insulin vesicle neighborhoods in β cells by cryo-electron tomography</a></p>
+    <p class="pub-a">Zhang, X., Carter, S. D., Singla, J., White, K. L., Butler, P. C., Stevens, R. C., &amp; Jensen, G. J.</p>
+    <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8258</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+  </div>
+  
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2019</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="cryoet">
-  <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X" target="_blank" rel="noopener">De novo structural pattern mining in cellular electron cryotomograms</a></p>
-  <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
-  <p class="pub-v"><em>Structure</em>, 27(4), 679–691</p>
-  <p class="pub-hl">Highlighted in <b>Nature Methods</b> &mdash; <a href="https://www.nature.com/articles/s41592-019-0382-2" target="_blank" rel="noopener">&ldquo;Template-free visual proteomics&rdquo;</a></p>
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
-</article><article class="pub" data-pub data-type="poster" data-topic="sxt">
-  <p class="pub-t">Multi-scale architecture of β-cells using soft X-ray and cryo-electron tomography</p>
-  <p class="pub-a">White, K. L., Singla, J., Francis, J. P., Chen, J. H., Ekman, A., Xu, M., Alber, F., Larabell, C., &amp; Stevens, R. C.</p>
-  <p class="pub-v"><em>63rd Annual Meeting of the Biophysical Society, Baltimore, Maryland</em>, March 2–6, 2019</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X" target="_blank" rel="noopener">De novo structural pattern mining in cellular electron cryotomograms</a></p>
+    <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
+    <p class="pub-v"><em>Structure</em>, 27(4), 679–691</p>
+    <p class="pub-hl">Highlighted in <b>Nature Methods</b> &mdash; <a href="https://www.nature.com/articles/s41592-019-0382-2" target="_blank" rel="noopener">&ldquo;Template-free visual proteomics&rdquo;</a></p>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
+</article><article class="pub" data-pub data-type="poster" data-topic="sxt">
+  <div class="pub-main">
+    <p class="pub-t">Multi-scale architecture of β-cells using soft X-ray and cryo-electron tomography</p>
+    <p class="pub-a">White, K. L., Singla, J., Francis, J. P., Chen, J. H., Ekman, A., Xu, M., Alber, F., Larabell, C., &amp; Stevens, R. C.</p>
+    <p class="pub-v"><em>63rd Annual Meeting of the Biophysical Society, Baltimore, Maryland</em>, March 2–6, 2019</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
+  </div>
+  
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2018</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="vdl">
-  <p class="pub-t"><a href="https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0" target="_blank" rel="noopener">Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell</a></p>
-  <p class="pub-a">Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., &amp; Stevens, R. C.</p>
-  <p class="pub-v"><em>Cell</em>, 173(1), 11–19</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0" target="_blank" rel="noopener">Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell</a></p>
+    <p class="pub-a">Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., &amp; Stevens, R. C.</p>
+    <p class="pub-v"><em>Cell</em>, 173(1), 11–19</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
 </article><article class="pub" data-pub data-type="poster" data-topic="cryoet">
-  <p class="pub-t">De novo structural pattern mining in cellular electron cryo-tomograms</p>
-  <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
-  <p class="pub-v"><em>4th Annual QCBio Retreat, Malibu, California</em>, September 25, 2018</p>
+  <div class="pub-main">
+    <p class="pub-t">De novo structural pattern mining in cellular electron cryo-tomograms</p>
+    <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
+    <p class="pub-v"><em>4th Annual QCBio Retreat, Malibu, California</em>, September 25, 2018</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
 </article><article class="pub" data-pub data-type="poster" data-topic="vdl">
-  <p class="pub-t"><a href="https://diabetes.diabetesjournals.org/content/68/Supplement_1/335-LB.abstract" target="_blank" rel="noopener">Towards Generating Spatiotemporal Multiscale Models of Human Pancreatic Beta Cells</a></p>
-  <p class="pub-a">White, K. L., McClary, K. M., Singla, J., &amp; Stevens, R. C.</p>
-  <p class="pub-v"><em>American Diabetes Association 78th Scientific Sessions, Orlando, Florida</em>, June 22–26, 2018</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://diabetes.diabetesjournals.org/content/68/Supplement_1/335-LB.abstract" target="_blank" rel="noopener">Towards Generating Spatiotemporal Multiscale Models of Human Pancreatic Beta Cells</a></p>
+    <p class="pub-a">White, K. L., McClary, K. M., Singla, J., &amp; Stevens, R. C.</p>
+    <p class="pub-v"><em>American Diabetes Association 78th Scientific Sessions, Orlando, Florida</em>, June 22–26, 2018</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Visualization &amp; modelling</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Visualization &amp; modelling</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2017</div>
   <div><article class="pub" data-pub data-type="poster" data-topic="cryoet">
-  <p class="pub-t">De novo structural pattern mining in cellular electron cryo-tomograms</p>
-  <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
-  <p class="pub-v"><em>5th Annual Shanghai iHuman Forum, Shanghai, China</em>, November 5–10, 2017</p>
+  <div class="pub-main">
+    <p class="pub-t">De novo structural pattern mining in cellular electron cryo-tomograms</p>
+    <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
+    <p class="pub-v"><em>5th Annual Shanghai iHuman Forum, Shanghai, China</em>, November 5–10, 2017</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
 </article><article class="pub" data-pub data-type="poster" data-topic="cryoet">
-  <p class="pub-t">Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography</p>
-  <p class="pub-a">Elizabeth, V., Watanabe, R., Buschauer, R., Khanna, K., Lam, V., Singla, J., &amp; Alber, F.</p>
-  <p class="pub-v"><em>Microscopy and Microanalysis</em>, 23(S1), 1248–1249</p>
+  <div class="pub-main">
+    <p class="pub-t">Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography</p>
+    <p class="pub-a">Elizabeth, V., Watanabe, R., Buschauer, R., Khanna, K., Lam, V., Singla, J., &amp; Alber, F.</p>
+    <p class="pub-v"><em>Microscopy and Microanalysis</em>, 23(S1), 1248–1249</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2016</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="ml">
-  <p class="pub-t"><a href="https://pubs.rsc.org/en/content/articlelanding/2016/MB/C5MB00655D#!divAbstract" target="_blank" rel="noopener">Understanding the functional impact of copy number alterations in breast cancer using a network modeling approach</a></p>
-  <p class="pub-a">Srihari, S., Kalimutho, M., Lal, S., Singla, J., Patel, D., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
-  <p class="pub-v"><em>Molecular BioSystems</em>, 12(3), 963–972</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://pubs.rsc.org/en/content/articlelanding/2016/MB/C5MB00655D#!divAbstract" target="_blank" rel="noopener">Understanding the functional impact of copy number alterations in breast cancer using a network modeling approach</a></p>
+    <p class="pub-a">Srihari, S., Kalimutho, M., Lal, S., Singla, J., Patel, D., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
+    <p class="pub-v"><em>Molecular BioSystems</em>, 12(3), 963–972</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2015</div>
   <div><article class="pub" data-pub data-type="journal" data-topic="ml">
-  <p class="pub-t"><a href="https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0086-1" target="_blank" rel="noopener">Inferring synthetic lethal interactions from mutual exclusivity of genetic events in cancer</a></p>
-  <p class="pub-a">Srihari, S., Singla, J., Wong, L., &amp; Ragan, M. A.</p>
-  <p class="pub-v"><em>Biology Direct</em>, 10(1), 1–18</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0086-1" target="_blank" rel="noopener">Inferring synthetic lethal interactions from mutual exclusivity of genetic events in cancer</a></p>
+    <p class="pub-a">Srihari, S., Singla, J., Wong, L., &amp; Ragan, M. A.</p>
+    <p class="pub-v"><em>Biology Direct</em>, 10(1), 1–18</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
 </article><article class="pub" data-pub data-type="poster" data-topic="ml">
-  <p class="pub-t"><a href="https://cancerres.aacrjournals.org/content/76/4_Supplement/PD6-05" target="_blank" rel="noopener">Identifying genetic vulnerabilities in cancers driven by defects in DNA-damage response</a></p>
-  <p class="pub-a">Srihari, S., Singla, J., Wong, L., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
-  <p class="pub-v"><em>San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research</em>, Abstract PD6-05</p>
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://cancerres.aacrjournals.org/content/76/4_Supplement/PD6-05" target="_blank" rel="noopener">Identifying genetic vulnerabilities in cancers driven by defects in DNA-damage response</a></p>
+    <p class="pub-a">Srihari, S., Singla, J., Wong, L., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
+    <p class="pub-v"><em>San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research</em>, Abstract PD6-05</p>
+    
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Machine learning</span></div>
+  </div>
   
-  <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Machine learning</span></div>
 </article></div>
 </div></div></section><section class="section section-alt">
   <div class="wrap">
