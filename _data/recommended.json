@@ -79,7 +79,7 @@
     },
     {
       "id": "channels",
-      "title": "Channels &amp; Videos",
+      "title": "Channels",
       "icon": "play",
       "kind": "chips",
       "lead": "<strong>Must watch —</strong> <em>Why We Sleep</em>. Beyond that, channels worth subscribing to:",
@@ -94,6 +94,27 @@
         { "title": "3Blue1Brown" },
         { "title": "Journey to the Microcosmos" },
         { "title": "DUST" }
+      ]
+    },
+    {
+      "id": "videos",
+      "title": "Videos",
+      "icon": "play",
+      "kind": "videos",
+      "lead": "Single films and talks, rather than whole channels.",
+      "items": [
+        { "yt": "eZP4jzXMPdA", "title": "The Pancreatic Beta Cell Project",
+          "meta": "BASA &mdash; The Bridge Art &amp; Science Alliance" },
+        { "yt": "ibpdNqrtar0", "title": "This Ciliate Is About to Die",
+          "meta": "Journey to the Microcosmos" },
+        { "yt": "HbwV-EzP67Q", "title": "We Upgraded Our Microscope!",
+          "meta": "Journey to the Microcosmos" },
+        { "yt": "EK32jo7i5LQ", "title": "Why do prime numbers make these spirals?",
+          "meta": "3Blue1Brown &middot; Dirichlet's theorem" },
+        { "yt": "WXuK6gekU1Y", "title": "AlphaGo &mdash; The Movie",
+          "meta": "Google DeepMind &middot; full documentary" },
+        { "yt": "d95J8yzvjbQ", "title": "The Thinking Game",
+          "meta": "Google DeepMind &middot; full documentary" }
       ]
     },
     {
@@ -150,11 +171,20 @@
       "id": "music",
       "title": "Music",
       "icon": "music",
-      "kind": "links",
+      "kind": "videos",
       "items": [
-        { "title": "Bharat",                  "link": "https://music.youtube.com/watch?v=8TzwTZYhJYk&list=RDAMVM8TzwTZYhJYk" },
-        { "title": "Bolo Kab Pratikar Karoge","link": "https://music.youtube.com/watch?v=CXa_kHbZRts&list=OLAK5uy_k-UMoPanDA70xbO3ZJgt1NRcZ1M-ejXsI" },
-        { "title": "Aya Re Toofan",           "link": "https://music.youtube.com/watch?v=djhFo5tEJ34" }
+        { "yt": "oZ72uTWla5Q", "title": "Shankara",
+          "meta": "Rishab Rikhiram Sharma &middot; Sitar for Mental Health" },
+        { "yt": "_2inB9VoS50", "title": "Vasanthabhairavi",
+          "meta": "Dr Jayanthi Kumaresh &middot; Veena" },
+        { "yt": "ywiXhMK_jJg", "title": "Sitar on Fire &mdash; Raag Lalit, Part 2",
+          "meta": "Pandit Budhaditya Mukherjee &middot; Darbar Festival" },
+        { "yt": "tTbY_EeC9Wg", "title": "A mind-blowing sitar player",
+          "meta": "tothszabi" },
+        { "yt": "BXl-TJZSDG0", "title": "He Surrano Chandra Vha",
+          "meta": "Mahesh Kale &middot; Natyageet" },
+        { "yt": "IX5cjrXMhec", "title": "Jaat Kahan Ho &mdash; Raag Bhairavi",
+          "meta": "Kesarbai Kerkar &middot; Saregama Hindustani Classical" }
       ]
     }
   ]

@@ -106,6 +106,7 @@ ICON = {
     'ext':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6M19 5l-9 9M18 14v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4"/></svg>',
     'menu':   '<svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     'x':      '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    'play':   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 6.2a1 1 0 011.52-.85l7.2 4.5a1.35 1.35 0 010 2.3l-7.2 4.5a1 1 0 01-1.52-.85z"/></svg>',
 }
 
 SITE = load('site')
@@ -1058,6 +1059,18 @@ def build_recommended():
   <p><a class="btn btn-ghost btn-sm" href="{link}" target="_blank" rel="noopener">Read more {ext}</a></p>
 </div>""".format(meta=a(i.get('meta', '')), t=a(i['title']), b=a(i.get('body', '')),
                  link=attr(i['link']), ext=ICON['ext']) for i in s['items']))
+        elif s['kind'] == 'videos':
+            # Thumbnails are copied into the repo rather than hot-linked, so the
+            # page does not announce every reader to Google before they click.
+            inner = '<div class="vids">{0}</div>'.format(''.join("""<a class="vid" href="https://www.youtube.com/watch?v={yt}" target="_blank" rel="noopener">
+  <span class="vid-thumb">
+    <img src="assets/img/media/yt/{yt}.jpg" alt="" loading="lazy" width="640" height="360">
+    <span class="vid-play" aria-hidden="true">{play}</span>
+  </span>
+  <span class="vid-t">{t}</span>
+  <span class="vid-m">{m}</span>
+</a>""".format(yt=attr(i['yt']), t=a(i['title']), play=ICON['play'],
+               m=a(i.get('meta', ''))) for i in s['items']))
         else:
             inner = '<div class="linklist">{0}</div>'.format(''.join("""<a class="linkrow" href="{link}" target="_blank" rel="noopener">
   <span><span class="linkrow-t">{t}</span>{m}</span>
@@ -1075,7 +1088,7 @@ def build_recommended():
 </section>""".format(id=s['id'], title=a(s['title']), lead=lead, inner=inner))
 
     jump = ''.join('<a class="btn btn-sm" href="#{0}">{1}</a>'.format(s['id'], a(s['title'])) for s in d['sections'])
-    body = page_head('Reading', 'Recommended', d['intro'],
+    body = page_head(None, 'Recommended', d['intro'],
                      '<div class="hero-cta" style="margin-top:1.5rem">{0}</div>'.format(jump)) + ''.join(out)
     return write('recommended.html', page('recommended.html', 'Recommended',
                                           'Books, channels, people and webpages recommended by Jitin Singla.', body))

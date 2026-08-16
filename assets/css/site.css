@@ -710,6 +710,33 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .linkrow-m { font-size: .82rem; color: var(--ink-3); margin-top: .1rem; }
 .linkrow svg { width: 17px; height: 17px; color: var(--ink-4); flex: none; }
 
+/* ---------- Video cards ---------- */
+.vids { display: grid; gap: 1.4rem 1.1rem; grid-template-columns: repeat(auto-fill, minmax(248px, 1fr)); }
+.vid { display: grid; gap: .1rem; color: var(--ink); }
+.vid:hover { text-decoration: none; }
+.vid-thumb {
+  display: block; position: relative; overflow: hidden;
+  border: 1px solid var(--rule); border-radius: var(--r-sm);
+  background: var(--paper-2); margin-bottom: .6rem;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.vid-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
+.vid:hover .vid-thumb { border-color: var(--indigo-lit); box-shadow: var(--shadow-2); }
+/* the play badge only appears once, over the image, so it needs its own ground */
+.vid-play {
+  position: absolute; inset: auto .55rem .55rem auto;
+  display: grid; place-items: center; width: 30px; height: 30px;
+  border-radius: 50%; background: rgba(28,23,19,.72); color: #fff;
+  backdrop-filter: saturate(140%) blur(2px);
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.vid-play svg { width: 15px; height: 15px; margin-left: 1px; }
+.vid:hover .vid-play { background: var(--indigo); transform: scale(1.08); }
+.vid-t { font-weight: 550; font-size: .95rem; line-height: 1.35; }
+.vid:hover .vid-t { color: var(--indigo-lit); }
+.vid-m { font-size: .8rem; color: var(--ink-3); line-height: 1.35; margin-top: .18rem; }
+@media (max-width: 560px) { .vids { grid-template-columns: 1fr; gap: 1.3rem; } }
+
 .pcard { display: grid; gap: .5rem; padding: 1.5rem; border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); }
 .pcard-t { font-family: var(--f-display); font-size: 1.3rem; }
 .pcard-m { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .06em; color: var(--saffron); text-transform: uppercase; }

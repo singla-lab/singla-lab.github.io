@@ -128,6 +128,25 @@ Add `"link"` for a DOI or arXiv URL and a *Read* button appears.
 **Add a news item** — prepend to `items` in `_data/news.json`. The first entry
 gets the highlighted marker on the timeline.
 
+**Add a video to Recommended** — save the thumbnail, then add the entry:
+
+```powershell
+.\tools\add-thumb.ps1 -VideoId oZ72uTWla5Q
+```
+
+That writes a 640×360 JPEG to `assets/img/media/yt/`, cropping to 16:9 if the
+only size YouTube offers is the letterboxed one. Then add to a `"kind":
+"videos"` section in `_data/recommended.json`:
+
+```json
+{ "yt": "oZ72uTWla5Q", "title": "Shankara", "meta": "Rishab Rikhiram Sharma" }
+```
+
+The build makes the watch URL from `yt`, so there is no link to keep in sync.
+Thumbnails are copied into the repository rather than hot-linked from
+`i.ytimg.com` — otherwise the page would report every reader to Google before
+they clicked anything.
+
 ---
 
 ## Deploying
