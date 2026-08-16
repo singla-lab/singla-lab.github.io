@@ -1,5 +1,5 @@
 {
-  "intro": "Sponsored research supported by ICMR, SERB-DST, MeitY, MoE-IKS, STARS and institutional grants.",
+  "intro": "Sponsored research supported by ICMR, ANRF, SERB-DST, MeitY, MoE-IKS, STARS, Avathon, the SKAN Research Trust and institutional grants.",
   "groups": [
     {
       "id": "pi-ongoing",
@@ -16,10 +16,35 @@
       ]
     },
     {
+      "id": "jointpi-ongoing",
+      "title": "As Joint Principal Investigator",
+      "status": "Ongoing",
+      "projects": [
+        {
+          "title": "Establishing Avathon Physical AI Labs (Avathon Labs)",
+          "agency": "Avathon Inc.",
+          "role": "Joint Principal Investigator",
+          "partners": "Joint PIs: Prof. Sugata Gangopadhyay, Prof. Aditi Gangopadhyay, Prof. Parikshit Pareek"
+        }
+      ]
+    },
+    {
       "id": "copi-ongoing",
       "title": "As Co-Principal Investigator",
       "status": "Ongoing",
       "projects": [
+        {
+          "title": "Mechanistic and receptor insight into E-protein-driven innate immune dysfunction in orthoflavivirus (Zika and KFDV)",
+          "agency": "ANRF",
+          "role": "Co-Principal Investigator",
+          "partners": "PI: Prof. Shailly Tomar"
+        },
+        {
+          "title": "Engineering and designing multifunctional enzymes for broad-spectrum plastic biodegradation",
+          "agency": "SKAN Research Trust",
+          "role": "Co-Principal Investigator",
+          "partners": "PI: Prof. Pravindra Kumar"
+        },
         {
           "title": "Computer-aided structure-based molecular engineering of nanobodies against SARS-CoV-2 Spike protein",
           "agency": "ICMR",
@@ -59,7 +84,14 @@
           "title": "Development of conversational Sanskrit translator using Neural Machine Translation",
           "agency": "MoE — Indian Knowledge Systems",
           "role": "Co-Principal Investigator",
+          "partners": "PI: Prof. Ganesh Ramakrishnan (IIT Bombay) · Co-PI: Prof. Anil Kumar Gourishetty",
           "summary": "Produced the publicly available <em>Sāmayik</em> English–Sanskrit dataset."
+        },
+        {
+          "title": "AI-powered language processing tools for Sanskrit understanding, generation and translation",
+          "agency": "Uttarakhand Sanskrit University",
+          "role": "Co-Principal Investigator",
+          "partners": "PI: Prof. Anil Kumar Gourishetty"
         },
         {
           "title": "Modelling mitochondrial network in pancreatic β-cells for improved therapeutic design",

@@ -235,14 +235,16 @@ def write(slug, content):
 # --------------------------------------------------------------------------
 
 def page_head(eyebrow, title, lede=None, extra=''):
+    """eyebrow may be None, for a page whose title says everything by itself."""
     return """<section class="section-tight dotgrid">
   <div class="wrap">
-    <p class="eyebrow">{eb}</p>
+    {eb}
     <h1 class="h1 measure">{t}</h1>
     {lede}
     {extra}
   </div>
-</section>""".format(eb=a(eyebrow), t=a(title),
+</section>""".format(eb='<p class="eyebrow">{0}</p>'.format(a(eyebrow)) if eyebrow else '',
+                     t=a(title),
                      lede='<p class="lede measure" style="margin-top:1.1rem">{0}</p>'.format(a(lede)) if lede else '',
                      extra=extra)
 
@@ -513,7 +515,8 @@ def build_research():
 </section>""".format(n=len(old), chev=ICON['arrow'], note=a(r['past_intro']),
                      blocks=''.join(area_block(x) for x in old)) if old else ''
 
-    body = page_head('Research', 'What the lab works on', r['intro']) + \
+    body = page_head('Research', 'What the lab works on', r['intro'],
+                     extra=verse(r.get('sanskrit'))) + \
         '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(blocks) + \
         past + cta_band()
     return write('research.html', page('research.html', 'Research',
@@ -536,9 +539,8 @@ def pub_item(p, meta):
     pills = ['<span class="pill pill-{0}">{1}</span>'.format(p['type'], a(meta['types'][p['type']]))]
     if p.get('topic') and p['topic'] in meta['topics']:
         pills.append('<span class="pill">{0}</span>'.format(a(meta['topics'][p['topic']])))
-    if p.get('link'):
-        pills.append('<a class="btn btn-ghost btn-sm" href="{0}" target="_blank" rel="noopener">Read {1}</a>'.format(
-            p['link'], ICON['ext']))
+    # No Read button: when there is a link the title itself carries it, and two
+    # controls to the same URL is one too many.
 
     hl = '<p class="pub-hl">{0}</p>'.format(a(p['highlight'])) if p.get('highlight') else ''
 
@@ -662,7 +664,7 @@ def build_team():
     collab = '<div class="people people-sm">{0}</div>'.format(
         ''.join(person_card(c) for c in d['collaborators']))
 
-    body = page_head('Team', 'Current members') + """
+    body = page_head(None, 'Team') + """
 <section class="section-tight">
   <div class="wrap">
     <div class="pi-mini rv" style="padding-bottom:2.4rem;border-bottom:1px solid var(--rule)">

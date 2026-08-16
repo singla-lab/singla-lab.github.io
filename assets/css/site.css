@@ -70,6 +70,11 @@ body {
 
 img, svg { max-width: 100%; display: block; }
 img { height: auto; }
+/* [hidden] is only a UA default, so any explicit display beats it. The year
+   blocks are grid, which is exactly that case -- filtering left them standing
+   and empty. */
+[hidden] { display: none !important; }
+
 a { color: var(--indigo-lit); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 h1, h2, h3, h4 { margin: 0; font-weight: 500; letter-spacing: -.018em; line-height: 1.15; }
@@ -474,6 +479,15 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .pub { padding-block: .95rem; border-bottom: 1px solid var(--rule-2); }
 .pub:last-child { border-bottom: 0; }
 .pub-t { font-size: 1.03rem; font-weight: 550; line-height: 1.4; letter-spacing: -.008em; }
+/* The title is the link, so it keeps the ink colour -- 37 blue headings in a
+   row is a wall, not a list -- and the arrow does the signalling instead. */
+.pub-t a { color: var(--ink); }
+.pub-t a::after {
+  content: '\2197'; font-size: .78em; margin-left: .28em;
+  color: var(--ink-4); vertical-align: .06em;
+}
+.pub-t a:hover, .pub-t a:focus-visible { color: var(--indigo-lit); }
+.pub-t a:hover::after, .pub-t a:focus-visible::after { color: var(--indigo-lit); }
 .pub-a { font-size: .87rem; color: var(--ink-2); margin-top: .3rem; }
 .pub-a b { font-weight: 650; color: var(--ink); }
 .pub-v { font-size: .85rem; color: var(--ink-3); margin-top: .25rem; }

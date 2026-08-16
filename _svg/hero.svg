@@ -89,9 +89,4 @@
     <line class="hero-scan" x1="0" y1="0" x2="620" y2="0" stroke="#2563C9" stroke-opacity=".55" stroke-width="1.2"/>
   </g>
 
-  <!-- measurement callout -->
-  <g stroke="#B0521A" stroke-width="1.2" fill="none" stroke-linecap="round">
-    <path d="M74 310 h-38 M36 302 v16 M74 302 v16"/>
-  </g>
-  <text x="55" y="296" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" fill="#B0521A">10 µm</text>
 </svg>

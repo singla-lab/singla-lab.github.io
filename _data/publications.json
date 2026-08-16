@@ -24,6 +24,7 @@
       "title": "Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks",
       "venue": "Structure",
       "detail": "Accepted",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.03.19.712811v1",
       "topic": "sxt"
     },
     {
@@ -50,6 +51,7 @@
       "title": "Structural and functional characterization of thermostable EstS1 esterase for BHET degradation",
       "venue": "Journal of Structural Biology",
       "detail": "108342",
+      "link": "https://www.sciencedirect.com/science/article/pii/S1047847726000584",
       "topic": "structbio"
     },
     {
@@ -58,6 +60,7 @@
       "title": "Robust mitochondria segmentation and morphological profiling using soft X-ray tomography",
       "venue": "Journal of Structural Biology",
       "detail": "108291",
+      "link": "https://www.sciencedirect.com/science/article/pii/S1047847726000079",
       "topic": "sxt"
     },
 
@@ -76,6 +79,7 @@
       "title": "DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model",
       "venue": "IEEE Open Journal of the Computer Society",
       "detail": "1–12",
+      "link": "https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC",
       "topic": "ml"
     },
     {
@@ -84,6 +88,7 @@
       "title": "In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas",
       "venue": "bioRxiv",
       "detail": "2025-04",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2",
       "topic": "structbio"
     },
     {
@@ -92,6 +97,7 @@
       "title": "Structural Virology: The Key Determinants in Development of Antiviral Therapeutics",
       "venue": "Viruses",
       "detail": "17(3), 417",
+      "link": "https://www.preprints.org/frontend/manuscript/8468712f752c57101edc8cdb1b12842d/download_pub",
       "topic": "structbio"
     },
     {
@@ -100,6 +106,7 @@
       "title": "Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme",
       "venue": "Structure",
       "detail": "33(2), 247–261.e3",
+      "link": "https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9",
       "topic": "structbio"
     },
     {
@@ -108,6 +115,7 @@
       "title": "Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant",
       "venue": "International Journal of Biological Macromolecules",
       "detail": "290, 138751",
+      "link": "https://www.sciencedirect.com/science/article/pii/S014181302409562X",
       "topic": "structbio"
     },
     {
@@ -116,6 +124,7 @@
       "title": "Structure-guided mutations in CDRs for enhancing the affinity of neutralizing SARS-CoV-2 nanobody",
       "venue": "Biochemical and Biophysical Research Communications",
       "detail": "734, 150746",
+      "link": "https://www.sciencedirect.com/science/article/pii/S0006291X24012828",
       "topic": "structbio"
     },
     {
@@ -124,6 +133,7 @@
       "title": "In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters",
       "venue": "International Journal of Biological Macromolecules",
       "detail": "280, 136006",
+      "link": "https://www.sciencedirect.com/science/article/pii/S0141813024068156",
       "topic": "structbio"
     },
     {
@@ -132,6 +142,7 @@
       "title": "Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis",
       "venue": "Archives of Biochemistry and Biophysics",
       "detail": "753, 109888",
+      "link": "https://www.sciencedirect.com/science/article/pii/S0003986124000079",
       "topic": "structbio"
     },
     {
@@ -140,6 +151,7 @@
       "title": "Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs",
       "venue": "Advances in Antiviral Research, Springer Nature Singapore",
       "detail": "41–71",
+      "link": "https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2",
       "topic": "structbio"
     },
     {
@@ -148,6 +160,7 @@
       "title": "Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation",
       "venue": "LREC-COLING 2024",
       "detail": "14298–14304",
+      "link": "https://arxiv.org/abs/2305.14004",
       "topic": "sanskrit"
     },
     {
@@ -156,6 +169,7 @@
       "title": "Database Evolution, by Scientists, for Scientists: A Case Study",
       "venue": "2023 IEEE 19th International Conference on e-Science",
       "detail": "1–10",
+      "link": "https://ieeexplore.ieee.org/abstract/document/10254872",
       "topic": "ml"
     },
     {
@@ -173,6 +187,7 @@
       "title": "A New Visual Design Language for Biological Structures in a Cell",
       "venue": "Structure",
       "detail": "30(4), 485–497.e3",
+      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8",
       "topic": "vdl"
     },
     {
@@ -182,6 +197,7 @@
       "venue": "Structure",
       "detail": "30(4), 510–521.e3",
       "highlight": "Highlighted in Nature — “Soft X-rays capture the dance of the organelles”",
+      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5",
       "topic": "sxt"
     },
     {
@@ -190,6 +206,7 @@
       "title": "Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion",
       "venue": "PLOS ONE",
       "detail": "17(3), e0265567",
+      "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567",
       "topic": "sxt"
     },
     {
@@ -198,6 +215,7 @@
       "title": "An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms",
       "venue": "PLOS ONE",
       "detail": "17(9), e0269887",
+      "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887",
       "topic": "sxt"
     },
     {
@@ -206,6 +224,7 @@
       "title": "Bayesian metamodeling of complex biological systems across varying representations",
       "venue": "Proceedings of the National Academy of Sciences",
       "detail": "118(35), e2104559118",
+      "link": "https://www.biorxiv.org/content/10.1101/2021.03.29.437574v1.abstract",
       "topic": "ml"
     },
     {
@@ -214,6 +233,7 @@
       "title": "A community approach to whole-cell modeling",
       "venue": "Current Opinion in Systems Biology",
       "detail": "26, 33–38",
+      "link": "https://www.sciencedirect.com/science/article/pii/S2452310021000111",
       "topic": "vdl"
     },
     {
@@ -222,6 +242,7 @@
       "title": "Assessment of scoring functions to rank the quality of 3D subtomogram clusters from cryo-electron tomography",
       "venue": "Journal of Structural Biology",
       "detail": "213(2), 107727",
+      "link": "https://www.sciencedirect.com/science/article/pii/S1047847721000320",
       "topic": "cryoet"
     },
     {
@@ -231,6 +252,7 @@
       "venue": "Science Advances",
       "detail": "6(50), eabc8262",
       "highlight": "Highlighted in Science — “Subcellular map of vesicle maturation”",
+      "link": "https://advances.sciencemag.org/content/6/50/eabc8262",
       "topic": "sxt"
     },
     {
@@ -239,6 +261,7 @@
       "title": "Visualizing insulin vesicle neighborhoods in β cells by cryo-electron tomography",
       "venue": "Science Advances",
       "detail": "6(50), eabc8258",
+      "link": "https://advances.sciencemag.org/content/6/50/eabc8258.full",
       "topic": "cryoet"
     },
     {
@@ -248,6 +271,7 @@
       "venue": "Structure",
       "detail": "27(4), 679–691",
       "highlight": "Highlighted in Nature Methods — “Template-free visual proteomics”",
+      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
     {
@@ -256,6 +280,7 @@
       "title": "Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell",
       "venue": "Cell",
       "detail": "173(1), 11–19",
+      "link": "https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0",
       "topic": "vdl"
     },
     {
@@ -264,6 +289,7 @@
       "title": "Understanding the functional impact of copy number alterations in breast cancer using a network modeling approach",
       "venue": "Molecular BioSystems",
       "detail": "12(3), 963–972",
+      "link": "https://pubs.rsc.org/en/content/articlelanding/2016/MB/C5MB00655D#!divAbstract",
       "topic": "ml"
     },
     {
@@ -272,6 +298,7 @@
       "title": "Inferring synthetic lethal interactions from mutual exclusivity of genetic events in cancer",
       "venue": "Biology Direct",
       "detail": "10(1), 1–18",
+      "link": "https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0086-1",
       "topic": "ml"
     },
 
@@ -297,6 +324,7 @@
       "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
       "venue": "4th Annual QCBio Retreat, Malibu, California",
       "detail": "September 25, 2018",
+      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
     {
@@ -305,6 +333,7 @@
       "title": "Towards Generating Spatiotemporal Multiscale Models of Human Pancreatic Beta Cells",
       "venue": "American Diabetes Association 78th Scientific Sessions, Orlando, Florida",
       "detail": "June 22–26, 2018",
+      "link": "https://diabetes.diabetesjournals.org/content/68/Supplement_1/335-LB.abstract",
       "topic": "vdl"
     },
     {
@@ -313,6 +342,7 @@
       "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
       "venue": "5th Annual Shanghai iHuman Forum, Shanghai, China",
       "detail": "November 5–10, 2017",
+      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
     {
@@ -321,6 +351,7 @@
       "title": "Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography",
       "venue": "Microscopy and Microanalysis",
       "detail": "23(S1), 1248–1249",
+      "link": "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/revealing-the-native-molecular-architecture-of-the-nuclear-periphery-using-cryofocusedionbeam-milling-light-microscopy-and-electron-tomography/CD1178A6F232A42A6ABD2290C58BF6AE",
       "topic": "cryoet"
     },
     {
@@ -329,6 +360,7 @@
       "title": "Identifying genetic vulnerabilities in cancers driven by defects in DNA-damage response",
       "venue": "San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research",
       "detail": "Abstract PD6-05",
+      "link": "https://cancerres.aacrjournals.org/content/76/4_Supplement/PD6-05",
       "topic": "ml"
     }
   ],
