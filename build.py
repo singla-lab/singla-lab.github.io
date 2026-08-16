@@ -662,7 +662,7 @@ def build_team():
     collab = '<div class="people people-sm">{0}</div>'.format(
         ''.join(person_card(c) for c in d['collaborators']))
 
-    body = page_head('Team', 'The people doing the work') + """
+    body = page_head('Team', 'Current members') + """
 <section class="section-tight">
   <div class="wrap">
     <div class="pi-mini rv" style="padding-bottom:2.4rem;border-bottom:1px solid var(--rule)">
@@ -734,7 +734,7 @@ def build_alumni():
 </div>""".format(title=a(g['title']), n=len(g['members']), grid=grid))
 
     body = page_head('Alumni', 'Former members',
-                     'People who built things here and moved on. Photographs turn colour on hover.') + \
+                     'People who built things here and moved on.') + \
         '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(blocks)) + \
         cta_band()
     return write('alumni.html', page('alumni.html', 'Alumni',
