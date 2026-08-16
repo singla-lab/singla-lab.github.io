@@ -145,29 +145,6 @@
       ]
     },
     {
-      "id": "webpages",
-      "title": "Webpages",
-      "icon": "link",
-      "kind": "links",
-      "items": [
-        {
-          "title": "Scale of the Universe",
-          "meta": "Planck length to the observable universe",
-          "link": "https://htwins.net/scale2/"
-        },
-        {
-          "title": "Visualize Cellular Pathways",
-          "meta": "Cell Signaling Technology — RTK landscape",
-          "link": "http://media.cellsignal.com/www/html/science/landscapes/rtk/rtk.html"
-        },
-        {
-          "title": "World in a Cell",
-          "meta": "The immersive beta-cell experience",
-          "link": "https://worldinacell.com/"
-        }
-      ]
-    },
-    {
       "id": "music",
       "title": "Music",
       "icon": "music",
