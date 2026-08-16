@@ -325,12 +325,17 @@ def cta_band():
 # pages
 # --------------------------------------------------------------------------
 
-def stat_count(key):
+def stat_count(s):
     """The four numbers on the front page, counted from the data rather than
     typed into site.json -- adding a paper or a grant should not be able to
     leave the home page quietly saying otherwise."""
+    key = s['count']
     if key == 'publications':
-        return len(load('publications')['publications'])
+        # "types" narrows what the headline number counts; the publications
+        # page still lists everything, posters included.
+        types = s.get('types')
+        return sum(1 for p in load('publications')['publications']
+                   if not types or p['type'] in types)
     if key == 'projects':
         return sum(len(g['projects']) for g in load('projects')['groups'])
     if key == 'doctoral':
@@ -349,7 +354,7 @@ def build_home():
 
     stats = ''.join(
         '<div class="stat"><div class="stat-v">{0}</div><div class="stat-l">{1}</div></div>'.format(
-            stat_count(s['count']) if s.get('count') else a(s['value']),
+            stat_count(s) if s.get('count') else a(s['value']),
             a(s['label'])) for s in SITE['stats'])
 
     rows = []

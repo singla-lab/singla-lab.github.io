@@ -46,7 +46,7 @@
       "title": "Undergraduate Thesis",
       "members": [
         { "name": "Aman Bawane",          "year": "2026", "dept": "CSE Department", "photo": "aman-bawane" },
-        { "name": "Meet Sindhav",         "year": "2026", "dept": "CSE Department" },
+        { "name": "Meet Sindhav",         "year": "2026", "dept": "CSE Department", "photo": "meet-sindhav" },
         { "name": "Ayush",                "year": "2026", "dept": "CSE Department" },
         { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department" },
         { "name": "Kshitij Shah",         "year": "2026", "dept": "CSE Department", "photo": "kshitij-shah" },
@@ -89,7 +89,7 @@
         { "name": "Shivang Kaushal",  "year": "Summer 2023", "photo": "shivang-kaushal", "link": "https://www.linkedin.com/in/shivang-kaushal-72938b1ba/" },
         { "name": "Arjun Handa",      "year": "Summer 2023", "photo": "arjun-handa", "link": "https://www.linkedin.com/in/arjun-handa/" },
         { "name": "Ramashish Vyas",   "year": "Summer 2025" },
-        { "name": "Shubh Bhateja",    "year": "Summer 2025", "link": "https://www.linkedin.com/in/shubh-bhateja/" },
+        { "name": "Shubh Bhateja",    "year": "Summer 2025", "photo": "shubh-bhateja", "link": "https://www.linkedin.com/in/shubh-bhateja/" },
         { "name": "Lakshya Khatana",  "year": "Summer 2025" },
         { "name": "Aishwarya JA",     "year": "Autumn 2025", "photo": "aishwarya-ja", "link": "https://www.linkedin.com/in/aishwarya-j-a-b2b5a133a/" },
         { "name": "Ananya Dinesh",    "year": "Autumn 2025", "photo": "ananya-dinesh", "link": "https://www.linkedin.com/in/ananya-dinesh-lkdn/" }

@@ -36,7 +36,7 @@
     { "label": "Join Us", "href": "contact.html" }
   ],
   "stats": [
-    { "count": "publications", "label": "Publications" },
+    { "count": "publications", "types": ["journal", "conference"], "label": "Publications" },
     { "count": "doctoral", "label": "Doctoral researchers" },
     { "count": "alumni", "label": "Alumni &amp; interns" },
     { "count": "projects", "label": "Sponsored projects" }

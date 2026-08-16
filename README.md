@@ -236,6 +236,11 @@ To serve this at `www.jitinsingla.in`:
   from the corresponding JSON file at build time. Add a paper or a grant and the
   front page follows on the next build. A literal `"value"` still works if you
   ever need a number that isn't in the data.
+
+  The publications figure counts journal and conference papers only — that is
+  the `"types"` list on that entry. Widen it to include `"chapter"` or
+  `"preprint"`, or drop the key entirely to count everything on the
+  publications page. The page itself always lists all of it either way.
 - **Cache busting**: the stylesheet and script are linked with a `?v=` content
   hash, regenerated on every build. GitHub Pages serves them with a ten-minute
   cache and no fingerprint of its own, so without this a returning reader can
