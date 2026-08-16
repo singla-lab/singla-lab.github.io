@@ -36,9 +36,9 @@
     { "label": "Join Us", "href": "contact.html" }
   ],
   "stats": [
-    { "value": "40+", "label": "Publications" },
+    { "value": "40", "label": "Publications" },
     { "value": "7", "label": "Doctoral researchers" },
-    { "value": "60+", "label": "Alumni &amp; interns" },
+    { "value": "59", "label": "Alumni &amp; interns" },
     { "value": "8", "label": "Sponsored projects" }
   ],
   "partners": [
