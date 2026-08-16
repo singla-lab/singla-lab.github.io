@@ -19,8 +19,7 @@
         "Our group develops robust segmentation and morphological profiling pipelines for mitochondria in these volumes, and uses them to ask how network structure, density and subcellular location are coupled — and how that coupling shifts under drug treatment.",
         "The work is carried out with collaborators at USC and UCSF, and has appeared in <em>Science Advances</em>, <em>Structure</em> and the <em>Journal of Structural Biology</em>."
       ],
-      "tags": ["Soft X-ray tomography", "Segmentation", "Morphometry", "β-cells"],
-      "image": "mitochondria"
+      "tags": ["Soft X-ray tomography", "Segmentation", "Morphometry", "β-cells"]
     },
     {
       "id": "cryoet",
@@ -34,8 +33,7 @@
         "We develop frameworks for template-free, unsupervised discovery of distinct complexes from large, heterogeneous particle sets — including scoring functions that rank the quality of 3D subtomogram clusters, and de novo structural pattern mining across whole tomograms.",
         "This line of work is pursued in collaboration with researchers at UCLA and has been highlighted in <em>Nature Methods</em> as template-free visual proteomics."
       ],
-      "tags": ["Cryo-ET", "Subtomogram averaging", "Unsupervised learning", "Pattern mining"],
-      "image": "cryoet"
+      "tags": ["Cryo-ET", "Subtomogram averaging", "Unsupervised learning", "Pattern mining"]
     },
     {
       "id": "jaundice",
@@ -49,8 +47,7 @@
         "We are building smartphone-based, non-invasive bilirubin estimation trained on Indian cohorts, in partnership with PGIMER Chandigarh — explicitly targeting skin-tone distributions and imaging conditions that existing models were not built for.",
         "A parallel thread works on ECG: patient-independent reconstruction of missing leads using pathology-aware multi-view contrastive learning, so that a reduced-lead recording can still support diagnosis."
       ],
-      "tags": ["Neonatal jaundice", "ECG reconstruction", "Contrastive learning", "Point-of-care"],
-      "image": "bilicam"
+      "tags": ["Neonatal jaundice", "ECG reconstruction", "Contrastive learning", "Point-of-care"]
     },
     {
       "id": "sanskrit",
@@ -78,8 +75,7 @@
         "We developed a new visual design language in which tetrahedral building blocks compose into molecules and organelles, giving a consistent visual grammar across scales — from a single protein to the whole cellular environment — while remaining efficient to animate and interact with.",
         "The language was published in <em>Structure</em> and underpins the ongoing artscience collaboration with the World Building Media Lab at USC."
       ],
-      "tags": ["Scientific visualization", "Immersive media", "Design language", "Beta cell"],
-      "image": "insulin-design"
+      "tags": ["Scientific visualization", "Immersive media", "Design language", "Beta cell"]
     }
   ]
 }

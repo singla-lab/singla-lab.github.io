@@ -1,35 +1,52 @@
-<svg viewBox="0 0 320 220" role="img" aria-label="Tetrahedral building blocks composing into a larger molecular assembly" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 320 220" role="img" aria-label="One tetrahedral primitive standing for an amino acid, composed first into a helix and then into an insulin hexamer, the same grammar holding at every scale" xmlns="http://www.w3.org/2000/svg">
   <rect x="12" y="12" width="296" height="196" rx="10" fill="var(--paper)" stroke="var(--rule)"/>
 
-  <!-- single primitive -->
-  <g>
-    <path d="M72 62 L96 104 L48 104 Z" fill="var(--indigo)" fill-opacity=".1" stroke="var(--indigo)" stroke-width="1.6" stroke-linejoin="round"/>
-    <path d="M72 62 L74 92 M96 104 L74 92 M48 104 L74 92" fill="none" stroke="var(--indigo)" stroke-width=".9" stroke-opacity=".5"/>
-    <circle cx="74" cy="92" r="2.8" fill="var(--saffron)"/>
-  </g>
-  <text x="72" y="128" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">primitive</text>
+  <text x="26" y="32" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">one primitive, every scale</text>
 
-  <g stroke="var(--ink-4)" stroke-width="1.1" fill="none" stroke-linecap="round">
-    <path d="M112 96 h22 M128 90 l6 6 l-6 6"/>
+  <!-- the primitive: a tetrahedron standing in for an amino acid -->
+  <path d="M55 76L73 110H37Z" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M55 76L57 98M73 110L57 98M37 110L57 98" fill="none" stroke="var(--indigo)"
+        stroke-width=".9" stroke-opacity=".5"/>
+  <circle cx="57" cy="98" r="2.6" fill="var(--saffron)"/>
+
+  <g stroke="var(--saffron)" stroke-width="1" stroke-opacity=".8">
+    <path d="M37 118h36M37 114v8M73 114v8"/>
+  </g>
+  <text x="55" y="134" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--saffron)">4.8 Å</text>
+
+  <g stroke="var(--ink-4)" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-opacity=".7">
+    <path d="M92 100h12M100 95l5 5-5 5"/>
   </g>
 
-  <!-- assembly -->
-  <circle cx="212" cy="104" r="74" fill="none" stroke="var(--indigo)" stroke-opacity=".2" stroke-width="1" stroke-dasharray="3 6"/>
-  <g class="spin-tetra">
-    <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.4" stroke-linejoin="round">
-      <path d="M212 56 L226 80 L198 80 Z"/>
-      <path d="M254 80 L268 104 L240 104 Z"/>
-      <path d="M254 128 L268 152 L240 152 Z"/>
-      <path d="M212 152 L226 176 L198 176 Z"/>
-      <path d="M170 128 L184 152 L156 152 Z"/>
-      <path d="M170 80 L184 104 L156 104 Z"/>
-    </g>
-    <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.3" stroke-linejoin="round">
-      <path d="M212 90 L223 110 L201 110 Z"/>
-      <path d="M234 124 L245 144 L223 144 Z"/>
-      <path d="M190 124 L201 144 L179 144 Z"/>
-    </g>
+  <!-- composed along a backbone -->
+  <path d="M140 138C172 126 132 108 164 94C188 84 146 74 166 64" fill="none" stroke="var(--indigo)"
+        stroke-opacity=".22" stroke-width="7" stroke-linecap="round"/>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M140 129l8 13h-16z"/><path d="M160 115l8 13h-16z"/><path d="M142 101l8 13h-16z"/>
+    <path d="M162 87l8 13h-16z"/><path d="M146 73l8 13h-16z"/><path d="M164 59l8 13h-16z"/>
   </g>
-  <circle cx="212" cy="104" r="3" fill="var(--saffron)"/>
-  <text x="212" y="198" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">assembly</text>
+  <text x="154" y="178" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-4)">helix</text>
+
+  <g stroke="var(--ink-4)" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-opacity=".7">
+    <path d="M194 100h12M202 95l5 5-5 5"/>
+  </g>
+
+  <!-- and again, unchanged, at the scale of an assembly -->
+  <circle class="pulse-o" cx="252" cy="100" r="45" fill="none" stroke="var(--indigo)"
+          stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 6"/>
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M286 92l7 13h-14z"/><path d="M269 121l7 13h-14z"/><path d="M235 121l7 13h-14z"/>
+    <path d="M218 92l7 13h-14z"/><path d="M235 63l7 13h-14z"/><path d="M269 63l7 13h-14z"/>
+  </g>
+  <g fill="var(--saffron)">
+    <circle cx="252" cy="94" r="3.2"/><circle cx="252" cy="106" r="3.2"/>
+  </g>
+  <text x="252" y="178" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-4)">insulin hexamer</text>
+
+  <text x="55" y="178" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-4)">amino acid</text>
 </svg>

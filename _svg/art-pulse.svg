@@ -1,38 +1,80 @@
-<svg viewBox="0 0 320 220" role="img" aria-label="ECG trace with a reconstructed lead, beside a smartphone capturing a non-invasive reading" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 320 220" role="img" aria-label="Above, a phone reading a colour calibration card against a range of cohort skin tones to estimate bilirubin; below, an ECG in which a recorded segment continues as a reconstructed one, with three of twelve leads recorded" xmlns="http://www.w3.org/2000/svg">
   <rect x="12" y="12" width="296" height="196" rx="10" fill="var(--surface)" stroke="var(--rule)"/>
-  <!-- ecg graph paper -->
-  <g fill="none" stroke="#F2D9D2" stroke-width=".7">
-    <path d="M12 44h190M12 68h190M12 92h190M12 116h190M12 140h190M12 164h190M12 188h190"/>
-    <path d="M36 12v196M60 12v196M84 12v196M108 12v196M132 12v196M156 12v196M180 12v196"/>
-  </g>
-  <!-- measured lead -->
-  <path d="M16 92 h14 l6 -10 l5 10 h10 l7 26 l8 -60 l8 46 l7 -12 h12 l9 -8 l6 8 h16"
-        fill="none" stroke="var(--indigo)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M130 92 h14 l6 -10 l5 10 h10 l7 26 l8 -60 l8 46 l7 -12 h5"
-        fill="none" stroke="var(--indigo)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <!-- reconstructed lead -->
-  <path class="trace" d="M16 168 h16 l5 -7 l4 7 h12 l6 16 l7 -38 l7 28 l6 -8 h14 l7 -5 l5 5 h16 l6 -7 l4 7 h12 l6 16 l7 -38 l7 28 l6 -8 h13"
-        fill="none" stroke="var(--saffron)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
-    <text x="18" y="34" fill="var(--indigo)">lead II · measured</text>
-    <text x="18" y="204" fill="var(--saffron)">lead V4 · reconstructed</text>
-  </g>
-  <!-- phone -->
-  <rect x="222" y="42" width="66" height="128" rx="11" fill="var(--paper)" stroke="var(--ink-2)" stroke-width="1.8"/>
-  <rect x="228" y="56" width="54" height="94" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".3"/>
-  <path d="M247 48h16" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="255" cy="160" r="4.5" fill="none" stroke="var(--ink-2)" stroke-width="1.4"/>
-  <!-- skin-tone read-out swatches -->
+
+  <text x="26" y="30" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">images &#183; neonatal bilirubin</text>
+
+  <!-- phone against a calibration card, which is what makes the estimate portable -->
+  <rect x="28" y="38" width="50" height="70" rx="8" fill="var(--paper)" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <rect x="33" y="47" width="40" height="52" rx="4" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".3"/>
+  <path d="M45 43h16" stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round"/>
   <g stroke="var(--indigo)" stroke-opacity=".25">
-    <rect x="236" y="64" width="17" height="17" rx="3" fill="#F6E3C4"/>
-    <rect x="257" y="64" width="17" height="17" rx="3" fill="#E7C79A"/>
-    <rect x="236" y="85" width="17" height="17" rx="3" fill="#C99C6B"/>
-    <rect x="257" y="85" width="17" height="17" rx="3" fill="#9E7248"/>
+    <rect x="38" y="53" width="14" height="14" rx="2.5" fill="#F6E3C4"/>
+    <rect x="55" y="53" width="14" height="14" rx="2.5" fill="#D9AE7C"/>
+    <rect x="38" y="70" width="14" height="14" rx="2.5" fill="#B07F4E"/>
+    <rect x="55" y="70" width="14" height="14" rx="2.5" fill="#7A5232"/>
   </g>
-  <circle class="pulse-o" cx="255" cy="93" r="30" fill="none" stroke="var(--saffron)" stroke-width="1.2" stroke-dasharray="3 4"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--indigo)">
-    <text x="236" y="122">TcB est.</text>
-    <text x="236" y="136" font-size="11" fill="var(--saffron)">14.2</text>
-    <text x="264" y="136">mg/dL</text>
+  <circle class="pulse-o" cx="53" cy="70" r="26" fill="none" stroke="var(--saffron)"
+          stroke-width="1.1" stroke-dasharray="3 4"/>
+
+  <g stroke="var(--ink-4)" stroke-width="1.1" fill="none" stroke-linecap="round">
+    <path d="M86 73h18 M99 68l6 5-6 5"/>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="112" y="58" font-size="8" fill="var(--ink-4)">TcB est.</text>
+    <text x="112" y="84" font-size="19" fill="var(--saffron)">14.2</text>
+    <text x="112" y="100" font-size="8" fill="var(--ink-4)">mg/dL</text>
+  </g>
+
+  <!-- the cohort the model is actually fitted on -->
+  <g stroke="var(--rule)" stroke-width=".8">
+    <rect x="182" y="52" width="18" height="17" rx="3" fill="#F6E3C4"/>
+    <rect x="201" y="52" width="18" height="17" rx="3" fill="#E2BE92"/>
+    <rect x="220" y="52" width="18" height="17" rx="3" fill="#C79A6B"/>
+    <rect x="239" y="52" width="18" height="17" rx="3" fill="#A97A4E"/>
+    <rect x="258" y="52" width="18" height="17" rx="3" fill="#83583A"/>
+    <rect x="277" y="52" width="18" height="17" rx="3" fill="#5E3D2A"/>
+  </g>
+  <text x="182" y="82" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">fitted on cohort skin tones</text>
+
+  <line x1="26" y1="118" x2="294" y2="118" stroke="var(--rule-2)" stroke-width="1"/>
+
+  <text x="26" y="134" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">signals &#183; ECG lead reconstruction</text>
+
+  <!-- graph paper -->
+  <g fill="none" stroke="var(--rule-2)" stroke-width=".7">
+    <path d="M24 146h172M24 160h172M24 174h172M24 188h172"/>
+    <path d="M36 142v56M60 142v56M84 142v56M108 142v56M132 142v56M156 142v56M180 142v56"/>
+  </g>
+
+  <path d="M26 176 h10 l5 -7 l4 7 h8 l6 16 l7 -38 l7 30 l6 -8 h14 l5 -7 l4 7 h8 l6 16 l7 -38 l7 30 l6 -8 h4"
+        fill="none" stroke="var(--indigo)" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+  <path class="trace" d="M136 176 h14 l5 -7 l4 7 h8 l6 16 l7 -38 l7 30 l6 -8 h4"
+        fill="none" stroke="var(--saffron)" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="134" y1="142" x2="134" y2="198" stroke="var(--ink-4)" stroke-opacity=".45"
+        stroke-width="1" stroke-dasharray="2 3"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5">
+    <text x="26" y="148" fill="var(--indigo)">recorded</text>
+    <text x="138" y="148" fill="var(--saffron)">reconstructed</text>
+  </g>
+
+  <!-- three leads in, twelve leads out -->
+  <text x="212" y="140" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">3 &#8594; 12 leads</text>
+  <g>
+    <rect x="212" y="148" width="16" height="11" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.1"/>
+    <rect x="232" y="148" width="16" height="11" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.1"/>
+    <rect x="252" y="148" width="16" height="11" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.1"/>
+  </g>
+  <g fill="none" stroke="var(--saffron)" stroke-width="1" stroke-dasharray="2.5 2.5">
+    <rect x="272" y="148" width="16" height="11" rx="2"/>
+    <rect x="212" y="163" width="16" height="11" rx="2"/><rect x="232" y="163" width="16" height="11" rx="2"/>
+    <rect x="252" y="163" width="16" height="11" rx="2"/><rect x="272" y="163" width="16" height="11" rx="2"/>
+    <rect x="212" y="178" width="16" height="11" rx="2"/><rect x="232" y="178" width="16" height="11" rx="2"/>
+    <rect x="252" y="178" width="16" height="11" rx="2"/><rect x="272" y="178" width="16" height="11" rx="2"/>
   </g>
 </svg>

@@ -479,6 +479,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .area:last-child { border-bottom: 0; }
 @media (max-width: 900px) { .area { grid-template-columns: 1fr; } }
 .area-fig {
+  /* a bare <figure> carries the UA's 1em/40px margin, which was quietly costing
+     the graphic 80px of its column at every width */
+  margin: 0;
   background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r);
   overflow: hidden; position: sticky; top: 92px;
 }
