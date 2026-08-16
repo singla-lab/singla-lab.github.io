@@ -103,11 +103,8 @@
     var years = Array.prototype.slice.call(document.querySelectorAll('[data-year-block]'));
     var counter = document.querySelector('[data-pub-count]');
 
-    var apply = function (key, value) {
-      pubs.forEach(function (p) {
-        var show = value === 'all' || p.getAttribute(key) === value;
-        p.hidden = !show;
-      });
+    var apply = function (match) {
+      pubs.forEach(function (p) { p.hidden = !match(p); });
       // hide year blocks that ended up empty
       var shown = 0;
       years.forEach(function (block) {
@@ -118,15 +115,28 @@
       if (counter) counter.textContent = shown;
     };
 
+    var matcher = function (group, value) {
+      if (value === 'all') return function () { return true; };
+      if (group === 'year') {
+        // "last n years" is n whole calendar years, this one included. The cut-off
+        // is read off the clock here so it never goes stale between rebuilds.
+        var floor = new Date().getFullYear() - (parseInt(value, 10) - 1);
+        return function (p) {
+          return parseInt(p.getAttribute('data-pub-year'), 10) >= floor;
+        };
+      }
+      var key = group === 'type' ? 'data-type' : 'data-topic';
+      return function (p) { return p.getAttribute(key) === value; };
+    };
+
     filterBar.addEventListener('click', function (e) {
       var btn = e.target.closest('.chip');
       if (!btn) return;
-      var group = btn.getAttribute('data-group');
       // reset every chip in the bar, then activate this one
       filterBar.querySelectorAll('.chip').forEach(function (c) {
         c.setAttribute('aria-pressed', String(c === btn));
       });
-      apply(group === 'type' ? 'data-type' : 'data-topic', btn.getAttribute('data-value'));
+      apply(matcher(btn.getAttribute('data-group'), btn.getAttribute('data-value')));
     });
   }
 

@@ -616,7 +616,9 @@ def pub_item(p, meta, full=True):
     # one grid item rather than five when pub-wide turns the article into a grid
     fig = pub_fig(p) if full else ''
 
-    return """<article class="pub{wide}" data-pub data-type="{type}" data-topic="{topic}">
+    # data-pub-year, not data-year: the footer's copyright span already answers to
+    # [data-year], and a bare one here would be the first match on the page
+    return """<article class="pub{wide}" data-pub data-type="{type}" data-topic="{topic}" data-pub-year="{year}">
   <div class="pub-main">
     <p class="pub-t">{title}</p>
     <p class="pub-a">{authors}</p>
@@ -627,8 +629,8 @@ def pub_item(p, meta, full=True):
   </div>
   {fig}
 </article>""".format(wide=' pub-wide' if fig else '', type=p['type'],
-                     topic=p.get('topic', ''), title=title, authors=authors,
-                     venue=venue, hl=hl, pills=''.join(pills),
+                     topic=p.get('topic', ''), year=p['year'], title=title,
+                     authors=authors, venue=venue, hl=hl, pills=''.join(pills),
                      summary=summary, fig=fig)
 
 
@@ -642,6 +644,10 @@ def build_publications():
         chips.append('<button class="chip" data-group="type" data-value="{0}" aria-pressed="false">{1}</button>'.format(key, a(label)))
     for key, label in d['topics'].items():
         chips.append('<button class="chip" data-group="topic" data-value="{0}" aria-pressed="false">{1}</button>'.format(key, a(label)))
+    # recency, alongside type and topic. The cut-off year is worked out in the
+    # browser rather than baked in here, so it stays right between rebuilds.
+    for value, label in (('1', 'Last 1 year'), ('5', 'Last 5 years')):
+        chips.append('<button class="chip" data-group="year" data-value="{0}" aria-pressed="false">{1}</button>'.format(value, label))
 
     years = sorted({p['year'] for p in pubs}, reverse=True)
     blocks = []
