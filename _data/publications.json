@@ -48,7 +48,9 @@
       "venue": "arXiv preprint",
       "detail": "arXiv:2603.24307",
       "link": "https://arxiv.org/abs/2603.24307",
-      "topic": "sanskrit"
+      "topic": "sanskrit",
+      "graphic": "samasamayik",
+      "summary": "The same argument carried to a second language pair: 92,196 Hindi–Sanskrit parallel sentences, aggregated from spoken tutorials, children's magazines, radio conversations and instruction material rather than from classical texts. Fine-tuning ByT5, NLLB and IndicTrans-v2 on it gives significant in-domain gains while holding up on the usual test sets, and a comparison against existing corpora shows minimal semantic and lexical overlap — the resource is new, not a repackaging."
     },
     {
       "year": 2026, "type": "journal",
@@ -102,7 +104,9 @@
       "venue": "bioRxiv",
       "detail": "2025-04",
       "link": "https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "clas",
+      "summary": "Candidatus Liberibacter asiaticus causes citrus greening, and its long association with the host has cost it essential metabolic genes — including transaldolase, whose loss breaks the pentose phosphate pathway and is part of why the bacterium resists culture in a host-free environment. Sequence analysis, structure prediction and molecular dynamics here suggest PFP can bypass that loss: it binds both fructose 6-phosphate and sedoheptulose 7-phosphate, and together with fructose bisphosphate aldolase it reconstructs the disrupted route."
     },
     {
       "year": 2025, "type": "journal",
@@ -111,7 +115,9 @@
       "venue": "Viruses",
       "detail": "17(3), 417",
       "link": "https://www.mdpi.com/1999-4915/17/3/417",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "virology",
+      "summary": "A review of what structure buys antiviral development. Resolving capsids, envelope proteins, replication machinery and host-interaction interfaces at atomic or near-atomic resolution is what turned viral proteases, polymerases and integrases into drug targets for HIV, SARS-CoV-2 and influenza. X-ray crystallography, NMR, cryo-EM and cryo-electron tomography each contribute, and the structural diversity and high mutation rates of viruses are precisely why that work has to keep pace."
     },
     {
       "year": 2024, "type": "journal",
@@ -120,7 +126,9 @@
       "venue": "Structure",
       "detail": "33(2), 247–261.e3",
       "link": "https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "phthalate",
+      "summary": "Phthalate diesters are important pollutants and act as endocrine disruptors, and while certain bacterial esterases degrade them to monoesters, the structural and mechanistic basis was largely unexplored. High-resolution structures of the thermostable, pH-tolerant EstS1 — apo, and with substrates, products and analogs bound — show a catalytic tunnel carrying substrate in and product out, and a central Ser-His-Asp triad running a bi-bi ping-pong mechanism through a tetrahedral intermediate. Mutating Met207 to alanine abolishes DEHP binding at the active site altogether."
     },
     {
       "year": 2024, "type": "journal",
@@ -147,7 +155,9 @@
       "venue": "International Journal of Biological Macromolecules",
       "detail": "280, 136006",
       "link": "https://www.sciencedirect.com/science/article/pii/S0141813024068156",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "hypothetical",
+      "summary": "Phthalate plasticizers leach out of PVC and disrupt endocrine function, but few esterases degrade a wide enough range of them, and thermostability — needed for in-situ use — narrows the field further. This study takes an unannotated protein, POB10642.1 from a thermostable Sulfobacillus strain, and argues that it is one: 42.67% sequence identity and 0.557 Å RMSD to the known EstS1 esterase, a Tm of 55–66 °C, two surface cavities forming a catalytic tunnel, and stable binding to eight different phthalate diesters across 100 ns of simulation."
     },
     {
       "year": 2024, "type": "journal",
@@ -174,7 +184,9 @@
       "venue": "LREC-COLING 2024",
       "detail": "14298–14304",
       "link": "https://arxiv.org/abs/2305.14004",
-      "topic": "sanskrit"
+      "topic": "sanskrit",
+      "graphic": "samayik",
+      "summary": "Sanskrit is a classical language still in sustenance, but the digitised Sanskrit that exists is overwhelmingly poetry, which leaves models poorly matched to how the language is written now. Sāmayik is around 53,000 English–Sanskrit sentence pairs in contemporary prose, curated from language instruction material, teaching pedagogy and online tutorials. Models trained on it improve significantly on out-of-domain contemporary text, outperforming models trained on classical-era poetry."
     },
     {
       "year": 2023, "type": "conference",
@@ -183,7 +195,9 @@
       "venue": "2023 IEEE 19th International Conference on e-Science",
       "detail": "1–10",
       "link": "https://ieeexplore.ieee.org/abstract/document/10254872",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "dbevo",
+      "summary": "Scientific database designs go stale within months of use, and there is little evidence that scientists have the tools or the process to evolve them without leaning on a database administrator. This paper offers a simplified evolution methodology aimed at scientists, then follows one scientist evolving a research database for cell modeling as new requirements arrived, with a detailed analysis of what they actually did — showing that a complex information system can be evolved by the researcher who depends on it."
     },
     {
       "year": 2023, "type": "preprint",
@@ -192,7 +206,9 @@
       "venue": "arXiv preprint",
       "detail": "arXiv:2309.16630",
       "link": "https://arxiv.org/abs/2309.16630",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "lad",
+      "summary": "Logical analysis of data yields two-class classifiers as Boolean functions in disjunctive normal form. Those rules are found by optimization, which ought to invite overfitting, and yet it does not happen. The justification offered here is an estimate of the VC dimension for LAD models whose hypothesis sets are DNFs with a small number of cubic monomials — the capacity to overfit simply is not there — illustrated and confirmed empirically."
     },
     {
       "year": 2022, "type": "journal",
@@ -201,7 +217,9 @@
       "venue": "Structure",
       "detail": "30(4), 485–497.e3",
       "link": "https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8",
-      "topic": "vdl"
+      "topic": "vdl",
+      "graphic": "designlang",
+      "summary": "Part of the effort to build a spatiotemporal model of the pancreatic β-cell is an immersive experience, World in a Cell. It needs a way to draw molecules and organelles in crowded cellular environments that a machine can also animate in real time: a visual design language built from tetrahedral blocks, which carries the structural features while staying cheap enough for animation and user interaction."
     },
     {
       "year": 2022, "type": "journal",
@@ -245,7 +263,9 @@
       "venue": "Proceedings of the National Academy of Sciences",
       "detail": "118(35), e2104559118",
       "link": "https://www.pnas.org/doi/10.1073/pnas.2104559118",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "metamodel",
+      "summary": "Modelling a whole cell means integrating models that agree on neither scale, granularity, data type, nor even mathematical representation. Bayesian metamodeling divides that problem: each input model is converted to a standardized statistical form as a probabilistic graphical model, coupled to the others through their mutual relations with the physical world, and then harmonized against them. The proof of principle assembles six such models — from vesicle trafficking to systemic insulin response — into one account of glucose-stimulated insulin secretion, resolving the places where they conflict."
     },
     {
       "year": 2021, "type": "journal",
@@ -311,7 +331,9 @@
       "venue": "Cell",
       "detail": "173(1), 11–19",
       "link": "https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0",
-      "topic": "vdl"
+      "topic": "vdl",
+      "graphic": "betacell",
+      "summary": "A predictive model of an entire eukaryotic cell — its dynamic structure from atomic to cellular scales — is a grand challenge sitting at the intersection of biology, chemistry, physics and computer science. This sets out the vision for one such model of the pancreatic β cell, a target relevant to understanding and modulating the pathogenesis of diabetes, and argues that the experimental and modelling methods it needs are best developed as a community effort."
     },
     {
       "year": 2016, "type": "journal",

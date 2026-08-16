@@ -1,0 +1,69 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: with transaldolase lost from the pathway, PFP and FBPA provide a detour that reconnects central carbon metabolism, PFP binding two different sugar phosphates" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">a lost enzyme</text>
+    <text x="286" y="24" text-anchor="end">and the way around it</text>
+  </g>
+
+  <line x1="176" y1="32" x2="176" y2="116" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== the step that is missing, and the detour that replaces it ===== -->
+  <circle cx="32" cy="50" r="12" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="32" y="53" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-3)">S7P</text>
+  <circle cx="150" cy="50" r="12" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="150" y="53" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-3)">F6P</text>
+
+  <g stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1.2" stroke-dasharray="4 3">
+    <line x1="44" y1="50" x2="80" y2="50"/><line x1="102" y1="50" x2="138" y2="50"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-width="1.6" stroke-linecap="round">
+    <path d="M85 44l12 12 M97 44l-12 12"/>
+  </g>
+  <text x="91" y="36" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-4)">transaldolase lost</text>
+
+  <path d="M32 62 C32 84, 58 94, 91 94 C124 94, 150 84, 150 62" fill="none" stroke="var(--teal)"
+        stroke-width="1.6"/>
+  <path d="M146.5 68l3.5-6 3.5 6" fill="none" stroke="var(--teal)" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="46" y="84" width="36" height="18" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="64" y="97" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">PFP</text>
+  <rect x="100" y="84" width="40" height="18" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="120" y="97" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">FBPA</text>
+
+  <!-- ===== one enzyme, two substrates ===== -->
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <path d="M216 29 L222 32.5 L222 39.5 L216 43 L210 39.5 L210 32.5 Z"/>
+  </g>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2">
+    <path d="M256 29 L262 32.5 L262 39.5 L256 43 L250 39.5 L250 32.5 Z"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M216 45v6 M212.5 47.5l3.5 3.5 3.5-3.5"/>
+    <path d="M256 45v6 M252.5 47.5l3.5 3.5 3.5-3.5"/>
+  </g>
+  <path d="M196 54 h80 a10 10 0 0 1 10 10 v14 a10 10 0 0 1 -10 10 h-70 a10 10 0 0 1 -10 -10 v-14
+           a10 10 0 0 1 10 -10 z" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <path d="M208 54a8 8 0 0 0 16 0z"/><path d="M248 54a8 8 0 0 0 16 0z"/>
+  </g>
+  <text x="236" y="79" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">PFP</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="216" y="102" fill="var(--teal)">F6P</text>
+    <text x="256" y="102" fill="var(--saffron)">S7P</text>
+    <text x="236" y="116" fill="var(--ink-4)">both fit</text>
+  </g>
+
+  <line x1="14" y1="126" x2="286" y2="126" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="146" font-size="8.5" fill="var(--ink-3)">PFP and FBPA rebuild the broken route</text>
+    <text x="14" y="166" font-size="8" fill="var(--ink-4)">citrus greening; CLas still resists culture</text>
+  </g>
+</svg>

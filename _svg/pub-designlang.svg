@@ -1,0 +1,52 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a molecule drawn as a crowd of atoms alongside the same form rebuilt from tetrahedral building blocks, the visual language behind the World in a Cell experience" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">atoms and surfaces</text>
+    <text x="286" y="24" text-anchor="end">tetrahedral blocks</text>
+  </g>
+
+  <!-- ===== the crowded way: every atom drawn, nothing to spare for animation ===== -->
+  <rect x="14" y="32" width="110" height="76" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".22" stroke="var(--ink-4)" stroke-opacity=".35" stroke-width=".9">
+    <circle cx="58" cy="46" r="5"/><circle cx="69" cy="46" r="5"/><circle cx="80" cy="46" r="5"/>
+    <circle cx="47" cy="58" r="5"/><circle cx="58" cy="58" r="5"/><circle cx="69" cy="58" r="5"/>
+    <circle cx="80" cy="58" r="5"/><circle cx="91" cy="58" r="5"/>
+    <circle cx="41" cy="70" r="5"/><circle cx="52" cy="70" r="5"/><circle cx="63" cy="70" r="5"/>
+    <circle cx="74" cy="70" r="5"/><circle cx="85" cy="70" r="5"/><circle cx="97" cy="70" r="5"/>
+    <circle cx="47" cy="82" r="5"/><circle cx="58" cy="82" r="5"/><circle cx="69" cy="82" r="5"/>
+    <circle cx="80" cy="82" r="5"/><circle cx="91" cy="82" r="5"/>
+    <circle cx="58" cy="94" r="5"/><circle cx="69" cy="94" r="5"/><circle cx="80" cy="94" r="5"/>
+  </g>
+
+  <path d="M130 70h10 M136 66.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== the same form, spoken in tetrahedra ===== -->
+  <rect x="152" y="32" width="134" height="76" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".55" stroke-width="1.2">
+    <path d="M176 43 L167.5 58 L184.5 58 Z"/><path d="M198 37 L189.5 52 L206.5 52 Z"/>
+    <path d="M220 45 L211.5 60 L228.5 60 Z"/><path d="M186 65 L177.5 80 L194.5 80 Z"/>
+    <path d="M210 65 L201.5 80 L218.5 80 Z"/><path d="M236 61 L227.5 76 L244.5 76 Z"/>
+    <path d="M196 87 L187.5 102 L204.5 102 Z"/><path d="M220 85 L211.5 100 L228.5 100 Z"/>
+  </g>
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".35" stroke-width=".9">
+    <path d="M176 43 L177.5 53 M167.5 58 L177.5 53 M184.5 58 L177.5 53"/>
+    <path d="M198 37 L199.5 47 M189.5 52 L199.5 47 M206.5 52 L199.5 47"/>
+    <path d="M220 45 L221.5 55 M211.5 60 L221.5 55 M228.5 60 L221.5 55"/>
+    <path d="M186 65 L187.5 75 M177.5 80 L187.5 75 M194.5 80 L187.5 75"/>
+    <path d="M210 65 L211.5 75 M201.5 80 L211.5 75 M218.5 80 L211.5 75"/>
+    <path d="M236 61 L237.5 71 M227.5 76 L237.5 71 M244.5 76 L237.5 71"/>
+    <path d="M196 87 L197.5 97 M187.5 102 L197.5 97 M204.5 102 L197.5 97"/>
+    <path d="M220 85 L221.5 95 M211.5 100 L221.5 95 M228.5 100 L221.5 95"/>
+  </g>
+
+  <line x1="14" y1="118" x2="286" y2="118" stroke="var(--rule)" stroke-width="1"/>
+
+  <rect x="14" y="126" width="100" height="20" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="64" y="140" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-3)">World in a Cell</text>
+  <text x="126" y="140" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">crowding &#183; animation &#183; immersion</text>
+  <text x="14" y="166" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-3)">built for the β-cell model</text>
+</svg>

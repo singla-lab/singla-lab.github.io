@@ -1,0 +1,63 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a research database schema before and after a scientist evolves it, gaining a column, a new table and a rewired relation, without a database administrator" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">schema, version 1</text>
+    <text x="286" y="24" text-anchor="end">version 2</text>
+  </g>
+
+  <!-- ===== the schema as the research began ===== -->
+  <rect x="14" y="32" width="106" height="80" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <rect x="22" y="40" width="44" height="30" rx="3"/>
+    <rect x="70" y="54" width="44" height="30" rx="3"/>
+    <rect x="26" y="84" width="44" height="24" rx="3"/>
+  </g>
+  <g fill="var(--ink-4)" fill-opacity=".18">
+    <rect x="22" y="40" width="44" height="8" rx="3"/>
+    <rect x="70" y="54" width="44" height="8" rx="3"/>
+    <rect x="26" y="84" width="44" height="8" rx="3"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1">
+    <path d="M26 56h36 M26 63h36"/><path d="M74 70h36 M74 77h36"/><path d="M30 100h36"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.1">
+    <path d="M66 58h4"/><path d="M44 70v14"/>
+  </g>
+
+  <path d="M128 72h12 M134 68.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== and after the questions changed: a column, a table, a rewired link ===== -->
+  <rect x="160" y="32" width="126" height="80" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <rect x="168" y="40" width="44" height="38" rx="3"/>
+    <rect x="220" y="54" width="44" height="30" rx="3"/>
+    <rect x="176" y="88" width="44" height="20" rx="3"/>
+  </g>
+  <g fill="var(--ink-4)" fill-opacity=".18">
+    <rect x="168" y="40" width="44" height="8" rx="3"/>
+    <rect x="220" y="54" width="44" height="8" rx="3"/>
+    <rect x="176" y="88" width="44" height="8" rx="3"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1">
+    <path d="M172 56h36 M172 63h36"/><path d="M224 70h36 M224 77h36"/><path d="M180 102h36"/>
+  </g>
+  <path d="M172 71h36" stroke="var(--indigo)" stroke-width="1.4"/>
+  <rect x="232" y="90" width="48" height="20" rx="3" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".6" stroke-width="1.1"/>
+  <rect x="232" y="90" width="48" height="8" rx="3" fill="var(--indigo)" fill-opacity=".25"/>
+  <path d="M236 105h40" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.1">
+    <path d="M212 58h8"/><path d="M190 78v10"/>
+  </g>
+  <path d="M220 100h12" stroke="var(--indigo)" stroke-width="1.4"/>
+
+  <text x="140" y="126" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-4)">driven by new research</text>
+
+  <line x1="14" y1="136" x2="286" y2="136" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="156" font-size="8.5" fill="var(--ink-3)">the scientist evolves the schema</text>
+    <text x="14" y="176" font-size="8" fill="var(--ink-4)">no database administrator in the loop</text>
+  </g>
+</svg>

@@ -513,16 +513,77 @@
     
   </div>
   
-</article><article class="pub" data-pub data-type="preprint" data-topic="sanskrit">
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="sanskrit">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2603.24307" target="_blank" rel="noopener">Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation</a></p>
     <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
     
     <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> The same argument carried to a second language pair: 92,196 Hindi–Sanskrit parallel sentences, aggregated from spoken tutorials, children's magazines, radio conversations and instruction material rather than from classical texts. Fine-tuning ByT5, NLLB and IndicTrans-v2 on it gives significant in-domain gains while holding up on the usual test sets, and a comparison against existing corpora shows minimal semantic and lexical overlap — the resource is new, not a repackaging.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a Hindi-Sanskrit corpus of ninety-two thousand pairs drawn from spoken tutorials, children's magazines, radio and instruction material, overlapping barely at all with existing corpora" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">Hindi &#8596; Sanskrit</text>
+    <text x="286" y="24" text-anchor="end">92,196 pairs</text>
+  </g>
+
+  <rect x="14" y="38" width="48" height="20" rx="6" fill="var(--saffron-soft)" stroke="var(--saffron)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="38" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--saffron)">Hindi</text>
+  <rect x="84" y="38" width="56" height="20" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="112" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">Sanskrit</text>
+  <path d="M66 48h14 M70 44.5l-3.5 3.5 3.5 3.5 M76 51.5l3.5-3.5-3.5-3.5" fill="none"
+        stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== not classical poetry: the everyday registers ===== -->
+  <text x="14" y="70" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">curated from</text>
+
+  <path d="M18 76 h11 a3 3 0 0 1 3 3 v5 a3 3 0 0 1 -3 3 h-6 l-4 4 v-4 h-1 a3 3 0 0 1 -3 -3 v-5
+           a3 3 0 0 1 3 -3 z" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6"
+        stroke-width="1"/>
+  <g fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
+    <rect x="15" y="92" width="15" height="12" rx="1.5"/>
+    <rect x="15" y="124" width="15" height="12" rx="1.5"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
+    <path d="M22.5 92v12"/>
+    <path d="M16 114a7 7 0 0 1 13 0 M19 114a4 4 0 0 1 7 0"/>
+    <path d="M18 128h9 M18 131h9 M18 134h6"/>
+  </g>
+  <circle cx="22.5" cy="114" r="1.6" fill="var(--ink-4)"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
+    <text x="38" y="87">spoken tutorials</text>
+    <text x="38" y="103">children's magazines</text>
+    <text x="38" y="119">radio conversations</text>
+    <text x="38" y="135">instruction material</text>
+  </g>
+
+  <!-- ===== and it barely overlaps what already existed ===== -->
+  <circle cx="196" cy="62" r="30" fill="var(--teal-soft)" fill-opacity=".65" stroke="var(--teal)"
+          stroke-width="1.3"/>
+  <circle cx="248" cy="62" r="26" fill="var(--ink-4)" fill-opacity=".16" stroke="var(--ink-4)"
+          stroke-opacity=".6" stroke-width="1.2"/>
+  <line x1="222" y1="112" x2="222" y2="70" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="1" stroke-dasharray="3 3"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="190" y="104" fill="var(--teal)">Samas&#257;mayik</text>
+    <text x="252" y="104" fill="var(--ink-4)">existing</text>
+    <text x="222" y="122" fill="var(--ink-4)">minimal overlap</text>
+  </g>
+
+  <line x1="14" y1="142" x2="286" y2="142" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="160" font-size="8.5" fill="var(--ink-3)">contemporary Sanskrit, not classical</text>
+    <text x="14" y="178" font-size="8" fill="var(--ink-4)">ByT5 &#183; NLLB &#183; IndicTrans-v2</text>
+  </g>
+</svg></figure>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2025</div>
@@ -614,16 +675,70 @@
   <text x="14" y="164" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
         fill="var(--ink-3)">a nested stack, not one model</text>
 </svg></figure>
-</article><article class="pub" data-pub data-type="journal" data-topic="structbio">
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.mdpi.com/1999-4915/17/3/417" target="_blank" rel="noopener">Structural Virology: The Key Determinants in Development of Antiviral Therapeutics</a></p>
     <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
     <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> A review of what structure buys antiviral development. Resolving capsids, envelope proteins, replication machinery and host-interaction interfaces at atomic or near-atomic resolution is what turned viral proteases, polymerases and integrases into drug targets for HIV, SARS-CoV-2 and influenza. X-ray crystallography, NMR, cryo-EM and cryo-electron tomography each contribute, and the structural diversity and high mutation rates of viruses are precisely why that work has to keep pace.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a virion whose capsid, envelope proteins, replication machinery and host interfaces are resolved by X-ray, NMR, cryo-EM and cryo-electron tomography, and turned into therapeutics" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">resolve the virus</text>
+    <text x="286" y="24" text-anchor="end">then design against it</text>
+  </g>
+
+  <!-- ===== the particle, and the four parts that get solved ===== -->
+  <g stroke="var(--ink-4)" stroke-width="1.3" fill="none">
+    <path d="M89 88.1 L98.5 93.6"/><path d="M68 100.25 L68 111.25"/>
+    <path d="M47 88.1 L37.5 93.6"/><path d="M47 63.9 L37.5 58.4"/>
+    <path d="M68 51.75 L68 40.75"/><path d="M89 63.9 L98.5 58.4"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <circle cx="98.5" cy="93.6" r="3.2"/><circle cx="68" cy="111.25" r="3.2"/>
+    <circle cx="37.5" cy="93.6" r="3.2"/><circle cx="37.5" cy="58.4" r="3.2"/>
+    <circle cx="68" cy="40.75" r="3.2"/><circle cx="98.5" cy="58.4" r="3.2"/>
+  </g>
+  <path d="M96 76 L82 100.25 L54 100.25 L40 76 L54 51.75 L82 51.75 Z"
+        fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="1.3"/>
+  <path d="M56 70 C64 63, 78 70, 76 79 C74 88, 58 87, 58 78" fill="none" stroke="var(--saffron)"
+        stroke-width="1.5"/>
+
+  <g fill="var(--teal)">
+    <circle cx="106" cy="45" r="2.4"/><circle cx="106" cy="59" r="2.4"/>
+    <circle cx="106" cy="73" r="2.4"/><circle cx="106" cy="87" r="2.4"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
+    <text x="114" y="48">capsid</text>
+    <text x="114" y="62">envelope proteins</text>
+    <text x="114" y="76">replication machinery</text>
+    <text x="114" y="90">host interfaces</text>
+  </g>
+
+  <line x1="14" y1="122" x2="286" y2="122" stroke="var(--rule)" stroke-width="1"/>
+
+  <text x="14" y="141" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">resolved by</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
+     text-anchor="middle">
+    <rect x="76" y="128" width="44" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="98" y="141">X-ray</text>
+    <rect x="126" y="128" width="40" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="146" y="141">NMR</text>
+    <rect x="172" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="198" y="141">cryo-EM</text>
+    <rect x="230" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="256" y="141">cryo-ET</text>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="166" font-size="8.5" fill="var(--ink-3)">therapeutics, vaccines, antibodies</text>
+    <text x="14" y="182" font-size="8" fill="var(--ink-4)">for threats that keep mutating</text>
+  </g>
+</svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="health">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
@@ -698,29 +813,161 @@
     <text x="286" y="158" text-anchor="end">gains at high IoU</text>
   </g>
 </svg></figure>
-</article><article class="pub" data-pub data-type="preprint" data-topic="structbio">
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2" target="_blank" rel="noopener">In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas</a></p>
     <p class="pub-a">KP, S., Sharma, A. K., &amp; Singla, J.</p>
     <p class="pub-v"><em>bioRxiv</em>, 2025-04</p>
     
     <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Structural biology</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Candidatus Liberibacter asiaticus causes citrus greening, and its long association with the host has cost it essential metabolic genes — including transaldolase, whose loss breaks the pentose phosphate pathway and is part of why the bacterium resists culture in a host-free environment. Sequence analysis, structure prediction and molecular dynamics here suggest PFP can bypass that loss: it binds both fructose 6-phosphate and sedoheptulose 7-phosphate, and together with fructose bisphosphate aldolase it reconstructs the disrupted route.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: with transaldolase lost from the pathway, PFP and FBPA provide a detour that reconnects central carbon metabolism, PFP binding two different sugar phosphates" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">a lost enzyme</text>
+    <text x="286" y="24" text-anchor="end">and the way around it</text>
+  </g>
+
+  <line x1="176" y1="32" x2="176" y2="116" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== the step that is missing, and the detour that replaces it ===== -->
+  <circle cx="32" cy="50" r="12" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="32" y="53" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-3)">S7P</text>
+  <circle cx="150" cy="50" r="12" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="150" y="53" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-3)">F6P</text>
+
+  <g stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1.2" stroke-dasharray="4 3">
+    <line x1="44" y1="50" x2="80" y2="50"/><line x1="102" y1="50" x2="138" y2="50"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-width="1.6" stroke-linecap="round">
+    <path d="M85 44l12 12 M97 44l-12 12"/>
+  </g>
+  <text x="91" y="36" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-4)">transaldolase lost</text>
+
+  <path d="M32 62 C32 84, 58 94, 91 94 C124 94, 150 84, 150 62" fill="none" stroke="var(--teal)"
+        stroke-width="1.6"/>
+  <path d="M146.5 68l3.5-6 3.5 6" fill="none" stroke="var(--teal)" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="46" y="84" width="36" height="18" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="64" y="97" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">PFP</text>
+  <rect x="100" y="84" width="40" height="18" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="120" y="97" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">FBPA</text>
+
+  <!-- ===== one enzyme, two substrates ===== -->
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <path d="M216 29 L222 32.5 L222 39.5 L216 43 L210 39.5 L210 32.5 Z"/>
+  </g>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2">
+    <path d="M256 29 L262 32.5 L262 39.5 L256 43 L250 39.5 L250 32.5 Z"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M216 45v6 M212.5 47.5l3.5 3.5 3.5-3.5"/>
+    <path d="M256 45v6 M252.5 47.5l3.5 3.5 3.5-3.5"/>
+  </g>
+  <path d="M196 54 h80 a10 10 0 0 1 10 10 v14 a10 10 0 0 1 -10 10 h-70 a10 10 0 0 1 -10 -10 v-14
+           a10 10 0 0 1 10 -10 z" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <path d="M208 54a8 8 0 0 0 16 0z"/><path d="M248 54a8 8 0 0 0 16 0z"/>
+  </g>
+  <text x="236" y="79" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">PFP</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="216" y="102" fill="var(--teal)">F6P</text>
+    <text x="256" y="102" fill="var(--saffron)">S7P</text>
+    <text x="236" y="116" fill="var(--ink-4)">both fit</text>
+  </g>
+
+  <line x1="14" y1="126" x2="286" y2="126" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="146" font-size="8.5" fill="var(--ink-3)">PFP and FBPA rebuild the broken route</text>
+    <text x="14" y="166" font-size="8" fill="var(--ink-4)">citrus greening; CLas still resists culture</text>
+  </g>
+</svg></figure>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2024</div>
-  <div><article class="pub" data-pub data-type="journal" data-topic="structbio">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9" target="_blank" rel="noopener">Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme</a></p>
     <p class="pub-a">Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al.</p>
     <p class="pub-v"><em>Structure</em>, 33(2), 247–261.e3</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Phthalate diesters are important pollutants and act as endocrine disruptors, and while certain bacterial esterases degrade them to monoesters, the structural and mechanistic basis was largely unexplored. High-resolution structures of the thermostable, pH-tolerant EstS1 — apo, and with substrates, products and analogs bound — show a catalytic tunnel carrying substrate in and product out, and a central Ser-His-Asp triad running a bi-bi ping-pong mechanism through a tetrahedral intermediate. Mutating Met207 to alanine abolishes DEHP binding at the active site altogether.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: the Ser-His-Asp triad of EstS1 attacking a phthalate diester, beside a Cleland diagram of the bi-bi ping-pong mechanism in which the enzyme returns unchanged" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">Ser-His-Asp</text>
+    <text x="286" y="24" text-anchor="end">bi-bi ping-pong</text>
+  </g>
+
+  <line x1="138" y1="32" x2="138" y2="116" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== the triad, and the ester it opens ===== -->
+  <path d="M66 40 L72 43.5 L72 50.5 L66 54 L60 50.5 L60 43.5 Z" fill="var(--paper-2)"
+        stroke="var(--ink-3)" stroke-width="1.2"/>
+  <path d="M72 47h10 M82 47v-5" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
+  <text x="90" y="44" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">DEHP</text>
+
+  <path d="M46 78 L60 56" fill="none" stroke="var(--teal)" stroke-width="1.1" stroke-dasharray="3 2"/>
+
+  <g fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 92 v-8 l6 -4" stroke="var(--teal)"/>
+    <path d="M104 92 v-8 l-5 -4 M104 84 l5 -4" stroke="var(--saffron)"/>
+  </g>
+  <path d="M72 68 L77 71 L75 77 L69 77 L67 71 Z" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-width="1.3"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1" stroke-dasharray="2.5 2">
+    <path d="M47 80 L66 74"/><path d="M78 74 L98 80"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="40" y="104" fill="var(--teal)">Ser</text>
+    <text x="72" y="104" fill="var(--indigo)">His</text>
+    <text x="104" y="104" fill="var(--saffron)">Asp</text>
+  </g>
+  <text x="14" y="118" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">tetrahedral intermediate</text>
+
+  <!-- ===== two half-reactions, the enzyme handed back at the end ===== -->
+  <line x1="152" y1="80" x2="282" y2="80" stroke="var(--ink-3)" stroke-width="1.4"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M172 60v16 M168.5 72.5l3.5 3.5 3.5-3.5"/>
+    <path d="M208 76v-16 M204.5 63.5l3.5-3.5 3.5 3.5"/>
+    <path d="M236 60v16 M232.5 72.5l3.5 3.5 3.5-3.5"/>
+    <path d="M266 76v-16 M262.5 63.5l3.5-3.5 3.5 3.5"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="172" y="54" fill="var(--teal)">DEHP</text>
+    <text x="208" y="54" fill="var(--ink-4)">alcohol</text>
+    <text x="236" y="54" fill="var(--teal)">water</text>
+    <text x="266" y="54" fill="var(--ink-4)">product</text>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="158" y="94">E</text>
+    <text x="217" y="94">F</text>
+    <text x="276" y="94">E</text>
+  </g>
+  <text x="146" y="112" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">enzyme returns unchanged</text>
+
+  <line x1="14" y1="126" x2="286" y2="126" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="146" font-size="8.5" fill="var(--ink-3)">a tunnel in, a tunnel out</text>
+    <text x="14" y="166" font-size="8" fill="var(--ink-4)">Met207Ala abolishes binding</text>
+    <text x="286" y="166" font-size="8" fill="var(--ink-4)" text-anchor="end">apo and bound structures</text>
+  </g>
+</svg></figure>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S014181302409562X" target="_blank" rel="noopener">Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant</a></p>
@@ -741,16 +988,71 @@
     
   </div>
   
-</article><article class="pub" data-pub data-type="journal" data-topic="structbio">
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0141813024068156" target="_blank" rel="noopener">In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters</a></p>
     <p class="pub-a">Verma, S., Singh, A., Kumar, P., &amp; Singla, J.</p>
     <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 280, 136006</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Phthalate plasticizers leach out of PVC and disrupt endocrine function, but few esterases degrade a wide enough range of them, and thermostability — needed for in-situ use — narrows the field further. This study takes an unannotated protein, POB10642.1 from a thermostable Sulfobacillus strain, and argues that it is one: 42.67% sequence identity and 0.557 Å RMSD to the known EstS1 esterase, a Tm of 55–66 °C, two surface cavities forming a catalytic tunnel, and stable binding to eight different phthalate diesters across 100 ns of simulation.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: an unannotated protein sequence is matched to the known EstS1 esterase by identity and structural superposition, shown to be thermostable, and docked against eight phthalate diesters" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">a hypothetical protein</text>
+    <text x="286" y="24" text-anchor="end">POB10642.1</text>
+  </g>
+
+  <!-- ===== a sequence with nothing attached to it ===== -->
+  <rect x="14" y="44" width="96" height="14" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".35" stroke-width="1">
+    <path d="M22 46v10 M30 46v10 M38 46v10 M46 46v10 M54 46v10 M62 46v10
+             M70 46v10 M78 46v10 M86 46v10 M94 46v10 M102 46v10"/>
+  </g>
+  <text x="14" y="76" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">no annotation</text>
+
+  <path d="M118 51h10 M124 47.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== laid over a fold that is already known ===== -->
+  <path d="M146 66 C156 40, 174 40, 184 56 C194 72, 212 72, 222 52 C230 38, 244 42, 250 52
+           C256 60, 268 62, 278 54" fill="none" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="2.2"/>
+  <path d="M148 65 C158 39, 176 39, 186 55 C196 71, 214 71, 224 51 C232 37, 246 41, 252 51
+           C258 59, 270 61, 280 53" fill="none" stroke="var(--teal)" stroke-width="1.6"/>
+  <text x="140" y="88" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">42.67% id &#183; RMSD 0.557 Å</text>
+
+  <line x1="14" y1="98" x2="286" y2="98" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== it holds its shape when hot, and it takes all eight ligands ===== -->
+  <rect x="20" y="106" width="8" height="26" rx="4" fill="var(--surface)" stroke="var(--ink-4)"
+        stroke-width="1.1"/>
+  <rect x="22" y="117" width="4" height="17" fill="var(--saffron)"/>
+  <circle cx="24" cy="136" r="7" fill="var(--saffron)" stroke="var(--saffron)" stroke-width="1"/>
+  <text x="38" y="128" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--saffron)">Tm 55-66 °C</text>
+
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.1">
+    <path d="M133 136.2 L131 132.7 L133 129.2 L137 129.2 L139 132.7 L137 136.2 Z"/>
+    <path d="M137.7 126.4 L135.7 122.9 L137.7 119.4 L141.7 119.4 L143.7 122.9 L141.7 126.4 Z"/>
+    <path d="M146.1 118.6 L144.1 115.1 L146.1 111.6 L150.1 111.6 L152.1 115.1 L150.1 118.6 Z"/>
+    <path d="M156.3 114.5 L154.3 111 L156.3 107.5 L160.3 107.5 L162.3 111 L160.3 114.5 Z"/>
+    <path d="M167.2 114.5 L165.2 111 L167.2 107.5 L171.2 107.5 L173.2 111 L171.2 114.5 Z"/>
+    <path d="M177.9 118.6 L175.9 115.1 L177.9 111.6 L181.9 111.6 L183.9 115.1 L181.9 118.6 Z"/>
+    <path d="M186 126 L184 122.5 L186 119 L190 119 L192 122.5 L190 126 Z"/>
+    <path d="M191 136.2 L189 132.7 L191 129.2 L195 129.2 L197 132.7 L195 136.2 Z"/>
+  </g>
+  <path d="M140 142 C140 120, 184 120, 184 142 Z" fill="var(--paper-2)" stroke="var(--rule)"
+        stroke-width="1.1"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8">
+    <text x="14" y="166" fill="var(--ink-3)">docks all eight at -5.4 to -7.5 kcal/mol</text>
+    <text x="14" y="182" fill="var(--ink-4)">stable over 100 ns; a bioremediation candidate</text>
+  </g>
+</svg></figure>
 </article><article class="pub" data-pub data-type="journal" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S0003986124000079" target="_blank" rel="noopener">Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis</a></p>
@@ -761,16 +1063,72 @@
     
   </div>
   
-</article><article class="pub" data-pub data-type="conference" data-topic="sanskrit">
+</article><article class="pub pub-wide" data-pub data-type="conference" data-topic="sanskrit">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2305.14004" target="_blank" rel="noopener">Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation</a></p>
     <p class="pub-a">Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., &amp; Singla, J.</p>
     <p class="pub-v"><em>LREC-COLING 2024</em>, 14298–14304</p>
     
     <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Sanskrit is a classical language still in sustenance, but the digitised Sanskrit that exists is overwhelmingly poetry, which leaves models poorly matched to how the language is written now. Sāmayik is around 53,000 English–Sanskrit sentence pairs in contemporary prose, curated from language instruction material, teaching pedagogy and online tutorials. Models trained on it improve significantly on out-of-domain contemporary text, outperforming models trained on classical-era poetry.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: existing Sanskrit corpora are classical verse while this one is contemporary prose, fifty-three thousand English-Sanskrit sentence pairs benchmarked on four pretrained models" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">English &#8596; Sanskrit</text>
+    <text x="286" y="24" text-anchor="end">53k sentence pairs</text>
+  </g>
+
+  <!-- ===== what Sanskrit corpora have been: verse ===== -->
+  <rect x="14" y="34" width="64" height="76" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".35" stroke-width="1.4" stroke-linecap="round">
+    <path d="M29 46h34"/><path d="M33 56h26"/><path d="M27 66h38"/><path d="M31 76h30"/>
+    <path d="M28 86h36"/><path d="M34 96h24"/>
+  </g>
+
+  <path d="M86 72h10 M92 68.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== what this one is: prose, set flush ===== -->
+  <rect x="106" y="34" width="64" height="76" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g stroke="var(--teal)" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round">
+    <path d="M112 44h52"/><path d="M112 54h52"/><path d="M112 64h52"/><path d="M112 74h52"/>
+    <path d="M112 84h52"/><path d="M112 94h52"/><path d="M112 104h34"/>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="46" y="122" fill="var(--ink-4)">classical verse</text>
+    <text x="138" y="122" fill="var(--teal)">S&#257;mayik prose</text>
+  </g>
+
+  <!-- ===== the pair, and the models it was benchmarked on ===== -->
+  <rect x="182" y="40" width="44" height="20" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="204" y="54" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--indigo)">English</text>
+  <rect x="242" y="40" width="44" height="20" rx="6" fill="var(--saffron-soft)" stroke="var(--saffron)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="264" y="54" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--saffron)">Sanskrit</text>
+  <path d="M229 50h10 M232 46.5l-3.5 3.5 3.5 3.5 M236 53.5l3.5-3.5-3.5-3.5" fill="none"
+        stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1">
+    <rect x="182" y="84" width="18" height="18" rx="4"/><rect x="208" y="84" width="18" height="18" rx="4"/>
+    <rect x="234" y="84" width="18" height="18" rx="4"/><rect x="260" y="84" width="18" height="18" rx="4"/>
+  </g>
+  <g fill="var(--saffron)">
+    <circle cx="198" cy="86" r="2.6"/><circle cx="224" cy="86" r="2.6"/><circle cx="250" cy="86" r="2.6"/>
+  </g>
+  <text x="182" y="122" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">3 of 4 new to Sanskrit</text>
+
+  <line x1="14" y1="134" x2="286" y2="134" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="152" font-size="8.5" fill="var(--ink-3)">contemporary prose, not classical poetry</text>
+    <text x="14" y="172" font-size="8" fill="var(--ink-4)">and the gains show on contemporary text</text>
+  </g>
+</svg></figure>
 </article><article class="pub" data-pub data-type="chapter" data-topic="structbio">
   <div class="pub-main">
     <p class="pub-t"><a href="https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" target="_blank" rel="noopener">Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs</a></p>
@@ -784,26 +1142,167 @@
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2023</div>
-  <div><article class="pub" data-pub data-type="conference" data-topic="ml">
+  <div><article class="pub pub-wide" data-pub data-type="conference" data-topic="ml">
   <div class="pub-main">
     <p class="pub-t"><a href="https://ieeexplore.ieee.org/abstract/document/10254872" target="_blank" rel="noopener">Database Evolution, by Scientists, for Scientists: A Case Study</a></p>
     <p class="pub-a">Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., &amp; Kesselman, C.</p>
     <p class="pub-v"><em>2023 IEEE 19th International Conference on e-Science</em>, 1–10</p>
     
     <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Machine learning</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Scientific database designs go stale within months of use, and there is little evidence that scientists have the tools or the process to evolve them without leaning on a database administrator. This paper offers a simplified evolution methodology aimed at scientists, then follows one scientist evolving a research database for cell modeling as new requirements arrived, with a detailed analysis of what they actually did — showing that a complex information system can be evolved by the researcher who depends on it.</p>
   </div>
-  
-</article><article class="pub" data-pub data-type="preprint" data-topic="ml">
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a research database schema before and after a scientist evolves it, gaining a column, a new table and a rewired relation, without a database administrator" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">schema, version 1</text>
+    <text x="286" y="24" text-anchor="end">version 2</text>
+  </g>
+
+  <!-- ===== the schema as the research began ===== -->
+  <rect x="14" y="32" width="106" height="80" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <rect x="22" y="40" width="44" height="30" rx="3"/>
+    <rect x="70" y="54" width="44" height="30" rx="3"/>
+    <rect x="26" y="84" width="44" height="24" rx="3"/>
+  </g>
+  <g fill="var(--ink-4)" fill-opacity=".18">
+    <rect x="22" y="40" width="44" height="8" rx="3"/>
+    <rect x="70" y="54" width="44" height="8" rx="3"/>
+    <rect x="26" y="84" width="44" height="8" rx="3"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1">
+    <path d="M26 56h36 M26 63h36"/><path d="M74 70h36 M74 77h36"/><path d="M30 100h36"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.1">
+    <path d="M66 58h4"/><path d="M44 70v14"/>
+  </g>
+
+  <path d="M128 72h12 M134 68.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== and after the questions changed: a column, a table, a rewired link ===== -->
+  <rect x="160" y="32" width="126" height="80" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1">
+    <rect x="168" y="40" width="44" height="38" rx="3"/>
+    <rect x="220" y="54" width="44" height="30" rx="3"/>
+    <rect x="176" y="88" width="44" height="20" rx="3"/>
+  </g>
+  <g fill="var(--ink-4)" fill-opacity=".18">
+    <rect x="168" y="40" width="44" height="8" rx="3"/>
+    <rect x="220" y="54" width="44" height="8" rx="3"/>
+    <rect x="176" y="88" width="44" height="8" rx="3"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1">
+    <path d="M172 56h36 M172 63h36"/><path d="M224 70h36 M224 77h36"/><path d="M180 102h36"/>
+  </g>
+  <path d="M172 71h36" stroke="var(--indigo)" stroke-width="1.4"/>
+  <rect x="232" y="90" width="48" height="20" rx="3" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".6" stroke-width="1.1"/>
+  <rect x="232" y="90" width="48" height="8" rx="3" fill="var(--indigo)" fill-opacity=".25"/>
+  <path d="M236 105h40" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.1">
+    <path d="M212 58h8"/><path d="M190 78v10"/>
+  </g>
+  <path d="M220 100h12" stroke="var(--indigo)" stroke-width="1.4"/>
+
+  <text x="140" y="126" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-4)">driven by new research</text>
+
+  <line x1="14" y1="136" x2="286" y2="136" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="156" font-size="8.5" fill="var(--ink-3)">the scientist evolves the schema</text>
+    <text x="14" y="176" font-size="8" fill="var(--ink-4)">no database administrator in the loop</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2309.16630" target="_blank" rel="noopener">On Learning with LAD</a></p>
     <p class="pub-a">Jothishwaran, C. A., Srivastava, B., Singla, J., &amp; Gangopadhyay, S.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2309.16630</p>
     
     <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Logical analysis of data yields two-class classifiers as Boolean functions in disjunctive normal form. Those rules are found by optimization, which ought to invite overfitting, and yet it does not happen. The justification offered here is an estimate of the VC dimension for LAD models whose hypothesis sets are DNFs with a small number of cubic monomials — the capacity to overfit simply is not there — illustrated and confirmed empirically.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: binary patterns in two classes are separated by a disjunctive normal form rule of three-literal terms, whose VC dimension stays under a bound and so does not overfit" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">two classes, binary rules</text>
+    <text x="286" y="24" text-anchor="end">no overfitting</text>
+  </g>
+
+  <!-- ===== the data is 0/1 and the label is +/- ===== -->
+  <rect x="14" y="32" width="104" height="76" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".45">
+    <rect x="22" y="42" width="10" height="8" rx="1.5"/><rect x="46" y="42" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="42" width="10" height="8" rx="1.5"/>
+    <rect x="34" y="52" width="10" height="8" rx="1.5"/><rect x="58" y="52" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="52" width="10" height="8" rx="1.5"/><rect x="82" y="52" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="62" width="10" height="8" rx="1.5"/><rect x="58" y="62" width="10" height="8" rx="1.5"/>
+    <rect x="82" y="62" width="10" height="8" rx="1.5"/>
+    <rect x="34" y="72" width="10" height="8" rx="1.5"/><rect x="46" y="72" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="82" width="10" height="8" rx="1.5"/><rect x="70" y="82" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="92" width="10" height="8" rx="1.5"/><rect x="82" y="92" width="10" height="8" rx="1.5"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width=".8">
+    <rect x="22" y="42" width="10" height="8" rx="1.5"/><rect x="34" y="42" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="42" width="10" height="8" rx="1.5"/><rect x="58" y="42" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="42" width="10" height="8" rx="1.5"/><rect x="82" y="42" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="52" width="10" height="8" rx="1.5"/><rect x="34" y="52" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="52" width="10" height="8" rx="1.5"/><rect x="58" y="52" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="52" width="10" height="8" rx="1.5"/><rect x="82" y="52" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="62" width="10" height="8" rx="1.5"/><rect x="34" y="62" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="62" width="10" height="8" rx="1.5"/><rect x="58" y="62" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="62" width="10" height="8" rx="1.5"/><rect x="82" y="62" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="72" width="10" height="8" rx="1.5"/><rect x="34" y="72" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="72" width="10" height="8" rx="1.5"/><rect x="58" y="72" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="72" width="10" height="8" rx="1.5"/><rect x="82" y="72" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="82" width="10" height="8" rx="1.5"/><rect x="34" y="82" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="82" width="10" height="8" rx="1.5"/><rect x="58" y="82" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="82" width="10" height="8" rx="1.5"/><rect x="82" y="82" width="10" height="8" rx="1.5"/>
+    <rect x="22" y="92" width="10" height="8" rx="1.5"/><rect x="34" y="92" width="10" height="8" rx="1.5"/>
+    <rect x="46" y="92" width="10" height="8" rx="1.5"/><rect x="58" y="92" width="10" height="8" rx="1.5"/>
+    <rect x="70" y="92" width="10" height="8" rx="1.5"/><rect x="82" y="92" width="10" height="8" rx="1.5"/>
+  </g>
+  <g stroke-width="1.5" stroke-linecap="round">
+    <path d="M98 46h8 M102 42v8" stroke="var(--teal)"/>
+    <path d="M98 56h8 M102 52v8" stroke="var(--teal)"/>
+    <path d="M98 66h8 M102 62v8" stroke="var(--teal)"/>
+    <path d="M98 76h8" stroke="var(--saffron)"/>
+    <path d="M98 86h8" stroke="var(--saffron)"/>
+    <path d="M98 96h8" stroke="var(--saffron)"/>
+  </g>
+
+  <!-- ===== the classifier is a short Boolean formula ===== -->
+  <text x="130" y="52" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">DNF, three literals a term</text>
+  <rect x="130" y="58" width="156" height="32" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".45" stroke-width="1.2"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--indigo)"
+     text-anchor="middle">
+    <text x="208" y="71">(x1 &amp; !x3 &amp; x7)</text>
+    <text x="208" y="84">| (x2 &amp; x5 &amp; !x9)</text>
+  </g>
+  <text x="130" y="106" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">optimized, yet stable</text>
+
+  <line x1="14" y1="118" x2="286" y2="118" stroke="var(--rule)" stroke-width="1"/>
+
+  <text x="14" y="139" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">capacity</text>
+  <line x1="70" y1="126" x2="200" y2="126" stroke="var(--ink-4)" stroke-width="1.4"
+        stroke-dasharray="4 3"/>
+  <text x="206" y="122" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">VC bound</text>
+  <rect x="90" y="130" width="90" height="12" rx="3" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-width="1.2"/>
+  <text x="286" y="139" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--teal)">stays under</text>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="164" font-size="8" fill="var(--ink-3)">small DNFs cannot overfit</text>
+    <text x="14" y="180" font-size="8" fill="var(--ink-4)">argued from VC dimension, checked empirically</text>
+  </g>
+</svg></figure>
 </article><article class="pub" data-pub data-type="poster" data-topic="sxt">
   <div class="pub-main">
     <p class="pub-t"><a href="https://academic.oup.com/mam/article/29/Supplement_1/1181/7228625" target="_blank" rel="noopener">Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions</a></p>
@@ -817,16 +1316,67 @@
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2022</div>
-  <div><article class="pub" data-pub data-type="journal" data-topic="vdl">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="vdl">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8" target="_blank" rel="noopener">A New Visual Design Language for Biological Structures in a Cell</a></p>
     <p class="pub-a">Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al.</p>
     <p class="pub-v"><em>Structure</em>, 30(4), 485–497.e3</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Part of the effort to build a spatiotemporal model of the pancreatic β-cell is an immersive experience, World in a Cell. It needs a way to draw molecules and organelles in crowded cellular environments that a machine can also animate in real time: a visual design language built from tetrahedral blocks, which carries the structural features while staying cheap enough for animation and user interaction.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a molecule drawn as a crowd of atoms alongside the same form rebuilt from tetrahedral building blocks, the visual language behind the World in a Cell experience" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">atoms and surfaces</text>
+    <text x="286" y="24" text-anchor="end">tetrahedral blocks</text>
+  </g>
+
+  <!-- ===== the crowded way: every atom drawn, nothing to spare for animation ===== -->
+  <rect x="14" y="32" width="110" height="76" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".22" stroke="var(--ink-4)" stroke-opacity=".35" stroke-width=".9">
+    <circle cx="58" cy="46" r="5"/><circle cx="69" cy="46" r="5"/><circle cx="80" cy="46" r="5"/>
+    <circle cx="47" cy="58" r="5"/><circle cx="58" cy="58" r="5"/><circle cx="69" cy="58" r="5"/>
+    <circle cx="80" cy="58" r="5"/><circle cx="91" cy="58" r="5"/>
+    <circle cx="41" cy="70" r="5"/><circle cx="52" cy="70" r="5"/><circle cx="63" cy="70" r="5"/>
+    <circle cx="74" cy="70" r="5"/><circle cx="85" cy="70" r="5"/><circle cx="97" cy="70" r="5"/>
+    <circle cx="47" cy="82" r="5"/><circle cx="58" cy="82" r="5"/><circle cx="69" cy="82" r="5"/>
+    <circle cx="80" cy="82" r="5"/><circle cx="91" cy="82" r="5"/>
+    <circle cx="58" cy="94" r="5"/><circle cx="69" cy="94" r="5"/><circle cx="80" cy="94" r="5"/>
+  </g>
+
+  <path d="M130 70h10 M136 66.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== the same form, spoken in tetrahedra ===== -->
+  <rect x="152" y="32" width="134" height="76" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".55" stroke-width="1.2">
+    <path d="M176 43 L167.5 58 L184.5 58 Z"/><path d="M198 37 L189.5 52 L206.5 52 Z"/>
+    <path d="M220 45 L211.5 60 L228.5 60 Z"/><path d="M186 65 L177.5 80 L194.5 80 Z"/>
+    <path d="M210 65 L201.5 80 L218.5 80 Z"/><path d="M236 61 L227.5 76 L244.5 76 Z"/>
+    <path d="M196 87 L187.5 102 L204.5 102 Z"/><path d="M220 85 L211.5 100 L228.5 100 Z"/>
+  </g>
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".35" stroke-width=".9">
+    <path d="M176 43 L177.5 53 M167.5 58 L177.5 53 M184.5 58 L177.5 53"/>
+    <path d="M198 37 L199.5 47 M189.5 52 L199.5 47 M206.5 52 L199.5 47"/>
+    <path d="M220 45 L221.5 55 M211.5 60 L221.5 55 M228.5 60 L221.5 55"/>
+    <path d="M186 65 L187.5 75 M177.5 80 L187.5 75 M194.5 80 L187.5 75"/>
+    <path d="M210 65 L211.5 75 M201.5 80 L211.5 75 M218.5 80 L211.5 75"/>
+    <path d="M236 61 L237.5 71 M227.5 76 L237.5 71 M244.5 76 L237.5 71"/>
+    <path d="M196 87 L197.5 97 M187.5 102 L197.5 97 M204.5 102 L197.5 97"/>
+    <path d="M220 85 L221.5 95 M211.5 100 L221.5 95 M228.5 100 L221.5 95"/>
+  </g>
+
+  <line x1="14" y1="118" x2="286" y2="118" stroke="var(--rule)" stroke-width="1"/>
+
+  <rect x="14" y="126" width="100" height="20" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="64" y="140" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--ink-3)">World in a Cell</text>
+  <text x="126" y="140" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">crowding &#183; animation &#183; immersion</text>
+  <text x="14" y="166" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-3)">built for the β-cell model</text>
+</svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5" target="_blank" rel="noopener">Soft X-ray tomography to map and quantify organelle interactions at the mesoscale</a></p>
@@ -1061,16 +1611,85 @@
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2021</div>
-  <div><article class="pub" data-pub data-type="journal" data-topic="ml">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="ml">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.pnas.org/doi/10.1073/pnas.2104559118" target="_blank" rel="noopener">Bayesian metamodeling of complex biological systems across varying representations</a></p>
     <p class="pub-a">Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al.</p>
     <p class="pub-v"><em>Proceedings of the National Academy of Sciences</em>, 118(35), e2104559118</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> Modelling a whole cell means integrating models that agree on neither scale, granularity, data type, nor even mathematical representation. Bayesian metamodeling divides that problem: each input model is converted to a standardized statistical form as a probabilistic graphical model, coupled to the others through their mutual relations with the physical world, and then harmonized against them. The proof of principle assembles six such models — from vesicle trafficking to systemic insulin response — into one account of glucose-stimulated insulin secretion, resolving the places where they conflict.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: models of different kinds and scales are converted, coupled and harmonized into a single metamodel that reconciles inputs which disagree with one another" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">heterogeneous inputs</text>
+    <text x="286" y="24" text-anchor="end">one metamodel</text>
+  </g>
+
+  <!-- ===== each input is a different kind of thing ===== -->
+  <rect x="14" y="32" width="84" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".4">
+    <rect x="28" y="44" width="4" height="4"/><rect x="35" y="44" width="4" height="4"/>
+    <rect x="42" y="44" width="4" height="4"/><rect x="28" y="51" width="4" height="4"/>
+    <rect x="35" y="51" width="4" height="4"/><rect x="42" y="51" width="4" height="4"/>
+    <rect x="28" y="58" width="4" height="4"/><rect x="35" y="58" width="4" height="4"/>
+    <rect x="42" y="58" width="4" height="4"/>
+  </g>
+  <g fill="var(--ink-4)" fill-opacity=".45" stroke="var(--ink-4)" stroke-opacity=".45" stroke-width="1">
+    <circle cx="68" cy="44" r="2.5"/><circle cx="84" cy="47" r="2.5"/>
+    <circle cx="70" cy="59" r="2.5"/><circle cx="84" cy="59" r="2.5"/>
+  </g>
+  <path d="M68 44 L84 47 L70 59 L84 59" fill="none" stroke="var(--ink-4)" stroke-opacity=".4"
+        stroke-width="1"/>
+  <path d="M26 88 C32 70, 40 92, 48 74" fill="none" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="1.4"/>
+  <path d="M64 86 q5 -12 10 0 q5 12 10 0" fill="none" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="1.4"/>
+
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M104 64h10 M110 60.5l3.5 3.5-3.5 3.5"/>
+    <path d="M206 64h10 M212 60.5l3.5 3.5-3.5 3.5"/>
+  </g>
+
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1.2">
+    <rect x="120" y="34" width="80" height="18" rx="5"/>
+    <rect x="120" y="56" width="80" height="18" rx="5"/>
+    <rect x="120" y="78" width="80" height="18" rx="5"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--indigo)"
+     text-anchor="middle">
+    <text x="160" y="47">1 convert</text>
+    <text x="160" y="69">2 couple</text>
+    <text x="160" y="91">3 harmonize</text>
+  </g>
+
+  <rect x="222" y="32" width="64" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--ink-4)" fill-opacity=".35">
+    <circle cx="236" cy="48" r="1.8"/><circle cx="254" cy="48" r="1.8"/><circle cx="272" cy="48" r="1.8"/>
+    <circle cx="236" cy="64" r="1.8"/><circle cx="254" cy="64" r="1.8"/><circle cx="272" cy="64" r="1.8"/>
+    <circle cx="236" cy="80" r="1.8"/><circle cx="254" cy="80" r="1.8"/><circle cx="272" cy="80" r="1.8"/>
+  </g>
+  <path d="M236 48 L254 64 L272 80" fill="none" stroke="var(--teal)" stroke-opacity=".5" stroke-width="1"/>
+  <path d="M230 84 C242 52, 262 92, 278 54" fill="none" stroke="var(--teal)" stroke-width="1.6"/>
+
+  <line x1="14" y1="106" x2="286" y2="106" stroke="var(--rule)" stroke-width="1"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="124" font-size="8" fill="var(--ink-4)">conflicting inputs, reconciled</text>
+    <text x="14" y="146" font-size="8.5" fill="var(--ink-3)">each input keeps its own scale</text>
+    <text x="14" y="166" font-size="8" fill="var(--ink-4)">insulin secretion, β cells</text>
+  </g>
+
+  <line x1="176" y1="164" x2="282" y2="164" stroke="var(--rule)" stroke-width="1"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="3 2">
+    <path d="M180 158 C204 136, 240 122, 276 116"/>
+    <path d="M180 158 C204 152, 240 148, 276 148"/>
+  </g>
+  <path d="M180 158 C204 144, 240 134, 276 130" fill="none" stroke="var(--teal)" stroke-width="1.8"/>
+  <text x="176" y="180" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">inputs vs harmonized</text>
+</svg></figure>
 </article><article class="pub" data-pub data-type="journal" data-topic="vdl">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.sciencedirect.com/science/article/pii/S2452310021000111" target="_blank" rel="noopener">A community approach to whole-cell modeling</a></p>
@@ -1398,16 +2017,67 @@
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2018</div>
-  <div><article class="pub" data-pub data-type="journal" data-topic="vdl">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="vdl">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0" target="_blank" rel="noopener">Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell</a></p>
     <p class="pub-a">Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., &amp; Stevens, R. C.</p>
     <p class="pub-v"><em>Cell</em>, 173(1), 11–19</p>
     
     <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
-    
+    <p class="pub-sum"><b>Summary:</b> A predictive model of an entire eukaryotic cell — its dynamic structure from atomic to cellular scales — is a grand challenge sitting at the intersection of biology, chemistry, physics and computer science. This sets out the vision for one such model of the pancreatic β cell, a target relevant to understanding and modulating the pathogenesis of diabetes, and argues that the experimental and modelling methods it needs are best developed as a community effort.</p>
   </div>
-  
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a single predictive model spanning four scales, from an atom through a molecular complex and an organelle to a whole pancreatic beta cell" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="24" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">one predictive model</text>
+
+  <path d="M20 40 v-6 h260 v6" fill="none" stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1.2"/>
+
+  <!-- ===== the same cell, asked at four scales ===== -->
+  <ellipse cx="44" cy="90" rx="12" ry="5.5" fill="none" stroke="var(--ink-4)"
+           stroke-opacity=".45" stroke-width="1.1"/>
+  <circle cx="44" cy="90" r="4" fill="var(--ink-4)" fill-opacity=".5"/>
+
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <circle cx="104" cy="86" r="5"/><circle cx="115" cy="84" r="5"/>
+    <circle cx="108" cy="95" r="5"/><circle cx="119" cy="93" r="5"/>
+  </g>
+
+  <rect x="163" y="84" width="34" height="16" rx="8" fill="var(--saffron-soft)"
+        stroke="var(--saffron)" stroke-width="1.3"/>
+  <path d="M168 92l4-4 4 8 4-8 4 8 4-8 4 4" fill="none" stroke="var(--saffron)"
+        stroke-opacity=".5" stroke-width="1"/>
+
+  <circle cx="250" cy="74" r="26" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1"/>
+  <circle cx="242" cy="66" r="9" fill="var(--ink-4)" fill-opacity=".14"/>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1">
+    <circle cx="260" cy="82" r="2.6"/><circle cx="248" cy="90" r="2.6"/><circle cx="264" cy="66" r="2.6"/>
+  </g>
+  <rect x="228" y="82" width="14" height="6" rx="3" fill="var(--saffron-soft)"
+        stroke="var(--saffron)" stroke-width="1"/>
+
+  <line x1="20" y1="104" x2="280" y2="104" stroke="var(--rule)" stroke-width="1"/>
+  <g stroke="var(--rule)" stroke-width="1">
+    <path d="M44 104v4 M110 104v4 M180 104v4 M250 104v4"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="44" y="118">atomic</text>
+    <text x="110" y="118">molecular</text>
+    <text x="180" y="118">organelle</text>
+    <text x="250" y="118">cellular</text>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-4)">
+    <text x="14" y="118">Å</text>
+    <text x="286" y="118" text-anchor="end">µm</text>
+  </g>
+
+  <line x1="14" y1="142" x2="286" y2="142" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="160" font-size="8" fill="var(--ink-3)">biology + chemistry + physics + computing</text>
+    <text x="14" y="178" font-size="8" fill="var(--ink-4)">a community effort, aimed at diabetes</text>
+  </g>
+</svg></figure>
 </article><article class="pub" data-pub data-type="poster" data-topic="cryoet">
   <div class="pub-main">
     <p class="pub-t">De novo structural pattern mining in cellular electron cryo-tomograms</p>

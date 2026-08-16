@@ -1,0 +1,55 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a virion whose capsid, envelope proteins, replication machinery and host interfaces are resolved by X-ray, NMR, cryo-EM and cryo-electron tomography, and turned into therapeutics" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">resolve the virus</text>
+    <text x="286" y="24" text-anchor="end">then design against it</text>
+  </g>
+
+  <!-- ===== the particle, and the four parts that get solved ===== -->
+  <g stroke="var(--ink-4)" stroke-width="1.3" fill="none">
+    <path d="M89 88.1 L98.5 93.6"/><path d="M68 100.25 L68 111.25"/>
+    <path d="M47 88.1 L37.5 93.6"/><path d="M47 63.9 L37.5 58.4"/>
+    <path d="M68 51.75 L68 40.75"/><path d="M89 63.9 L98.5 58.4"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <circle cx="98.5" cy="93.6" r="3.2"/><circle cx="68" cy="111.25" r="3.2"/>
+    <circle cx="37.5" cy="93.6" r="3.2"/><circle cx="37.5" cy="58.4" r="3.2"/>
+    <circle cx="68" cy="40.75" r="3.2"/><circle cx="98.5" cy="58.4" r="3.2"/>
+  </g>
+  <path d="M96 76 L82 100.25 L54 100.25 L40 76 L54 51.75 L82 51.75 Z"
+        fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="1.3"/>
+  <path d="M56 70 C64 63, 78 70, 76 79 C74 88, 58 87, 58 78" fill="none" stroke="var(--saffron)"
+        stroke-width="1.5"/>
+
+  <g fill="var(--teal)">
+    <circle cx="106" cy="45" r="2.4"/><circle cx="106" cy="59" r="2.4"/>
+    <circle cx="106" cy="73" r="2.4"/><circle cx="106" cy="87" r="2.4"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
+    <text x="114" y="48">capsid</text>
+    <text x="114" y="62">envelope proteins</text>
+    <text x="114" y="76">replication machinery</text>
+    <text x="114" y="90">host interfaces</text>
+  </g>
+
+  <line x1="14" y1="122" x2="286" y2="122" stroke="var(--rule)" stroke-width="1"/>
+
+  <text x="14" y="141" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">resolved by</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
+     text-anchor="middle">
+    <rect x="76" y="128" width="44" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="98" y="141">X-ray</text>
+    <rect x="126" y="128" width="40" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="146" y="141">NMR</text>
+    <rect x="172" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="198" y="141">cryo-EM</text>
+    <rect x="230" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="256" y="141">cryo-ET</text>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="166" font-size="8.5" fill="var(--ink-3)">therapeutics, vaccines, antibodies</text>
+    <text x="14" y="182" font-size="8" fill="var(--ink-4)">for threats that keep mutating</text>
+  </g>
+</svg>

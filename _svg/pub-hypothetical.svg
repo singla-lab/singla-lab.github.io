@@ -1,0 +1,56 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: an unannotated protein sequence is matched to the known EstS1 esterase by identity and structural superposition, shown to be thermostable, and docked against eight phthalate diesters" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">a hypothetical protein</text>
+    <text x="286" y="24" text-anchor="end">POB10642.1</text>
+  </g>
+
+  <!-- ===== a sequence with nothing attached to it ===== -->
+  <rect x="14" y="44" width="96" height="14" rx="3" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g stroke="var(--ink-4)" stroke-opacity=".35" stroke-width="1">
+    <path d="M22 46v10 M30 46v10 M38 46v10 M46 46v10 M54 46v10 M62 46v10
+             M70 46v10 M78 46v10 M86 46v10 M94 46v10 M102 46v10"/>
+  </g>
+  <text x="14" y="76" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">no annotation</text>
+
+  <path d="M118 51h10 M124 47.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== laid over a fold that is already known ===== -->
+  <path d="M146 66 C156 40, 174 40, 184 56 C194 72, 212 72, 222 52 C230 38, 244 42, 250 52
+           C256 60, 268 62, 278 54" fill="none" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="2.2"/>
+  <path d="M148 65 C158 39, 176 39, 186 55 C196 71, 214 71, 224 51 C232 37, 246 41, 252 51
+           C258 59, 270 61, 280 53" fill="none" stroke="var(--teal)" stroke-width="1.6"/>
+  <text x="140" y="88" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">42.67% id &#183; RMSD 0.557 Å</text>
+
+  <line x1="14" y1="98" x2="286" y2="98" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== it holds its shape when hot, and it takes all eight ligands ===== -->
+  <rect x="20" y="106" width="8" height="26" rx="4" fill="var(--surface)" stroke="var(--ink-4)"
+        stroke-width="1.1"/>
+  <rect x="22" y="117" width="4" height="17" fill="var(--saffron)"/>
+  <circle cx="24" cy="136" r="7" fill="var(--saffron)" stroke="var(--saffron)" stroke-width="1"/>
+  <text x="38" y="128" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--saffron)">Tm 55-66 °C</text>
+
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.1">
+    <path d="M133 136.2 L131 132.7 L133 129.2 L137 129.2 L139 132.7 L137 136.2 Z"/>
+    <path d="M137.7 126.4 L135.7 122.9 L137.7 119.4 L141.7 119.4 L143.7 122.9 L141.7 126.4 Z"/>
+    <path d="M146.1 118.6 L144.1 115.1 L146.1 111.6 L150.1 111.6 L152.1 115.1 L150.1 118.6 Z"/>
+    <path d="M156.3 114.5 L154.3 111 L156.3 107.5 L160.3 107.5 L162.3 111 L160.3 114.5 Z"/>
+    <path d="M167.2 114.5 L165.2 111 L167.2 107.5 L171.2 107.5 L173.2 111 L171.2 114.5 Z"/>
+    <path d="M177.9 118.6 L175.9 115.1 L177.9 111.6 L181.9 111.6 L183.9 115.1 L181.9 118.6 Z"/>
+    <path d="M186 126 L184 122.5 L186 119 L190 119 L192 122.5 L190 126 Z"/>
+    <path d="M191 136.2 L189 132.7 L191 129.2 L195 129.2 L197 132.7 L195 136.2 Z"/>
+  </g>
+  <path d="M140 142 C140 120, 184 120, 184 142 Z" fill="var(--paper-2)" stroke="var(--rule)"
+        stroke-width="1.1"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8">
+    <text x="14" y="166" fill="var(--ink-3)">docks all eight at -5.4 to -7.5 kcal/mol</text>
+    <text x="14" y="182" fill="var(--ink-4)">stable over 100 ns; a bioremediation candidate</text>
+  </g>
+</svg>
