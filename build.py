@@ -387,6 +387,18 @@ def build_home():
     partners = ''.join('<li>{0}</li>'.format(a(p)) for p in SITE['partners'])
     pi = people['pi']
 
+    # Degrees, under the bio. The team page's "Full profile" button points here,
+    # so this card is the one place the record is set out in full.
+    pied = ''
+    if pi.get('education'):
+        edrows = ''.join(
+            '<li><span class="pi-ed-d">{0}</span><span class="pi-ed-o">{1}</span></li>'.format(
+                a(e['degree']), a(e['org'])) for e in pi['education'])
+        pied = ('<div class="pi-ed">\n'
+                '          <p class="eyebrow">Education</p>\n'
+                '          <ul>{0}</ul>\n'
+                '        </div>').format(edrows)
+
     body = """<section class="hero dotgrid">
   <div class="wrap">
     <div class="hero-grid">
@@ -437,6 +449,7 @@ def build_home():
         <h2 class="h2">{piname}, {pisuffix}</h2>
         <p class="muted small" style="margin:.5rem 0 1.3rem">{pirole} &middot; {piaffil}</p>
         <div class="measure">{pibio}</div>
+        {pied}
         <div class="hero-cta" style="margin-top:1.6rem">
           <a class="btn btn-sm" href="team.html">Meet the team</a>
           <a class="btn btn-sm" href="mailto:{pimail}">{mailicon} {pimail}</a>
@@ -485,7 +498,7 @@ def build_home():
                 cta=cta_band(), pislug=pi['photo'], piname=a(pi['name']),
                 pisuffix=a(pi['suffix']), pirole=a(pi['role']), piaffil=a(pi['affil'][0]),
                 pibio=''.join('<p>{0}</p>'.format(a(x)) for x in pi['bio'][:2]),
-                pimail=pi['email'], mailicon=ICON['mail'])
+                pied=pied, pimail=pi['email'], mailicon=ICON['mail'])
 
     return write('index.html', page('index.html', SITE['name'], SITE['description'], body))
 

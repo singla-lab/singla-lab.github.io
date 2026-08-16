@@ -542,6 +542,29 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   transform: rotate(-8deg); z-index: 0;
 }
 
+/* Education, under the PI bio. Ruled rows rather than bullets, so it reads as a
+   record. The institution sits under its degree by default and moves out to the
+   right edge only past 960px, where the widest of the three pairs (measured at
+   567px against a 640px column) still clears in one line — below that the rows
+   would break unevenly, one inline and two stacked. flex-wrap stays on as the
+   safety valve for larger text sizes. */
+.pi-ed { margin-top: 1.9rem; max-width: 40rem; }
+.pi-ed .eyebrow { margin-bottom: .6rem; }
+.pi-ed ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-2); }
+.pi-ed li {
+  display: flex; flex-wrap: wrap; gap: .12rem 1.6rem;
+  padding: .62rem 0; border-bottom: 1px solid var(--rule-2);
+}
+.pi-ed-d { flex: 1 0 100%; font-size: .9rem; color: var(--ink-2); }
+.pi-ed-o {
+  font-family: var(--f-mono); font-size: .72rem; letter-spacing: .02em;
+  color: var(--ink-3);
+}
+@media (min-width: 960px) {
+  .pi-ed li { align-items: baseline; justify-content: space-between; }
+  .pi-ed-d { flex: 0 1 auto; }
+}
+
 /* compact PI strip — the full profile lives on the home page.
    The photo column matches a person card, so the PI reads as a peer. */
 .pi-mini {
