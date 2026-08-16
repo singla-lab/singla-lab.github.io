@@ -183,13 +183,34 @@ To serve this at `www.jitinsingla.in`:
 
 ## Design notes
 
-- **Light, editorial-scientific.** Apricot paper (`--paper: #FBF5EB`), one deep
-  indigo primary sitting opposite it, one burnt-saffron accent, teal for
-  biological objects. Every neutral — surface, rules, the whole ink ramp — is
-  mixed on the same warm axis, so no grey reads cold against the ground. Change
-  `--paper` and the warm tokens together, or the page goes muddy.
-  All body text clears WCAG AA on the new ground: ink 16.4:1, `--ink-2` 9.0:1,
-  `--ink-3` 4.6:1, saffron 4.8:1, indigo 9.2:1.
+- **Two themes, one token block.** Light is terracotta paper (`--paper:
+  #F9EBDE`) with a deep indigo primary opposite it; dark keeps the ground warm
+  (`#17120E`) and lifts the blues and greens rather than darkening them.
+
+  Nothing in the stylesheet below `:root` names a colour directly — a theme is
+  a matter of redefining tokens. Two habits keep that true: every colour comes
+  from a token, and any pair that must stay legible together is defined as a
+  pair (`--indigo` with `--on-primary`, `--band` with `--on-band`). If you add
+  a rule, reach for a token; if none fits, add one to *both* blocks.
+
+  Both themes clear WCAG AA on every text pair. Light: ink 15.2:1, `--ink-2`
+  8.4:1, `--ink-3` 5.2:1, link 4.9:1, saffron 4.8:1, teal 4.9:1. Dark: ink
+  16.2:1, `--ink-3` 7.1:1, link 10.7:1. `--ink-4` is deliberately below that
+  bar and is for rules, bullets and icons — never for text.
+
+- **The theme switch** sits in the header at every width. A three-line script
+  in `<head>` reads `localStorage.theme`, falls back to the system preference
+  and stamps `data-theme` on `<html>` before first paint, so there is no flash
+  and the stylesheet needs no `prefers-color-scheme` block. Without JavaScript
+  the site stays light. While no explicit choice is stored, `site.js` keeps
+  following the system if it changes.
+
+- **The SVG art follows the theme** because it is inlined rather than loaded
+  as `<img>` — the `fill` and `stroke` attributes hold `var(--token)`.
+  `_svg/logo.svg` is the exception: `build.py` also writes it out as the
+  favicon, and a standalone SVG has no `:root` to read from, so it keeps
+  literal colours and the inline copy is recoloured through its `lg-*`
+  classes.
 - **Type**: Newsreader (display serif), Inter (text), JetBrains Mono (labels and
   numbers), Tiro Devanagari Hindi for every Sanskrit line (`--f-sa`). Loaded from
   Google Fonts with full system fallbacks, so the site still reads correctly if

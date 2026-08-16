@@ -2,9 +2,9 @@
   <!-- integral, redrawn as a path from the original XeTeX lockup -->
   <path class="lg-int"
         d="M43 18 C29.2 10.1, 27.3 28.8, 26.1 41.1 C24.8 50.4, 21.1 59.6, 19.9 68.9 C18.7 81.2, 16.8 99.9, 3 92"
-        fill="none" stroke="#173F8A" stroke-width="7.4" stroke-linecap="round"/>
+        fill="none" stroke="var(--indigo)" stroke-width="7.4" stroke-linecap="round"/>
   <text class="lg-word" x="46" y="101" font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="46" font-weight="500" fill="#1C1713" letter-spacing="1">LAB</text>
+        font-size="46" font-weight="500" fill="var(--ink)" letter-spacing="1">LAB</text>
   <text class="lg-sub" x="8.5" y="117" font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="13.5" fill="#7A6D61">@BSBE, IIT Roorkee</text>
+        font-size="13.5" fill="var(--ink-3)">@BSBE, IIT Roorkee</text>
 </svg>

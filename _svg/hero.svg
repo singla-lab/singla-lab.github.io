@@ -1,21 +1,21 @@
 <svg viewBox="0 0 620 620" role="img" aria-label="Stylised tomographic slice through a cell: nucleus, mitochondrial network and secretory vesicles under a scanning beam" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="cellFill" cx="42%" cy="36%" r="72%">
-      <stop offset="0%"  stop-color="#FFFFFF"/>
-      <stop offset="58%" stop-color="#FBF6F0"/>
-      <stop offset="100%" stop-color="#EAEDF6"/>
+      <stop offset="0%"  stop-color="var(--surface)"/>
+      <stop offset="58%" stop-color="var(--paper-2)"/>
+      <stop offset="100%" stop-color="var(--indigo-soft)"/>
     </radialGradient>
     <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#2563C9" stop-opacity="0"/>
-      <stop offset="45%"  stop-color="#2563C9" stop-opacity=".20"/>
-      <stop offset="52%"  stop-color="#2563C9" stop-opacity=".34"/>
-      <stop offset="100%" stop-color="#2563C9" stop-opacity="0"/>
+      <stop offset="0%"   stop-color="var(--indigo-lit)" stop-opacity="0"/>
+      <stop offset="45%"  stop-color="var(--indigo-lit)" stop-opacity=".20"/>
+      <stop offset="52%"  stop-color="var(--indigo-lit)" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="var(--indigo-lit)" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="cellClip"><circle cx="310" cy="310" r="236"/></clipPath>
   </defs>
 
   <!-- instrument crosshair ticks -->
-  <g fill="none" stroke="#A29486" stroke-width="1.2" stroke-linecap="round" opacity=".5">
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" opacity=".5">
     <path d="M18 18 h26 M18 18 v26"/>
     <path d="M602 18 h-26 M602 18 v26"/>
     <path d="M18 602 h26 M18 602 v-26"/>
@@ -23,17 +23,17 @@
   </g>
 
   <!-- outer goniometer rings -->
-  <circle class="spin-slow" cx="310" cy="310" r="286" fill="none" stroke="#B0521A" stroke-opacity=".42" stroke-width="1.1" stroke-dasharray="2 14"/>
-  <circle class="spin-rev"  cx="310" cy="310" r="262" fill="none" stroke="#173F8A" stroke-opacity=".26" stroke-width="1" stroke-dasharray="26 12"/>
+  <circle class="spin-slow" cx="310" cy="310" r="286" fill="none" stroke="var(--saffron)" stroke-opacity=".42" stroke-width="1.1" stroke-dasharray="2 14"/>
+  <circle class="spin-rev"  cx="310" cy="310" r="262" fill="none" stroke="var(--indigo)" stroke-opacity=".26" stroke-width="1" stroke-dasharray="26 12"/>
 
   <!-- cell body -->
   <circle cx="310" cy="310" r="236" fill="url(#cellFill)"/>
-  <circle cx="310" cy="310" r="236" fill="none" stroke="#173F8A" stroke-opacity=".5" stroke-width="1.8"/>
-  <circle cx="310" cy="310" r="224" fill="none" stroke="#173F8A" stroke-opacity=".16" stroke-width="1" stroke-dasharray="4 6"/>
+  <circle cx="310" cy="310" r="236" fill="none" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.8"/>
+  <circle cx="310" cy="310" r="224" fill="none" stroke="var(--indigo)" stroke-opacity=".16" stroke-width="1" stroke-dasharray="4 6"/>
 
   <g clip-path="url(#cellClip)">
     <!-- cytoskeletal hints -->
-    <g fill="none" stroke="#173F8A" stroke-opacity=".14" stroke-width="1.1">
+    <g fill="none" stroke="var(--indigo)" stroke-opacity=".14" stroke-width="1.1">
       <path d="M120 210 C 230 260, 330 200, 470 250"/>
       <path d="M96 380 C 220 340, 360 420, 520 350"/>
       <path d="M200 120 C 250 260, 220 400, 270 540"/>
@@ -41,20 +41,20 @@
     </g>
 
     <!-- nucleus -->
-    <circle cx="246" cy="262" r="86" fill="#173F8A" fill-opacity=".07"/>
-    <circle cx="246" cy="262" r="86" fill="none" stroke="#173F8A" stroke-opacity=".45" stroke-width="1.6"/>
-    <circle cx="246" cy="262" r="86" fill="none" stroke="#173F8A" stroke-opacity=".2" stroke-width="6" stroke-dasharray="1 9" stroke-linecap="round"/>
-    <circle cx="228" cy="244" r="27" fill="#173F8A" fill-opacity=".16"/>
-    <circle cx="228" cy="244" r="27" fill="none" stroke="#173F8A" stroke-opacity=".4" stroke-width="1.2"/>
+    <circle cx="246" cy="262" r="86" fill="var(--indigo)" fill-opacity=".07"/>
+    <circle cx="246" cy="262" r="86" fill="none" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1.6"/>
+    <circle cx="246" cy="262" r="86" fill="none" stroke="var(--indigo)" stroke-opacity=".2" stroke-width="6" stroke-dasharray="1 9" stroke-linecap="round"/>
+    <circle cx="228" cy="244" r="27" fill="var(--indigo)" fill-opacity=".16"/>
+    <circle cx="228" cy="244" r="27" fill="none" stroke="var(--indigo)" stroke-opacity=".4" stroke-width="1.2"/>
 
     <!-- mitochondrial network edges -->
     <polyline class="dash-run" points="398,206 428,330 352,428 214,424 170,344"
-              fill="none" stroke="#1F7A6B" stroke-opacity=".55" stroke-width="1.4"/>
+              fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.4"/>
     <polyline class="dash-run" points="170,344 246,262 398,206" fill="none"
-              stroke="#1F7A6B" stroke-opacity=".3" stroke-width="1.2"/>
+              stroke="var(--teal)" stroke-opacity=".3" stroke-width="1.2"/>
 
     <!-- mitochondria -->
-    <g fill="#E4F2EF" stroke="#1F7A6B" stroke-width="1.7">
+    <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.7">
       <rect x="350" y="189" width="96" height="34" rx="17" transform="rotate(-27 398 206)"/>
       <rect x="389" y="315" width="78" height="30" rx="15" transform="rotate(44 428 330)"/>
       <rect x="300" y="412" width="104" height="32" rx="16" transform="rotate(11 352 428)"/>
@@ -62,13 +62,13 @@
       <rect x="137" y="331" width="66" height="26" rx="13" transform="rotate(61 170 344)"/>
     </g>
     <!-- cristae -->
-    <g fill="none" stroke="#1F7A6B" stroke-opacity=".45" stroke-width="1.1" stroke-linecap="round">
+    <g fill="none" stroke="var(--teal)" stroke-opacity=".45" stroke-width="1.1" stroke-linecap="round">
       <path d="M368 200 l10 12 M386 194 l10 12 M404 189 l10 12 M422 183 l10 12" transform="rotate(-27 398 206)"/>
       <path d="M322 424 l8 11 M340 424 l8 11 M358 424 l8 11 M376 424 l8 11" transform="rotate(11 352 428)"/>
     </g>
 
     <!-- secretory vesicles -->
-    <g fill="#FBE4CD" stroke="#B0521A" stroke-width="1.5">
+    <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.5">
       <circle class="pulse-o" cx="452" cy="252" r="11"/>
       <circle cx="478" cy="296" r="8"/>
       <circle class="pulse-o" cx="404" cy="374" r="13" style="animation-delay:-1.4s"/>
@@ -86,7 +86,7 @@
 
     <!-- scanning beam -->
     <rect class="hero-scan" x="0" y="-70" width="620" height="70" fill="url(#scanBeam)"/>
-    <line class="hero-scan" x1="0" y1="0" x2="620" y2="0" stroke="#2563C9" stroke-opacity=".55" stroke-width="1.2"/>
+    <line class="hero-scan" x1="0" y1="0" x2="620" y2="0" stroke="var(--indigo-lit)" stroke-opacity=".55" stroke-width="1.2"/>
   </g>
 
 </svg>

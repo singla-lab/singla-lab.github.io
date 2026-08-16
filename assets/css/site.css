@@ -1,32 +1,70 @@
 /* ============================================================
    Singla Lab — design system
-   Light, editorial-scientific. Warm apricot paper, one indigo
-   primary sitting opposite it, one deeper saffron accent.
-   Every neutral is mixed on the same warm axis, so nothing in
-   the greys reads cold against the ground.
+   Editorial-scientific, in two themes. Light is warm terracotta
+   paper with an indigo primary opposite it; dark is the same
+   palette turned over, warm and low rather than blue-black.
+
+   Every colour comes from the token block, so a theme is a matter
+   of redefining tokens rather than hunting literals through the
+   stylesheet. Two rules keep that true: nothing below names a
+   colour directly, and any pair that has to stay legible together
+   is defined as a pair — --indigo with --on-primary, --band with
+   --on-band.
    ============================================================ */
 
 /* ---------- Tokens ---------- */
 :root {
+  color-scheme: light;
+
   /* surfaces */
-  --paper:        #FBF5EB;
-  --paper-2:      #F6ECE2;
-  --surface:      #FFFCF8;
+  --paper:        #F9EBDE;
+  --paper-2:      #F4E2D2;
+  --surface:      #FFFBF6;
   --ink:          #1C1713;
   --ink-2:        #4C4239;
-  --ink-3:        #7A6D61;
-  --ink-4:        #A29486;
-  --rule:         #EADFD2;
-  --rule-2:       #F3EAE0;
+  --ink-3:        #6C6053;
+  --ink-4:        #8D7F70;
+  --rule:         #E7D6C4;
+  --rule-2:       #F1E3D5;
 
   /* brand */
   --indigo:       #173F8A;
   --indigo-lit:   #2563C9;
+  --indigo-dk:    #10306D;
   --indigo-soft:  #EAEDF6;
-  --saffron:      #B0521A;
-  --saffron-soft: #FBE4CD;
-  --teal:         #1F7A6B;
-  --teal-soft:    #E4F2EF;
+  --saffron:      #A94C15;
+  --saffron-soft: #F8DBBB;
+  --teal:         #1C7364;
+  --teal-soft:    #E0F0EC;
+  --on-primary:   #FFFBF6;
+
+  /* the dark bands — quote strip, footer, ink sections */
+  --band:         #1C1713;
+  --on-band:      #F1EAE2;
+  --on-band-2:    #A08F7F;
+  --band-rule:    #332B24;
+  --band-lit:     #8FB4EE;
+
+  /* chips and pills; the fills come from the -soft tokens above */
+  --tag-ink:      #1B4A9E;
+  --tag-bd:       #DAE5F6;
+  --warm-ink:     #8F440F;
+  --warm-bd:      #F0D6B8;
+  --teal-ink:     #14604F;
+  --teal-ink-b:   #0F4E40;
+  --teal-bd:      #D2E8E3;
+
+  /* incidental */
+  --sh:        74,52,32;                /* shadow tint */
+  --dot:       rgba(74,52,32,.085);     /* the dot grid */
+  --hdr-bg:    rgba(249,235,222,.85);
+  --wash:      rgba(255,251,246,.75);   /* row hover */
+  --press:     rgba(74,52,32,.055);     /* nav hover */
+  --sel:       #F7D9B8;
+  --card-bd:   #C9D6EC;                 /* card hover border */
+  --glow-1:    rgba(37,99,201,.09);
+  --glow-2:    rgba(169,76,21,.11);
+  --img-mat:   #fff;                    /* behind figures and gallery plates */
 
   /* type */
   --f-display: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
@@ -43,12 +81,75 @@
   --r:         14px;
   --r-sm:      9px;
 
-  --shadow-1: 0 1px 2px rgba(74,52,32,.05), 0 1px 3px rgba(74,52,32,.04);
-  --shadow-2: 0 2px 4px rgba(74,52,32,.04), 0 12px 28px -12px rgba(74,52,32,.16);
-  --shadow-3: 0 4px 8px rgba(74,52,32,.05), 0 24px 48px -20px rgba(23,63,138,.28);
+  --shadow-1: 0 1px 2px rgba(var(--sh),.05), 0 1px 3px rgba(var(--sh),.04);
+  --shadow-2: 0 2px 4px rgba(var(--sh),.04), 0 12px 28px -12px rgba(var(--sh),.16);
+  --shadow-3: 0 4px 8px rgba(var(--sh),.05), 0 24px 48px -20px rgba(23,63,138,.28);
 
   --ease: cubic-bezier(.22,.61,.36,1);
 }
+
+/* ---------- Dark ----------
+   Not the light theme inverted: the ground stays warm, and the blues and
+   greens are lifted rather than darkened, since a colour that reads well on
+   paper goes muddy on a dark ground. --paper is lighter than --band here, so
+   the quote strip and footer still recede the way they do in light.
+
+   There is deliberately no prefers-color-scheme block. A three-line script in
+   <head> reads the stored choice, falls back to the system preference, and
+   stamps data-theme before first paint — so this one rule covers both cases
+   and the values live in exactly one place. Without JavaScript the site stays
+   light, which is the design it was drawn in. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --paper:        #17120E;
+  --paper-2:      #1F1913;
+  --surface:      #221B15;
+  --ink:          #F6EEE4;
+  --ink-2:        #D6C8B8;
+  --ink-3:        #AC9E8E;
+  --ink-4:        #8E8170;
+  --rule:         #3A3027;
+  --rule-2:       #2C241D;
+
+  --indigo:       #8FB4EE;
+  --indigo-lit:   #A9C6F5;
+  --indigo-dk:    #C3D8F8;
+  --indigo-soft:  #1E2739;
+  --saffron:      #E0904F;
+  --saffron-soft: #3A2515;
+  --teal:         #5EC4AD;
+  --teal-soft:    #143029;
+  --on-primary:   #17120E;
+
+  --band:         #100C09;
+  --on-band:      #E8DFD4;
+  --on-band-2:    #91836F;
+  --band-rule:    #262019;
+  --band-lit:     #8FB4EE;
+
+  --tag-ink:      #A9C6F5;
+  --tag-bd:       #2C3A52;
+  --warm-ink:     #F0AE78;
+  --warm-bd:      #4A3120;
+  --teal-ink:     #7FD6C0;
+  --teal-ink-b:   #9BE3CF;
+  --teal-bd:      #1D4239;
+
+  --sh:        0,0,0;
+  --dot:       rgba(246,238,228,.055);
+  --hdr-bg:    rgba(23,18,14,.86);
+  --wash:      rgba(246,238,228,.045);
+  --press:     rgba(246,238,228,.06);
+  --sel:       #4A3120;
+  --card-bd:   #3C4B66;
+  --glow-1:    rgba(143,180,238,.07);
+  --glow-2:    rgba(224,144,79,.06);
+  --img-mat:   #EFE7DD;
+
+  --shadow-3: 0 4px 8px rgba(0,0,0,.4), 0 24px 48px -20px rgba(0,0,0,.7);
+}
+
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -89,7 +190,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   border-radius: 3px;
 }
 
-::selection { background: #FADFC4; color: var(--ink); }
+::selection { background: var(--sel); color: var(--ink); }
 
 /* ---------- Layout ---------- */
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gut); }
@@ -98,11 +199,11 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 .section-tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .section-alt { background: var(--paper-2); }
-.section-ink { background: var(--ink); color: #EFE8E0; }
+.section-ink { background: var(--band); color: var(--on-band); }
 
 .skip {
   position: absolute; left: -9999px; top: 0; z-index: 999;
-  background: var(--ink); color: #fff; padding: .7rem 1.1rem; border-radius: 0 0 8px 0;
+  background: var(--ink); color: var(--on-primary); padding: .7rem 1.1rem; border-radius: 0 0 8px 0;
 }
 .skip:focus { left: 0; }
 
@@ -151,7 +252,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 /* ---------- Header ---------- */
 .hdr {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(251,245,235,.85);
+  background: var(--hdr-bg);
   backdrop-filter: saturate(1.6) blur(14px);
   -webkit-backdrop-filter: saturate(1.6) blur(14px);
   border-bottom: 1px solid transparent;
@@ -162,6 +263,24 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 1.5rem; height: 68px;
 }
+/* the nav takes the slack so the two buttons stay pinned to the right */
+.hdr-in .nav { margin-left: auto; }
+.hdr-in .theme-toggle { margin-left: -.4rem; }
+
+/* The mark is drawn with literal colours because it doubles as the favicon,
+   so the inline copy is re-pointed at the tokens here. */
+:root[data-theme='dark'] .brand .lg-bg { fill: var(--indigo-soft); }
+:root[data-theme='dark'] .brand .lg-ring,
+:root[data-theme='dark'] .brand .lg-int { stroke: var(--indigo); }
+:root[data-theme='dark'] .brand .lg-dot { fill: var(--saffron); }
+
+/* Photographs were lit for a white page. On the dark ground they glare, so
+   they come down a little; alumni already run greyscale until hover. */
+:root[data-theme='dark'] .person-img img,
+:root[data-theme='dark'] .pi-photo img,
+:root[data-theme='dark'] .vid-thumb img { filter: brightness(.9) contrast(1.02); }
+:root[data-theme='dark'] .person:hover .person-img img,
+:root[data-theme='dark'] .vid:hover .vid-thumb img { filter: none; }
 
 .brand { display: flex; align-items: center; gap: .68rem; color: var(--ink); }
 .brand:hover { text-decoration: none; }
@@ -183,12 +302,29 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   border-radius: 7px;
   transition: color .18s var(--ease), background .18s var(--ease);
 }
-.nav a:hover { color: var(--ink); background: rgba(74,52,32,.055); text-decoration: none; }
+.nav a:hover { color: var(--ink); background: var(--press); text-decoration: none; }
 .nav a[aria-current='page'] { color: var(--indigo); font-weight: 550; }
 .nav a[aria-current='page']::after {
   content: ''; position: absolute; left: .62rem; right: .62rem; bottom: .18rem;
   height: 2px; border-radius: 2px; background: var(--saffron);
 }
+
+/* ---------- Theme toggle ----------
+   Sits between the nav and the burger and stays visible at every width --
+   it is not a navigation item, so it does not belong inside the menu. */
+.theme-toggle {
+  flex: none; display: grid; place-items: center;
+  width: 38px; height: 38px; padding: 0; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 10px;
+  background: var(--surface); color: var(--ink-2);
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--ink-4); background: var(--paper-2); }
+.theme-toggle svg { width: 18px; height: 18px; grid-area: 1 / 1; }
+/* show the theme you would be switching *to*, which is the one you cannot see */
+.theme-toggle .ic-sun { display: none; }
+:root[data-theme='dark'] .theme-toggle .ic-sun { display: block; }
+:root[data-theme='dark'] .theme-toggle .ic-moon { display: none; }
 
 .nav-toggle {
   display: none; width: 42px; height: 42px; border: 1px solid var(--rule);
@@ -202,6 +338,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 
 @media (max-width: 1040px) {
   .nav-toggle { display: flex; }
+  /* the nav goes fixed here, so it leaves the flex row and space-between
+     strands the toggle mid-header; this walks it back beside the burger */
+  .hdr-in { gap: .6rem; }
+  .hdr-in .theme-toggle { margin-left: auto; margin-right: 0; }
   .nav {
     position: fixed; inset: 68px 0 auto 0;
     flex-direction: column; align-items: stretch; gap: 0;
@@ -230,8 +370,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 }
 .btn:hover { text-decoration: none; border-color: var(--ink-4); transform: translateY(-1px); box-shadow: var(--shadow-1); }
 .btn svg { width: 15px; height: 15px; }
-.btn-primary { background: var(--indigo); border-color: var(--indigo); color: #fff; }
-.btn-primary:hover { background: #10306D; border-color: #10306D; box-shadow: var(--shadow-3); }
+.btn-primary { background: var(--indigo); border-color: var(--indigo); color: var(--on-primary); }
+.btn-primary:hover { background: var(--indigo-dk); border-color: var(--indigo-dk); box-shadow: var(--shadow-3); }
 .btn-ghost { background: transparent; border-color: transparent; color: var(--indigo-lit); padding-inline: .4rem; }
 .btn-ghost:hover { background: var(--indigo-soft); border-color: transparent; transform: none; box-shadow: none; }
 .btn-sm { font-size: .8rem; padding: .48rem .85rem; }
@@ -243,8 +383,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .hero::before {
   content: ''; position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(760px 460px at 78% 8%, rgba(37,99,201,.09), transparent 65%),
-    radial-gradient(620px 420px at 8% 96%, rgba(176,82,26,.10), transparent 62%);
+    radial-gradient(760px 460px at 78% 8%, var(--glow-1), transparent 65%),
+    radial-gradient(620px 420px at 8% 96%, var(--glow-2), transparent 62%);
   pointer-events: none;
 }
 .hero .wrap { position: relative; z-index: 1; }
@@ -265,7 +405,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .dotgrid { position: relative; }
 .dotgrid::before {
   content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, rgba(74,52,32,.085) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
   background-size: 26px 26px;
   mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
@@ -300,7 +440,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   padding: 1.5rem;
   transition: border-color .22s var(--ease), box-shadow .22s var(--ease), transform .22s var(--ease);
 }
-.card-link:hover { border-color: #C9D6EC; box-shadow: var(--shadow-2); transform: translateY(-2px); text-decoration: none; }
+.card-link:hover { border-color: var(--card-bd); box-shadow: var(--shadow-2); transform: translateY(-2px); text-decoration: none; }
 
 .grid { display: grid; gap: 1.1rem; }
 .g2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -322,7 +462,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   border-bottom: 1px solid var(--rule);
   transition: background .22s var(--ease);
 }
-.rsrch-row:hover { background: rgba(255,252,249,.75); }
+.rsrch-row:hover { background: var(--wash); }
 @media (max-width: 860px) { .rsrch-row { grid-template-columns: 3rem minmax(0,1fr); } .rsrch-art { display: none; } }
 .rsrch-num { font-family: var(--f-mono); font-size: .82rem; color: var(--saffron); padding-top: .35rem; letter-spacing: .04em; }
 .rsrch-kicker { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .5rem; }
@@ -343,7 +483,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   overflow: hidden; position: sticky; top: 92px;
 }
 @media (max-width: 900px) { .area-fig { position: static; } }
-.area-fig img { width: 100%; height: auto; background: #fff; }
+.area-fig img { width: 100%; height: auto; background: var(--img-mat); }
 .area-fig figcaption { padding: .8rem 1rem; font-size: .78rem; color: var(--ink-3); border-top: 1px solid var(--rule-2); }
 .area-fig .svg-holder { padding: 1.4rem; background: linear-gradient(180deg, var(--surface), var(--paper-2)); }
 
@@ -351,10 +491,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .tag {
   font-family: var(--f-mono); font-size: .69rem; letter-spacing: .04em;
   padding: .32rem .6rem; border-radius: 999px;
-  background: var(--indigo-soft); color: #1B4A9E; border: 1px solid #DAE5F6;
+  background: var(--indigo-soft); color: var(--tag-ink); border: 1px solid var(--tag-bd);
 }
-.tag-warm { background: var(--saffron-soft); color: #8F440F; border-color: #F0D6B8; }
-.tag-teal { background: var(--teal-soft); color: #14604F; border-color: #D2E8E3; }
+.tag-warm { background: var(--saffron-soft); color: var(--warm-ink); border-color: var(--warm-bd); }
+.tag-teal { background: var(--teal-soft); color: var(--teal-ink); border-color: var(--teal-bd); }
 
 /* ---------- Earlier threads (a disclosure, so it works without JS) ---------- */
 .past { border-top: 1px solid var(--rule); }
@@ -447,6 +587,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 
 .is-alum .person-img img { filter: grayscale(1) contrast(1.02); }
 .is-alum .person:hover .person-img img { filter: grayscale(0); }
+/* higher specificity than the blanket dark-photo rule above, so alumni keep
+   their greyscale instead of inheriting the general brightness trim */
+:root[data-theme='dark'] .is-alum .person-img img { filter: grayscale(1) brightness(.92) contrast(1.02); }
+:root[data-theme='dark'] .is-alum .person:hover .person-img img { filter: grayscale(0) brightness(.95); }
 
 /* compact name-only list */
 .namelist { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: .1rem 1.5rem; }
@@ -462,7 +606,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   transition: all .18s var(--ease);
 }
 .chip:hover { border-color: var(--ink-4); color: var(--ink); }
-.chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--on-primary); }
 
 .pub-year {
   display: grid; grid-template-columns: 5.5rem minmax(0,1fr);
@@ -499,19 +643,19 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   padding: .22rem .5rem; border-radius: 5px; background: var(--paper-2); color: var(--ink-3);
   border: 1px solid var(--rule);
 }
-.pill-journal { background: var(--indigo-soft); color: #1B4A9E; border-color: #DAE5F6; }
-.pill-preprint { background: var(--saffron-soft); color: #8F440F; border-color: #F0D6B8; }
-.pill-conference { background: var(--teal-soft); color: #14604F; border-color: #D2E8E3; }
+.pill-journal { background: var(--indigo-soft); color: var(--tag-ink); border-color: var(--tag-bd); }
+.pill-preprint { background: var(--saffron-soft); color: var(--warm-ink); border-color: var(--warm-bd); }
+.pill-conference { background: var(--teal-soft); color: var(--teal-ink); border-color: var(--teal-bd); }
 /* Press coverage. Teal, not saffron -- saffron is the accent and reads as a
    warning next to warm paper; and not indigo, which is what a link looks like. */
 .pub-hl {
-  margin-top: .4rem; font-size: .82rem; color: #14604F;
+  margin-top: .4rem; font-size: .82rem; color: var(--teal-ink);
   background: var(--teal-soft); border-left: 2px solid var(--teal);
   padding: .45rem .7rem; border-radius: 0 6px 6px 0;
 }
-.pub-hl b { font-weight: 650; color: #0F4E40; }
+.pub-hl b { font-weight: 650; color: var(--teal-ink-b); }
 .pub-hl a { color: inherit; text-decoration: underline; text-underline-offset: 2px;
-            text-decoration-color: rgba(31,122,107,.4); }
+            text-decoration-color: var(--teal); }
 .pub-hl a:hover { text-decoration-color: currentColor; }
 
 /* ---------- Timeline / news ---------- */
@@ -537,11 +681,11 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   padding: 1.5rem 1.6rem; display: grid; gap: .7rem;
   transition: box-shadow .22s var(--ease), border-color .22s var(--ease);
 }
-.proj:hover { box-shadow: var(--shadow-2); border-color: #C9D6EC; }
+.proj:hover { box-shadow: var(--shadow-2); border-color: var(--card-bd); }
 .proj-top { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
 .agency {
   font-family: var(--f-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
-  color: #fff; background: var(--indigo); padding: .26rem .55rem; border-radius: 5px;
+  color: var(--on-primary); background: var(--indigo); padding: .26rem .55rem; border-radius: 5px;
 }
 .role { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .06em; color: var(--ink-3); }
 .proj-t { font-size: 1.06rem; font-weight: 550; line-height: 1.38; letter-spacing: -.01em; }
@@ -552,7 +696,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   font-family: var(--f-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--teal);
 }
 .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
-.status-done { color: var(--ink-4); }
+.status-done { color: var(--ink-3); }
 .status-done::before { background: var(--ink-4); }
 
 /* ---------- Teaching ---------- */
@@ -563,7 +707,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .course { display: flex; align-items: baseline; gap: .7rem; padding-block: .3rem; flex-wrap: wrap; }
 .course-c { font-family: var(--f-mono); font-size: .8rem; color: var(--indigo); background: var(--indigo-soft); padding: .16rem .45rem; border-radius: 5px; }
 .course-n { font-size: 1rem; font-weight: 500; }
-.course-note { font-size: .78rem; color: var(--ink-4); font-style: italic; }
+.course-note { font-size: .78rem; color: var(--ink-3); font-style: italic; }
 
 /* a term row whose course has a page of its own */
 a.course-link { color: inherit; text-decoration: none; border-radius: var(--r-sm); }
@@ -582,7 +726,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
   font-family: var(--f-mono); font-size: .84rem; letter-spacing: .02em; color: var(--ink);
   padding-bottom: .7rem; border-bottom: 1px solid var(--rule);
 }
-.crs-group-n { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-4); }
+.crs-group-n { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
 .crs-group-now { color: var(--saffron); }
 
 .crs-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); margin-top: 1.2rem; }
@@ -600,11 +744,11 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .crs-card-t { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .04em; color: var(--ink-3); }
 .crs-card-b { font-size: .87rem; color: var(--ink-2); margin-top: .5rem; }
 .crs-card-alt { background: var(--paper-2); }
-.crs-card-alt .crs-code { background: var(--teal-soft); color: #14604F; }
+.crs-card-alt .crs-code { background: var(--teal-soft); color: var(--teal-ink); }
 
 .crs-code {
   display: inline-block; font-family: var(--f-mono); font-size: .82rem; font-weight: 500;
-  color: var(--indigo); background: var(--indigo-soft); border: 1px solid #DAE5F6;
+  color: var(--indigo); background: var(--indigo-soft); border: 1px solid var(--tag-bd);
   padding: .25rem .6rem; border-radius: 7px; letter-spacing: .02em;
 }
 .crs-head { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap; margin-top: .7rem; }
@@ -637,7 +781,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
   overflow: hidden; margin-top: 1.2rem;
 }
 .crs-cell { padding: 1.1rem 1.3rem; border-right: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule-2); }
-.crs-k { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-4); }
+.crs-k { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
 .crs-v { font-size: .9rem; color: var(--ink-2); line-height: 1.55; margin-top: .35rem; }
 
 .crs-list { margin-top: 1.1rem; display: grid; gap: .55rem; }
@@ -665,9 +809,9 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 }
 .tbl tbody tr:last-child th, .tbl tbody tr:last-child td { border-bottom: 0; }
 .tbl tbody tr:hover { background: var(--paper); }
-.tbl tbody th { font-family: var(--f-mono); font-weight: 400; color: var(--ink-4); width: 3.2rem; }
+.tbl tbody th { font-family: var(--f-mono); font-weight: 400; color: var(--ink-3); width: 3.2rem; }
 .tbl td:nth-child(2) { color: var(--ink); font-weight: 500; min-width: 13rem; }
-.tbl-none { color: var(--ink-4); }
+.tbl-none { color: var(--ink-3); }
 .tbl a { text-underline-offset: 3px; }
 
 /* evaluation */
@@ -753,7 +897,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .gal figure:hover { box-shadow: var(--shadow-2); transform: translateY(-3px); }
 .gal .wide { grid-column: span 2; }
 @media (max-width: 560px) { .gal .wide { grid-column: span 1; } }
-.gal img { width: 100%; aspect-ratio: 16/10; object-fit: contain; background: #fff; padding: .5rem; }
+.gal img { width: 100%; aspect-ratio: 16/10; object-fit: contain; background: var(--img-mat); padding: .5rem; }
 .gal .photo img { object-fit: cover; padding: 0; }
 .gal figcaption { padding: .9rem 1.1rem; }
 .gal-t { font-size: .93rem; font-weight: 600; }
@@ -770,7 +914,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
   font-size: .67rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .55rem;
 }
 .route-open .route-badge { color: var(--teal); }
-.route-closed .route-badge { color: var(--ink-4); }
+.route-closed .route-badge { color: var(--ink-3); }
 .route-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .subject-line {
   font-family: var(--f-mono); font-size: .8rem; background: var(--paper-2);
@@ -781,11 +925,11 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .contact-row { display: flex; gap: .85rem; padding-block: .85rem; border-bottom: 1px solid var(--rule-2); align-items: flex-start; }
 .contact-row:last-child { border-bottom: 0; }
 .contact-row svg { width: 17px; height: 17px; color: var(--indigo); flex: none; margin-top: .22rem; }
-.contact-k { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-4); }
+.contact-k { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
 .contact-v { font-size: .95rem; margin-top: .1rem; }
 
 /* ---------- Quote band ---------- */
-.quote-band { background: var(--ink); color: #F1EAE2; }
+.quote-band { background: var(--band); color: var(--on-band); }
 /* one line, all the way down -- the size follows the viewport so it never wraps */
 .quote-band .q {
   font-family: var(--f-display); font-style: italic;
@@ -798,7 +942,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
   font-size: clamp(1.35rem, 3.2vw, 2.15rem); line-height: 1.8; letter-spacing: 0;
   max-width: 26ch;
 }
-.quote-band .attr { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: #A08F7F; margin-top: 1.4rem; }
+.quote-band .attr { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--on-band-2); margin-top: 1.4rem; }
 
 /* ---------- Partner marquee ---------- */
 .partners { display: flex; flex-wrap: wrap; gap: .55rem 1.9rem; align-items: center; }
@@ -809,7 +953,7 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 /* ---------- CTA band ---------- */
 .cta-band {
   border: 1px solid var(--rule); border-radius: var(--r);
-  background: linear-gradient(140deg, var(--surface) 0%, var(--indigo-soft) 55%, #FBE4CD 130%);
+  background: linear-gradient(140deg, var(--surface) 0%, var(--indigo-soft) 55%, var(--saffron-soft) 130%);
   padding: clamp(1.2rem, 2.6vw, 1.8rem) clamp(1.3rem, 3vw, 2.1rem);
   display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap;
 }
@@ -817,14 +961,14 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .cta-band p { margin: .15rem 0 0; }
 
 /* ---------- Footer ---------- */
-.ftr { background: var(--ink); color: #CBBFB2; padding-block: clamp(3rem,6vw,4.5rem) 2rem; margin-top: 0; }
-.ftr a { color: #CBBFB2; }
-.ftr a:hover { color: #fff; }
+.ftr { background: var(--band); color: var(--on-band); padding-block: clamp(3rem,6vw,4.5rem) 2rem; margin-top: 0; }
+.ftr a { color: var(--on-band); }
+.ftr a:hover { color: var(--on-primary); }
 .ftr-grid { display: grid; grid-template-columns: minmax(0,1.4fr) repeat(3, minmax(0,1fr)); gap: 2.5rem; }
 @media (max-width: 900px) { .ftr-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (max-width: 520px) { .ftr-grid { grid-template-columns: 1fr; } }
-.ftr .brand { color: #fff; }
-.ftr .brand-sub { color: #92857A; }
+.ftr .brand { color: var(--on-primary); }
+.ftr .brand-sub { color: var(--on-band-2); }
 
 /* full ∫LAB lockup */
 .ftr-logo { display: inline-block; width: 210px; max-width: 70%; }
@@ -833,18 +977,18 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 .lg-int  { stroke: var(--indigo); }
 .lg-word { fill: var(--ink); }
 .lg-sub  { fill: var(--ink-3); }
-.ftr .lg-int  { stroke: #8FB4EE; }
-.ftr .lg-word { fill: #FFFFFF; }
-.ftr .lg-sub  { fill: #92857A; }
-.ftr-h { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: #92857A; margin-bottom: .9rem; }
+.ftr .lg-int  { stroke: var(--band-lit); }
+.ftr .lg-word { fill: var(--surface); }
+.ftr .lg-sub  { fill: var(--on-band-2); }
+.ftr-h { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--on-band-2); margin-bottom: .9rem; }
 .ftr-l li { padding-block: .3rem; font-size: .89rem; }
 .ftr-bottom {
-  margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #332B24;
+  margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--band-rule);
   display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
-  font-size: .8rem; color: #92857A;
+  font-size: .8rem; color: var(--on-band-2);
 }
-.sanskrit-line { font-family: var(--f-sa); font-size: 1.34rem; color: #EBE3DA; letter-spacing: .01em; line-height: 1.7; }
-.sanskrit-tr { font-size: .82rem; color: #92857A; font-style: italic; margin-top: .35rem; }
+.sanskrit-line { font-family: var(--f-sa); font-size: 1.34rem; color: var(--on-band); letter-spacing: .01em; line-height: 1.7; }
+.sanskrit-tr { font-size: .82rem; color: var(--on-band-2); font-style: italic; margin-top: .35rem; }
 
 /* ---------- Reveal on scroll ---------- */
 .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }

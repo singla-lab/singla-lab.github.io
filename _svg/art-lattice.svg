@@ -1,7 +1,7 @@
 <svg viewBox="0 0 320 220" role="img" aria-label="Heterogeneous particle field with three discovered structural clusters circled" xmlns="http://www.w3.org/2000/svg">
-  <rect x="12" y="12" width="296" height="196" rx="10" fill="#FBF5EB" stroke="#EADFD2"/>
+  <rect x="12" y="12" width="296" height="196" rx="10" fill="var(--paper)" stroke="var(--rule)"/>
   <!-- noise particles -->
-  <g fill="#A29486" fill-opacity=".45">
+  <g fill="var(--ink-4)" fill-opacity=".45">
     <circle cx="40" cy="40" r="3"/><circle cx="72" cy="28" r="2.4"/><circle cx="112" cy="46" r="3.2"/>
     <circle cx="150" cy="30" r="2.6"/><circle cx="196" cy="44" r="3"/><circle cx="236" cy="30" r="2.4"/>
     <circle cx="278" cy="48" r="3.1"/><circle cx="34" cy="86" r="2.7"/><circle cx="86" cy="96" r="3"/>
@@ -11,31 +11,31 @@
     <circle cx="160" cy="112" r="2.4"/><circle cx="256" cy="120" r="2.8"/><circle cx="76" cy="160" r="2.4"/>
   </g>
   <!-- cluster 1: triangles -->
-  <g fill="#EAEDF6" stroke="#173F8A" stroke-width="1.4">
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.4">
     <path d="M64 66l9 15H55z"/><path d="M86 78l9 15H77z"/><path d="M62 94l9 15H53z"/>
   </g>
-  <circle cx="74" cy="88" r="30" fill="none" stroke="#173F8A" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <circle cx="74" cy="88" r="30" fill="none" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 4"/>
   <!-- cluster 2: squares -->
-  <g fill="#FBE4CD" stroke="#B0521A" stroke-width="1.4">
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4">
     <rect x="158" y="60" width="15" height="15" rx="2.5" transform="rotate(14 165 67)"/>
     <rect x="182" y="74" width="15" height="15" rx="2.5" transform="rotate(-8 189 81)"/>
     <rect x="160" y="90" width="15" height="15" rx="2.5" transform="rotate(26 167 97)"/>
   </g>
-  <circle class="pulse-o" cx="178" cy="82" r="32" fill="none" stroke="#B0521A" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <circle class="pulse-o" cx="178" cy="82" r="32" fill="none" stroke="var(--saffron)" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="4 4"/>
   <!-- cluster 3: hexes -->
-  <g fill="#E4F2EF" stroke="#1F7A6B" stroke-width="1.4">
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
     <path d="M158 140l7 4v8l-7 4-7-4v-8z"/><path d="M180 152l7 4v8l-7 4-7-4v-8z"/><path d="M156 166l7 4v8l-7 4-7-4v-8z"/>
   </g>
-  <circle cx="170" cy="162" r="30" fill="none" stroke="#1F7A6B" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <circle cx="170" cy="162" r="30" fill="none" stroke="var(--teal)" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 4"/>
   <!-- cluster 4 emerging -->
-  <g fill="#EAEDF6" stroke="#173F8A" stroke-width="1.4" opacity=".85">
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.4" opacity=".85">
     <path d="M240 68l9 15h-18z"/><path d="M246 92l9 15h-18z"/>
   </g>
-  <circle class="pulse-o" cx="246" cy="88" r="26" fill="none" stroke="#173F8A" stroke-opacity=".35" stroke-width="1.1" stroke-dasharray="3 5" style="animation-delay:-2s"/>
+  <circle class="pulse-o" cx="246" cy="88" r="26" fill="none" stroke="var(--indigo)" stroke-opacity=".35" stroke-width="1.1" stroke-dasharray="3 5" style="animation-delay:-2s"/>
   <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
-    <text x="46" y="130" fill="#173F8A">class 1</text>
-    <text x="152" y="46" fill="#B0521A">class 2</text>
-    <text x="146" y="204" fill="#1F7A6B">class 3</text>
-    <text x="226" y="128" fill="#A29486">?</text>
+    <text x="46" y="130" fill="var(--indigo)">class 1</text>
+    <text x="152" y="46" fill="var(--saffron)">class 2</text>
+    <text x="146" y="204" fill="var(--teal)">class 3</text>
+    <text x="226" y="128" fill="var(--ink-4)">?</text>
   </g>
 </svg>

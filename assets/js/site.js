@@ -5,6 +5,46 @@
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- theme ----
+     The attribute is already stamped by the inline script in <head>; this only
+     handles the button and, while no explicit choice is stored, keeps
+     following the system if it changes under us. */
+  var root = document.documentElement;
+  var themeBtn = document.querySelector('[data-theme-toggle]');
+  var meta = document.querySelector('meta[name="theme-color"]');
+  var sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  var paint = function (theme) {
+    root.dataset.theme = theme;
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#17120E' : '#F9EBDE');
+    }
+    if (themeBtn) {
+      var next = theme === 'dark' ? 'light' : 'dark';
+      var label = 'Switch to ' + next + ' theme';
+      themeBtn.setAttribute('aria-label', label);
+      themeBtn.setAttribute('title', label);
+    }
+  };
+
+  paint(root.dataset.theme === 'dark' ? 'dark' : 'light');
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+      paint(next);
+    });
+  }
+
+  var onSystem = function (e) {
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch (err) { stored = null; }
+    if (stored !== 'light' && stored !== 'dark') paint(e.matches ? 'dark' : 'light');
+  };
+  if (sysDark.addEventListener) sysDark.addEventListener('change', onSystem);
+  else if (sysDark.addListener) sysDark.addListener(onSystem);
+
   /* ---- sticky header shadow ---- */
   var hdr = document.querySelector('.hdr');
   if (hdr) {

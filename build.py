@@ -107,7 +107,17 @@ ICON = {
     'menu':   '<svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     'x':      '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
     'play':   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 6.2a1 1 0 011.52-.85l7.2 4.5a1.35 1.35 0 010 2.3l-7.2 4.5a1 1 0 01-1.52-.85z"/></svg>',
+    'sun':    '<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg>',
+    'moon':   '<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.4 8.4 0 102.4 16.4A8.2 8.2 0 0020 14.2z"/></svg>',
 }
+
+# Runs before first paint, so the page never flashes the wrong theme. It also
+# stamps the attribute for the system preference, which is why the stylesheet
+# needs no prefers-color-scheme block of its own.
+THEME_BOOT = ("<script>(function(){try{var t=localStorage.getItem('theme');"
+              "if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)')"
+              ".matches?'dark':'light';document.documentElement.dataset.theme=t;}"
+              "catch(e){}})();</script>")
 
 SITE = load('site')
 BASE = SITE['url'].rstrip('/')
@@ -144,10 +154,13 @@ def header(slug):
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">{links}</nav>
+    <button class="theme-toggle" type="button" data-theme-toggle
+            aria-label="Switch to dark theme" title="Switch to dark theme">{sun}{moon}</button>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">{menu}{x}</button>
   </div>
 </header>""".format(logo=svg('logo'), name=a(SITE['name']), links=''.join(links),
-                    menu=ICON['menu'], x=ICON['x'])
+                    menu=ICON['menu'], x=ICON['x'],
+                    sun=ICON['sun'], moon=ICON['moon'])
 
 
 def footer():
@@ -193,6 +206,7 @@ def page(slug, title, desc, body, body_class='', nav=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{themeboot}
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{base}/{slug}">
@@ -202,7 +216,7 @@ def page(slug, title, desc, body, body_class='', nav=None):
 <meta property="og:url" content="{base}/{slug}">
 <meta property="og:site_name" content="{name}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FBF5EB">
+<meta name="theme-color" content="#F9EBDE">
 {favicon}
 {fonts}
 <link rel="stylesheet" href="assets/css/site.css?v={cssv}">
@@ -221,6 +235,7 @@ def page(slug, title, desc, body, body_class='', nav=None):
     return html.format(title=attr(full), desc=attr(desc), base=BASE, slug=slug,
                        name=attr(SITE['name']), favicon=FAVICON, fonts=FONTS,
                        header=header(nav or slug), body=body, footer=footer(),
+                       themeboot=THEME_BOOT,
                        cssv=asset_v('assets/css/site.css'), jsv=asset_v('assets/js/site.js'),
                        cls=(' class="' + body_class + '"') if body_class else '')
 
