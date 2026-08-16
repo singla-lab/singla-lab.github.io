@@ -70,8 +70,8 @@
         { "name": "Akhil Punia",          "year": "2025", "dept": "CSE Department", "note": "Joint with Prof. Aparajita Khan", "photo": "akhil-punia", "link": "https://www.linkedin.com/in/akhil-216-punia/" },
         { "name": "Jyotsna Singh",        "year": "2025", "dept": "Physics Department", "photo": "jyotsna-singh", "link": "https://www.linkedin.com/in/jyotsna-singh-072ba4230/" },
         { "name": "Roshan Kumar",         "year": "2024", "dept": "BSBE Department", "photo": "roshan-kumar", "link": "https://www.linkedin.com/in/roshan-kumar-16a675209/" },
-        { "name": "Mayank Garg",          "year": "2024", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/mayank-garg-16b6411b9/" },
-        { "name": "Ayush Bhateja",        "year": "2024", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/ayush-bhateja-1321591b9/" },
+        { "name": "Mayank Garg",          "year": "2024", "dept": "BSBE Department", "photo": "mayank-garg", "link": "https://www.linkedin.com/in/mayank-garg-16b6411b9/" },
+        { "name": "Ayush Bhateja",        "year": "2024", "dept": "BSBE Department", "photo": "ayush-bhateja", "link": "https://www.linkedin.com/in/ayush-bhateja-1321591b9/" },
         { "name": "Aditya Singh Bisht",   "year": "2024", "dept": "CSE Department" },
         { "name": "Alok Raj",             "year": "2024", "dept": "CSE Department" },
         { "name": "Kumar Devesh",         "year": "2024", "dept": "CSE Department", "link": "https://www.linkedin.com/in/kumar-devesh-984511218/" },
@@ -82,7 +82,7 @@
         { "name": "Gayathri K",           "year": "2023", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/gayathri-k-ab24991ab/" },
         { "name": "Amitesh Uppal",        "year": "2023", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/amiteshuppal/" },
         { "name": "Kushagra Rustagi",     "year": "2022", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/kushagra-rustagi-215284178/" },
-        { "name": "Sanchit Verma",        "year": "2022", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/sanchit-verma-ai/" }
+        { "name": "Sanchit Verma",        "year": "2022", "dept": "BSBE Department", "photo": "sanchit-verma", "link": "https://www.linkedin.com/in/sanchit-verma-ai/" }
       ]
     },
     {
