@@ -182,6 +182,11 @@ To serve this at `www.jitinsingla.in`:
   editor. `hero.svg` is a stylised tomographic slice; the `art-*.svg` files
   illustrate each research area.
 - **Animation** is subtle and always disabled under `prefers-reduced-motion`.
+- **Cache busting**: the stylesheet and script are linked with a `?v=` content
+  hash, regenerated on every build. GitHub Pages serves them with a ten-minute
+  cache and no fingerprint of its own, so without this a returning reader can
+  sit on the old design after a deploy. If a design change ever seems not to
+  have landed, check the hash in the page source before blaming the deploy.
 - Total repository weight is around 3.5 MB, so the site loads fast on a poor
   connection.
 

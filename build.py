@@ -13,6 +13,7 @@ ampersands are escaped automatically, so you can type "A & B" without thinking
 about it.
 """
 
+import hashlib
 import io
 import json
 import os
@@ -35,6 +36,23 @@ def load(name):
 def svg(name):
     with io.open(os.path.join(SVGD, name + '.svg'), encoding='utf-8') as fh:
         return fh.read().strip()
+
+
+_VCACHE = {}
+
+
+def asset_v(relpath):
+    """Short content hash, hung off the stylesheet and script as ?v=.
+
+    GitHub Pages serves these with a ten-minute cache and no fingerprint, so a
+    returning reader could sit on the old design well past a deploy. The hash
+    changes only when the file does, so caching still works -- it just cannot
+    outlive the file it is caching.
+    """
+    if relpath not in _VCACHE:
+        with open(os.path.join(ROOT, relpath), 'rb') as fh:
+            _VCACHE[relpath] = hashlib.sha1(fh.read()).hexdigest()[:8]
+    return _VCACHE[relpath]
 
 
 _AMP = re.compile(r'&(?!#?\w+;)')
@@ -186,7 +204,7 @@ def page(slug, title, desc, body, body_class='', nav=None):
 <meta name="theme-color" content="#FBF5EB">
 {favicon}
 {fonts}
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v={cssv}">
 </head>
 <body{cls}>
 <a class="skip" href="#main">Skip to content</a>
@@ -195,13 +213,14 @@ def page(slug, title, desc, body, body_class='', nav=None):
 {body}
 </main>
 {footer}
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v={jsv}" defer></script>
 </body>
 </html>
 """
     return html.format(title=attr(full), desc=attr(desc), base=BASE, slug=slug,
                        name=attr(SITE['name']), favicon=FAVICON, fonts=FONTS,
                        header=header(nav or slug), body=body, footer=footer(),
+                       cssv=asset_v('assets/css/site.css'), jsv=asset_v('assets/js/site.js'),
                        cls=(' class="' + body_class + '"') if body_class else '')
 
 
