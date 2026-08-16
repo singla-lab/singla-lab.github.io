@@ -2,8 +2,8 @@
   <defs>
     <radialGradient id="cellFill" cx="42%" cy="36%" r="72%">
       <stop offset="0%"  stop-color="#FFFFFF"/>
-      <stop offset="58%" stop-color="#F4F7FD"/>
-      <stop offset="100%" stop-color="#E9EFF9"/>
+      <stop offset="58%" stop-color="#FBF6F0"/>
+      <stop offset="100%" stop-color="#EAEDF6"/>
     </radialGradient>
     <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#2563C9" stop-opacity="0"/>
@@ -15,7 +15,7 @@
   </defs>
 
   <!-- instrument crosshair ticks -->
-  <g fill="none" stroke="#9AA3AC" stroke-width="1.2" stroke-linecap="round" opacity=".5">
+  <g fill="none" stroke="#A29486" stroke-width="1.2" stroke-linecap="round" opacity=".5">
     <path d="M18 18 h26 M18 18 v26"/>
     <path d="M602 18 h-26 M602 18 v26"/>
     <path d="M18 602 h26 M18 602 v-26"/>
@@ -23,7 +23,7 @@
   </g>
 
   <!-- outer goniometer rings -->
-  <circle class="spin-slow" cx="310" cy="310" r="286" fill="none" stroke="#C2601F" stroke-opacity=".42" stroke-width="1.1" stroke-dasharray="2 14"/>
+  <circle class="spin-slow" cx="310" cy="310" r="286" fill="none" stroke="#B0521A" stroke-opacity=".42" stroke-width="1.1" stroke-dasharray="2 14"/>
   <circle class="spin-rev"  cx="310" cy="310" r="262" fill="none" stroke="#173F8A" stroke-opacity=".26" stroke-width="1" stroke-dasharray="26 12"/>
 
   <!-- cell body -->
@@ -68,7 +68,7 @@
     </g>
 
     <!-- secretory vesicles -->
-    <g fill="#FBEFE3" stroke="#C2601F" stroke-width="1.5">
+    <g fill="#FBE4CD" stroke="#B0521A" stroke-width="1.5">
       <circle class="pulse-o" cx="452" cy="252" r="11"/>
       <circle cx="478" cy="296" r="8"/>
       <circle class="pulse-o" cx="404" cy="374" r="13" style="animation-delay:-1.4s"/>
@@ -90,8 +90,8 @@
   </g>
 
   <!-- measurement callout -->
-  <g stroke="#C2601F" stroke-width="1.2" fill="none" stroke-linecap="round">
+  <g stroke="#B0521A" stroke-width="1.2" fill="none" stroke-linecap="round">
     <path d="M74 310 h-38 M36 302 v16 M74 302 v16"/>
   </g>
-  <text x="55" y="296" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" fill="#C2601F">10 µm</text>
+  <text x="55" y="296" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" fill="#B0521A">10 µm</text>
 </svg>

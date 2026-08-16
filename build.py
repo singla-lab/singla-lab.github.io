@@ -100,7 +100,8 @@ FONTS = (
     'family=Inter:wght@300..700&amp;'
     'family=JetBrains+Mono:wght@400..600&amp;'
     'family=Newsreader:ital,wght@0,300..600;1,300..600&amp;'
-    'family=Noto+Sans+Devanagari:wght@400..600&amp;display=swap">'
+    'family=Tiro+Devanagari+Hindi:ital@0;1&amp;'
+    'family=Noto+Serif+Devanagari:wght@400..600&amp;display=swap">'
 )
 
 FAVICON = (
@@ -182,7 +183,7 @@ def page(slug, title, desc, body, body_class='', nav=None):
 <meta property="og:url" content="{base}/{slug}">
 <meta property="og:site_name" content="{name}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FBFAF7">
+<meta name="theme-color" content="#FBF5EB">
 {favicon}
 {fonts}
 <link rel="stylesheet" href="assets/css/site.css">
@@ -270,14 +271,14 @@ def person_card(p, alum=False):
 
 
 def cta_band():
-    return """<section class="section">
+    return """<section class="section-tight">
   <div class="wrap">
     <div class="cta-band rv">
       <div>
-        <h2 class="h2">Work with us</h2>
-        <p class="lede measure-sm" style="margin-top:.6rem">We look for people who want to build, question and grow — not collect credentials.</p>
+        <h2 class="h3">Work with us</h2>
+        <p class="muted small measure-sm">We look for people who want to build, question and grow &mdash; not collect credentials.</p>
       </div>
-      <a class="btn btn-primary btn-arrow" href="contact.html">See open routes {arrow}</a>
+      <a class="btn btn-sm btn-primary btn-arrow" href="contact.html">See open routes {arrow}</a>
     </div>
   </div>
 </section>""".format(arrow=ICON['arrow'])
@@ -329,7 +330,7 @@ def build_home():
     <div class="hero-grid">
       <div>
         <p class="eyebrow rv">Singla Lab &middot; Biosciences &amp; Bioengineering</p>
-        <h1 class="display rv">We look for structure &mdash;<br>in cells, in signals,<br>in <span class="accent">Sanskrit</span>.</h1>
+        <h1 class="display rv">We look for <span class="accent">structure</span> &mdash;<br>in cells and signals.</h1>
         <p class="lede hero-sub rv">{desc}</p>
         <div class="hero-cta rv">
           <a class="btn btn-primary btn-arrow" href="research.html">Explore the research {arrow}</a>
@@ -797,7 +798,7 @@ def build_teaching():
 </section>
 <section class="section quote-band">
   <div class="wrap">
-    <p class="q" style="font-family:'Noto Sans Devanagari',serif;font-style:normal">{sk}</p>
+    <p class="q q-sa">{sk}</p>
     <p class="attr">{tr}</p>
   </div>
 </section>""".format(groups=''.join(groups), terms=''.join(terms),

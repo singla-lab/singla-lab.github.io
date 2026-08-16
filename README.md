@@ -164,11 +164,20 @@ To serve this at `www.jitinsingla.in`:
 
 ## Design notes
 
-- **Light, editorial-scientific.** Warm off-white paper, one deep indigo
-  primary, one burnt-saffron accent, teal for biological objects.
+- **Light, editorial-scientific.** Apricot paper (`--paper: #FBF5EB`), one deep
+  indigo primary sitting opposite it, one burnt-saffron accent, teal for
+  biological objects. Every neutral — surface, rules, the whole ink ramp — is
+  mixed on the same warm axis, so no grey reads cold against the ground. Change
+  `--paper` and the warm tokens together, or the page goes muddy.
+  All body text clears WCAG AA on the new ground: ink 16.4:1, `--ink-2` 9.0:1,
+  `--ink-3` 4.6:1, saffron 4.8:1, indigo 9.2:1.
 - **Type**: Newsreader (display serif), Inter (text), JetBrains Mono (labels and
-  numbers), Noto Sans Devanagari. Loaded from Google Fonts with full system
-  fallbacks, so the site still reads correctly if the fonts fail to load.
+  numbers), Tiro Devanagari Hindi for every Sanskrit line (`--f-sa`). Loaded from
+  Google Fonts with full system fallbacks, so the site still reads correctly if
+  the fonts fail to load.
+- **The home-page quote is set on one line** — `.q` is `white-space: nowrap` and
+  its size follows the viewport. A much longer quote will therefore render small
+  rather than wrap; shorten the text or drop the `nowrap` if that happens.
 - **Graphics** in `_svg/` are hand-written SVG, not exports — edit them in a text
   editor. `hero.svg` is a stylised tomographic slice; the `art-*.svg` files
   illustrate each research area.

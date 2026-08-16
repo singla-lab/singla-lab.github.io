@@ -1,6 +1,6 @@
 <svg viewBox="0 0 320 220" role="img" aria-label="Mitochondrial network with morphometric bounding boxes" xmlns="http://www.w3.org/2000/svg">
-  <rect x="12" y="12" width="296" height="196" rx="10" fill="#FFFFFF" stroke="#E5E2DA"/>
-  <g fill="none" stroke="#E5E2DA" stroke-width=".8">
+  <rect x="12" y="12" width="296" height="196" rx="10" fill="#FFFFFF" stroke="#EADFD2"/>
+  <g fill="none" stroke="#EADFD2" stroke-width=".8">
     <path d="M12 60h296M12 110h296M12 160h296M80 12v196M160 12v196M240 12v196"/>
   </g>
   <polyline class="dash-run" points="72,72 128,102 106,158 176,168 226,120 262,66"
@@ -18,13 +18,13 @@
     <path d="M90 153l6 8M102 153l6 8M114 153l6 8" transform="rotate(8 106 157)"/>
   </g>
   <!-- morphometry callouts -->
-  <g stroke="#C2601F" stroke-width="1.1" fill="none" stroke-dasharray="3 3">
+  <g stroke="#B0521A" stroke-width="1.1" fill="none" stroke-dasharray="3 3">
     <rect x="42" y="52" width="64" height="42" rx="3"/>
     <rect x="144" y="150" width="68" height="36" rx="3"/>
   </g>
-  <g fill="#C2601F" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
+  <g fill="#B0521A" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5">
     <text x="42" y="46">len 2.4 µm</text>
     <text x="144" y="144">Ø 0.61</text>
   </g>
-  <circle class="pulse-o" cx="262" cy="66" r="16" fill="none" stroke="#C2601F" stroke-width="1.2"/>
+  <circle class="pulse-o" cx="262" cy="66" r="16" fill="none" stroke="#B0521A" stroke-width="1.2"/>
 </svg>
