@@ -53,8 +53,8 @@
       "members": [
         { "name": "Aman Bawane",          "year": "2026", "dept": "CSE Department", "photo": "aman-bawane", "link": "https://www.linkedin.com/in/aman-bawane-179b1926a/" },
         { "name": "Meet Sindhav",         "year": "2026", "dept": "CSE Department", "photo": "meet-sindhav", "link": "https://www.linkedin.com/in/meet-sindhav/" },
-        { "name": "Ayush",                "year": "2026", "dept": "CSE Department" },
-        { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department", "link": "https://www.linkedin.com/in/raman-sharma-7b7054267/" },
+        { "name": "Ayush Ranjan",         "year": "2026", "dept": "CSE Department", "photo": "ayush-ranjan" },
+        { "name": "Raman Sharma",         "year": "2026", "dept": "CSE Department", "photo": "raman-sharma", "link": "https://www.linkedin.com/in/raman-sharma-7b7054267/" },
         { "name": "Kshitij Shah",         "year": "2026", "dept": "CSE Department", "photo": "kshitij-shah", "link": "https://www.linkedin.com/in/kshitij-shah-62406b251/" },
         { "name": "Aryan Dhas",           "year": "2026", "dept": "CSE Department", "photo": "aryan-dhas", "link": "https://www.linkedin.com/in/aryan-dhas-48070b285/" },
         { "name": "Amandeep Singh",       "year": "2025", "dept": "CSE Department", "photo": "amandeep-singh", "link": "https://www.linkedin.com/in/aman262225/" },
