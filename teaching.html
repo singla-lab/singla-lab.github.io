@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400..600&amp;family=Newsreader:ital,wght@0,300..600;1,300..600&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;family=Noto+Serif+Devanagari:wght@400..600&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=7411aea1">
+<link rel="stylesheet" href="assets/css/site.css?v=99a18780">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -64,36 +64,249 @@
     <div class="crs-group rv">
   <p class="crs-group-t">Autumn 2026–27<span class="crs-group-n crs-group-now">in progress</span></p>
   <div class="crs-cards"><a class="crs-card" href="course-bec351-2026.html">
-  <span class="crs-code">BEC-351</span>
-  <span class="crs-card-n">Fundamentals of AI/ML</span>
-  <span class="crs-card-t">Running now</span>
-  <span class="crs-card-b">Where the field came from, the mathematics underneath it, and how to tell whether a model is any good.</span>
+  <span class="crs-thumb" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two classes of points separated by a decision boundary" xmlns="http://www.w3.org/2000/svg">
+  <!-- measure grid -->
+  <g stroke="var(--rule)" stroke-width="1" opacity=".85">
+    <path d="M0 45h320M0 90h320M0 135h320"/>
+    <path d="M64 0v180M128 0v180M192 0v180M256 0v180"/>
+  </g>
+
+  <!-- the margin, then the boundary itself -->
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-4)" stroke-opacity=".16" stroke-width="22"/>
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="6 5"/>
+
+  <!-- class one: inside the boundary -->
+  <g fill="var(--indigo)" fill-opacity=".8">
+    <circle cx="52" cy="48" r="5"/>
+    <circle cx="84" cy="32" r="5"/>
+    <circle cx="112" cy="58" r="5"/>
+    <circle cx="70" cy="86" r="5"/>
+    <circle cx="144" cy="42" r="5"/>
+    <circle cx="102" cy="24" r="5"/>
+    <circle cx="170" cy="30" r="5"/>
+    <circle cx="126" cy="74" r="5"/>
+  </g>
+
+  <!-- class two: hollow, so the two read apart without relying on hue -->
+  <g fill="none" stroke="var(--saffron)" stroke-width="1.9">
+    <circle cx="96" cy="152" r="5"/>
+    <circle cx="134" cy="138" r="5"/>
+    <circle cx="170" cy="122" r="5"/>
+    <circle cx="206" cy="100" r="5"/>
+    <circle cx="152" cy="162" r="5"/>
+    <circle cx="192" cy="146" r="5"/>
+    <circle cx="236" cy="88" r="5"/>
+    <circle cx="264" cy="130" r="5"/>
+  </g>
+
+  <!-- two points the boundary gets wrong: the part that makes it a fit, not a rule -->
+  <circle cx="176" cy="70" r="5" fill="none" stroke="var(--saffron)" stroke-width="1.9"/>
+  <circle cx="118" cy="112" r="5" fill="var(--indigo)" fill-opacity=".8"/>
+
+  <!-- instrument ticks -->
+  <g stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" opacity=".55">
+    <path d="M10 10h12M10 10v12"/>
+    <path d="M310 170h-12M310 170v-12"/>
+  </g>
+</svg></span>
+  <span class="crs-card-in">
+    <span class="crs-code">BEC-351</span>
+    <span class="crs-card-n">Fundamentals of AI/ML</span>
+    <span class="crs-card-t">Running now</span>
+    <span class="crs-card-b">Where the field came from, the mathematics underneath it, and how to tell whether a model is any good.</span>
+  </span>
 </a><a class="crs-card" href="course-bel483-2026.html">
-  <span class="crs-code">BEL-483</span>
-  <span class="crs-card-n">Deep Learning</span>
-  <span class="crs-card-t">Running now</span>
-  <span class="crs-card-b">From the perceptron to transformers — the architectures, the mathematics that makes them trainable, and the papers that introduced them.</span>
+  <span class="crs-thumb" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A fully connected network of four layers" xmlns="http://www.w3.org/2000/svg">
+  <!-- edges, thin and low, so the nodes stay the subject -->
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".22" stroke-width="1">
+    <path d="M52 60L120 30M52 60L120 60M52 60L120 90M52 60L120 120M52 60L120 150
+             M52 90L120 30M52 90L120 60M52 90L120 90M52 90L120 120M52 90L120 150
+             M52 120L120 30M52 120L120 60M52 120L120 90M52 120L120 120M52 120L120 150"/>
+    <path d="M120 30L188 30M120 30L188 60M120 30L188 90M120 30L188 120M120 30L188 150
+             M120 60L188 30M120 60L188 60M120 60L188 90M120 60L188 120M120 60L188 150
+             M120 90L188 30M120 90L188 60M120 90L188 90M120 90L188 120M120 90L188 150
+             M120 120L188 30M120 120L188 60M120 120L188 90M120 120L188 120M120 120L188 150
+             M120 150L188 30M120 150L188 60M120 150L188 90M120 150L188 120M120 150L188 150"/>
+    <path d="M188 30L256 75M188 30L256 105M188 60L256 75M188 60L256 105
+             M188 90L256 75M188 90L256 105M188 120L256 75M188 120L256 105
+             M188 150L256 75M188 150L256 105"/>
+  </g>
+
+  <!-- one path lit through the whole network: what a forward pass looks like -->
+  <path class="dash-run" d="M52 90L120 60L188 120L256 75" fill="none"
+        stroke="var(--saffron)" stroke-width="1.9" stroke-linejoin="round"/>
+
+  <!-- input -->
+  <g fill="var(--surface)" stroke="var(--teal)" stroke-width="1.8">
+    <circle cx="52" cy="60" r="7"/>
+    <circle cx="52" cy="90" r="7"/>
+    <circle cx="52" cy="120" r="7"/>
+  </g>
+  <!-- hidden -->
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.8">
+    <circle cx="120" cy="30" r="7"/>
+    <circle cx="120" cy="60" r="7"/>
+    <circle cx="120" cy="90" r="7"/>
+    <circle cx="120" cy="120" r="7"/>
+    <circle cx="120" cy="150" r="7"/>
+    <circle cx="188" cy="30" r="7"/>
+    <circle cx="188" cy="60" r="7"/>
+    <circle cx="188" cy="90" r="7"/>
+    <circle cx="188" cy="120" r="7"/>
+    <circle cx="188" cy="150" r="7"/>
+  </g>
+  <!-- output -->
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.8">
+    <circle cx="256" cy="75" r="7"/>
+    <circle cx="256" cy="105" r="7"/>
+  </g>
+</svg></span>
+  <span class="crs-card-in">
+    <span class="crs-code">BEL-483</span>
+    <span class="crs-card-n">Deep Learning</span>
+    <span class="crs-card-t">Running now</span>
+    <span class="crs-card-b">From the perceptron to transformers — the architectures, the mathematics that makes them trainable, and the papers that introduced them.</span>
+  </span>
 </a></div>
 </div><div class="crs-group rv">
   <p class="crs-group-t">Autumn 2025–26<span class="crs-group-n">completed</span></p>
   <div class="crs-cards"><a class="crs-card" href="course-bec351-2025.html">
-  <span class="crs-code">BEC-351</span>
-  <span class="crs-card-n">Fundamentals of AI/ML</span>
-  <span class="crs-card-t">Completed</span>
-  <span class="crs-card-b">The completed 2025–26 run: eight topics from the history of the field through learning theory to linear and logistic regression.</span>
+  <span class="crs-thumb" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two classes of points separated by a decision boundary" xmlns="http://www.w3.org/2000/svg">
+  <!-- measure grid -->
+  <g stroke="var(--rule)" stroke-width="1" opacity=".85">
+    <path d="M0 45h320M0 90h320M0 135h320"/>
+    <path d="M64 0v180M128 0v180M192 0v180M256 0v180"/>
+  </g>
+
+  <!-- the margin, then the boundary itself -->
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-4)" stroke-opacity=".16" stroke-width="22"/>
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="6 5"/>
+
+  <!-- class one: inside the boundary -->
+  <g fill="var(--indigo)" fill-opacity=".8">
+    <circle cx="52" cy="48" r="5"/>
+    <circle cx="84" cy="32" r="5"/>
+    <circle cx="112" cy="58" r="5"/>
+    <circle cx="70" cy="86" r="5"/>
+    <circle cx="144" cy="42" r="5"/>
+    <circle cx="102" cy="24" r="5"/>
+    <circle cx="170" cy="30" r="5"/>
+    <circle cx="126" cy="74" r="5"/>
+  </g>
+
+  <!-- class two: hollow, so the two read apart without relying on hue -->
+  <g fill="none" stroke="var(--saffron)" stroke-width="1.9">
+    <circle cx="96" cy="152" r="5"/>
+    <circle cx="134" cy="138" r="5"/>
+    <circle cx="170" cy="122" r="5"/>
+    <circle cx="206" cy="100" r="5"/>
+    <circle cx="152" cy="162" r="5"/>
+    <circle cx="192" cy="146" r="5"/>
+    <circle cx="236" cy="88" r="5"/>
+    <circle cx="264" cy="130" r="5"/>
+  </g>
+
+  <!-- two points the boundary gets wrong: the part that makes it a fit, not a rule -->
+  <circle cx="176" cy="70" r="5" fill="none" stroke="var(--saffron)" stroke-width="1.9"/>
+  <circle cx="118" cy="112" r="5" fill="var(--indigo)" fill-opacity=".8"/>
+
+  <!-- instrument ticks -->
+  <g stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" opacity=".55">
+    <path d="M10 10h12M10 10v12"/>
+    <path d="M310 170h-12M310 170v-12"/>
+  </g>
+</svg></span>
+  <span class="crs-card-in">
+    <span class="crs-code">BEC-351</span>
+    <span class="crs-card-n">Fundamentals of AI/ML</span>
+    <span class="crs-card-t">Completed</span>
+    <span class="crs-card-b">The completed 2025–26 run: eight topics from the history of the field through learning theory to linear and logistic regression.</span>
+  </span>
 </a><a class="crs-card" href="course-csl537-2025.html">
-  <span class="crs-code">CSL-537</span>
-  <span class="crs-card-n">Deep Learning</span>
-  <span class="crs-card-t">Completed</span>
-  <span class="crs-card-b">The completed 2025–26 run: nineteen lectures from the perceptron through CNNs and transformers to variational autoencoders.</span>
+  <span class="crs-thumb" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A kernel sliding over an input grid into a stack of feature maps" xmlns="http://www.w3.org/2000/svg">
+  <!-- input plane -->
+  <rect x="22" y="34" width="112" height="112" rx="4" fill="var(--surface)" stroke="var(--rule)" stroke-width="1.4"/>
+  <g stroke="var(--rule)" stroke-width="1">
+    <path d="M50 34v112M78 34v112M106 34v112"/>
+    <path d="M22 62h112M22 90h112M22 118h112"/>
+  </g>
+
+  <!-- the receptive field, sitting on one 2x2 of the grid -->
+  <rect x="50" y="62" width="56" height="56" rx="3" fill="var(--saffron)" fill-opacity=".14"
+        stroke="var(--saffron)" stroke-width="2"/>
+  <g stroke="var(--saffron)" stroke-width="1.4" stroke-opacity=".65">
+    <path d="M78 62v56M50 90h56"/>
+  </g>
+
+  <!-- what it maps to -->
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.3">
+    <path d="M106 68 L196 46"/>
+    <path d="M106 112 L196 62"/>
+  </g>
+
+  <!-- feature maps, stacked back to front -->
+  <g stroke-width="1.5">
+    <rect x="212" y="30" width="76" height="76" rx="4" fill="var(--indigo-soft)" stroke="var(--indigo)" opacity=".45"/>
+    <rect x="200" y="46" width="76" height="76" rx="4" fill="var(--indigo-soft)" stroke="var(--indigo)" opacity=".7"/>
+    <rect x="188" y="62" width="76" height="76" rx="4" fill="var(--indigo-soft)" stroke="var(--indigo)"/>
+  </g>
+  <!-- activations on the front map -->
+  <g fill="var(--teal)" fill-opacity=".7">
+    <rect x="200" y="74" width="14" height="14" rx="2"/>
+    <rect x="228" y="88" width="14" height="14" rx="2"/>
+    <rect x="214" y="112" width="14" height="14" rx="2"/>
+    <rect x="242" y="74" width="14" height="14" rx="2"/>
+  </g>
+
+  <!-- instrument ticks -->
+  <g stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" opacity=".55">
+    <path d="M10 10h12M10 10v12"/>
+    <path d="M310 170h-12M310 170v-12"/>
+  </g>
+</svg></span>
+  <span class="crs-card-in">
+    <span class="crs-code">CSL-537</span>
+    <span class="crs-card-n">Deep Learning</span>
+    <span class="crs-card-t">Completed</span>
+    <span class="crs-card-b">The completed 2025–26 run: nineteen lectures from the perceptron through CNNs and transformers to variational autoencoders.</span>
+  </span>
 </a></div>
 </div><div class="crs-group rv">
   <p class="crs-group-t">Any time<span class="crs-group-n">no enrolment, no deadline</span></p>
   <div class="crs-cards"><a class="crs-card crs-card-alt" href="self-learning.html">
-  <span class="crs-code">&#8734;</span>
-  <span class="crs-card-n">Self-learning</span>
-  <span class="crs-card-t">Work at your own pace</span>
-  <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
+  <span class="crs-thumb" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A stack of notes and a path climbing at its own pace" xmlns="http://www.w3.org/2000/svg">
+  <!-- a stack of notes, offset -->
+  <g stroke-width="1.5">
+    <rect x="34" y="46" width="84" height="104" rx="5" fill="var(--paper-2)" stroke="var(--rule)" transform="rotate(-7 76 98)"/>
+    <rect x="42" y="42" width="84" height="104" rx="5" fill="var(--paper-2)" stroke="var(--rule)" transform="rotate(-2.5 84 94)"/>
+    <rect x="50" y="38" width="84" height="104" rx="5" fill="var(--surface)" stroke="var(--teal)"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+    <path d="M64 62h56M64 76h56M64 90h38M64 104h48M64 118h30"/>
+  </g>
+
+  <!-- no deadline: the path climbs, but it is dashed and open at both ends -->
+  <path d="M150 142 C 186 138, 190 104, 218 96 C 246 88, 252 56, 288 48"
+        fill="none" stroke="var(--saffron)" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="7 6"/>
+  <g fill="var(--surface)" stroke="var(--saffron)" stroke-width="2">
+    <circle cx="150" cy="142" r="6"/>
+    <circle cx="218" cy="96" r="6"/>
+  </g>
+  <circle cx="288" cy="48" r="6" fill="var(--saffron)"/>
+
+  <!-- and it loops: you can always come back round -->
+  <path d="M262 138 a20 20 0 1 0 20-20" fill="none" stroke="var(--indigo)"
+        stroke-opacity=".55" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M276 112 l6 6 -6 6" fill="none" stroke="var(--indigo)" stroke-opacity=".55"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+  <span class="crs-card-in">
+    <span class="crs-code">&#8734;</span>
+    <span class="crs-card-n">Self-learning</span>
+    <span class="crs-card-t">Work at your own pace</span>
+    <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
+  </span>
 </a></div>
 </div>
   </div>

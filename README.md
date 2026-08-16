@@ -101,6 +101,14 @@ corners of the square get clipped.
 the matching group in `alumni.json`. Alumni portraits render in greyscale and
 turn to colour on hover; the photo file does not need changing.
 
+**Change a course card's picture** — set `"art"` on the course in
+`_data/courses.json` to one of the motifs in `_svg/`: `ml` (a decision
+boundary through two classes), `dl` (a fully connected network), `conv` (a
+kernel and its feature maps). Omit it and you get `ml`. The self-paced card
+uses `crs-self.svg`. These are hand-written SVG in the same token colours as
+the rest of the site, so they follow the theme — draw a new one at 320×180 and
+name it `crs-<key>.svg`.
+
 **Add a course page** — append an object to `courses` in `_data/courses.json`.
 `slug` decides the filename (`"bec351-2027"` → `course-bec351-2027.html`), and
 `code` + `term` must match the entry in `_data/teaching.json` for the term list

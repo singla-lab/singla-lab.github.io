@@ -814,21 +814,28 @@ def build_teaching():
         for c in by_term[term]:
             running = running or bool(c.get('current'))
             cards.append("""<a class="crs-card" href="{href}">
-  <span class="crs-code">{code}</span>
-  <span class="crs-card-n">{name}</span>
-  <span class="crs-card-t">{state}</span>
-  <span class="crs-card-b">{blurb}</span>
+  <span class="crs-thumb" aria-hidden="true">{art}</span>
+  <span class="crs-card-in">
+    <span class="crs-code">{code}</span>
+    <span class="crs-card-n">{name}</span>
+    <span class="crs-card-t">{state}</span>
+    <span class="crs-card-b">{blurb}</span>
+  </span>
 </a>""".format(href=course_slug(c), code=a(c['code']), name=a(c['name']),
+               art=svg('crs-' + c.get('art', 'ml')),
                state='Running now' if c.get('current') else 'Completed',
                blurb=a(c['blurb'])))
         groups.append(card_group(term, 'in progress' if running else 'completed', cards, now=running))
 
     groups.append(card_group('Any time', 'no enrolment, no deadline', ["""<a class="crs-card crs-card-alt" href="self-learning.html">
-  <span class="crs-code">&#8734;</span>
-  <span class="crs-card-n">Self-learning</span>
-  <span class="crs-card-t">Work at your own pace</span>
-  <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
-</a>"""]))
+  <span class="crs-thumb" aria-hidden="true">{art}</span>
+  <span class="crs-card-in">
+    <span class="crs-code">&#8734;</span>
+    <span class="crs-card-n">Self-learning</span>
+    <span class="crs-card-t">Work at your own pace</span>
+    <span class="crs-card-b">Notes to work through on your own, shared by the lab and its friends.</span>
+  </span>
+</a>""".format(art=svg('crs-self'))]))
 
     body = page_head('Teaching', 'Courses', d['intro']) + """
 <section class="section-tight">

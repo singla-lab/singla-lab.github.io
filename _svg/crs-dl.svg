@@ -1,0 +1,45 @@
+<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A fully connected network of four layers" xmlns="http://www.w3.org/2000/svg">
+  <!-- edges, thin and low, so the nodes stay the subject -->
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".22" stroke-width="1">
+    <path d="M52 60L120 30M52 60L120 60M52 60L120 90M52 60L120 120M52 60L120 150
+             M52 90L120 30M52 90L120 60M52 90L120 90M52 90L120 120M52 90L120 150
+             M52 120L120 30M52 120L120 60M52 120L120 90M52 120L120 120M52 120L120 150"/>
+    <path d="M120 30L188 30M120 30L188 60M120 30L188 90M120 30L188 120M120 30L188 150
+             M120 60L188 30M120 60L188 60M120 60L188 90M120 60L188 120M120 60L188 150
+             M120 90L188 30M120 90L188 60M120 90L188 90M120 90L188 120M120 90L188 150
+             M120 120L188 30M120 120L188 60M120 120L188 90M120 120L188 120M120 120L188 150
+             M120 150L188 30M120 150L188 60M120 150L188 90M120 150L188 120M120 150L188 150"/>
+    <path d="M188 30L256 75M188 30L256 105M188 60L256 75M188 60L256 105
+             M188 90L256 75M188 90L256 105M188 120L256 75M188 120L256 105
+             M188 150L256 75M188 150L256 105"/>
+  </g>
+
+  <!-- one path lit through the whole network: what a forward pass looks like -->
+  <path class="dash-run" d="M52 90L120 60L188 120L256 75" fill="none"
+        stroke="var(--saffron)" stroke-width="1.9" stroke-linejoin="round"/>
+
+  <!-- input -->
+  <g fill="var(--surface)" stroke="var(--teal)" stroke-width="1.8">
+    <circle cx="52" cy="60" r="7"/>
+    <circle cx="52" cy="90" r="7"/>
+    <circle cx="52" cy="120" r="7"/>
+  </g>
+  <!-- hidden -->
+  <g fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.8">
+    <circle cx="120" cy="30" r="7"/>
+    <circle cx="120" cy="60" r="7"/>
+    <circle cx="120" cy="90" r="7"/>
+    <circle cx="120" cy="120" r="7"/>
+    <circle cx="120" cy="150" r="7"/>
+    <circle cx="188" cy="30" r="7"/>
+    <circle cx="188" cy="60" r="7"/>
+    <circle cx="188" cy="90" r="7"/>
+    <circle cx="188" cy="120" r="7"/>
+    <circle cx="188" cy="150" r="7"/>
+  </g>
+  <!-- output -->
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.8">
+    <circle cx="256" cy="75" r="7"/>
+    <circle cx="256" cy="105" r="7"/>
+  </g>
+</svg>

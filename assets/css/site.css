@@ -731,15 +731,38 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 
 .crs-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); margin-top: 1.2rem; }
 .crs-card {
-  display: flex; flex-direction: column; gap: .35rem; padding: 1.4rem 1.5rem 1.5rem;
+  display: flex; flex-direction: column;
   border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface);
-  color: var(--ink); text-decoration: none; transition: all .22s var(--ease);
+  color: var(--ink); text-decoration: none; overflow: hidden;
+  transition: all .22s var(--ease);
 }
+.crs-card-in { display: flex; flex-direction: column; gap: .35rem; padding: 1.2rem 1.5rem 1.5rem; }
 .crs-card:hover {
   text-decoration: none; border-color: var(--ink-4);
   transform: translateY(-2px); box-shadow: var(--shadow-2);
 }
 .crs-card .crs-code { align-self: flex-start; margin-bottom: .5rem; }
+
+/* The card's picture. Drawn rather than photographed, and built from the same
+   tokens as everything else, so it follows the theme instead of sitting on it. */
+.crs-thumb {
+  display: block; position: relative; aspect-ratio: 16 / 9;
+  background: linear-gradient(150deg, var(--paper-2), var(--surface) 70%);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+.crs-thumb svg { width: 100%; height: 100%; display: block; }
+/* a hairline of the brand along the top edge, warmer on the self-paced card */
+.crs-thumb::after {
+  content: ''; position: absolute; inset: 0 0 auto 0; height: 2px;
+  background: var(--indigo); opacity: .55;
+}
+.crs-card-alt .crs-thumb::after { background: var(--teal); }
+.crs-card:hover .crs-thumb::after { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .crs-thumb svg { transition: transform .3s var(--ease); }
+  .crs-card:hover .crs-thumb svg { transform: scale(1.03); }
+}
 .crs-card-n { font-family: var(--f-display); font-size: 1.28rem; letter-spacing: -.015em; }
 .crs-card-t { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .04em; color: var(--ink-3); }
 .crs-card-b { font-size: .87rem; color: var(--ink-2); margin-top: .5rem; }

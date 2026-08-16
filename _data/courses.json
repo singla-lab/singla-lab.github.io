@@ -3,7 +3,7 @@
 
   "courses": [
     {
-      "slug": "bec351-2026",
+      "slug": "bec351-2026", "art": "ml",
       "code": "BEC-351",
       "name": "Fundamentals of AI/ML",
       "term": "Autumn 2026–27",
@@ -80,7 +80,7 @@
     },
 
     {
-      "slug": "bel483-2026",
+      "slug": "bel483-2026", "art": "dl",
       "code": "BEL-483",
       "name": "Deep Learning",
       "term": "Autumn 2026–27",
@@ -179,7 +179,7 @@
     },
 
     {
-      "slug": "bec351-2025",
+      "slug": "bec351-2025", "art": "ml",
       "code": "BEC-351",
       "name": "Fundamentals of AI/ML",
       "term": "Autumn 2025–26",
@@ -288,7 +288,7 @@
     },
 
     {
-      "slug": "csl537-2025",
+      "slug": "csl537-2025", "art": "conv",
       "code": "CSL-537",
       "name": "Deep Learning",
       "term": "Autumn 2025–26",

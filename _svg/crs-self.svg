@@ -1,0 +1,27 @@
+<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A stack of notes and a path climbing at its own pace" xmlns="http://www.w3.org/2000/svg">
+  <!-- a stack of notes, offset -->
+  <g stroke-width="1.5">
+    <rect x="34" y="46" width="84" height="104" rx="5" fill="var(--paper-2)" stroke="var(--rule)" transform="rotate(-7 76 98)"/>
+    <rect x="42" y="42" width="84" height="104" rx="5" fill="var(--paper-2)" stroke="var(--rule)" transform="rotate(-2.5 84 94)"/>
+    <rect x="50" y="38" width="84" height="104" rx="5" fill="var(--surface)" stroke="var(--teal)"/>
+  </g>
+  <g stroke="var(--ink-4)" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+    <path d="M64 62h56M64 76h56M64 90h38M64 104h48M64 118h30"/>
+  </g>
+
+  <!-- no deadline: the path climbs, but it is dashed and open at both ends -->
+  <path d="M150 142 C 186 138, 190 104, 218 96 C 246 88, 252 56, 288 48"
+        fill="none" stroke="var(--saffron)" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="7 6"/>
+  <g fill="var(--surface)" stroke="var(--saffron)" stroke-width="2">
+    <circle cx="150" cy="142" r="6"/>
+    <circle cx="218" cy="96" r="6"/>
+  </g>
+  <circle cx="288" cy="48" r="6" fill="var(--saffron)"/>
+
+  <!-- and it loops: you can always come back round -->
+  <path d="M262 138 a20 20 0 1 0 20-20" fill="none" stroke="var(--indigo)"
+        stroke-opacity=".55" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M276 112 l6 6 -6 6" fill="none" stroke="var(--indigo)" stroke-opacity=".55"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two classes of points separated by a decision boundary" xmlns="http://www.w3.org/2000/svg">
+  <!-- measure grid -->
+  <g stroke="var(--rule)" stroke-width="1" opacity=".85">
+    <path d="M0 45h320M0 90h320M0 135h320"/>
+    <path d="M64 0v180M128 0v180M192 0v180M256 0v180"/>
+  </g>
+
+  <!-- the margin, then the boundary itself -->
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-4)" stroke-opacity=".16" stroke-width="22"/>
+  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="6 5"/>
+
+  <!-- class one: inside the boundary -->
+  <g fill="var(--indigo)" fill-opacity=".8">
+    <circle cx="52" cy="48" r="5"/>
+    <circle cx="84" cy="32" r="5"/>
+    <circle cx="112" cy="58" r="5"/>
+    <circle cx="70" cy="86" r="5"/>
+    <circle cx="144" cy="42" r="5"/>
+    <circle cx="102" cy="24" r="5"/>
+    <circle cx="170" cy="30" r="5"/>
+    <circle cx="126" cy="74" r="5"/>
+  </g>
+
+  <!-- class two: hollow, so the two read apart without relying on hue -->
+  <g fill="none" stroke="var(--saffron)" stroke-width="1.9">
+    <circle cx="96" cy="152" r="5"/>
+    <circle cx="134" cy="138" r="5"/>
+    <circle cx="170" cy="122" r="5"/>
+    <circle cx="206" cy="100" r="5"/>
+    <circle cx="152" cy="162" r="5"/>
+    <circle cx="192" cy="146" r="5"/>
+    <circle cx="236" cy="88" r="5"/>
+    <circle cx="264" cy="130" r="5"/>
+  </g>
+
+  <!-- two points the boundary gets wrong: the part that makes it a fit, not a rule -->
+  <circle cx="176" cy="70" r="5" fill="none" stroke="var(--saffron)" stroke-width="1.9"/>
+  <circle cx="118" cy="112" r="5" fill="var(--indigo)" fill-opacity=".8"/>
+
+  <!-- instrument ticks -->
+  <g stroke="var(--ink-4)" stroke-width="1.2" stroke-linecap="round" opacity=".55">
+    <path d="M10 10h12M10 10v12"/>
+    <path d="M310 170h-12M310 170v-12"/>
+  </g>
+</svg>
