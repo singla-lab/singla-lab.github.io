@@ -501,11 +501,17 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .pill-journal { background: var(--indigo-soft); color: #1B4A9E; border-color: #DAE5F6; }
 .pill-preprint { background: var(--saffron-soft); color: #8F440F; border-color: #F0D6B8; }
 .pill-conference { background: var(--teal-soft); color: #14604F; border-color: #D2E8E3; }
+/* Press coverage. Teal, not saffron -- saffron is the accent and reads as a
+   warning next to warm paper; and not indigo, which is what a link looks like. */
 .pub-hl {
-  margin-top: .5rem; font-size: .82rem; color: #8F440F;
-  background: var(--saffron-soft); border-left: 2px solid var(--saffron);
+  margin-top: .5rem; font-size: .82rem; color: #14604F;
+  background: var(--teal-soft); border-left: 2px solid var(--teal);
   padding: .45rem .7rem; border-radius: 0 6px 6px 0;
 }
+.pub-hl b { font-weight: 650; color: #0F4E40; }
+.pub-hl a { color: inherit; text-decoration: underline; text-underline-offset: 2px;
+            text-decoration-color: rgba(31,122,107,.4); }
+.pub-hl a:hover { text-decoration-color: currentColor; }
 
 /* ---------- Timeline / news ---------- */
 .tl { position: relative; padding-left: 1.75rem; }

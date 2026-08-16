@@ -97,7 +97,7 @@
       "title": "Structural Virology: The Key Determinants in Development of Antiviral Therapeutics",
       "venue": "Viruses",
       "detail": "17(3), 417",
-      "link": "https://www.preprints.org/frontend/manuscript/8468712f752c57101edc8cdb1b12842d/download_pub",
+      "link": "https://www.mdpi.com/1999-4915/17/3/417",
       "topic": "structbio"
     },
     {
@@ -196,7 +196,8 @@
       "title": "Soft X-ray tomography to map and quantify organelle interactions at the mesoscale",
       "venue": "Structure",
       "detail": "30(4), 510–521.e3",
-      "highlight": "Highlighted in Nature — “Soft X-rays capture the dance of the organelles”",
+      "highlight": { "venue": "Nature", "title": "Soft X-rays capture the dance of the organelles",
+                     "link": "https://www.nature.com/articles/d41586-022-00420-z" },
       "link": "https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5",
       "topic": "sxt"
     },
@@ -224,7 +225,7 @@
       "title": "Bayesian metamodeling of complex biological systems across varying representations",
       "venue": "Proceedings of the National Academy of Sciences",
       "detail": "118(35), e2104559118",
-      "link": "https://www.biorxiv.org/content/10.1101/2021.03.29.437574v1.abstract",
+      "link": "https://www.pnas.org/doi/10.1073/pnas.2104559118",
       "topic": "ml"
     },
     {
@@ -251,7 +252,8 @@
       "title": "Visualizing subcellular rearrangements in intact β cells using soft X-ray tomography",
       "venue": "Science Advances",
       "detail": "6(50), eabc8262",
-      "highlight": "Highlighted in Science — “Subcellular map of vesicle maturation”",
+      "highlight": { "venue": "Science", "title": "Subcellular map of vesicle maturation",
+                     "link": "https://science.sciencemag.org/content/370/6522/twis" },
       "link": "https://advances.sciencemag.org/content/6/50/eabc8262",
       "topic": "sxt"
     },
@@ -270,7 +272,8 @@
       "title": "De novo structural pattern mining in cellular electron cryotomograms",
       "venue": "Structure",
       "detail": "27(4), 679–691",
-      "highlight": "Highlighted in Nature Methods — “Template-free visual proteomics”",
+      "highlight": { "venue": "Nature Methods", "title": "Template-free visual proteomics",
+                     "link": "https://www.nature.com/articles/s41592-019-0382-2" },
       "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
@@ -308,6 +311,7 @@
       "title": "Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions",
       "venue": "Microscopy and Microanalysis",
       "detail": "29, Supplement 1, p. 1181",
+      "link": "https://academic.oup.com/mam/article/29/Supplement_1/1181/7228625",
       "topic": "sxt"
     },
     {
@@ -324,7 +328,6 @@
       "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
       "venue": "4th Annual QCBio Retreat, Malibu, California",
       "detail": "September 25, 2018",
-      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
     {
@@ -342,7 +345,6 @@
       "title": "De novo structural pattern mining in cellular electron cryo-tomograms",
       "venue": "5th Annual Shanghai iHuman Forum, Shanghai, China",
       "detail": "November 5–10, 2017",
-      "link": "https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X",
       "topic": "cryoet"
     },
     {
@@ -351,7 +353,6 @@
       "title": "Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography",
       "venue": "Microscopy and Microanalysis",
       "detail": "23(S1), 1248–1249",
-      "link": "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/revealing-the-native-molecular-architecture-of-the-nuclear-periphery-using-cryofocusedionbeam-milling-light-microscopy-and-electron-tomography/CD1178A6F232A42A6ABD2290C58BF6AE",
       "topic": "cryoet"
     },
     {

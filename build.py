@@ -523,6 +523,19 @@ def build_research():
                                        'Research areas of the Singla Lab: soft X-ray tomography, AI for point-of-care diagnostics and Sanskrit language models, with earlier work in cryo-ET and scientific visualization.', body))
 
 
+def highlight(h):
+    """The press a paper picked up. The journal carries the weight, so it is
+    set bold and the piece's own title is the link."""
+    if not h:
+        return ''
+    title = '&ldquo;{0}&rdquo;'.format(a(h['title']))
+    if h.get('link'):
+        title = '<a href="{0}" target="_blank" rel="noopener">{1}</a>'.format(
+            attr(h['link']), title)
+    return ('<p class="pub-hl">Highlighted in <b>{0}</b> &mdash; {1}</p>'
+            .format(a(h['venue']), title))
+
+
 def pub_item(p, meta):
     title = a(p['title'])
     if p.get('link'):
@@ -542,7 +555,7 @@ def pub_item(p, meta):
     # No Read button: when there is a link the title itself carries it, and two
     # controls to the same URL is one too many.
 
-    hl = '<p class="pub-hl">{0}</p>'.format(a(p['highlight'])) if p.get('highlight') else ''
+    hl = highlight(p.get('highlight'))
 
     return """<article class="pub" data-pub data-type="{type}" data-topic="{topic}">
   <p class="pub-t">{title}</p>
