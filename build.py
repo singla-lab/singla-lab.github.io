@@ -298,7 +298,7 @@ def build_home():
             a(s['value']), a(s['label'])) for s in SITE['stats'])
 
     rows = []
-    for area in research['areas']:
+    for area in current_areas(research):
         rows.append("""<a class="rsrch-row" href="research.html#{id}">
   <div class="rsrch-num">{num}</div>
   <div>
@@ -357,7 +357,7 @@ def build_home():
     <div class="sec-head rv">
       <div>
         <p class="eyebrow">What we work on</p>
-        <h2 class="h2 measure">Five threads, one question: how do you get from raw measurement to something you can reason about?</h2>
+        <h2 class="h2 measure">Three threads, one question: how do you get from raw measurement to something you can reason about?</h2>
       </div>
       <a class="btn btn-arrow" href="research.html">All research {arrow}</a>
     </div>
@@ -427,43 +427,77 @@ def build_home():
     return write('index.html', page('index.html', SITE['name'], SITE['description'], body))
 
 
-def build_research():
-    r = load('research')
-    blocks = []
-    for area in r['areas']:
-        if area.get('image'):
-            fig = ('<figure class="area-fig">'
-                   '<img src="assets/img/media/{0}.jpg" alt="{1}" loading="lazy">'
-                   '<figcaption>{2}</figcaption></figure>').format(
-                       area['image'], attr(area['title']), a(area['kicker']))
-        else:
-            fig = ('<figure class="area-fig"><div class="svg-holder">{0}</div>'
-                   '<figcaption>{1}</figcaption></figure>').format(
-                       svg('art-' + area['graphic']), a(area['kicker']))
+def current_areas(r):
+    return [x for x in r['areas'] if not x.get('past')]
 
-        tagcls = ['tag', 'tag-warm', 'tag-teal']
-        tags = ''.join('<span class="{0}">{1}</span>'.format(
-            tagcls[i % 3], a(t)) for i, t in enumerate(area.get('tags', [])))
 
-        blocks.append("""<article class="area rv" id="{id}">
+def past_areas(r):
+    return [x for x in r['areas'] if x.get('past')]
+
+
+def area_block(area):
+    if area.get('image'):
+        fig = ('<figure class="area-fig">'
+               '<img src="assets/img/media/{0}.jpg" alt="{1}" loading="lazy">'
+               '<figcaption>{2}</figcaption></figure>').format(
+                   area['image'], attr(area['title']), a(area['kicker']))
+    else:
+        fig = ('<figure class="area-fig"><div class="svg-holder">{0}</div>'
+               '<figcaption>{1}</figcaption></figure>').format(
+                   svg('art-' + area['graphic']), a(area['kicker']))
+
+    tagcls = ['tag', 'tag-warm', 'tag-teal']
+    tags = ''.join('<span class="{0}">{1}</span>'.format(
+        tagcls[i % 3], a(t)) for i, t in enumerate(area.get('tags', [])))
+
+    # a past thread carries no number -- it is out of the running order
+    eb = '{0} &nbsp;&mdash;&nbsp; {1}'.format(area['num'], a(area['kicker'])) \
+        if area.get('num') else a(area['kicker'])
+
+    return """<article class="area rv" id="{id}">
   <div>
-    <p class="eyebrow">{num} &nbsp;&mdash;&nbsp; {kicker}</p>
+    <p class="eyebrow">{eb}</p>
     <h2 class="h2">{title}</h2>
     <p class="lede" style="margin:1rem 0 1.4rem">{summary}</p>
     <div class="measure">{body}</div>
     <div class="tags">{tags}</div>
   </div>
   {fig}
-</article>""".format(id=area['id'], num=area['num'], kicker=a(area['kicker']),
-                     title=a(area['title']), summary=a(area['summary']),
+</article>""".format(id=area['id'], eb=eb, title=a(area['title']),
+                     summary=a(area['summary']),
                      body=''.join('<p>{0}</p>'.format(a(p)) for p in area['body']),
-                     tags=tags, fig=fig))
+                     tags=tags, fig=fig)
+
+
+def build_research():
+    r = load('research')
+    blocks = ''.join(area_block(x) for x in current_areas(r))
+    old = past_areas(r)
+
+    # Closed by default, and a plain <details> so it still opens without JS.
+    past = """
+<section class="section-tight">
+  <div class="wrap">
+    <details class="past rv" id="past">
+      <summary class="past-tab">
+        <span class="past-tab-l">Earlier threads</span>
+        <span class="past-tab-n">{n}</span>
+        <span class="past-tab-c" aria-hidden="true">{chev}</span>
+      </summary>
+      <div class="past-body">
+        <p class="muted small measure" style="margin-bottom:.5rem">{note}</p>
+        {blocks}
+      </div>
+    </details>
+  </div>
+</section>""".format(n=len(old), chev=ICON['arrow'], note=a(r['past_intro']),
+                     blocks=''.join(area_block(x) for x in old)) if old else ''
 
     body = page_head('Research', 'What the lab works on', r['intro']) + \
-        '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(blocks)) + \
-        cta_band()
+        '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(blocks) + \
+        past + cta_band()
     return write('research.html', page('research.html', 'Research',
-                                       'Research areas of the Singla Lab: soft X-ray tomography, cryo-ET, AI diagnostics, Sanskrit NLP and scientific visualization.', body))
+                                       'Research areas of the Singla Lab: soft X-ray tomography, AI for point-of-care diagnostics and Sanskrit language models, with earlier work in cryo-ET and scientific visualization.', body))
 
 
 def pub_item(p, meta):

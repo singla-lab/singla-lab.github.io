@@ -113,6 +113,12 @@ string becomes an em dash.
 change `slug`, `term` and `schedule.rows`, move `"current": true` across, and
 add the old exam papers to the new page's `past_papers`.
 
+**Retire a research thread** — add `"past": true` to its entry in
+`_data/research.json` and delete its `"num"`. It disappears from the home page
+and moves into the *Earlier threads* panel at the foot of Research, which is
+closed until a reader opens it. Renumber the remaining threads `01`, `02`, … and
+update `intro` so the count still reads true. Bringing one back is the reverse.
+
 **Add a publication** — add an object to the `publications` array in
 `_data/publications.json`. `type` is one of `journal`, `conference`, `preprint`,
 `chapter`, `poster`; `topic` must be a key from the `topics` map at the bottom of

@@ -1,5 +1,6 @@
 {
-  "intro": "We build computational frameworks that sit between biology, data science and engineering. Four threads run through the lab — cellular architecture from tomography, template-free molecular discovery, AI for point-of-care diagnostics, and language models for Sanskrit.",
+  "intro": "We build computational frameworks that sit between biology, data science and engineering. Three threads run through the lab right now — cellular architecture from tomography, AI for point-of-care diagnostics, and language models for Sanskrit.",
+  "past_intro": "Lines of work the lab has taken as far as it means to for now. The methods and the papers stand; we are simply not adding to them this year.",
   "areas": [
     {
       "id": "sxt",
@@ -18,7 +19,7 @@
     },
     {
       "id": "cryoet",
-      "num": "02",
+      "past": true,
       "graphic": "lattice",
       "title": "Template-free macromolecular discovery in cryo-electron tomograms",
       "kicker": "Visual proteomics",
@@ -33,7 +34,7 @@
     },
     {
       "id": "jaundice",
-      "num": "03",
+      "num": "02",
       "graphic": "pulse",
       "title": "Non-invasive diagnostics from images and signals",
       "kicker": "AI for healthcare",
@@ -48,7 +49,7 @@
     },
     {
       "id": "sanskrit",
-      "num": "04",
+      "num": "03",
       "graphic": "devanagari",
       "title": "AI models for Sanskrit",
       "kicker": "Low-resource NLP",
@@ -62,7 +63,7 @@
     },
     {
       "id": "vdl",
-      "num": "05",
+      "past": true,
       "graphic": "tetra",
       "title": "A visual design language for biological structure",
       "kicker": "World in a Cell",
