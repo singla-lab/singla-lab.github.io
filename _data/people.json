@@ -45,7 +45,7 @@
       "members": [
         { "slug": "swaroop-itkikar", "name": "Swaroop Itkikar", "role": "UG Research Project", "dept": "Meta Department", "photo": "swaroop-itkikar", "link": "https://www.linkedin.com/in/swaroop-itkikar-346790284/" },
         { "slug": "raunak",          "name": "Raunak",          "role": "UG Research Project", "dept": "ECE Department",  "photo": "raunak", "link": "https://www.linkedin.com/in/raunak-kumar-10b7692a1/" },
-        { "slug": "anuj-pal",        "name": "Anuj Pal",        "role": "UG Research Project", "dept": "ECE Department" }
+        { "slug": "anuj-pal",        "name": "Anuj Pal",        "role": "UG Research Project", "dept": "ECE Department",  "photo": "anuj-pal", "link": "https://www.linkedin.com/in/anuj-pal-199b052a3/" }
       ]
     },
     {
@@ -53,8 +53,8 @@
       "title": "Undergraduate Thesis",
       "blurb": "B.Tech. thesis students working with the lab this year.",
       "members": [
-        { "name": "Aryan", "role": "B.Tech. Thesis", "dept": "CSE Department" },
-        { "name": "Ansh",  "role": "B.Tech. Thesis", "dept": "CSE Department" }
+        { "name": "Aryan Laroia", "role": "B.Tech. Thesis", "dept": "CSE Department", "photo": "aryan-laroia", "link": "https://www.linkedin.com/in/aryanlaroia/" },
+        { "name": "Ansh Jain",    "role": "B.Tech. Thesis", "dept": "CSE Department", "photo": "ansh-jain", "link": "https://www.linkedin.com/in/ansh-jain-19a92325a/" }
       ]
     }
   ],
