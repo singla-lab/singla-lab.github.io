@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://singla-lab.github.io/sitemap.xml
+Sitemap: https://www.jitinsingla.in/sitemap.xml

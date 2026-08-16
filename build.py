@@ -1255,6 +1255,14 @@ def build_extras():
 
     # tells GitHub Pages to serve the files as-is instead of running Jekyll
     written.append(write('.nojekyll', ''))
+
+    # the custom domain, taken from "url" so the canonical tags, the sitemap and
+    # the host GitHub answers on can never drift apart. A github.io url means
+    # there is no custom domain, and no CNAME file should exist.
+    host = BASE.split('//', 1)[-1]
+    if not host.endswith('.github.io'):
+        written.append(write('CNAME', host + '\n'))
+
     return written
 
 

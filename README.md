@@ -1,7 +1,8 @@
 # Singla Lab — website
 
-Source for **https://singla-lab.github.io** — the site of the Singla Lab,
-Department of Biosciences and Bioengineering, IIT Roorkee.
+Source for **https://www.jitinsingla.in** — the site of the Singla Lab,
+Department of Biosciences and Bioengineering, IIT Roorkee. GitHub serves it from
+`singla-lab.github.io`, which redirects to the custom domain.
 
 Plain static HTML. No framework, no npm, no build server. GitHub Pages serves
 the files in this repository exactly as they are.
@@ -173,19 +174,30 @@ Settings → Pages should read: **Source: Deploy from a branch · Branch: `main`
 `.nojekyll` is present, which tells Pages to skip Jekyll and publish the files
 verbatim. Do not delete it.
 
-### Custom domain (later)
+### Custom domain
 
-To serve this at `www.jitinsingla.in`:
+The site answers on `www.jitinsingla.in`. That domain used to point at a Google
+Site; it was moved here in August 2026.
 
-1. Add a file named `CNAME` in the repository root containing one line:
-   `www.jitinsingla.in`
-2. At the DNS registrar, point `www` at `singla-lab.github.io` with a CNAME
-   record. For the apex `jitinsingla.in`, add four A records to
-   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
-3. In Settings → Pages, enter the domain and tick **Enforce HTTPS** once the
-   certificate is issued.
-4. Update `"url"` in `_data/site.json` and rebuild, so canonical links and the
-   sitemap point at the new domain.
+`"url"` in `_data/site.json` is the single place the domain is written down.
+`build.py` uses it for the canonical tags, `sitemap.xml`, `robots.txt` **and**
+for the root `CNAME` file, which is the file GitHub Pages reads to decide which
+host to answer on. Change that one string, rebuild, and everything follows. Set
+it back to a `github.io` address and the `CNAME` file is simply not emitted —
+though note that a stale one already committed would have to be deleted by hand.
+
+The zone at the registrar holds:
+
+| Type | Name | Value |
+|---|---|---|
+| CNAME | `www` | `singla-lab.github.io.` |
+| A | `@` | `185.199.108.153`, `.109.153`, `.110.153`, `.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153`, `:8001::153`, `:8002::153`, `:8003::153` |
+
+The apex records exist so `jitinsingla.in` redirects to the `www` host rather
+than failing. Everything else in that zone — five `MX`, the SPF and DKIM `TXT`
+records, two `gv-*.dv.googlehosted.com` verification `CNAME`s — belongs to
+Google Workspace email and must be left alone.
 
 ---
 
