@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Singla Lab site generator.
@@ -181,7 +181,7 @@ def footer():
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="ftr-logo" href="index.html" aria-label="{name} — home">{logofull}</a>
+        <a class="ftr-logo" href="index.html" aria-label="{name} â€” home">{logofull}</a>
         <p class="sanskrit-line" style="margin-top:1.6rem">{sans}</p>
         <p class="sanskrit-tr">{sanstr}</p>
       </div>
@@ -200,7 +200,7 @@ def footer():
 
 def page(slug, title, desc, body, body_class='', nav=None):
     """nav lets a sub-page (a course, say) keep its parent lit in the header."""
-    full = title if title == SITE['name'] else '{0} — {1}'.format(title, SITE['name'])
+    full = title if title == SITE['name'] else '{0} â€” {1}'.format(title, SITE['name'])
     html = """<!doctype html>
 <html lang="en">
 <head>
@@ -375,7 +375,7 @@ def build_home():
     # it would tip the whole block over, so the drawn summaries stay on the
     # publications page where there is room for them
     recent = [p for p in pubs['publications'] if p['type'] != 'poster'][:5]
-    pubhtml = ''.join(pub_item(p, pubs, figures=False) for p in recent)
+    pubhtml = ''.join(pub_item(p, pubs, full=False) for p in recent)
 
     newshtml = ''.join("""<div class="tl-item">
   <p class="tl-date">{date}</p>
@@ -578,18 +578,15 @@ def highlight(h):
 
 
 def pub_fig(p):
-    """A drawn summary of the paper, for the few that have one. The graphic is
-    a schematic of the method and the claim, not a reproduction of a figure,
-    so the caption says as much rather than passing it off as the real thing."""
+    """A drawn summary of the paper, for the few that have one. It carries no
+    caption: the prose summary sits in the text column instead, where it fills
+    the run of empty space the figure's height opens up beside it."""
     if not p.get('graphic'):
         return ''
-    cap = ''
-    if p.get('figcap'):
-        cap = '<figcaption>{0}</figcaption>'.format(a(p['figcap']))
-    return '<figure class="pub-fig">{0}{1}</figure>'.format(svg('pub-' + p['graphic']), cap)
+    return '<figure class="pub-fig">{0}</figure>'.format(svg('pub-' + p['graphic']))
 
 
-def pub_item(p, meta, figures=True):
+def pub_item(p, meta, full=True):
     title = a(p['title'])
     if p.get('link'):
         title = '<a href="{0}" target="_blank" rel="noopener">{1}</a>'.format(p['link'], title)
@@ -608,9 +605,16 @@ def pub_item(p, meta, figures=True):
 
     hl = highlight(p.get('highlight'))
 
+    # last in the entry, so it runs down beside a figure rather than pushing the
+    # pills away from the title. Independent of the figure -- a paper may carry
+    # a summary without a drawing.
+    summary = ''
+    if full and p.get('summary'):
+        summary = '<p class="pub-sum"><b>Summary:</b> {0}</p>'.format(a(p['summary']))
+
     # the text is wrapped whether or not there is a figure, so that the entry is
     # one grid item rather than five when pub-wide turns the article into a grid
-    fig = pub_fig(p) if figures else ''
+    fig = pub_fig(p) if full else ''
 
     return """<article class="pub{wide}" data-pub data-type="{type}" data-topic="{topic}">
   <div class="pub-main">
@@ -619,11 +623,13 @@ def pub_item(p, meta, figures=True):
     <p class="pub-v">{venue}</p>
     {hl}
     <div class="pub-meta">{pills}</div>
+    {summary}
   </div>
   {fig}
 </article>""".format(wide=' pub-wide' if fig else '', type=p['type'],
                      topic=p.get('topic', ''), title=title, authors=authors,
-                     venue=venue, hl=hl, pills=''.join(pills), fig=fig)
+                     venue=venue, hl=hl, pills=''.join(pills),
+                     summary=summary, fig=fig)
 
 
 def build_publications():
@@ -671,7 +677,7 @@ def build_publications():
 </section>""".format(talks)
 
     return write('publications.html', page('publications.html', 'Publications',
-                                           'Publications from the Singla Lab at IIT Roorkee — journals, preprints, conference papers, book chapters and posters.', body))
+                                           'Publications from the Singla Lab at IIT Roorkee â€” journals, preprints, conference papers, book chapters and posters.', body))
 
 
 def build_projects():
@@ -705,7 +711,7 @@ def build_projects():
         '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(blocks)) + \
         cta_band()
     return write('projects.html', page('projects.html', 'Sponsored Projects',
-                                       'Sponsored research projects led by or involving the Singla Lab — ICMR, SERB-DST, MeitY, MoE-IKS and STARS.', body))
+                                       'Sponsored research projects led by or involving the Singla Lab â€” ICMR, SERB-DST, MeitY, MoE-IKS and STARS.', body))
 
 
 def build_team():
@@ -787,7 +793,7 @@ def build_team():
                      groups=''.join(groups), collab=collab, arrow=ICON['arrow'])
 
     return write('team.html', page('team.html', 'Team',
-                                   'Members of the Singla Lab at IIT Roorkee — doctoral researchers, undergraduate researchers and collaborators.', body))
+                                   'Members of the Singla Lab at IIT Roorkee â€” doctoral researchers, undergraduate researchers and collaborators.', body))
 
 
 def build_alumni():
@@ -1042,7 +1048,7 @@ def build_course(c):
   </div>
 </section>""".format(arrow=ICON['arrow'])
 
-    desc = '{0} {1}, {2} — course page for {3} at IIT Roorkee: schedule, slides, reading and evaluation.'.format(
+    desc = '{0} {1}, {2} â€” course page for {3} at IIT Roorkee: schedule, slides, reading and evaluation.'.format(
         c['code'], c['name'], c['term'], SITE['name'])
     return write(slug, page(slug, '{0} {1}'.format(c['code'], c['name']),
                             desc, body, nav='teaching.html'))
@@ -1257,7 +1263,7 @@ def build_404():
 def build_extras():
     written = []
 
-    # favicon — a miniature of the lab mark
+    # favicon â€” a miniature of the lab mark
     fav = svg('logo')
     with io.open(os.path.join(ROOT, 'assets', 'img', 'favicon.svg'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(fav + '\n')

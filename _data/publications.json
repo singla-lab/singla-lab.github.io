@@ -26,7 +26,7 @@
       "link": "https://www.biorxiv.org/content/10.64898/2026.03.19.712811v1",
       "topic": "sxt",
       "graphic": "morphometry",
-      "figcap": "Schematic summary. Mitochondria of three morphotypes are resolved in whole β-cells; structure, density and location are found to move together rather than independently."
+      "summary": "Mitochondrial networks in whole β-cells are resolved into distinct morphotypes and measured in three dimensions from soft X-ray tomograms. Across the population, structure, density and subcellular location are found to vary together rather than independently — a coupling that a population-averaged measurement would miss."
     },
     {
       "year": 2026, "type": "preprint",
@@ -64,7 +64,7 @@
       "link": "https://www.sciencedirect.com/science/article/pii/S1047847726000079",
       "topic": "sxt",
       "graphic": "segmentation",
-      "figcap": "Schematic summary. Soft X-ray tomograms are segmented into a mitochondrial mask, the mask is split into individual organelles, and each one is measured."
+      "summary": "A pipeline for turning soft X-ray tomograms into measurable biology: mitochondria are separated from the surrounding volume, the mask is split into individual organelles, and each one is profiled for size, shape and connectivity. The emphasis is on segmentation that holds up across volumes rather than being tuned to a single dataset."
     },
 
     {

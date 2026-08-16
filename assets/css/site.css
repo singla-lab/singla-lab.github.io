@@ -659,9 +659,15 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   background: var(--surface); overflow: hidden;
 }
 .pub-fig svg { display: block; width: 100%; height: auto; }
-.pub-fig figcaption {
-  font-size: .72rem; line-height: 1.5; color: var(--ink-3);
-  padding: .5rem .65rem .55rem; border-top: 1px solid var(--rule-2);
+
+/* The prose that goes with the drawing. It is last in the entry so that it runs
+   down the column the figure's height leaves open, rather than pushing the
+   pills away from the title. */
+.pub-sum { margin: .6rem 0 0; font-size: .875rem; line-height: 1.6; color: var(--ink-2); }
+.pub-sum b {
+  font-family: var(--f-mono); font-size: .68rem; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4);
+  margin-right: .4rem;
 }
 @media (min-width: 900px) {
   .pub-wide { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 1.6rem; align-items: start; }
