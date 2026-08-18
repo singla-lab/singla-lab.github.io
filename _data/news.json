@@ -11,16 +11,9 @@
       "date": "March 2026",
       "sort": "2026-03-01",
       "title": "Divyanshu Bathla awarded the IndiaAI PhD Fellowship",
-      "body": "Divyanshu Bathla, a doctoral student in the lab, has received the IndiaAI PhD Fellowship. A national initiative under the IndiaAI Mission, it supports full-time doctoral researchers in AI with a monthly stipend of &#8377;70,000&#8211;80,000, an annual research grant of &#8377;2 lakh, and conference travel support of up to &#8377;1 lakh.",
+      "body": "Divyanshu Bathla, a doctoral student in the lab, has received the IndiaAI PhD Fellowship for his work building Sanskrit-AI tools. A national initiative under the IndiaAI Mission, it supports full-time doctoral researchers in AI with a monthly stipend of &#8377;70,000&#8211;80,000, an annual research grant of &#8377;2 lakh, and conference travel support of up to &#8377;1 lakh.",
       "tag": "Award",
-      "svg": "indiaai"
-    },
-    {
-      "date": "2025",
-      "sort": "2025-12-31",
-      "title": "Excellence in Teaching Award 2025, Young Faculty",
-      "body": "Jitin Singla has been conferred the Excellence in Teaching Award for the year 2025 at IIT Roorkee, in the Young Faculty category.",
-      "tag": "Award"
+      "svg": "sanskrit-ai"
     },
     {
       "date": "6 December 2025",
@@ -37,6 +30,14 @@
       "body": "A five-day workshop on Science Communication, Outreach &amp; Public Engagement.",
       "tag": "Outreach",
       "image": "news-scope-iitkgp"
+    },
+    {
+      "date": "5 September 2025",
+      "sort": "2025-09-05",
+      "title": "Excellence in Teaching Award 2025, Young Faculty",
+      "body": "Jitin Singla was conferred the Excellence in Teaching Award for the year 2025 at IIT Roorkee, in the Young Faculty category, presented at the Teachers&#8217; Day ceremony.",
+      "tag": "Award",
+      "image": "news-teaching-award"
     },
     {
       "date": "19–21 February 2025",
