@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCA Playground · EEC 351</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0; background: #f9f8f4; color: #1a1a1a; line-height: 1.55; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 2px solid #143C78; padding-bottom: 10px; margin-bottom: 18px; }
+  header h1 { margin: 0; color: #143C78; font-size: 26px; }
+  .subtitle { color: #555; font-size: 13px; margin-top: 4px; }
+  .intro { font-size: 15px; max-width: 850px; margin-bottom: 16px; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .btn { background: #143C78; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
+  .btn:hover { background: #0d2a55; }
+  .btn-alt { background: #fff; color: #143C78; border: 1px solid #143C78; }
+  .btn-alt:hover { background: #eef2f9; }
+  .btn-active { background: #B42828; }
+  .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .viz { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px; }
+  .viz svg { width: 100%; height: auto; display: block; cursor: crosshair; }
+  .panel { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; margin-bottom: 12px; }
+  .panel h4 { margin: 0 0 8px; color: #143C78; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .matrix-box { display: inline-grid; grid-template-columns: auto auto; gap: 4px 16px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 14px;
+    padding: 6px 12px; border-left: 2px solid #143C78; border-right: 2px solid #143C78; }
+  .matrix-box span { text-align: right; }
+  .vec-box { display: inline-grid; grid-template-columns: auto; gap: 4px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 14px;
+    padding: 6px 12px; border-left: 2px solid #B42828; border-right: 2px solid #B42828; }
+  .row { margin: 4px 0; font-size: 14px; }
+  .row b { color: #143C78; }
+  .key { color: #B42828; font-family: "SF Mono", Consolas, monospace; }
+  .checkbox-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 8px 0; font-size: 14px; }
+  .checkbox-row label { cursor: pointer; user-select: none; }
+  .checkbox-row input { margin-right: 4px; vertical-align: middle; }
+  .legend { font-size: 12px; color: #666; padding: 6px 8px 0; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; margin-left: 8px; }
+  .scree-canvas { width: 100%; height: 90px; margin-top: 4px; }
+  .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
+  .hint { font-size: 12px; color: #777; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>PCA Playground</h1>
+  <div class="subtitle">EEC 351 · Fundamentals of AI/ML · Prof. Parikshit Pareek &amp; Prof. Jitin Singla · IIT Roorkee</div>
+</header>
+
+<p class="intro">
+Click on the plot to add data points. The principal components are computed live as eigenvectors of the sample covariance matrix <i>C</i> = (1/<i>n</i>) X<sup>⊤</sup>X. Try the preset datasets to see different shapes, and toggle the projection / reconstruction to see what PCA loses when we keep only PC1.
+</p>
+
+<div class="toolbar">
+  <span style="font-weight:600;color:#143C78;font-size:13px;">Preset:</span>
+  <button class="btn" data-preset="elongated">Elongated cluster</button>
+  <button class="btn" data-preset="circular">Circular cluster</button>
+  <button class="btn" data-preset="two-clusters">Two clusters</button>
+  <button class="btn" data-preset="line">Near a line</button>
+  <button class="btn btn-alt" id="clear-btn">Clear all</button>
+  <button class="btn btn-alt" id="example-btn">HW2-Q2 example</button>
+</div>
+
+<div class="layout">
+  <div>
+    <div class="viz">
+      <svg id="canvas" viewBox="-220 -180 440 360" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="legend">
+        <span class="swatch" style="background:#143C78"></span>raw data
+        <span class="swatch" style="background:#888"></span>centered data
+        <span class="swatch" style="background:#B42828"></span>PC1
+        <span class="swatch" style="background:#2a9d8f"></span>PC2
+        <span class="swatch" style="background:#f4a261"></span>projection onto PC1
+      </div>
+    </div>
+    <div class="hint">Click anywhere in the plot to add a point. Click an existing point to remove it.</div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h4>Display options</h4>
+      <div class="checkbox-row">
+        <label><input type="checkbox" id="show-mean" checked> Mean</label>
+        <label><input type="checkbox" id="show-centered"> Centered data</label>
+        <label><input type="checkbox" id="show-ellipse" checked> 1-σ ellipse</label>
+        <label><input type="checkbox" id="show-pc1" checked> PC1</label>
+        <label><input type="checkbox" id="show-pc2" checked> PC2</label>
+        <label><input type="checkbox" id="show-proj"> Projection onto PC1</label>
+        <label><input type="checkbox" id="show-recon"> Reconstruction lines</label>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h4>Mean &amp; Covariance Matrix</h4>
+      <div class="row"><b>n</b> = <span class="key" id="n-val">0</span> points</div>
+      <div class="row"><b>x̄</b> = <span id="mean-display">—</span></div>
+      <div class="row" style="margin-top:8px;"><b>C</b> = (1/n) X<sup>⊤</sup>X =</div>
+      <div id="cov-matrix"></div>
+    </div>
+
+    <div class="panel">
+      <h4>Eigendecomposition of C</h4>
+      <div class="row">λ<sub>1</sub> = <span class="key" id="lam1">—</span>, &nbsp; <b>v<sub>1</sub></b> = <span id="v1">—</span></div>
+      <div class="row">λ<sub>2</sub> = <span class="key" id="lam2">—</span>, &nbsp; <b>v<sub>2</sub></b> = <span id="v2">—</span></div>
+      <div class="row" style="margin-top:6px;">Total variance: <b>tr(C)</b> = <span class="key" id="trace-val">—</span></div>
+    </div>
+
+    <div class="panel">
+      <h4>Variance Explained</h4>
+      <div class="row">EVR(1) = <span class="key" id="evr1">—</span></div>
+      <div class="row">EVR(2) = <span class="key" id="evr2">—</span></div>
+      <svg id="scree" class="scree-canvas" viewBox="0 0 200 90" preserveAspectRatio="none"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h4>What to notice during class</h4>
+  <ul style="margin:6px 0 0; padding-left:20px; font-size:14px;">
+    <li>Pick the <b>Elongated cluster</b> preset: EVR(1) is large, the ellipse is thin, the data is well-summarised by one PC.</li>
+    <li>Pick the <b>Circular cluster</b>: λ<sub>1</sub> ≈ λ<sub>2</sub>, EVR(1) ≈ 0.5 — there is no preferred direction, PCA isn't useful.</li>
+    <li>Pick <b>Two clusters</b>: PC1 will align with the inter-cluster direction; PC2 captures the spread within each cluster.</li>
+    <li>Toggle <b>Reconstruction lines</b>: each line shows what's lost when we drop to 1-D. The lines are perpendicular to PC1 — the residuals.</li>
+    <li>Adding a single far-away outlier swings PC1 a lot. PCA is not robust.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Standalone classroom visualizer · works fully offline · © EEC 351, IIT Roorkee
+</div>
+
+</div>
+
+<script>
+"use strict";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const scree = document.getElementById("scree");
+const SCALE = 35;  // px per unit
+const VB_X = -220, VB_Y = -180, VB_W = 440, VB_H = 360;
+
+let points = [];
+
+function el(tag, attrs) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function toSvg(p) { return [p[0]*SCALE, -p[1]*SCALE]; }
+
+// --- Math ---
+function computeMean(pts) {
+  if (pts.length === 0) return [0, 0];
+  let sx = 0, sy = 0;
+  for (const p of pts) { sx += p[0]; sy += p[1]; }
+  return [sx / pts.length, sy / pts.length];
+}
+function computeCov(pts, mean) {
+  if (pts.length === 0) return [[0,0],[0,0]];
+  let c00 = 0, c01 = 0, c11 = 0;
+  for (const p of pts) {
+    const dx = p[0] - mean[0], dy = p[1] - mean[1];
+    c00 += dx*dx; c01 += dx*dy; c11 += dy*dy;
+  }
+  const n = pts.length;
+  return [[c00/n, c01/n], [c01/n, c11/n]];
+}
+// 2x2 symmetric eigendecomposition (closed form)
+function eig2x2(C) {
+  const a = C[0][0], b = C[0][1], d = C[1][1];
+  const tr = a + d;
+  const disc = Math.sqrt(((a - d)/2)**2 + b*b);
+  const lam1 = tr/2 + disc;
+  const lam2 = tr/2 - disc;
+  // eigenvector for lam1
+  let v1;
+  if (Math.abs(b) > 1e-10) {
+    v1 = [b, lam1 - a];
+  } else {
+    // diagonal already
+    v1 = (a >= d) ? [1, 0] : [0, 1];
+  }
+  const v1n = Math.hypot(v1[0], v1[1]) || 1;
+  v1 = [v1[0]/v1n, v1[1]/v1n];
+  // v2 is perp to v1
+  const v2 = [-v1[1], v1[0]];
+  return {lam1, lam2, v1, v2};
+}
+
+// --- Rendering ---
+function render() {
+  // clear
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  
+  // grid
+  for (let i = -6; i <= 6; i++) {
+    if (i === 0) continue;
+    svg.appendChild(el("line", {x1: i*SCALE, y1: -180, x2: i*SCALE, y2: 180, stroke: "#eee", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: -220, y1: i*SCALE, x2: 220, y2: i*SCALE, stroke: "#eee", "stroke-width": 1}));
+  }
+  svg.appendChild(el("line", {x1: -220, y1: 0, x2: 220, y2: 0, stroke: "#bbb", "stroke-width": 1.5}));
+  svg.appendChild(el("line", {x1: 0, y1: -180, x2: 0, y2: 180, stroke: "#bbb", "stroke-width": 1.5}));
+
+  const mean = computeMean(points);
+  const C = computeCov(points, mean);
+  const {lam1, lam2, v1, v2} = eig2x2(C);
+  
+  const opts = {
+    showMean: document.getElementById("show-mean").checked,
+    showCentered: document.getElementById("show-centered").checked,
+    showEllipse: document.getElementById("show-ellipse").checked,
+    showPC1: document.getElementById("show-pc1").checked,
+    showPC2: document.getElementById("show-pc2").checked,
+    showProj: document.getElementById("show-proj").checked,
+    showRecon: document.getElementById("show-recon").checked,
+  };
+
+  // 1-sigma ellipse
+  if (opts.showEllipse && points.length >= 2 && lam1 > 1e-8) {
+    const N = 64;
+    let path = "M ";
+    for (let k = 0; k <= N; k++) {
+      const a = k * 2 * Math.PI / N;
+      // ellipse point in eigen basis: (sqrt(lam1) cos a, sqrt(lam2) sin a)
+      const u = Math.sqrt(lam1) * Math.cos(a);
+      const w = Math.sqrt(Math.max(lam2, 0)) * Math.sin(a);
+      // rotate by frame [v1 v2]
+      const x = u * v1[0] + w * v2[0] + mean[0];
+      const y = u * v1[1] + w * v2[1] + mean[1];
+      const [sx, sy] = toSvg([x, y]);
+      path += `${sx.toFixed(2)},${sy.toFixed(2)} `;
+      if (k < N) path += "L ";
+    }
+    path += "Z";
+    svg.appendChild(el("path", {d: path, fill: "rgba(20,60,120,0.06)",
+      stroke: "#143C78", "stroke-width": 1.5, "stroke-dasharray": "5,4"}));
+  }
+
+  // reconstruction lines (from each point to its projection on PC1 line through mean)
+  if (opts.showRecon && points.length >= 1) {
+    for (const p of points) {
+      const dx = p[0] - mean[0], dy = p[1] - mean[1];
+      const s = dx*v1[0] + dy*v1[1];
+      const proj = [mean[0] + s*v1[0], mean[1] + s*v1[1]];
+      const [px1, py1] = toSvg(p);
+      const [px2, py2] = toSvg(proj);
+      svg.appendChild(el("line", {x1: px1, y1: py1, x2: px2, y2: py2,
+        stroke: "#f4a261", "stroke-width": 1.2, "stroke-dasharray": "3,2"}));
+    }
+  }
+
+  // PC arrows (from mean)
+  if (opts.showPC1 && points.length >= 2 && lam1 > 1e-8) {
+    const L = Math.sqrt(lam1);
+    const tip = [mean[0] + L*v1[0], mean[1] + L*v1[1]];
+    drawArrow(mean, tip, "#B42828", "v₁ (PC1)");
+  }
+  if (opts.showPC2 && points.length >= 2 && lam2 > 1e-8) {
+    const L = Math.sqrt(Math.max(lam2, 0));
+    const tip = [mean[0] + L*v2[0], mean[1] + L*v2[1]];
+    drawArrow(mean, tip, "#2a9d8f", "v₂ (PC2)");
+  }
+
+  // projections onto PC1 (small orange dots on PC1 line)
+  if (opts.showProj && points.length >= 1) {
+    for (const p of points) {
+      const dx = p[0] - mean[0], dy = p[1] - mean[1];
+      const s = dx*v1[0] + dy*v1[1];
+      const proj = [mean[0] + s*v1[0], mean[1] + s*v1[1]];
+      const [px, py] = toSvg(proj);
+      svg.appendChild(el("circle", {cx: px, cy: py, r: 4, fill: "#f4a261", stroke: "#a06521", "stroke-width": 1}));
+    }
+  }
+
+  // centered points (faded greys)
+  if (opts.showCentered) {
+    for (const p of points) {
+      const [px, py] = toSvg([p[0] - mean[0], p[1] - mean[1]]);
+      svg.appendChild(el("circle", {cx: px, cy: py, r: 4, fill: "rgba(120,120,120,0.5)", stroke: "#777", "stroke-width": 1}));
+    }
+  }
+
+  // raw points
+  for (const p of points) {
+    const [px, py] = toSvg(p);
+    const c = el("circle", {cx: px, cy: py, r: 5.5, fill: "#143C78", stroke: "#0d2a55", "stroke-width": 1.5});
+    c.style.cursor = "pointer";
+    c.dataset.idx = points.indexOf(p);
+    c.addEventListener("click", e => {
+      e.stopPropagation();
+      const i = parseInt(c.dataset.idx);
+      points.splice(i, 1);
+      render();
+    });
+    svg.appendChild(c);
+  }
+
+  // mean
+  if (opts.showMean && points.length >= 1) {
+    const [mx, my] = toSvg(mean);
+    svg.appendChild(el("circle", {cx: mx, cy: my, r: 6, fill: "#fff", stroke: "#143C78", "stroke-width": 2}));
+    svg.appendChild(el("circle", {cx: mx, cy: my, r: 2, fill: "#143C78"}));
+  }
+
+  // update panels
+  updatePanels(mean, C, lam1, lam2, v1, v2);
+  renderScree(lam1, lam2);
+}
+
+function drawArrow(from, to, color, label) {
+  const [x1, y1] = toSvg(from);
+  const [x2, y2] = toSvg(to);
+  svg.appendChild(el("line", {x1, y1, x2, y2, stroke: color, "stroke-width": 2.5, "stroke-linecap": "round"}));
+  const dx = x2-x1, dy = y2-y1, L = Math.hypot(dx, dy) || 1;
+  const ux = dx/L, uy = dy/L, head = 9, wing = 5;
+  const p2 = [x2 - head*ux + wing*uy, y2 - head*uy - wing*ux];
+  const p3 = [x2 - head*ux - wing*uy, y2 - head*uy + wing*ux];
+  svg.appendChild(el("polygon", {points: `${x2},${y2} ${p2[0]},${p2[1]} ${p3[0]},${p3[1]}`, fill: color}));
+  if (label) {
+    const t = el("text", {x: x2 + 12*ux, y: y2 + 12*uy + 4, fill: color,
+      "font-family": "Georgia, serif", "font-weight": "bold", "font-size": 13, "text-anchor": "middle"});
+    t.textContent = label;
+    svg.appendChild(t);
+  }
+}
+
+function fmt(x, d) { return (Math.abs(x) < 1e-10 ? 0 : x).toFixed(d || 3); }
+
+function updatePanels(mean, C, lam1, lam2, v1, v2) {
+  document.getElementById("n-val").textContent = points.length;
+  if (points.length === 0) {
+    document.getElementById("mean-display").textContent = "—";
+    document.getElementById("cov-matrix").innerHTML = '<div class="matrix-box"><span>—</span><span>—</span><span>—</span><span>—</span></div>';
+    document.getElementById("lam1").textContent = "—";
+    document.getElementById("lam2").textContent = "—";
+    document.getElementById("v1").textContent = "—";
+    document.getElementById("v2").textContent = "—";
+    document.getElementById("trace-val").textContent = "—";
+    document.getElementById("evr1").textContent = "—";
+    document.getElementById("evr2").textContent = "—";
+    return;
+  }
+  document.getElementById("mean-display").textContent = `(${fmt(mean[0],2)}, ${fmt(mean[1],2)})`;
+  document.getElementById("cov-matrix").innerHTML =
+    `<div class="matrix-box"><span>${fmt(C[0][0])}</span><span>${fmt(C[0][1])}</span><span>${fmt(C[1][0])}</span><span>${fmt(C[1][1])}</span></div>`;
+  document.getElementById("lam1").textContent = fmt(lam1);
+  document.getElementById("lam2").textContent = fmt(lam2);
+  document.getElementById("v1").textContent = `(${fmt(v1[0],3)}, ${fmt(v1[1],3)})`;
+  document.getElementById("v2").textContent = `(${fmt(v2[0],3)}, ${fmt(v2[1],3)})`;
+  const tr = lam1 + lam2;
+  document.getElementById("trace-val").textContent = fmt(tr);
+  if (tr > 1e-10) {
+    document.getElementById("evr1").textContent = (lam1/tr*100).toFixed(1) + "%";
+    document.getElementById("evr2").textContent = "100.0%";
+  } else {
+    document.getElementById("evr1").textContent = "—";
+    document.getElementById("evr2").textContent = "—";
+  }
+}
+
+function renderScree(lam1, lam2) {
+  while (scree.firstChild) scree.removeChild(scree.firstChild);
+  const tr = Math.max(lam1 + lam2, 1e-10);
+  const norm = v => Math.max(0, v) / tr * 70;  // bar height in viewBox units
+  const h1 = norm(lam1), h2 = norm(lam2);
+  // bars
+  scree.appendChild(el("rect", {x: 30, y: 80 - h1, width: 50, height: h1, fill: "#B42828"}));
+  scree.appendChild(el("rect", {x: 110, y: 80 - h2, width: 50, height: h2, fill: "#2a9d8f"}));
+  // axes
+  scree.appendChild(el("line", {x1: 20, y1: 80, x2: 190, y2: 80, stroke: "#888", "stroke-width": 1}));
+  // labels
+  const t1 = el("text", {x: 55, y: 78 - h1 - 3, "text-anchor": "middle",
+    "font-size": 11, fill: "#B42828", "font-family": "monospace"});
+  t1.textContent = (lam1/tr*100).toFixed(0) + "%"; scree.appendChild(t1);
+  const t2 = el("text", {x: 135, y: 78 - h2 - 3, "text-anchor": "middle",
+    "font-size": 11, fill: "#2a9d8f", "font-family": "monospace"});
+  t2.textContent = (lam2/tr*100).toFixed(0) + "%"; scree.appendChild(t2);
+  const tx1 = el("text", {x: 55, y: 90, "text-anchor": "middle", "font-size": 11, fill: "#444"});
+  tx1.innerHTML = "PC1"; scree.appendChild(tx1);
+  const tx2 = el("text", {x: 135, y: 90, "text-anchor": "middle", "font-size": 11, fill: "#444"});
+  tx2.innerHTML = "PC2"; scree.appendChild(tx2);
+}
+
+// --- Click handling ---
+function svgPointToData(evt) {
+  const rect = svg.getBoundingClientRect();
+  const x = (evt.clientX - rect.left) / rect.width * VB_W + VB_X;
+  const y = (evt.clientY - rect.top) / rect.height * VB_H + VB_Y;
+  return [x / SCALE, -y / SCALE];
+}
+svg.addEventListener("click", e => {
+  if (e.target.tagName === "circle" && e.target.dataset.idx !== undefined) return; // handled
+  const [x, y] = svgPointToData(e);
+  points.push([x, y]);
+  render();
+});
+
+// --- Presets ---
+function randn() {
+  // box-muller
+  let u1 = 0, u2 = 0;
+  while (u1 === 0) u1 = Math.random();
+  while (u2 === 0) u2 = Math.random();
+  return Math.sqrt(-2*Math.log(u1)) * Math.cos(2*Math.PI*u2);
+}
+function preset(name) {
+  points = [];
+  if (name === "elongated") {
+    const theta = 25 * Math.PI/180;
+    const c = Math.cos(theta), s = Math.sin(theta);
+    for (let i = 0; i < 40; i++) {
+      const a = randn() * 3.0, b = randn() * 0.6;
+      points.push([a*c - b*s, a*s + b*c]);
+    }
+  } else if (name === "circular") {
+    for (let i = 0; i < 35; i++) points.push([randn()*1.5, randn()*1.5]);
+  } else if (name === "two-clusters") {
+    for (let i = 0; i < 20; i++) points.push([2.5 + randn()*0.6, 1.2 + randn()*0.6]);
+    for (let i = 0; i < 20; i++) points.push([-2.5 + randn()*0.6, -1.2 + randn()*0.6]);
+  } else if (name === "line") {
+    const theta = 35*Math.PI/180, c = Math.cos(theta), s = Math.sin(theta);
+    for (let i = 0; i < 20; i++) {
+      const a = (Math.random()*8 - 4), b = randn()*0.15;
+      points.push([a*c - b*s, a*s + b*c]);
+    }
+  }
+  render();
+}
+document.querySelectorAll("[data-preset]").forEach(btn => {
+  btn.addEventListener("click", () => preset(btn.dataset.preset));
+});
+document.getElementById("clear-btn").addEventListener("click", () => {
+  points = [];
+  render();
+});
+document.getElementById("example-btn").addEventListener("click", () => {
+  // From the LaTeX worked example
+  points = [[4,2],[-2,-4],[-4,-2],[2,4]];
+  render();
+});
+
+// Display toggles
+["show-mean","show-centered","show-ellipse","show-pc1","show-pc2","show-proj","show-recon"]
+  .forEach(id => document.getElementById(id).addEventListener("change", render));
+
+// init
+preset("elongated");
+</script>
+</body>
+</html>

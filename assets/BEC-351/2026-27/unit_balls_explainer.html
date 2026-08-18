@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ℓₚ Unit Balls · EEC 351</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0; background: #f9f8f4; color: #1a1a1a; line-height: 1.55; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 2px solid #143C78; padding-bottom: 10px; margin-bottom: 18px; }
+  header h1 { margin: 0; color: #143C78; font-size: 26px; }
+  .subtitle { color: #555; font-size: 13px; margin-top: 4px; }
+  .intro { font-size: 15px; max-width: 850px; margin-bottom: 16px; }
+  .eqn { background: #f0f4fa; border: 1px solid #143C78; border-radius: 4px;
+    padding: 12px 16px; margin: 14px 0; font-size: 18px; text-align: center; font-family: Georgia, serif; }
+  .controls { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 14px; margin: 12px 0; }
+  .controls label { display: block; font-weight: 600; color: #143C78; margin-bottom: 6px; font-size: 14px; }
+  .controls input[type=range] { width: 100%; accent-color: #143C78; }
+  .controls .value { font-family: "SF Mono", Consolas, monospace; color: #B42828; font-size: 16px; }
+  .quick-jumps { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .btn { background: #143C78; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; }
+  .btn:hover { background: #0d2a55; }
+  .btn-alt { background: #fff; color: #143C78; border: 1px solid #143C78; }
+  .btn-alt:hover { background: #eef2f9; }
+  .btn-active { background: #B42828; }
+  .layout { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .viz { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px; }
+  .viz svg { width: 100%; height: auto; display: block; }
+  .panel { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; }
+  .panel h4 { margin: 0 0 8px; color: #143C78; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-row { font-size: 14px; margin: 4px 0; }
+  .info-row b { color: #143C78; }
+  .info-row .key { font-family: "SF Mono", Consolas, monospace; color: #B42828; }
+  .shape-name { background: #fff8e1; border-left: 4px solid #B42828;
+    padding: 10px 14px; margin: 10px 0; font-size: 15px; }
+  .shape-name b { color: #B42828; font-size: 17px; }
+  .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>ℓₚ Unit Balls in ℝ²</h1>
+  <div class="subtitle">EEC 351 · Fundamentals of AI/ML · Prof. Parikshit Pareek &amp; Prof. Jitin Singla · IIT Roorkee</div>
+</header>
+
+<p class="intro">
+The <b>unit ball</b> of the ℓₚ norm is the set of all <b>x</b> with ‖<b>x</b>‖<sub>p</sub> ≤ 1. As <i>p</i> changes, the shape morphs in a striking way: the <b>diamond</b> (p=1) becomes the <b>circle</b> (p=2), then approaches the <b>square</b> as p→∞. Slide <i>p</i> to watch.
+</p>
+
+<div class="eqn">
+‖x‖<sub>p</sub> = ( |x<sub>1</sub>|<sup>p</sup> + |x<sub>2</sub>|<sup>p</sup> )<sup>1/p</sup>,
+&nbsp;&nbsp; ‖x‖<sub>∞</sub> = max(|x<sub>1</sub>|, |x<sub>2</sub>|)
+</div>
+
+<div class="controls">
+  <label>p = <span class="value" id="p-value">2.00</span></label>
+  <input type="range" id="p" min="0.5" max="8" value="2" step="0.05">
+  <div class="quick-jumps">
+    <button class="btn" data-p="0.5">p = ½ (quasi-norm)</button>
+    <button class="btn" data-p="1">p = 1 (diamond)</button>
+    <button class="btn" data-p="1.5">p = 1.5</button>
+    <button class="btn" data-p="2">p = 2 (circle)</button>
+    <button class="btn" data-p="3">p = 3</button>
+    <button class="btn" data-p="4">p = 4</button>
+    <button class="btn" data-p="inf">p = ∞ (square)</button>
+  </div>
+</div>
+
+<div class="shape-name" id="shape-name">
+  <b>Circle</b> &nbsp;·&nbsp; p = 2 (Euclidean norm) &nbsp;·&nbsp; smooth, rotationally symmetric
+</div>
+
+<div class="layout">
+  <div class="viz">
+    <svg id="canvas" viewBox="-200 -200 400 400" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h4>Live values</h4>
+      <div class="info-row">For a point on the boundary at angle 45°:</div>
+      <div class="info-row"><b>x</b> = (<span class="key" id="x-coord">—</span>, <span class="key" id="y-coord">—</span>)</div>
+      <div class="info-row" style="margin-top:6px;">‖<b>x</b>‖<sub>p</sub> = <span class="key">1</span> (by definition of the unit ball)</div>
+      <div class="info-row">‖<b>x</b>‖<sub>2</sub> = <span class="key" id="l2-of-corner">—</span></div>
+      <div class="info-row">‖<b>x</b>‖<sub>1</sub> = <span class="key" id="l1-of-corner">—</span></div>
+      <div class="info-row">‖<b>x</b>‖<sub>∞</sub> = <span class="key" id="linf-of-corner">—</span></div>
+    </div>
+    <div class="panel" style="margin-top:10px;">
+      <h4>Comparison: all three balls</h4>
+      <svg id="compare" viewBox="-110 -110 220 220" style="width:100%; height:auto;"></svg>
+      <div style="font-size:12px;color:#666;margin-top:4px;text-align:center;">
+        <span style="color:#143C78;">━━</span> p = 1 &nbsp;
+        <span style="color:#B42828;">━━</span> p = 2 &nbsp;
+        <span style="color:#2a9d8f;">━━</span> p = ∞
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h4>What to notice during class</h4>
+  <ul style="margin:6px 0 0; padding-left:20px; font-size:14px;">
+    <li><b>p = 1 corners on the axes.</b> This is why ℓ₁ regularisation (LASSO) gives sparse solutions — the corners are at the axes, where some coordinates are zero.</li>
+    <li><b>Nesting:</b> for all p ≥ 1, the diamond (p=1) is inside the circle (p=2) is inside the square (p=∞). All three contain only the origin if you shrink them to size 0.</li>
+    <li><b>p &lt; 1 not a norm.</b> Drag p below 1: the shape becomes non-convex (the line between two points on it leaves the set). These are called quasi-norms.</li>
+    <li><b>p = ∞ is robust.</b> A point has small ℓ<sub>∞</sub>-norm iff every coordinate is small — useful for worst-case error bounds.</li>
+    <li><b>Same ball, different geometry.</b> All three norms define the same notion of "zero", but very different notions of "small" — which is why the choice of norm matters in optimization and regularisation.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Standalone classroom visualizer · works fully offline · © EEC 351, IIT Roorkee
+</div>
+
+</div>
+
+<script>
+"use strict";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const compareSvg = document.getElementById("compare");
+const SCALE = 110;  // px per unit
+
+let p = 2.0;
+let isInf = false;
+
+function el(tag, attrs) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function toSvg(pt) { return [pt[0]*SCALE, -pt[1]*SCALE]; }
+
+function ballPoint(angle, pval, useInf) {
+  // For angle theta, find r such that ||r*(cos,sin)||_p = 1
+  const c = Math.cos(angle), s = Math.sin(angle);
+  const ac = Math.abs(c), as = Math.abs(s);
+  let denom;
+  if (useInf || pval > 50) {
+    denom = Math.max(ac, as);
+  } else {
+    denom = Math.pow(Math.pow(ac, pval) + Math.pow(as, pval), 1/pval);
+  }
+  if (denom < 1e-12) return [0, 0];
+  const r = 1 / denom;
+  return [r*c, r*s];
+}
+
+function ballPath(pval, useInf, svgScale, viewSize) {
+  const N = 360;
+  let path = "M ";
+  for (let i = 0; i <= N; i++) {
+    const angle = i * 2 * Math.PI / N;
+    const [px, py] = ballPoint(angle, pval, useInf);
+    const sx = px * svgScale;
+    const sy = -py * svgScale;
+    path += `${sx.toFixed(2)},${sy.toFixed(2)} `;
+    if (i < N) path += "L ";
+  }
+  path += "Z";
+  return path;
+}
+
+function shapeName(pval, useInf) {
+  if (useInf) return {name: "Square", desc: "p = ∞ (Chebyshev / max-norm) · sharp axis-aligned corners"};
+  if (Math.abs(pval - 1) < 0.02) return {name: "Diamond", desc: "p = 1 (taxicab / Manhattan) · sharp corners on the axes — basis of LASSO"};
+  if (Math.abs(pval - 2) < 0.02) return {name: "Circle", desc: "p = 2 (Euclidean) · smooth, rotationally symmetric"};
+  if (pval < 1) return {name: "Astroid-like (not a norm)", desc: `p = ${pval.toFixed(2)} < 1 · non-convex — not a valid norm but a "quasi-norm"`};
+  if (pval < 2) return {name: "Sub-quadratic", desc: `p = ${pval.toFixed(2)} · between diamond and circle — corners still slightly pointed`};
+  if (pval < 4) return {name: "Super-circle", desc: `p = ${pval.toFixed(2)} · between circle and square — corners flattening`};
+  return {name: "Approaching square", desc: `p = ${pval.toFixed(2)} · close to ℓ∞, almost an axis-aligned square`};
+}
+
+function render() {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+  // grid
+  for (let i = -1; i <= 1; i++) {
+    if (i === 0) continue;
+    svg.appendChild(el("line", {x1: i*SCALE, y1: -200, x2: i*SCALE, y2: 200, stroke: "#eee", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: -200, y1: i*SCALE, x2: 200, y2: i*SCALE, stroke: "#eee", "stroke-width": 1}));
+  }
+  // axes
+  svg.appendChild(el("line", {x1: -200, y1: 0, x2: 200, y2: 0, stroke: "#bbb", "stroke-width": 1.5}));
+  svg.appendChild(el("line", {x1: 0, y1: -200, x2: 0, y2: 200, stroke: "#bbb", "stroke-width": 1.5}));
+  // labels for unit positions
+  ["−1","1"].forEach((lab, i) => {
+    const sign = i === 0 ? -1 : 1;
+    const t = el("text", {x: sign*SCALE, y: 18, "text-anchor":"middle",
+      "font-size": 11, fill: "#888", "font-family": "monospace"});
+    t.textContent = lab; svg.appendChild(t);
+    const t2 = el("text", {x: -14, y: -sign*SCALE+4, "text-anchor":"end",
+      "font-size": 11, fill: "#888", "font-family": "monospace"});
+    t2.textContent = lab; svg.appendChild(t2);
+  });
+  // axis names
+  svg.appendChild(Object.assign(el("text", {x: 192, y: 16, fill: "#888", "font-size": 13, "font-style": "italic"}), {textContent: "x₁"}));
+  svg.appendChild(Object.assign(el("text", {x: 6, y: -190, fill: "#888", "font-size": 13, "font-style": "italic"}), {textContent: "x₂"}));
+
+  // current ball
+  const path = ballPath(p, isInf, SCALE, 400);
+  svg.appendChild(el("path", {d: path, fill: "rgba(20,60,120,0.18)",
+    stroke: "#143C78", "stroke-width": 2.5}));
+
+  // mark the four "corners" on the axes ±1
+  [[1,0],[0,1],[-1,0],[0,-1]].forEach(c => {
+    const [sx, sy] = toSvg(c);
+    svg.appendChild(el("circle", {cx: sx, cy: sy, r: 3, fill: "#143C78"}));
+  });
+
+  // show the point on the boundary at 45° (the most discriminating direction)
+  const pt45 = ballPoint(Math.PI/4, p, isInf);
+  const [px45, py45] = toSvg(pt45);
+  svg.appendChild(el("line", {x1: 0, y1: 0, x2: px45, y2: py45,
+    stroke: "#B42828", "stroke-width": 2, "stroke-dasharray": "5,4"}));
+  svg.appendChild(el("circle", {cx: px45, cy: py45, r: 5, fill: "#B42828", stroke: "#7a1a1a", "stroke-width": 1.5}));
+
+  // update text
+  const sn = shapeName(p, isInf);
+  document.getElementById("shape-name").innerHTML =
+    `<b>${sn.name}</b> &nbsp;·&nbsp; ${sn.desc}`;
+  document.getElementById("x-coord").textContent = pt45[0].toFixed(3);
+  document.getElementById("y-coord").textContent = pt45[1].toFixed(3);
+  // norms of this corner-direction point
+  const l2 = Math.hypot(pt45[0], pt45[1]);
+  const l1 = Math.abs(pt45[0]) + Math.abs(pt45[1]);
+  const linf = Math.max(Math.abs(pt45[0]), Math.abs(pt45[1]));
+  document.getElementById("l1-of-corner").textContent = l1.toFixed(3);
+  document.getElementById("l2-of-corner").textContent = l2.toFixed(3);
+  document.getElementById("linf-of-corner").textContent = linf.toFixed(3);
+
+  renderComparison();
+}
+
+function renderComparison() {
+  while (compareSvg.firstChild) compareSvg.removeChild(compareSvg.firstChild);
+  // grid + axes
+  compareSvg.appendChild(el("line", {x1: -110, y1: 0, x2: 110, y2: 0, stroke: "#ccc", "stroke-width": 1}));
+  compareSvg.appendChild(el("line", {x1: 0, y1: -110, x2: 0, y2: 110, stroke: "#ccc", "stroke-width": 1}));
+  // three balls
+  const s = 60;
+  compareSvg.appendChild(el("path", {d: ballPath(1, false, s), fill: "none", stroke: "#143C78", "stroke-width": 2}));
+  compareSvg.appendChild(el("path", {d: ballPath(2, false, s), fill: "none", stroke: "#B42828", "stroke-width": 2}));
+  compareSvg.appendChild(el("path", {d: ballPath(8, true, s), fill: "none", stroke: "#2a9d8f", "stroke-width": 2}));
+}
+
+// --- Controls ---
+document.getElementById("p").addEventListener("input", e => {
+  p = parseFloat(e.target.value);
+  isInf = false;
+  document.getElementById("p-value").textContent = p.toFixed(2);
+  document.querySelectorAll(".quick-jumps .btn").forEach(b => b.classList.remove("btn-active"));
+  render();
+});
+document.querySelectorAll(".quick-jumps .btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".quick-jumps .btn").forEach(b => b.classList.remove("btn-active"));
+    btn.classList.add("btn-active");
+    if (btn.dataset.p === "inf") {
+      isInf = true;
+      p = 8;
+      document.getElementById("p-value").textContent = "∞";
+    } else {
+      isInf = false;
+      p = parseFloat(btn.dataset.p);
+      document.getElementById("p-value").textContent = p.toFixed(2);
+    }
+    document.getElementById("p").value = p;
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>

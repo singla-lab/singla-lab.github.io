@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosine Similarity · EEC 351</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0; background: #f9f8f4; color: #1a1a1a; line-height: 1.55; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 2px solid #143C78; padding-bottom: 10px; margin-bottom: 18px; }
+  header h1 { margin: 0; color: #143C78; font-size: 26px; }
+  .subtitle { color: #555; font-size: 13px; margin-top: 4px; }
+  .intro { font-size: 15px; max-width: 850px; margin-bottom: 16px; }
+  .eqn { background: #f0f4fa; border: 1px solid #143C78; border-radius: 4px;
+    padding: 12px 16px; margin: 14px 0; font-size: 18px; text-align: center; font-family: Georgia, serif; }
+  .eqn b { color: #143C78; }
+  .layout { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .viz { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px; }
+  .viz svg { width: 100%; height: auto; display: block; cursor: grab; }
+  .viz svg:active { cursor: grabbing; }
+  .panel { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; margin-bottom: 12px; }
+  .panel h4 { margin: 0 0 8px; color: #143C78; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-row { font-size: 14px; margin: 4px 0; }
+  .info-row b { color: #143C78; }
+  .info-row .x-color { color: #143C78; font-weight: bold; }
+  .info-row .y-color { color: #B42828; font-weight: bold; }
+  .info-row .key { font-family: "SF Mono", Consolas, monospace; color: #B42828; }
+  .similarity-bar { display: block; width: 100%; height: 18px; background: #eee; border-radius: 3px; overflow: hidden; position: relative; margin: 6px 0; }
+  .similarity-bar .fill { position: absolute; top: 0; height: 100%; background: linear-gradient(to right, #2a9d8f, #f4a261, #B42828); }
+  .similarity-bar .midline { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: #fff; }
+  .similarity-bar .pointer { position: absolute; top: -3px; width: 2px; height: 24px; background: #143C78; }
+  .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
+  .preset-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .btn { background: #143C78; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; }
+  .btn:hover { background: #0d2a55; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Cosine Similarity</h1>
+  <div class="subtitle">EEC 351 · Fundamentals of AI/ML · Prof. Parikshit Pareek &amp; Prof. Jitin Singla · IIT Roorkee</div>
+</header>
+
+<p class="intro">
+The inner product factorises as <b>x<sup>⊤</sup>y</b> = ‖<b>x</b>‖<sub>2</sub> ‖<b>y</b>‖<sub>2</sub> cos θ. Solving for cos θ gives the <b>cosine similarity</b> — a number in [−1, 1] that measures how much two vectors point in the same direction, ignoring their lengths. Drag either arrowhead to change the vectors.
+</p>
+
+<div class="eqn">
+cos θ &nbsp;=&nbsp; <b>x<sup>⊤</sup>y</b> / (‖<b>x</b>‖<sub>2</sub> · ‖<b>y</b>‖<sub>2</sub>) &nbsp;&nbsp;∈&nbsp;&nbsp; [−1, 1]
+</div>
+
+<div class="layout">
+  <div class="viz">
+    <svg id="canvas" viewBox="-220 -180 440 360" preserveAspectRatio="xMidYMid meet"></svg>
+    <div style="font-size:12px;color:#666;padding:6px 8px 0;">
+      <span style="color:#143C78;font-weight:bold;">━━</span> vector x &nbsp;
+      <span style="color:#B42828;font-weight:bold;">━━</span> vector y
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h4>Live values</h4>
+      <div class="info-row"><span class="x-color">x</span> = (<span class="key" id="x-val">—</span>) &nbsp; ‖x‖<sub>2</sub> = <span class="key" id="x-norm">—</span></div>
+      <div class="info-row"><span class="y-color">y</span> = (<span class="key" id="y-val">—</span>) &nbsp; ‖y‖<sub>2</sub> = <span class="key" id="y-norm">—</span></div>
+      <div class="info-row" style="margin-top:8px;"><b>x<sup>⊤</sup>y</b> = <span class="key" id="dot">—</span></div>
+      <div class="info-row">θ = <span class="key" id="theta-val">—</span></div>
+      <div class="info-row"><b>cos θ</b> = <span class="key" id="cos-val">—</span></div>
+      <div class="similarity-bar">
+        <div class="fill" style="left: 0; width: 100%;"></div>
+        <div class="midline"></div>
+        <div class="pointer" id="cos-pointer"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#666;">
+        <span>−1 (opposite)</span><span>0 (orthogonal)</span><span>+1 (aligned)</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h4>Quick presets</h4>
+      <div class="preset-row">
+        <button class="btn" data-preset="aligned">Aligned</button>
+        <button class="btn" data-preset="orthogonal">Orthogonal</button>
+        <button class="btn" data-preset="opposite">Opposite</button>
+        <button class="btn" data-preset="hw2">HW2 Q2 (4-D)</button>
+      </div>
+      <div id="hw2-note" style="display:none; margin-top:10px; font-size:12px; color:#555; background:#fff8e1; padding:8px; border-radius:3px;">
+        Displaying the 2-D projection of the 4-D HW2 vectors onto their PCA plane.<br>
+        The actual 4-D values are: x = (3, −4, 0, 2), y = (1, 2, −1, 3).<br>
+        x<sup>⊤</sup>y = 1, ‖x‖₂ = √29, ‖y‖₂ = √15, cos θ ≈ 0.048.
+      </div>
+    </div>
+
+    <div class="panel">
+      <h4>Interpretation</h4>
+      <div id="interp" style="font-size: 14px;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h4>Where this appears in ML</h4>
+  <ul style="margin:6px 0 0; padding-left:20px; font-size:14px;">
+    <li><b>Word/sentence embeddings:</b> the cosine between two embedding vectors measures semantic similarity. "king" and "queen" have high cosine similarity; "king" and "banana" have low.</li>
+    <li><b>Information retrieval:</b> rank documents by cos(query, document) — independent of how long each document is.</li>
+    <li><b>Recommender systems:</b> user-item or item-item similarity via cosine.</li>
+    <li><b>Cauchy-Schwarz</b> is exactly the statement that this quantity stays in [−1, 1] — geometrically obvious, algebraically non-trivial.</li>
+    <li><b>Not a distance:</b> can be negative, doesn't satisfy the triangle inequality. The "cosine distance" 1 − cos θ patches the first issue.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Standalone classroom visualizer · works fully offline · © EEC 351, IIT Roorkee
+</div>
+
+</div>
+
+<script>
+"use strict";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const SCALE = 50;
+const VB_X = -220, VB_Y = -180, VB_W = 440, VB_H = 360;
+
+let x = [3, 1.5];
+let y = [1.5, 2.5];
+
+function el(tag, attrs) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function toSvg(p) { return [p[0]*SCALE, -p[1]*SCALE]; }
+
+function render() {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+  // grid
+  for (let i = -4; i <= 4; i++) {
+    if (i === 0) continue;
+    svg.appendChild(el("line", {x1: i*SCALE, y1: -180, x2: i*SCALE, y2: 180, stroke: "#eee", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: -220, y1: i*SCALE, x2: 220, y2: i*SCALE, stroke: "#eee", "stroke-width": 1}));
+  }
+  svg.appendChild(el("line", {x1: -220, y1: 0, x2: 220, y2: 0, stroke: "#bbb", "stroke-width": 1.5}));
+  svg.appendChild(el("line", {x1: 0, y1: -180, x2: 0, y2: 180, stroke: "#bbb", "stroke-width": 1.5}));
+
+  // angle arc
+  const xn = Math.hypot(x[0], x[1]) || 1;
+  const yn = Math.hypot(y[0], y[1]) || 1;
+  const ax = Math.atan2(x[1], x[0]);
+  const ay = Math.atan2(y[1], y[0]);
+  let theta = ay - ax;
+  // normalize to [-pi, pi]
+  while (theta > Math.PI) theta -= 2*Math.PI;
+  while (theta < -Math.PI) theta += 2*Math.PI;
+  const arcR = 36;
+  const start = ax;
+  const end = ay;
+  // arc path from start to end going via shortest direction
+  const largeArc = Math.abs(theta) > Math.PI ? 1 : 0;
+  const sweep = theta > 0 ? 0 : 1;  // SVG y inverted, so flip
+  const [asx, asy] = [arcR*Math.cos(start), -arcR*Math.sin(start)];
+  const [aex, aey] = [arcR*Math.cos(end), -arcR*Math.sin(end)];
+  svg.appendChild(el("path", {d: `M ${asx},${asy} A ${arcR} ${arcR} 0 ${largeArc} ${sweep} ${aex},${aey}`,
+    fill: "none", stroke: "#f4a261", "stroke-width": 2}));
+  // theta label inside arc
+  const midA = (start + end)/2;
+  const labX = (arcR + 15) * Math.cos(midA);
+  const labY = -(arcR + 15) * Math.sin(midA);
+  const tt = el("text", {x: labX, y: labY, "text-anchor": "middle", "font-size": 14,
+    fill: "#a06521", "font-family": "Georgia, serif", "font-style": "italic", "font-weight": "bold"});
+  tt.textContent = "θ"; svg.appendChild(tt);
+
+  // arrows
+  drawArrow([0,0], x, "#143C78", "x", "tip-x");
+  drawArrow([0,0], y, "#B42828", "y", "tip-y");
+
+  // update info
+  const dot = x[0]*y[0] + x[1]*y[1];
+  const cosT = dot / (xn * yn);
+  const cosClamped = Math.max(-1, Math.min(1, cosT));
+  const thetaDeg = Math.acos(cosClamped) * 180 / Math.PI;
+
+  document.getElementById("x-val").textContent = `${x[0].toFixed(2)}, ${x[1].toFixed(2)}`;
+  document.getElementById("y-val").textContent = `${y[0].toFixed(2)}, ${y[1].toFixed(2)}`;
+  document.getElementById("x-norm").textContent = xn.toFixed(3);
+  document.getElementById("y-norm").textContent = yn.toFixed(3);
+  document.getElementById("dot").textContent = dot.toFixed(3);
+  document.getElementById("theta-val").textContent = thetaDeg.toFixed(1) + "°";
+  document.getElementById("cos-val").textContent = cosT.toFixed(4);
+  // similarity bar pointer
+  const pct = (cosClamped + 1) / 2 * 100;
+  document.getElementById("cos-pointer").style.left = `calc(${pct}% - 1px)`;
+
+  // interpretation
+  let interp;
+  if (cosT > 0.95) interp = "<b>Nearly aligned.</b> The vectors point in almost the same direction.";
+  else if (cosT > 0.7) interp = "<b>Strongly similar.</b> Acute angle, the vectors mostly agree in direction.";
+  else if (cosT > 0.3) interp = "<b>Mildly similar.</b> Some directional agreement.";
+  else if (cosT > -0.3) interp = "<b>Nearly orthogonal.</b> The vectors are almost perpendicular — essentially independent directions.";
+  else if (cosT > -0.7) interp = "<b>Mildly opposite.</b> They mostly disagree in direction.";
+  else if (cosT > -0.95) interp = "<b>Strongly opposite.</b> Obtuse angle, the vectors largely point in opposing directions.";
+  else interp = "<b>Nearly anti-aligned.</b> The vectors point in almost exactly opposite directions.";
+  document.getElementById("interp").innerHTML = interp;
+}
+
+function drawArrow(from, to, color, label, id) {
+  const [x1, y1] = toSvg(from);
+  const [x2, y2] = toSvg(to);
+  svg.appendChild(el("line", {x1, y1, x2, y2, stroke: color, "stroke-width": 2.8, "stroke-linecap": "round"}));
+  const dx = x2-x1, dy = y2-y1, L = Math.hypot(dx, dy) || 1;
+  const ux = dx/L, uy = dy/L, head = 12, wing = 7;
+  const p2 = [x2 - head*ux + wing*uy, y2 - head*uy - wing*ux];
+  const p3 = [x2 - head*ux - wing*uy, y2 - head*uy + wing*ux];
+  svg.appendChild(el("polygon", {points: `${x2},${y2} ${p2[0]},${p2[1]} ${p3[0]},${p3[1]}`, fill: color}));
+  // draggable handle at the tip
+  const handle = el("circle", {cx: x2, cy: y2, r: 10, fill: color, "fill-opacity": 0.001,
+    stroke: color, "stroke-opacity": 0.4, "stroke-width": 1});
+  handle.style.cursor = "grab";
+  handle.dataset.id = id;
+  svg.appendChild(handle);
+  if (label) {
+    const t = el("text", {x: x2 + 14*ux, y: y2 + 14*uy + 5, fill: color,
+      "font-family": "Georgia, serif", "font-style": "italic", "font-weight": "bold", "font-size": 18, "text-anchor": "middle"});
+    t.textContent = label;
+    svg.appendChild(t);
+  }
+}
+
+// --- Drag ---
+let dragging = null;
+function svgPointToData(evt) {
+  const rect = svg.getBoundingClientRect();
+  const sx = (evt.clientX - rect.left) / rect.width * VB_W + VB_X;
+  const sy = (evt.clientY - rect.top) / rect.height * VB_H + VB_Y;
+  return [sx/SCALE, -sy/SCALE];
+}
+function nearestTip(evt) {
+  const [dx, dy] = svgPointToData(evt);
+  const dToX = Math.hypot(dx-x[0], dy-x[1]);
+  const dToY = Math.hypot(dx-y[0], dy-y[1]);
+  if (dToX < dToY && dToX < 0.6) return "tip-x";
+  if (dToY < dToX && dToY < 0.6) return "tip-y";
+  return null;
+}
+svg.addEventListener("mousedown", e => {
+  dragging = nearestTip(e);
+});
+window.addEventListener("mousemove", e => {
+  if (!dragging) return;
+  const [dx, dy] = svgPointToData(e);
+  if (dragging === "tip-x") x = [dx, dy];
+  else if (dragging === "tip-y") y = [dx, dy];
+  render();
+});
+window.addEventListener("mouseup", () => dragging = null);
+
+// touch
+svg.addEventListener("touchstart", e => {
+  if (!e.touches[0]) return;
+  dragging = nearestTip(e.touches[0]);
+  if (dragging) e.preventDefault();
+}, {passive: false});
+window.addEventListener("touchmove", e => {
+  if (!dragging || !e.touches[0]) return;
+  const [dx, dy] = svgPointToData(e.touches[0]);
+  if (dragging === "tip-x") x = [dx, dy];
+  else if (dragging === "tip-y") y = [dx, dy];
+  render();
+}, {passive: false});
+window.addEventListener("touchend", () => dragging = null);
+
+// presets
+document.querySelectorAll("[data-preset]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const note = document.getElementById("hw2-note");
+    note.style.display = "none";
+    switch (btn.dataset.preset) {
+      case "aligned":    x = [3, 1.5]; y = [2, 1]; break;
+      case "orthogonal": x = [3, 1];   y = [-1, 3]; break;
+      case "opposite":   x = [3, 1.5]; y = [-2.5, -1.2]; break;
+      case "hw2":
+        // 2D illustration approximating the 4D HW2 vectors with near-orthogonal angle
+        x = [3, 0.15]; y = [0.15, 2.8];
+        note.style.display = "block";
+        break;
+    }
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>

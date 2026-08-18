@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eigenvectors as Fixed Directions · EEC 351</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0; background: #f9f8f4; color: #1a1a1a; line-height: 1.55; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 2px solid #143C78; padding-bottom: 10px; margin-bottom: 18px; }
+  header h1 { margin: 0; color: #143C78; font-size: 26px; }
+  .subtitle { color: #555; font-size: 13px; margin-top: 4px; }
+  .intro { font-size: 15px; max-width: 850px; margin-bottom: 16px; }
+  .eqn { background: #f0f4fa; border: 1px solid #143C78; border-radius: 4px;
+    padding: 12px 16px; margin: 14px 0; font-size: 20px; text-align: center; font-family: Georgia, serif; }
+  .eqn b { color: #143C78; }
+  .matrix-controls { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; margin: 12px 0; }
+  .matrix-controls h4 { margin: 0 0 8px; color: #143C78; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .entry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: center; }
+  @media (max-width: 700px) { .entry-grid { grid-template-columns: repeat(2, 1fr); } }
+  .entry-grid label { font-size: 12px; font-weight: 600; color: #143C78; display: block; margin-bottom: 4px; }
+  .entry-grid input[type=range] { width: 100%; accent-color: #143C78; }
+  .entry-grid .v { font-family: "SF Mono", Consolas, monospace; color: #B42828; font-size: 13px; }
+  .presets { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .btn { background: #143C78; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; }
+  .btn:hover { background: #0d2a55; }
+  .btn-alt { background: #fff; color: #143C78; border: 1px solid #143C78; }
+  .btn-alt:hover { background: #eef2f9; }
+  .btn-red { background: #B42828; }
+  .btn-red:hover { background: #7a1a1a; }
+  .layout { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .viz { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px; }
+  .viz svg { width: 100%; height: auto; display: block; }
+  .panel { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; margin-bottom: 12px; }
+  .panel h4 { margin: 0 0 8px; color: #143C78; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-row { font-size: 14px; margin: 4px 0; }
+  .info-row b { color: #143C78; }
+  .info-row .key { font-family: "SF Mono", Consolas, monospace; color: #B42828; }
+  .matrix-box { display: inline-grid; grid-template-columns: auto auto; gap: 4px 16px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 14px;
+    padding: 6px 12px; border-left: 2px solid #143C78; border-right: 2px solid #143C78; }
+  .matrix-box span { text-align: right; }
+  .alignment-indicator { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; font-weight: 600; }
+  .aligned { background: #d4edda; color: #155724; }
+  .not-aligned { background: #f8d7da; color: #721c24; }
+  .complex-warning { background: #fff8e1; border-left: 4px solid #B42828;
+    padding: 10px 14px; margin: 10px 0; font-size: 14px; color: #555; }
+  .legend { font-size: 12px; color: #666; padding: 6px 8px 0; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; margin-left: 8px; }
+  .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Eigenvectors as Fixed Directions</h1>
+  <div class="subtitle">EEC 351 · Fundamentals of AI/ML · Prof. Parikshit Pareek &amp; Prof. Jitin Singla · IIT Roorkee</div>
+</header>
+
+<p class="intro">
+A vector <b>v</b> is an <b>eigenvector</b> of <i>A</i> if multiplying by <i>A</i> doesn't change its direction — only its length. The scaling factor λ is the <b>eigenvalue</b>. Drag the blue arrow <b>v</b> around: usually <i>A</i><b>v</b> points somewhere else. But when <b>v</b> lies on one of the dashed eigen-lines, <i>A</i><b>v</b> stays on the same line. Press <b>Iterate</b> to watch power iteration drag <i>any</i> starting <b>v</b> toward the dominant eigenvector.
+</p>
+
+<div class="eqn"><b>A v = λ v</b></div>
+
+<div class="matrix-controls">
+  <h4>Matrix A (drag sliders)</h4>
+  <div class="entry-grid">
+    <div>
+      <label>A<sub>11</sub> = <span class="v" id="a00-val">2.0</span></label>
+      <input type="range" id="a00" min="-3" max="3" value="2" step="0.1">
+    </div>
+    <div>
+      <label>A<sub>12</sub> = <span class="v" id="a01-val">1.0</span></label>
+      <input type="range" id="a01" min="-3" max="3" value="1" step="0.1">
+    </div>
+    <div>
+      <label>A<sub>21</sub> = <span class="v" id="a10-val">1.0</span></label>
+      <input type="range" id="a10" min="-3" max="3" value="1" step="0.1">
+    </div>
+    <div>
+      <label>A<sub>22</sub> = <span class="v" id="a11-val">2.0</span></label>
+      <input type="range" id="a11" min="-3" max="3" value="2" step="0.1">
+    </div>
+  </div>
+  <div class="presets">
+    <span style="font-weight:600;color:#143C78;font-size:12px;align-self:center;">Presets:</span>
+    <button class="btn" data-preset="symmetric">Symmetric</button>
+    <button class="btn" data-preset="diagonal">Diagonal</button>
+    <button class="btn" data-preset="shear">Shear</button>
+    <button class="btn" data-preset="rotation">Rotation (complex!)</button>
+    <button class="btn" data-preset="reflection">Reflection</button>
+    <button class="btn" data-preset="projection">Rank-1 (projection-like)</button>
+  </div>
+</div>
+
+<div class="layout">
+  <div>
+    <div class="viz">
+      <svg id="canvas" viewBox="-220 -180 440 360" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="legend">
+        <span class="swatch" style="background:#143C78"></span>vector v (drag tip)
+        <span class="swatch" style="background:#B42828"></span>A v
+        <span class="swatch" style="background:#2a9d8f"></span>eigen-directions
+        <span class="swatch" style="background:#f4a261"></span>iteration trail
+      </div>
+    </div>
+    <div style="margin-top:10px; display: flex; gap: 8px; flex-wrap: wrap;">
+      <button class="btn btn-red" id="iter-btn">▶ Power iteration</button>
+      <button class="btn btn-alt" id="iter-step">Step once: v ← Av/‖Av‖</button>
+      <button class="btn btn-alt" id="reset-v">Reset v</button>
+      <button class="btn btn-alt" id="clear-trail">Clear trail</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h4>Vector data</h4>
+      <div class="info-row"><b>v</b> = (<span class="key" id="v-display">—</span>) &nbsp; ‖v‖ = <span class="key" id="v-norm">—</span></div>
+      <div class="info-row"><b>Av</b> = (<span class="key" id="av-display">—</span>) &nbsp; ‖Av‖ = <span class="key" id="av-norm">—</span></div>
+      <div class="info-row" style="margin-top:8px;">‖Av‖ / ‖v‖ = <span class="key" id="ratio">—</span></div>
+      <div class="info-row">Angle between v and Av: <span class="key" id="angle">—</span></div>
+      <div class="info-row" style="margin-top:6px;">Eigenvector test: <span id="eig-test" class="alignment-indicator not-aligned">not aligned</span></div>
+    </div>
+
+    <div class="panel">
+      <h4>Matrix A</h4>
+      <div id="A-display"></div>
+      <div class="info-row" style="margin-top:8px;">tr(A) = <span class="key" id="trA">—</span>, &nbsp; det(A) = <span class="key" id="detA">—</span></div>
+    </div>
+
+    <div class="panel">
+      <h4>Eigendecomposition</h4>
+      <div id="eig-info">—</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h4>What to notice during class</h4>
+  <ul style="margin:6px 0 0; padding-left:20px; font-size:14px;">
+    <li><b>The eigen-lines are special.</b> Drag <b>v</b> to land on a green dashed line; <i>A</i><b>v</b> snaps to that same line. Off the line, <i>A</i><b>v</b> rotates away.</li>
+    <li><b>Symmetric A has perpendicular eigenvectors.</b> Try the Symmetric preset: the two green lines are at right angles. Spectral theorem made visible.</li>
+    <li><b>Shear (A = [[1,1],[0,1]]) has only one eigen-line.</b> The y-axis. Every other vector picks up a horizontal component. Defective matrix — cannot be diagonalized.</li>
+    <li><b>Rotation has complex eigenvalues.</b> Try the Rotation preset: no real direction is preserved (except trivially when the rotation is by 0 or π). The eigenvectors live in ℂ².</li>
+    <li><b>Power iteration always works (almost).</b> Click "Power iteration" with any starting <b>v</b>. After a few steps it lands on the dominant eigen-line. This is how Google's PageRank was computed.</li>
+    <li><b>tr(A) = λ<sub>1</sub> + λ<sub>2</sub>, det(A) = λ<sub>1</sub>λ<sub>2</sub>.</b> Quick sanity check — useful for ETE problems.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Standalone classroom visualizer · works fully offline · © EEC 351, IIT Roorkee
+</div>
+
+</div>
+
+<script>
+"use strict";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const SCALE = 50;
+const VB_X = -220, VB_Y = -180, VB_W = 440, VB_H = 360;
+
+let A = [[2, 1], [1, 2]];
+let v = [1.5, 0.3];
+let trail = [];      // history of v during power iteration
+let iterating = false;
+let iterTimer = null;
+
+function el(tag, attrs) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function toSvg(p) { return [p[0]*SCALE, -p[1]*SCALE]; }
+function matVec(M, x) { return [M[0][0]*x[0]+M[0][1]*x[1], M[1][0]*x[0]+M[1][1]*x[1]]; }
+
+// 2x2 eigendecomposition — returns either real {real:true, lams, vecs} or complex {real:false, ...}
+function eig2(A) {
+  const a = A[0][0], b = A[0][1], c = A[1][0], d = A[1][1];
+  const tr = a + d;
+  const det = a*d - b*c;
+  const disc = tr*tr - 4*det;
+  if (disc < -1e-10) {
+    // complex
+    const real = tr/2;
+    const imag = Math.sqrt(-disc)/2;
+    return {real: false, lamR: real, lamI: imag};
+  }
+  const s = Math.sqrt(Math.max(disc, 0));
+  const lam1 = (tr + s) / 2;
+  const lam2 = (tr - s) / 2;
+  // eigenvector for lam1: (A - lam1 I) v = 0
+  let v1, v2;
+  if (Math.abs(b) > 1e-9) {
+    v1 = [b, lam1 - a];
+    v2 = [b, lam2 - a];
+  } else if (Math.abs(c) > 1e-9) {
+    v1 = [lam1 - d, c];
+    v2 = [lam2 - d, c];
+  } else {
+    // diagonal: eigenvectors are e1, e2 in some order
+    v1 = (a >= d) ? [1, 0] : [0, 1];
+    v2 = (a >= d) ? [0, 1] : [1, 0];
+  }
+  // normalize
+  const n1 = Math.hypot(v1[0], v1[1]) || 1;
+  v1 = [v1[0]/n1, v1[1]/n1];
+  const n2 = Math.hypot(v2[0], v2[1]) || 1;
+  v2 = [v2[0]/n2, v2[1]/n2];
+  // degenerate (repeated lam): check if vectors are parallel
+  const cross = v1[0]*v2[1] - v1[1]*v2[0];
+  const defective = Math.abs(lam1 - lam2) < 1e-9 && Math.abs(cross) < 1e-9;
+  return {real: true, lams: [lam1, lam2], vecs: [v1, v2], defective};
+}
+
+function render() {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  // grid
+  for (let i = -4; i <= 4; i++) {
+    if (i === 0) continue;
+    svg.appendChild(el("line", {x1: i*SCALE, y1: -180, x2: i*SCALE, y2: 180, stroke: "#eee", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: -220, y1: i*SCALE, x2: 220, y2: i*SCALE, stroke: "#eee", "stroke-width": 1}));
+  }
+  svg.appendChild(el("line", {x1: -220, y1: 0, x2: 220, y2: 0, stroke: "#bbb", "stroke-width": 1.5}));
+  svg.appendChild(el("line", {x1: 0, y1: -180, x2: 0, y2: 180, stroke: "#bbb", "stroke-width": 1.5}));
+
+  // eigen-lines
+  const E = eig2(A);
+  if (E.real) {
+    for (const ev of E.vecs) {
+      // extend the line through origin both ways across the viewBox
+      const L = 6;
+      const p1 = [-L*ev[0], -L*ev[1]];
+      const p2 = [ L*ev[0],  L*ev[1]];
+      const [x1, y1] = toSvg(p1);
+      const [x2, y2] = toSvg(p2);
+      svg.appendChild(el("line", {x1, y1, x2, y2, stroke: "#2a9d8f", "stroke-width": 1.5,
+        "stroke-dasharray": "5,5", opacity: 0.7}));
+    }
+  }
+
+  // trail
+  for (let i = 0; i < trail.length; i++) {
+    const [tx, ty] = toSvg(trail[i]);
+    svg.appendChild(el("circle", {cx: tx, cy: ty, r: 3, fill: "#f4a261",
+      opacity: 0.3 + 0.7 * (i / Math.max(trail.length-1, 1))}));
+  }
+
+  // v and Av
+  const av = matVec(A, v);
+  drawArrow([0,0], v, "#143C78", "v");
+  drawArrow([0,0], av, "#B42828", "Av");
+
+  // tip handle for v
+  const [vx, vy] = toSvg(v);
+  const handle = el("circle", {cx: vx, cy: vy, r: 11, fill: "#143C78", "fill-opacity": 0.001,
+    stroke: "#143C78", "stroke-opacity": 0.4, "stroke-width": 1});
+  handle.style.cursor = "grab";
+  svg.appendChild(handle);
+
+  updatePanels(av, E);
+}
+
+function drawArrow(from, to, color, label) {
+  const [x1, y1] = toSvg(from);
+  const [x2, y2] = toSvg(to);
+  svg.appendChild(el("line", {x1, y1, x2, y2, stroke: color, "stroke-width": 2.6, "stroke-linecap": "round"}));
+  const dx = x2-x1, dy = y2-y1, L = Math.hypot(dx, dy) || 1;
+  const ux = dx/L, uy = dy/L, head = 11, wing = 6;
+  const p2 = [x2 - head*ux + wing*uy, y2 - head*uy - wing*ux];
+  const p3 = [x2 - head*ux - wing*uy, y2 - head*uy + wing*ux];
+  svg.appendChild(el("polygon", {points: `${x2},${y2} ${p2[0]},${p2[1]} ${p3[0]},${p3[1]}`, fill: color}));
+  if (label) {
+    const t = el("text", {x: x2 + 14*ux, y: y2 + 14*uy + 5, fill: color,
+      "font-family": "Georgia, serif", "font-style": "italic", "font-weight": "bold", "font-size": 17, "text-anchor": "middle"});
+    t.textContent = label;
+    svg.appendChild(t);
+  }
+}
+
+function fmt(x, d) { return (Math.abs(x) < 1e-10 ? 0 : x).toFixed(d || 3); }
+
+function updatePanels(av, E) {
+  const vn = Math.hypot(v[0], v[1]);
+  const avn = Math.hypot(av[0], av[1]);
+  document.getElementById("v-display").textContent = `${v[0].toFixed(2)}, ${v[1].toFixed(2)}`;
+  document.getElementById("v-norm").textContent = vn.toFixed(3);
+  document.getElementById("av-display").textContent = `${av[0].toFixed(2)}, ${av[1].toFixed(2)}`;
+  document.getElementById("av-norm").textContent = avn.toFixed(3);
+  document.getElementById("ratio").textContent = vn > 1e-6 ? (avn / vn).toFixed(3) : "—";
+
+  // angle between v and Av
+  const cos = (v[0]*av[0] + v[1]*av[1]) / (vn * avn || 1);
+  const ang = Math.acos(Math.max(-1, Math.min(1, cos))) * 180 / Math.PI;
+  document.getElementById("angle").textContent = isFinite(ang) ? ang.toFixed(1) + "°" : "—";
+
+  // eigenvector test
+  const t = document.getElementById("eig-test");
+  if (ang < 2 || ang > 178) {
+    t.className = "alignment-indicator aligned";
+    t.textContent = "✓ EIGENVECTOR (Av ∥ v)";
+  } else {
+    t.className = "alignment-indicator not-aligned";
+    t.textContent = "Av ≠ λv (not aligned)";
+  }
+
+  // A display
+  document.getElementById("A-display").innerHTML =
+    `<div class="matrix-box"><span>${fmt(A[0][0])}</span><span>${fmt(A[0][1])}</span><span>${fmt(A[1][0])}</span><span>${fmt(A[1][1])}</span></div>`;
+  document.getElementById("trA").textContent = fmt(A[0][0] + A[1][1]);
+  document.getElementById("detA").textContent = fmt(A[0][0]*A[1][1] - A[0][1]*A[1][0]);
+
+  // Eigeninfo
+  let html;
+  if (E.real) {
+    if (E.defective) {
+      html = `<div class="info-row">λ<sub>1</sub> = λ<sub>2</sub> = <span class="key">${fmt(E.lams[0])}</span> (repeated)</div>` +
+             `<div class="info-row">Eigenvector: (<span class="key">${fmt(E.vecs[0][0])}, ${fmt(E.vecs[0][1])}</span>)</div>` +
+             `<div class="info-row" style="margin-top:4px;color:#B42828;"><b>Defective</b> — only one eigen-direction. Not diagonalizable.</div>`;
+    } else {
+      html = `<div class="info-row">λ<sub>1</sub> = <span class="key">${fmt(E.lams[0])}</span>, &nbsp; <b>v<sub>1</sub></b> = (<span class="key">${fmt(E.vecs[0][0])}, ${fmt(E.vecs[0][1])}</span>)</div>` +
+             `<div class="info-row">λ<sub>2</sub> = <span class="key">${fmt(E.lams[1])}</span>, &nbsp; <b>v<sub>2</sub></b> = (<span class="key">${fmt(E.vecs[1][0])}, ${fmt(E.vecs[1][1])}</span>)</div>`;
+      const sym = Math.abs(A[0][1] - A[1][0]) < 1e-9;
+      if (sym) html += `<div class="info-row" style="margin-top:4px;color:#155724;">✓ Symmetric → eigenvectors perpendicular (spectral theorem).</div>`;
+    }
+  } else {
+    html = `<div class="info-row">λ = <span class="key">${fmt(E.lamR)} ± ${fmt(E.lamI)}i</span> (complex conjugate pair)</div>` +
+           `<div class="complex-warning" style="margin-top:6px;">No real eigenvector direction. A rotates every real vector; no real line is preserved.</div>`;
+  }
+  document.getElementById("eig-info").innerHTML = html;
+}
+
+// --- Matrix sliders ---
+function bindMat(id, i, j) {
+  const sld = document.getElementById(id);
+  const val = document.getElementById(id + "-val");
+  sld.addEventListener("input", () => {
+    A[i][j] = parseFloat(sld.value);
+    val.textContent = A[i][j].toFixed(1);
+    render();
+  });
+}
+bindMat("a00", 0, 0); bindMat("a01", 0, 1); bindMat("a10", 1, 0); bindMat("a11", 1, 1);
+
+function setA(newA) {
+  A = newA;
+  document.getElementById("a00").value = A[0][0]; document.getElementById("a00-val").textContent = A[0][0].toFixed(1);
+  document.getElementById("a01").value = A[0][1]; document.getElementById("a01-val").textContent = A[0][1].toFixed(1);
+  document.getElementById("a10").value = A[1][0]; document.getElementById("a10-val").textContent = A[1][0].toFixed(1);
+  document.getElementById("a11").value = A[1][1]; document.getElementById("a11-val").textContent = A[1][1].toFixed(1);
+  trail = [];
+  render();
+}
+document.querySelectorAll("[data-preset]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    switch (btn.dataset.preset) {
+      case "symmetric": setA([[2, 1], [1, 2]]); break;
+      case "diagonal":  setA([[2, 0], [0, 0.5]]); break;
+      case "shear":     setA([[1, 1], [0, 1]]); break;
+      case "rotation":  setA([[0.5, -0.87], [0.87, 0.5]]); break;  // rotation by 60°
+      case "reflection":setA([[0.87, 0.5], [0.5, -0.87]]); break;  // reflection
+      case "projection":setA([[1, 1], [1, 1]]); break;  // rank 1
+    }
+  });
+});
+
+// --- Drag v ---
+let dragging = false;
+function svgPointToData(evt) {
+  const rect = svg.getBoundingClientRect();
+  const sx = (evt.clientX - rect.left) / rect.width * VB_W + VB_X;
+  const sy = (evt.clientY - rect.top) / rect.height * VB_H + VB_Y;
+  return [sx/SCALE, -sy/SCALE];
+}
+svg.addEventListener("mousedown", e => {
+  const [dx, dy] = svgPointToData(e);
+  if (Math.hypot(dx-v[0], dy-v[1]) < 0.7) dragging = true;
+});
+window.addEventListener("mousemove", e => {
+  if (!dragging) return;
+  const [dx, dy] = svgPointToData(e);
+  v = [dx, dy];
+  trail = [];
+  render();
+});
+window.addEventListener("mouseup", () => dragging = false);
+svg.addEventListener("touchstart", e => {
+  if (!e.touches[0]) return;
+  const [dx, dy] = svgPointToData(e.touches[0]);
+  if (Math.hypot(dx-v[0], dy-v[1]) < 0.7) { dragging = true; e.preventDefault(); }
+}, {passive: false});
+window.addEventListener("touchmove", e => {
+  if (!dragging || !e.touches[0]) return;
+  const [dx, dy] = svgPointToData(e.touches[0]);
+  v = [dx, dy];
+  trail = [];
+  render();
+}, {passive: false});
+window.addEventListener("touchend", () => dragging = false);
+
+// --- Power iteration ---
+function iterStep() {
+  trail.push([v[0], v[1]]);
+  if (trail.length > 40) trail.shift();
+  const av = matVec(A, v);
+  const an = Math.hypot(av[0], av[1]);
+  if (an < 1e-10) return;  // shrunk to zero
+  // keep length 2 for visibility
+  v = [2 * av[0] / an, 2 * av[1] / an];
+  render();
+}
+document.getElementById("iter-step").addEventListener("click", iterStep);
+
+const iterBtn = document.getElementById("iter-btn");
+iterBtn.addEventListener("click", () => {
+  if (iterating) {
+    clearInterval(iterTimer);
+    iterating = false;
+    iterBtn.textContent = "▶ Power iteration";
+  } else {
+    iterating = true;
+    iterBtn.textContent = "❚❚ Stop";
+    iterTimer = setInterval(iterStep, 400);
+  }
+});
+document.getElementById("reset-v").addEventListener("click", () => {
+  v = [1.5, 0.3]; trail = []; render();
+});
+document.getElementById("clear-trail").addEventListener("click", () => {
+  trail = []; render();
+});
+
+render();
+</script>
+</body>
+</html>

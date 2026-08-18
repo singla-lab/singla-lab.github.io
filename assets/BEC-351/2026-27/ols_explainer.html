@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Least Squares Line Fitting · EEC 351</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0; background: #f9f8f4; color: #1a1a1a; line-height: 1.55; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 2px solid #143C78; padding-bottom: 10px; margin-bottom: 18px; }
+  header h1 { margin: 0; color: #143C78; font-size: 26px; }
+  .subtitle { color: #555; font-size: 13px; margin-top: 4px; }
+  .intro { font-size: 15px; max-width: 850px; margin-bottom: 16px; }
+  .eqn { background: #f0f4fa; border: 1px solid #143C78; border-radius: 4px;
+    padding: 12px 16px; margin: 14px 0; font-size: 17px; text-align: center; font-family: Georgia, serif; }
+  .eqn b { color: #143C78; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .btn { background: #143C78; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
+  .btn:hover { background: #0d2a55; }
+  .btn-alt { background: #fff; color: #143C78; border: 1px solid #143C78; }
+  .btn-alt:hover { background: #eef2f9; }
+  .layout { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .viz { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px; }
+  .viz svg { width: 100%; height: auto; display: block; cursor: crosshair; }
+  .panel { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; margin-bottom: 12px; }
+  .panel h4 { margin: 0 0 8px; color: #143C78; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-row { font-size: 14px; margin: 4px 0; }
+  .info-row b { color: #143C78; }
+  .info-row .key { font-family: "SF Mono", Consolas, monospace; color: #B42828; }
+  .matrix-box { display: inline-grid; grid-template-columns: auto auto; gap: 4px 16px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 13px;
+    padding: 4px 10px; border-left: 2px solid #143C78; border-right: 2px solid #143C78; }
+  .matrix-box span { text-align: right; }
+  .vec-box { display: inline-grid; grid-template-columns: auto; gap: 4px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 13px;
+    padding: 4px 10px; border-left: 2px solid #143C78; border-right: 2px solid #143C78; text-align: right; }
+  .checkbox-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 6px 0; font-size: 14px; }
+  .checkbox-row label { cursor: pointer; user-select: none; }
+  .checkbox-row input { margin-right: 4px; vertical-align: middle; }
+  .legend { font-size: 12px; color: #666; padding: 6px 8px 0; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; margin-left: 8px; }
+  .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
+  .hint { font-size: 12px; color: #777; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Least Squares Line Fitting</h1>
+  <div class="subtitle">EEC 351 · Fundamentals of AI/ML · Prof. Parikshit Pareek &amp; Prof. Jitin Singla · IIT Roorkee</div>
+</header>
+
+<p class="intro">
+Given <i>n</i> points (<i>x<sub>i</sub></i>, <i>y<sub>i</sub></i>), the <b>ordinary least squares (OLS) line</b> minimises the sum of squared vertical distances from each point to the line. The minimiser has a closed form: <b>β̂ = (X<sup>⊤</sup>X)<sup>−1</sup>X<sup>⊤</sup>y</b>. Click to add data points and watch the line — and the matrix arithmetic — update live.
+</p>
+
+<div class="eqn">
+β̂ = arg min<sub>β</sub> ‖y − Xβ‖<sub>2</sub><sup>2</sup>,&nbsp;&nbsp;
+X = [x | 1],&nbsp;&nbsp;
+β̂ = (X<sup>⊤</sup>X)<sup>−1</sup>X<sup>⊤</sup>y
+</div>
+
+<div class="toolbar">
+  <span style="font-weight:600;color:#143C78;font-size:13px;">Preset:</span>
+  <button class="btn" data-preset="linear">Noisy linear</button>
+  <button class="btn" data-preset="quadratic">Quadratic (line fails)</button>
+  <button class="btn" data-preset="outlier">Linear + outlier</button>
+  <button class="btn" data-preset="anscombe">Anscombe-like</button>
+  <button class="btn btn-alt" id="clear-btn">Clear all</button>
+</div>
+
+<div class="layout">
+  <div>
+    <div class="viz">
+      <svg id="canvas" viewBox="-220 -160 440 320" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="legend">
+        <span class="swatch" style="background:#143C78"></span>data points
+        <span class="swatch" style="background:#B42828"></span>OLS fit
+        <span class="swatch" style="background:#f4a261"></span>residuals
+        <span class="swatch" style="background:#2a9d8f"></span>mean (x̄, ȳ)
+      </div>
+    </div>
+    <div class="hint">Click anywhere to add a point. Click on an existing point to remove it.</div>
+
+    <div class="panel" style="margin-top:12px;">
+      <h4>Display options</h4>
+      <div class="checkbox-row">
+        <label><input type="checkbox" id="show-residuals" checked> Residuals</label>
+        <label><input type="checkbox" id="show-mean" checked> Mean (line passes through)</label>
+        <label><input type="checkbox" id="show-squares"> Squared residuals (boxes)</label>
+        <label><input type="checkbox" id="show-confidence"> Confidence band (±1σ)</label>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h4>Fitted line</h4>
+      <div class="info-row"><b>n</b> = <span class="key" id="n-val">0</span> points</div>
+      <div class="info-row" id="line-eq" style="font-size:16px;">—</div>
+      <div class="info-row">Slope <b>m</b> = <span class="key" id="m-val">—</span></div>
+      <div class="info-row">Intercept <b>c</b> = <span class="key" id="c-val">—</span></div>
+    </div>
+
+    <div class="panel">
+      <h4>Error metrics</h4>
+      <div class="info-row">SSR = Σr<sub>i</sub><sup>2</sup> = <span class="key" id="ssr-val">—</span></div>
+      <div class="info-row">RMSE = √(SSR/n) = <span class="key" id="rmse-val">—</span></div>
+      <div class="info-row">R<sup>2</sup> = 1 − SSR/SST = <span class="key" id="r2-val">—</span></div>
+    </div>
+
+    <div class="panel">
+      <h4>Normal equations</h4>
+      <div class="info-row"><b>X<sup>⊤</sup>X</b> =</div>
+      <div id="xtx"></div>
+      <div class="info-row" style="margin-top:8px;"><b>X<sup>⊤</sup>y</b> =</div>
+      <div id="xty"></div>
+      <div class="info-row" style="margin-top:8px;"><b>β̂</b> = (X<sup>⊤</sup>X)<sup>−1</sup>X<sup>⊤</sup>y =</div>
+      <div id="beta-display"></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h4>What to notice during class</h4>
+  <ul style="margin:6px 0 0; padding-left:20px; font-size:14px;">
+    <li><b>The OLS line passes through the centroid (x̄, ȳ).</b> Always. This is a one-line consequence of the normal equation for the intercept.</li>
+    <li><b>Residuals are vertical, not perpendicular.</b> OLS minimises vertical distance — that's why it changes if you swap x and y. (Total least squares would minimise perpendicular distance — different problem.)</li>
+    <li><b>One outlier destroys the fit.</b> Try the "Linear + outlier" preset. The single far-away point swings the entire line because squared error penalises it enormously.</li>
+    <li><b>R<sup>2</sup> doesn't mean the model is correct.</b> Try the "Quadratic" preset: R<sup>2</sup> may still be high, but the line is wrong — the residuals show a U-shape, not random scatter. This is the visual diagnostic.</li>
+    <li><b>The matrix formulation generalises.</b> The same β̂ = (X<sup>⊤</sup>X)<sup>−1</sup>X<sup>⊤</sup>y holds for multivariate regression, polynomial fitting, and beyond. Only the design matrix X changes.</li>
+    <li><b>Connection to projection.</b> X(X<sup>⊤</sup>X)<sup>−1</sup>X<sup>⊤</sup> is the hat matrix H — the projection onto the column space of X. This is exactly the MTE Q7 idempotent matrix.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Standalone classroom visualizer · works fully offline · © EEC 351, IIT Roorkee
+</div>
+
+</div>
+
+<script>
+"use strict";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const SCALE = 35;
+const VB_X = -220, VB_Y = -160, VB_W = 440, VB_H = 320;
+
+let points = [];
+
+function el(tag, attrs) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function toSvg(p) { return [p[0]*SCALE, -p[1]*SCALE]; }
+
+function computeOLS(pts) {
+  const n = pts.length;
+  if (n < 2) return null;
+  let sx = 0, sy = 0, sxx = 0, sxy = 0, syy = 0;
+  for (const [x, y] of pts) {
+    sx += x; sy += y; sxx += x*x; sxy += x*y; syy += y*y;
+  }
+  const denom = n * sxx - sx * sx;
+  if (Math.abs(denom) < 1e-12) return null;  // all x's the same
+  const m = (n * sxy - sx * sy) / denom;
+  const c = (sy - m * sx) / n;
+  // SSR
+  let ssr = 0;
+  for (const [x, y] of pts) {
+    const r = y - (m*x + c);
+    ssr += r*r;
+  }
+  // SST
+  const ybar = sy / n;
+  const sst = syy - n * ybar * ybar;
+  const r2 = sst > 1e-12 ? 1 - ssr / sst : 1;
+  return {n, m, c, ssr, sst, r2, sx, sy, sxx, sxy, mean: [sx/n, sy/n]};
+}
+
+function render() {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  // grid
+  for (let i = -5; i <= 5; i++) {
+    if (i === 0) continue;
+    svg.appendChild(el("line", {x1: i*SCALE, y1: -160, x2: i*SCALE, y2: 160, stroke: "#eee", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: -220, y1: i*SCALE, x2: 220, y2: i*SCALE, stroke: "#eee", "stroke-width": 1}));
+  }
+  svg.appendChild(el("line", {x1: -220, y1: 0, x2: 220, y2: 0, stroke: "#bbb", "stroke-width": 1.5}));
+  svg.appendChild(el("line", {x1: 0, y1: -160, x2: 0, y2: 160, stroke: "#bbb", "stroke-width": 1.5}));
+  // axis labels
+  svg.appendChild(Object.assign(el("text", {x: 210, y: 16, fill: "#888", "font-size": 13, "font-style":"italic"}), {textContent: "x"}));
+  svg.appendChild(Object.assign(el("text", {x: 8, y: -150, fill: "#888", "font-size": 13, "font-style":"italic"}), {textContent: "y"}));
+
+  const fit = computeOLS(points);
+  const opts = {
+    showResiduals: document.getElementById("show-residuals").checked,
+    showMean: document.getElementById("show-mean").checked,
+    showSquares: document.getElementById("show-squares").checked,
+    showConfidence: document.getElementById("show-confidence").checked,
+  };
+
+  if (fit) {
+    const {m, c, mean, ssr, n} = fit;
+    // confidence band
+    if (opts.showConfidence && n > 1) {
+      const sigma = Math.sqrt(ssr / Math.max(n - 2, 1));
+      const xLeft = -6, xRight = 6;
+      const pts = [];
+      pts.push([xLeft, m*xLeft + c + sigma]);
+      pts.push([xRight, m*xRight + c + sigma]);
+      pts.push([xRight, m*xRight + c - sigma]);
+      pts.push([xLeft, m*xLeft + c - sigma]);
+      let path = "M ";
+      for (let i = 0; i < pts.length; i++) {
+        const [sx, sy] = toSvg(pts[i]);
+        path += `${sx.toFixed(2)},${sy.toFixed(2)} `;
+        if (i < pts.length - 1) path += "L ";
+      }
+      path += "Z";
+      svg.appendChild(el("path", {d: path, fill: "rgba(180,40,40,0.08)", stroke: "none"}));
+    }
+    // residual squares
+    if (opts.showSquares) {
+      for (const [x, y] of points) {
+        const yhat = m*x + c;
+        const r = y - yhat;
+        if (Math.abs(r) < 1e-6) continue;
+        const side = Math.abs(r);
+        const x0 = x, y0 = Math.min(y, yhat);
+        const [sx0, sy0] = toSvg([x0, y0 + side]);
+        svg.appendChild(el("rect", {x: sx0, y: sy0, width: side*SCALE, height: side*SCALE,
+          fill: "rgba(244,162,97,0.18)", stroke: "#f4a261", "stroke-width": 1}));
+      }
+    }
+    // residual lines
+    if (opts.showResiduals) {
+      for (const [x, y] of points) {
+        const yhat = m*x + c;
+        const [sx1, sy1] = toSvg([x, y]);
+        const [sx2, sy2] = toSvg([x, yhat]);
+        svg.appendChild(el("line", {x1: sx1, y1: sy1, x2: sx2, y2: sy2,
+          stroke: "#f4a261", "stroke-width": 1.5, "stroke-dasharray": "3,2"}));
+      }
+    }
+    // the OLS line
+    const xLeft = -7, xRight = 7;
+    const [lx1, ly1] = toSvg([xLeft, m*xLeft + c]);
+    const [lx2, ly2] = toSvg([xRight, m*xRight + c]);
+    svg.appendChild(el("line", {x1: lx1, y1: ly1, x2: lx2, y2: ly2,
+      stroke: "#B42828", "stroke-width": 2.5}));
+    // mean
+    if (opts.showMean) {
+      const [mx, my] = toSvg(mean);
+      svg.appendChild(el("circle", {cx: mx, cy: my, r: 8, fill: "#fff",
+        stroke: "#2a9d8f", "stroke-width": 2.5}));
+      svg.appendChild(el("circle", {cx: mx, cy: my, r: 2, fill: "#2a9d8f"}));
+    }
+  }
+
+  // points
+  for (let i = 0; i < points.length; i++) {
+    const [sx, sy] = toSvg(points[i]);
+    const dot = el("circle", {cx: sx, cy: sy, r: 5.5, fill: "#143C78", stroke: "#0d2a55", "stroke-width": 1.5});
+    dot.style.cursor = "pointer";
+    dot.dataset.idx = i;
+    dot.addEventListener("click", e => {
+      e.stopPropagation();
+      points.splice(parseInt(dot.dataset.idx), 1);
+      render();
+    });
+    svg.appendChild(dot);
+  }
+
+  updatePanels(fit);
+}
+
+function fmt(x, d) { return (Math.abs(x) < 1e-10 ? 0 : x).toFixed(d || 3); }
+
+function updatePanels(fit) {
+  document.getElementById("n-val").textContent = points.length;
+  if (!fit) {
+    document.getElementById("line-eq").textContent = (points.length < 2) ? "(add at least 2 points)" : "(degenerate — all x identical)";
+    document.getElementById("m-val").textContent = "—";
+    document.getElementById("c-val").textContent = "—";
+    document.getElementById("ssr-val").textContent = "—";
+    document.getElementById("rmse-val").textContent = "—";
+    document.getElementById("r2-val").textContent = "—";
+    document.getElementById("xtx").innerHTML = "—";
+    document.getElementById("xty").innerHTML = "—";
+    document.getElementById("beta-display").innerHTML = "—";
+    return;
+  }
+  const {m, c, ssr, r2, n, sx, sy, sxx, sxy} = fit;
+  const eqHtml = `ŷ = <span class="key">${fmt(m, 3)}</span>&thinsp;x ${c >= 0 ? "+" : "−"} <span class="key">${fmt(Math.abs(c), 3)}</span>`;
+  document.getElementById("line-eq").innerHTML = eqHtml;
+  document.getElementById("m-val").textContent = fmt(m, 4);
+  document.getElementById("c-val").textContent = fmt(c, 4);
+  document.getElementById("ssr-val").textContent = fmt(ssr);
+  document.getElementById("rmse-val").textContent = fmt(Math.sqrt(ssr/n));
+  document.getElementById("r2-val").textContent = fmt(r2, 4);
+  // X^T X, X^T y, beta
+  document.getElementById("xtx").innerHTML =
+    `<div class="matrix-box"><span>${fmt(sxx)}</span><span>${fmt(sx)}</span><span>${fmt(sx)}</span><span>${n}</span></div>`;
+  document.getElementById("xty").innerHTML =
+    `<div class="vec-box"><span>${fmt(sxy)}</span><span>${fmt(sy)}</span></div>`;
+  document.getElementById("beta-display").innerHTML =
+    `<div class="vec-box"><span>${fmt(m, 4)}</span><span>${fmt(c, 4)}</span></div>` +
+    ` <span style="font-size:12px;color:#666;">(slope, intercept)</span>`;
+}
+
+// --- Click handling ---
+function svgPointToData(evt) {
+  const rect = svg.getBoundingClientRect();
+  const sx = (evt.clientX - rect.left) / rect.width * VB_W + VB_X;
+  const sy = (evt.clientY - rect.top) / rect.height * VB_H + VB_Y;
+  return [sx/SCALE, -sy/SCALE];
+}
+svg.addEventListener("click", e => {
+  if (e.target.tagName === "circle" && e.target.dataset.idx !== undefined) return;
+  const [x, y] = svgPointToData(e);
+  points.push([x, y]);
+  render();
+});
+
+// --- Presets ---
+function randn() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2*Math.log(u)) * Math.cos(2*Math.PI*v);
+}
+document.querySelectorAll("[data-preset]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    points = [];
+    const N = 15;
+    switch (btn.dataset.preset) {
+      case "linear":
+        for (let i = 0; i < N; i++) {
+          const x = (i / (N-1)) * 10 - 5;
+          points.push([x, 0.7 * x + 0.5 + randn() * 0.6]);
+        }
+        break;
+      case "quadratic":
+        for (let i = 0; i < N; i++) {
+          const x = (i / (N-1)) * 10 - 5;
+          points.push([x, 0.18 * x * x - 2 + randn() * 0.3]);
+        }
+        break;
+      case "outlier":
+        for (let i = 0; i < N - 1; i++) {
+          const x = (i / (N-2)) * 8 - 4;
+          points.push([x, 0.6 * x + randn() * 0.3]);
+        }
+        points.push([4.5, -3.5]);  // big outlier
+        break;
+      case "anscombe":
+        // mimic Anscombe quartet 2 - a curve with linear regression fitting
+        const xs = [-4,-3,-2,-1,0,1,2,3,4,5];
+        for (const x of xs) points.push([x, -0.12*x*x + 0.5*x + 2 + randn()*0.2]);
+        break;
+    }
+    render();
+  });
+});
+document.getElementById("clear-btn").addEventListener("click", () => { points = []; render(); });
+
+// Display toggles
+["show-residuals","show-mean","show-squares","show-confidence"]
+  .forEach(id => document.getElementById(id).addEventListener("change", render));
+
+// init
+document.querySelector('[data-preset="linear"]').click();
+</script>
+</body>
+</html>

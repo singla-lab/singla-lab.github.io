@@ -54,7 +54,7 @@
            "[The course in one picture](assets/BEC-351/2026-27/BEC351_Course_Map.html)", ""],
           ["1", "History of AI and machine learning",
            "[Slides](assets/BEC-351/2026-27/Lec-1-History.pdf)",
-           "[Kolter &amp; Do, Linear Algebra Review &amp; Reference (CS229) §1–2](https://psquare-lab.github.io/assets/pdf/EEC351/notes/Linear-Algebra-Review.pdf) &middot; [Boyd &amp; Vandenberghe, Introduction to Applied Linear Algebra (VMLS) Ch. 1–3](https://web.stanford.edu/~boyd/vmls/vmls.pdf)",
+           "[Kolter &amp; Do, Linear Algebra Review &amp; Reference (CS229) §1–2](https://cs229.stanford.edu/section/cs229-linalg.pdf) &middot; [Boyd &amp; Vandenberghe, Introduction to Applied Linear Algebra (VMLS) Ch. 1–3](https://web.stanford.edu/~boyd/vmls/vmls.pdf)",
            "[The Imitation Game](https://www.imdb.com/title/tt2084970/) &middot; [Turing machine — short](https://www.youtube.com/shorts/Wcg06obKCrw)", ""],
           ["LA1", "Notation &amp; basic objects; vector/matrix products; properties of matrix multiplication",
            "",
@@ -63,7 +63,7 @@
           ["LA2", "Transpose, symmetric matrices, trace; norms, Cauchy–Schwarz &amp; cosine similarity",
            "",
            "[Kolter &amp; Do §3.2–3.5](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: ℓₚ unit balls](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/norm_balls_explainer.html) &middot; [Demo: cosine similarity](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/cosine_similarity_explainer.html)", ""],
+           "[Demo: ℓₚ unit balls](assets/BEC-351/2026-27/unit_balls_explainer.html) &middot; [Demo: cosine similarity](assets/BEC-351/2026-27/cosine_similarity_explainer.html)", ""],
           ["LA3", "Matrix inverse; span, range &amp; linear independence",
            "",
            "[Kolter &amp; Do §3.6–3.9](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
@@ -71,7 +71,7 @@
           ["LA4", "Linear projection &amp; least squares",
            "",
            "[Kolter &amp; Do §3.9, §4.4](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: least-squares line fitting](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/ols_explainer.html)", ""],
+           "[Demo: least-squares line fitting](assets/BEC-351/2026-27/ols_explainer.html)", ""],
           ["LA5", "Determinant; condition number &amp; numerical sensitivity",
            "",
            "[Kolter &amp; Do §3.10](https://cs229.stanford.edu/section/cs229-linalg.pdf) &middot; condition number is supplementary — see Trefethen &amp; Bau, <em>Numerical Linear Algebra</em>",
@@ -83,11 +83,11 @@
           ["LA7", "Eigenvalues &amp; eigenvectors; diagonalization &amp; the spectral theorem; eigenvalues as optimisation",
            "",
            "[Kolter &amp; Do §3.12–3.13, §4.6](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: eigenvectors as fixed directions](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/eigenvector_explainer.html) &middot; [Demo: rotate, scale, rotate](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/rotation_explainer.html) &middot; [Setosa, Eigenvectors &amp; Eigenvalues, Explained Visually](https://setosa.io/ev/eigenvectors-and-eigenvalues/)", ""],
+           "[Demo: eigenvectors as fixed directions](assets/BEC-351/2026-27/eigenvector_explainer.html) &middot; [Demo: rotate, scale, rotate](assets/BEC-351/2026-27/rotation_explainer.html) &middot; [Setosa, Eigenvectors &amp; Eigenvalues, Explained Visually](https://setosa.io/ev/eigenvectors-and-eigenvalues/)", ""],
           ["LA8", "SVD; PCA; matrix calculus (self study)",
            "",
            "[Kolter &amp; Do §4.1–4.3](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: PCA playground](https://psquare-lab.github.io/assets/pdf/EEC351/2026-27/LA/pca_explainer.html) &middot; [Setosa, Principal Component Analysis, Explained Visually](https://setosa.io/ev/principal-component-analysis/) &middot; [Petersen &amp; Pedersen, The Matrix Cookbook](https://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf)", ""]
+           "[Demo: PCA playground](assets/BEC-351/2026-27/pca_explainer.html) &middot; [Setosa, Principal Component Analysis, Explained Visually](https://setosa.io/ev/principal-component-analysis/) &middot; [Petersen &amp; Pedersen, The Matrix Cookbook](https://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf)", ""]
         ]
       },
       "references": [
