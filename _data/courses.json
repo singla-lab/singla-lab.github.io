@@ -83,11 +83,11 @@
           ["LA7", "Eigenvalues &amp; eigenvectors; diagonalization &amp; the spectral theorem; eigenvalues as optimisation",
            "",
            "[Kolter &amp; Do §3.12–3.13, §4.6](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: eigenvectors as fixed directions](assets/BEC-351/2026-27/eigenvector_explainer.html) &middot; [Demo: rotate, scale, rotate](assets/BEC-351/2026-27/rotation_explainer.html) &middot; [Setosa, Eigenvectors &amp; Eigenvalues, Explained Visually](https://setosa.io/ev/eigenvectors-and-eigenvalues/)", ""],
+           "[Demo: eigenvectors as fixed directions](assets/BEC-351/2026-27/eigenvector_explainer.html) &middot; [Demo: rotate, scale, rotate](assets/BEC-351/2026-27/rotation_explainer.html) &middot; [Setosa, Eigenvectors &amp; Eigenvalues, Explained Visually](https://setosa.io/ev/eigenvectors-and-eigenvalues/)", "[Practice-1](assets/BEC-351/2026-27/Practice-1.pdf)"],
           ["LA8", "SVD; PCA; matrix calculus (self study)",
            "",
            "[Kolter &amp; Do §4.1–4.3](https://cs229.stanford.edu/section/cs229-linalg.pdf)",
-           "[Demo: PCA playground](assets/BEC-351/2026-27/pca_explainer.html) &middot; [Setosa, Principal Component Analysis, Explained Visually](https://setosa.io/ev/principal-component-analysis/) &middot; [Petersen &amp; Pedersen, The Matrix Cookbook](https://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf)", ""]
+           "[Demo: PCA playground](assets/BEC-351/2026-27/pca_explainer.html) &middot; [Setosa, Principal Component Analysis, Explained Visually](https://setosa.io/ev/principal-component-analysis/) &middot; [Petersen &amp; Pedersen, The Matrix Cookbook](https://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf)", "[Practice-2](assets/BEC-351/2026-27/Practice-2.pdf)"]
         ]
       },
       "references": [
