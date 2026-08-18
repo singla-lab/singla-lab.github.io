@@ -732,6 +732,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .tl-body { color: var(--ink-2); font-size: .94rem; max-width: 62ch; }
 .tl-img { margin-top: 1rem; border-radius: var(--r-sm); overflow: hidden; border: 1px solid var(--rule); max-width: 460px; }
 .tl-img img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.tl-img svg { display: block; width: 100%; height: auto; background: var(--surface); }
 
 /* ---------- Projects ---------- */
 .proj {

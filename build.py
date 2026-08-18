@@ -1110,7 +1110,11 @@ def build_news():
     items = []
     for n in d['items']:
         img = ''
-        if n.get('image'):
+        # a drawn figure where there is no photograph -- an award or a result
+        # has nothing to photograph, but it does have a shape worth showing
+        if n.get('svg'):
+            img = '<div class="tl-img">{0}</div>'.format(svg('news-' + n['svg']))
+        elif n.get('image'):
             img = '<div class="tl-img"><img src="assets/img/media/{0}.jpg" alt="{1}" loading="lazy"></div>'.format(
                 n['image'], attr(n['title']))
         items.append("""<div class="tl-item rv">
