@@ -164,12 +164,21 @@
       "schedule": {
         "columns": ["#", "Topic", "Essential reading", "Homework"],
         "rows": [
-          ["1", "Course info and outline", "Chapters 1–5, [<em>Deep Learning</em>](https://www.deeplearningbook.org/)", ""],
-          ["2", "Basics of the perceptron, feedforward network notation", "Chapter 6, <em>Deep Learning</em>", ""],
-          ["3", "XOR network and hidden layer transformation", "Chapter 6", "HW-1"],
-          ["4", "Output units and loss functions", "Chapter 6", ""],
-          ["5", "Backpropagation", "Chapter 6", ""],
-          ["6", "Regularization", "Chapter 7", "HW-2"]
+          ["1", "Course info and outline",
+           "Chapters 1–5, [<em>Deep Learning</em>](https://www.deeplearningbook.org/)", ""],
+          ["2", "Deep learning applications",
+           "[Inspirational applications](https://machinelearningmastery.com/inspirational-applications-deep-learning/)", ""],
+          ["3", "Basics of the perceptron, feedforward network notation", "Chapter 6, <em>Deep Learning</em>", ""],
+          ["4", "XOR network and hidden layer transformation",
+           "Chapter 6", "[Practice-1](https://drive.google.com/file/d/1adzwcUOSsmeNWEHvwqkh9Pa0vRlH90aF/view?usp=drive_link)"],
+          ["5", "Output units and loss functions", "Chapter 6", ""],
+          ["6", "Backpropagation", "Chapter 6", ""],
+          ["7", "Regularization",
+           "Chapter 7", "[Practice-2](https://drive.google.com/file/d/1W3BI6sNZAYvpljC2-BOHnGBWwfX9bo6F/view?usp=drive_link)"],
+          ["8", "L2 and L1 regularization", "Section 7.1 &middot; additional reading 7.2–7.5", ""],
+          ["9", "Early stopping", "Section 7.8", ""],
+          ["10", "Dropout",
+           "Sections 7.10–7.12", "[Practice-3](https://drive.google.com/file/d/1QIQOyzgfClnGqrA2PNmKjmXoUB87TocP/view?usp=drive_link)"]
         ]
       },
       "assignments": [
