@@ -32,7 +32,8 @@
       "members": [
         { "name": "Arjun Singh",      "photo": "arjun-singh", "link": "https://www.linkedin.com/in/arjun-singh-/" },
         { "name": "Angshuman Mandal", "photo": "angshuman-mandal", "link": "https://www.linkedin.com/in/angshuman-mandal-585130215/" },
-        { "name": "Raghav Passi",     "photo": "raghav-passi", "link": "https://www.linkedin.com/in/passiraghav/" }
+        { "name": "Raghav Passi",     "photo": "raghav-passi", "link": "https://www.linkedin.com/in/passiraghav/" },
+        { "name": "Arun Yadav",       "note": "Now a Ph.D. student in the lab", "photo": "arun-yadav", "link": "https://www.linkedin.com/in/arun-yadav-901730208/" }
       ]
     },
     {
