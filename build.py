@@ -77,12 +77,12 @@ _LINK = re.compile(r'\[([^\]]+)\]\(([^)\s]+)\)')
 
 def rich(s):
     """Escape, then expand [label](url) into a link. Outbound links open in a
-    new tab, and so do our own handouts -- a PDF is a document, not a place on
-    the site, and it should not take the course page's tab. mailto and same-site
-    pages stay put."""
+    new tab, and so does anything under assets/ -- slides, handouts, the course
+    map. Those are documents, not places on the site, and should not take the
+    page's tab. mailto and site pages stay put."""
     def repl(m):
         text, href = m.group(1), m.group(2)
-        away = href.startswith('http') or href.endswith('.pdf')
+        away = href.startswith('http') or href.startswith('assets/')
         out = ' target="_blank" rel="noopener"' if away else ''
         return '<a href="{0}"{1}>{2}</a>'.format(href, out, text)
     return _LINK.sub(repl, a(s))
