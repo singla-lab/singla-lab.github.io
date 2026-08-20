@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
 <title>Page not found â€” Singla Lab</title>
 <meta name="description" content="The page you asked for does not exist.">
 <link rel="canonical" href="https://www.jitinsingla.in/404.html">
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400..600&amp;family=Newsreader:ital,wght@0,300..600;1,300..600&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;family=Noto+Serif+Devanagari:wght@400..600&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=ecf87d92">
+<link rel="stylesheet" href="assets/css/site.css?v=4eced72b">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -46,6 +46,13 @@
     <nav class="nav" id="nav" aria-label="Primary"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="team.html">Team</a><a href="alumni.html">Alumni</a><a href="teaching.html">Teaching</a><a href="news.html">News</a><a href="recommended.html">Recommended</a><a href="contact.html">Join Us</a></nav>
     <button class="theme-toggle" type="button" data-theme-toggle
             aria-label="Switch to dark theme" title="Switch to dark theme"><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.4 8.4 0 102.4 16.4A8.2 8.2 0 0020 14.2z"/></svg></button>
+    <div class="accent" data-accent-picker>
+      <button class="theme-toggle" type="button" aria-expanded="false" aria-haspopup="true"
+              aria-label="Colour theme" title="Colour theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="9.4" r="4.4"/><circle cx="15" cy="9.4" r="4.4"/><circle cx="12" cy="14.8" r="4.4"/></svg></button>
+      <div class="accent-menu" hidden role="menu" aria-label="Colour theme">
+        <p class="accent-h">Colour</p><button class="accent-sw" type="button" role="menuitemradio" data-accent="indigo" aria-checked="true"><i></i>Indigo</button><button class="accent-sw" type="button" role="menuitemradio" data-accent="plum" aria-checked="false"><i></i>Plum</button><button class="accent-sw" type="button" role="menuitemradio" data-accent="madder" aria-checked="false"><i></i>Madder</button><button class="accent-sw" type="button" role="menuitemradio" data-accent="slate" aria-checked="false"><i></i>Slate</button>
+      </div>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 </header>
@@ -88,6 +95,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=ac8a2240" defer></script>
+<script src="assets/js/site.js?v=63c097b4" defer></script>
 </body>
 </html>

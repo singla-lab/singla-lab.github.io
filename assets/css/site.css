@@ -150,6 +150,48 @@
   --shadow-3: 0 4px 8px rgba(0,0,0,.4), 0 24px 48px -20px rgba(0,0,0,.7);
 }
 
+/* ---------- Colourways ----------
+   Only the primary accent family moves. Saffron and teal are load-bearing in
+   the drawn figures -- they mean things there -- so every option below is kept
+   clearly away from an orange and a green, and each defines a light and a dark
+   value or the figures go muddy on one of the two grounds. Indigo is the
+   default and lives on bare :root above, so it needs nothing here. */
+:root[data-accent='plum'] {
+  --indigo: #6A2C6E; --indigo-lit: #9B47A0; --indigo-dk: #4C1D50; --indigo-soft: #F2E7F3;
+  --tag-ink: #7A3480; --tag-bd: #E7D3E9; --card-bd: #DDC6DF; --band-lit: #D6A2DB;
+  --glow-1: rgba(155,71,160,.09);
+  --shadow-3: 0 4px 8px rgba(var(--sh),.05), 0 24px 48px -20px rgba(106,44,110,.28);
+}
+:root[data-theme='dark'][data-accent='plum'] {
+  --indigo: #D9A2DE; --indigo-lit: #E6BCEA; --indigo-dk: #F0D5F3; --indigo-soft: #2E1F33;
+  --tag-ink: #E6BCEA; --tag-bd: #43304A; --card-bd: #4E3A56; --band-lit: #D9A2DE;
+  --glow-1: rgba(217,162,222,.07);
+}
+
+:root[data-accent='madder'] {
+  --indigo: #92243A; --indigo-lit: #C4374F; --indigo-dk: #6D1929; --indigo-soft: #F8E6E9;
+  --tag-ink: #9E2A40; --tag-bd: #EED2D8; --card-bd: #E4C3CA; --band-lit: #F0A9B5;
+  --glow-1: rgba(196,55,79,.09);
+  --shadow-3: 0 4px 8px rgba(var(--sh),.05), 0 24px 48px -20px rgba(146,36,58,.28);
+}
+:root[data-theme='dark'][data-accent='madder'] {
+  --indigo: #EDA3AE; --indigo-lit: #F3BFC7; --indigo-dk: #F8D9DE; --indigo-soft: #332024;
+  --tag-ink: #F3BFC7; --tag-bd: #4C3037; --card-bd: #593840; --band-lit: #EDA3AE;
+  --glow-1: rgba(237,163,174,.07);
+}
+
+:root[data-accent='slate'] {
+  --indigo: #3C4A57; --indigo-lit: #5A6C7C; --indigo-dk: #29333D; --indigo-soft: #EBEEF1;
+  --tag-ink: #405060; --tag-bd: #D9E0E6; --card-bd: #CBD5DD; --band-lit: #AEC0CE;
+  --glow-1: rgba(90,108,124,.09);
+  --shadow-3: 0 4px 8px rgba(var(--sh),.05), 0 24px 48px -20px rgba(60,74,87,.28);
+}
+:root[data-theme='dark'][data-accent='slate'] {
+  --indigo: #A9BCCB; --indigo-lit: #C3D2DD; --indigo-dk: #DAE4EB; --indigo-soft: #232B33;
+  --tag-ink: #C3D2DD; --tag-bd: #35414C; --card-bd: #42505C; --band-lit: #A9BCCB;
+  --glow-1: rgba(169,188,203,.07);
+}
+
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -326,6 +368,41 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .theme-toggle .ic-sun { display: none; }
 :root[data-theme='dark'] .theme-toggle .ic-sun { display: block; }
 :root[data-theme='dark'] .theme-toggle .ic-moon { display: none; }
+
+/* ---------- Colourway picker ----------
+   Reuses the theme toggle's button shell; only the popover is new. */
+.accent { position: relative; flex: none; }
+.accent-menu {
+  position: absolute; right: 0; top: calc(100% + .5rem); z-index: 70;
+  min-width: 158px; padding: .4rem;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--r-sm); box-shadow: var(--shadow-2);
+}
+.accent-h {
+  font-family: var(--f-mono); font-size: .6rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-4); padding: .3rem .55rem .35rem;
+}
+.accent-sw {
+  display: flex; align-items: center; gap: .6rem; width: 100%;
+  padding: .42rem .55rem; border: 0; border-radius: 7px; cursor: pointer;
+  background: none; color: var(--ink-2);
+  font-family: var(--f-sans); font-size: .82rem; text-align: left;
+}
+.accent-sw:hover { background: var(--press); color: var(--ink); }
+.accent-sw i {
+  width: 14px; height: 14px; border-radius: 50%; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(28,23,19,.16);
+}
+.accent-sw[aria-checked='true'] { color: var(--ink); font-weight: 550; }
+.accent-sw[aria-checked='true']::after {
+  content: ''; margin-left: auto; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--ink-3);
+}
+/* literal, not tokens: a swatch has to show its own colour, not the live one */
+.accent-sw[data-accent='indigo'] i { background: #173F8A; }
+.accent-sw[data-accent='plum']   i { background: #6A2C6E; }
+.accent-sw[data-accent='madder'] i { background: #92243A; }
+.accent-sw[data-accent='slate']  i { background: #3C4A57; }
 
 .nav-toggle {
   display: none; width: 42px; height: 42px; border: 1px solid var(--rule);

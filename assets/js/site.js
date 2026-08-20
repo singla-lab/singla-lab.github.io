@@ -45,6 +45,53 @@
   if (sysDark.addEventListener) sysDark.addEventListener('change', onSystem);
   else if (sysDark.addListener) sysDark.addListener(onSystem);
 
+  /* ---- colourway ----
+     Indigo is what the stylesheet already is, so choosing it clears the
+     attribute rather than setting one. The boot script in <head> has stamped
+     any stored choice already; this only wires the menu. */
+  var picker = document.querySelector('[data-accent-picker]');
+  if (picker) {
+    var accentBtn = picker.querySelector('button');
+    var accentMenu = picker.querySelector('.accent-menu');
+    var swatches = Array.prototype.slice.call(picker.querySelectorAll('.accent-sw'));
+
+    var openMenu = function (open) {
+      accentMenu.hidden = !open;
+      accentBtn.setAttribute('aria-expanded', String(open));
+    };
+
+    var mark = function (name) {
+      swatches.forEach(function (sw) {
+        sw.setAttribute('aria-checked', String(sw.getAttribute('data-accent') === name));
+      });
+    };
+
+    mark(root.dataset.accent || 'indigo');
+
+    accentBtn.addEventListener('click', function () {
+      openMenu(accentMenu.hidden);
+    });
+
+    swatches.forEach(function (sw) {
+      sw.addEventListener('click', function () {
+        var name = sw.getAttribute('data-accent');
+        if (name === 'indigo') delete root.dataset.accent;
+        else root.dataset.accent = name;
+        try { localStorage.setItem('accent', name); } catch (e) { /* private mode */ }
+        mark(name);
+        openMenu(false);
+        accentBtn.focus();
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!accentMenu.hidden && !picker.contains(e.target)) openMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !accentMenu.hidden) { openMenu(false); accentBtn.focus(); }
+    });
+  }
+
   /* ---- sticky header shadow ---- */
   var hdr = document.querySelector('.hdr');
   if (hdr) {

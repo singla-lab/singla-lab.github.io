@@ -111,16 +111,21 @@ ICON = {
     'x':      '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
     'play':   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 6.2a1 1 0 011.52-.85l7.2 4.5a1.35 1.35 0 010 2.3l-7.2 4.5a1 1 0 01-1.52-.85z"/></svg>',
     'sun':    '<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg>',
+    'swatch': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="9.4" r="4.4"/><circle cx="15" cy="9.4" r="4.4"/><circle cx="12" cy="14.8" r="4.4"/></svg>',
     'moon':   '<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.4 8.4 0 102.4 16.4A8.2 8.2 0 0020 14.2z"/></svg>',
 }
+
+# Indigo is the stylesheet's own accent, so it is the one with no attribute.
+ACCENTS = [('indigo', 'Indigo'), ('plum', 'Plum'),
+           ('madder', 'Madder'), ('slate', 'Slate')]
 
 # Runs before first paint, so the page never flashes the wrong theme. It also
 # stamps the attribute for the system preference, which is why the stylesheet
 # needs no prefers-color-scheme block of its own.
 THEME_BOOT = ("<script>(function(){try{var t=localStorage.getItem('theme');"
               "if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)')"
-              ".matches?'dark':'light';document.documentElement.dataset.theme=t;}"
-              "catch(e){}})();</script>")
+              ".matches?'dark':'light';document.documentElement.dataset.theme=t;"
+              "var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate')document.documentElement.dataset.accent=a;}catch(e){}})();</script>")
 
 SITE = load('site')
 BASE = SITE['url'].rstrip('/')
@@ -159,11 +164,23 @@ def header(slug):
     <nav class="nav" id="nav" aria-label="Primary">{links}</nav>
     <button class="theme-toggle" type="button" data-theme-toggle
             aria-label="Switch to dark theme" title="Switch to dark theme">{sun}{moon}</button>
+    <div class="accent" data-accent-picker>
+      <button class="theme-toggle" type="button" aria-expanded="false" aria-haspopup="true"
+              aria-label="Colour theme" title="Colour theme">{swatch}</button>
+      <div class="accent-menu" hidden role="menu" aria-label="Colour theme">
+        <p class="accent-h">Colour</p>{swatches}
+      </div>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">{menu}{x}</button>
   </div>
 </header>""".format(logo=svg('logo'), name=a(SITE['name']), links=''.join(links),
                     menu=ICON['menu'], x=ICON['x'],
-                    sun=ICON['sun'], moon=ICON['moon'])
+                    sun=ICON['sun'], moon=ICON['moon'], swatch=ICON['swatch'],
+                    swatches=''.join(
+                        '<button class="accent-sw" type="button" role="menuitemradio" '
+                        'data-accent="{0}" aria-checked="{1}"><i></i>{2}</button>'.format(
+                            k, 'true' if k == 'indigo' else 'false', lbl)
+                        for k, lbl in ACCENTS))
 
 
 def footer():
