@@ -178,7 +178,8 @@
           ["8", "L2 and L1 regularization", "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Section 7.1 &middot; additional reading 7.2–7.5", ""],
           ["9", "Early stopping", "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Section 7.8", ""],
           ["10", "Dropout",
-           "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Sections 7.10–7.12", "[Practice-3](assets/BEL-483/2026-27/BEL-483-Practice-3.pdf)"]
+           "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Sections 7.10–7.12", "[Practice-3](assets/BEL-483/2026-27/BEL-483-Practice-3.pdf)"],
+          ["11", "Optimization basics", "[Chapter 8](https://www.deeplearningbook.org/contents/optimization.html), Sections 8.1 and 8.2", ""]
         ]
       },
       "assignments": [
@@ -193,7 +194,7 @@
             "[<em>Deep Learning</em>](https://www.deeplearningbook.org/) — Ian Goodfellow, Yoshua Bengio and Aaron Courville",
             "[Chapter 6](https://www.deeplearningbook.org/contents/mlp.html) — multi-layered perceptrons, backpropagation",
             "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html) — regularization: L1/L2 and other techniques",
-            "Chapter 8 — optimization techniques, normalization",
+            "[Chapter 8](https://www.deeplearningbook.org/contents/optimization.html) — optimization techniques, normalization",
             "Chapter 9 — deep learning for vision, basic models (CNNs)",
             "Chapter 10 — deep learning for NLP, basic models (RNNs, LSTM)"
           ] },
@@ -416,7 +417,7 @@
             "[<em>Deep Learning</em>](https://www.deeplearningbook.org/) — Ian Goodfellow, Yoshua Bengio and Aaron Courville",
             "[Chapter 6](https://www.deeplearningbook.org/contents/mlp.html) — multi-layered perceptrons, backpropagation",
             "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html) — regularization: L1/L2 and other techniques",
-            "Chapter 8 — optimization techniques, normalization",
+            "[Chapter 8](https://www.deeplearningbook.org/contents/optimization.html) — optimization techniques, normalization",
             "Chapter 9 — deep learning for vision, basic models (CNNs)",
             "Chapter 10 — deep learning for NLP, basic models (RNNs, LSTM)"
           ] },
