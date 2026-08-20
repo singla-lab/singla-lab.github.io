@@ -156,25 +156,6 @@
    clearly away from an orange and a green, and each defines a light and a dark
    value or the figures go muddy on one of the two grounds. Indigo is the
    default and lives on bare :root above, so it needs nothing here. */
-:root[data-accent='saffron'] {
-  --indigo: #8A4E06; --indigo-lit: #B8690C; --indigo-dk: #6B3C05; --indigo-soft: #FAEBD4;
-  --tag-ink: #8A4E06; --tag-bd: #EEDCBE; --card-bd: #E3CDA6; --band-lit: #F0BE7A;
-  --glow-1: rgba(184,105,12,.09);
-  --shadow-3: 0 4px 8px rgba(var(--sh),.05), 0 24px 48px -20px rgba(138,78,6,.28);
-  /* The accent has moved into saffron's own hue, so saffron steps back to a
-     brick that still reads warm but is a different colour from it. Without
-     this the figures lose the accent/saffron distinction they are drawn on. */
-  --saffron: #6E2210; --saffron-soft: #F3D5CB;
-  --warm-ink: #7A2712; --warm-bd: #EABFB0;
-}
-:root[data-theme='dark'][data-accent='saffron'] {
-  --indigo: #F0B96E; --indigo-lit: #F5C98A; --indigo-dk: #F9DCB0; --indigo-soft: #33260F;
-  --tag-ink: #F5C98A; --tag-bd: #4A3A1E; --card-bd: #554323; --band-lit: #F0B96E;
-  --glow-1: rgba(240,185,110,.07);
-  --saffron: #D9744A; --saffron-soft: #35190F;
-  --warm-ink: #E4855A; --warm-bd: #452418;
-}
-
 :root[data-accent='plum'] {
   --indigo: #6A2C6E; --indigo-lit: #9B47A0; --indigo-dk: #4C1D50; --indigo-soft: #F2E7F3;
   --tag-ink: #7A3480; --tag-bd: #E7D3E9; --card-bd: #DDC6DF; --band-lit: #D6A2DB;
@@ -422,7 +403,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .accent-sw[data-accent='plum']   i { background: #6A2C6E; }
 .accent-sw[data-accent='madder'] i { background: #92243A; }
 .accent-sw[data-accent='slate']  i { background: #3C4A57; }
-.accent-sw[data-accent='saffron'] i { background: #8A4E06; }
 
 .nav-toggle {
   display: none; width: 42px; height: 42px; border: 1px solid var(--rule);
