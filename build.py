@@ -117,7 +117,7 @@ ICON = {
 
 # Indigo is the stylesheet's own accent, so it is the one with no attribute.
 ACCENTS = [('indigo', 'Indigo'), ('plum', 'Plum'),
-           ('madder', 'Madder'), ('slate', 'Slate')]
+           ('madder', 'Madder'), ('ochre', 'Ochre'), ('slate', 'Slate')]
 
 # Runs before first paint, so the page never flashes the wrong theme. It also
 # stamps the attribute for the system preference, which is why the stylesheet
@@ -125,7 +125,7 @@ ACCENTS = [('indigo', 'Indigo'), ('plum', 'Plum'),
 THEME_BOOT = ("<script>(function(){try{var t=localStorage.getItem('theme');"
               "if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)')"
               ".matches?'dark':'light';document.documentElement.dataset.theme=t;"
-              "var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate')document.documentElement.dataset.accent=a;}catch(e){}})();</script>")
+              "var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate'||a==='ochre')document.documentElement.dataset.accent=a;}catch(e){}})();</script>")
 
 SITE = load('site')
 BASE = SITE['url'].rstrip('/')
