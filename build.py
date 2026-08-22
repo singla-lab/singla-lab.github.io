@@ -109,9 +109,13 @@ ICON = {
     'ext':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6M19 5l-9 9M18 14v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4"/></svg>',
     'menu':   '<svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     'x':      '<svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    'copy':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg>',
+    'tick':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
     'play':   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 6.2a1 1 0 011.52-.85l7.2 4.5a1.35 1.35 0 010 2.3l-7.2 4.5a1 1 0 01-1.52-.85z"/></svg>',
     'sun':    '<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg>',
     'swatch': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="9.4" r="4.4"/><circle cx="15" cy="9.4" r="4.4"/><circle cx="12" cy="14.8" r="4.4"/></svg>',
+    'sa':     '<svg class="ic-sa" viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18.4" text-anchor="middle" font-size="17.5" fill="currentColor" font-family="&apos;Tiro Devanagari Hindi&apos;,&apos;Noto Serif Devanagari&apos;,serif">&#2309;</text></svg>',
+    'ro':     '<svg class="ic-ro" viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="16.5" fill="currentColor" font-family="Georgia,&apos;Times New Roman&apos;,serif">A</text></svg>',
     'moon':   '<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.4 8.4 0 102.4 16.4A8.2 8.2 0 0020 14.2z"/></svg>',
 }
 
@@ -125,7 +129,8 @@ ACCENTS = [('indigo', 'Indigo'), ('plum', 'Plum'),
 THEME_BOOT = ("<script>(function(){try{var t=localStorage.getItem('theme');"
               "if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)')"
               ".matches?'dark':'light';document.documentElement.dataset.theme=t;"
-              "var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate'||a==='ochre')document.documentElement.dataset.accent=a;}catch(e){}})();</script>")
+              "var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate'||a==='ochre')document.documentElement.dataset.accent=a;"
+              "if(localStorage.getItem('script')==='iast')document.documentElement.dataset.script='iast';}catch(e){}})();</script>")
 
 SITE = load('site')
 BASE = SITE['url'].rstrip('/')
@@ -162,6 +167,8 @@ def header(slug):
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">{links}</nav>
+    <button class="theme-toggle" type="button" data-script-toggle
+            aria-label="Show the Sanskrit in Roman letters" title="Show the Sanskrit in Roman letters">{sa}{ro}</button>
     <button class="theme-toggle" type="button" data-theme-toggle
             aria-label="Switch to dark theme" title="Switch to dark theme">{sun}{moon}</button>
     <div class="accent" data-accent-picker>
@@ -176,6 +183,7 @@ def header(slug):
 </header>""".format(logo=svg('logo'), name=a(SITE['name']), links=''.join(links),
                     menu=ICON['menu'], x=ICON['x'],
                     sun=ICON['sun'], moon=ICON['moon'], swatch=ICON['swatch'],
+                    sa=ICON['sa'], ro=ICON['ro'],
                     swatches=''.join(
                         '<button class="accent-sw" type="button" role="menuitemradio" '
                         'data-accent="{0}" aria-checked="{1}"><i></i>{2}</button>'.format(
@@ -202,7 +210,8 @@ def footer():
     <div class="ftr-grid">
       <div>
         <a class="ftr-logo" href="index.html" aria-label="{name} â€” home">{logofull}</a>
-        <p class="sanskrit-line" style="margin-top:1.6rem">{sans}</p>
+        <p class="sanskrit-line" data-script-sa style="margin-top:1.6rem">{sans}</p>
+        <p class="sanskrit-line" data-script-ro style="margin-top:1.6rem">{sansro}</p>
         <p class="sanskrit-tr">{sanstr}</p>
       </div>
       {cols}
@@ -213,7 +222,8 @@ def footer():
     </div>
   </div>
 </footer>""".format(logofull=svg('logo-full'), name=attr(SITE['name']), cols=''.join(colhtml),
-                    sans=SITE['sanskrit']['line'], sanstr=a(SITE['sanskrit']['translation']),
+                    sans=SITE['sanskrit']['line'], sansro=a(SITE['sanskrit']['roman']),
+                    sanstr=a(SITE['sanskrit']['translation']),
                     dept=a(SITE['institution']), mail=c['email'], tel=c['phone_href'],
                     phone=a(c['phone']))
 
@@ -619,6 +629,24 @@ def pub_fig(p):
     return '<figure class="pub-fig">{0}</figure>'.format(svg('pub-' + p['graphic']))
 
 
+def citation(p):
+    """A one-line citation, in the style the authors field is already written in.
+
+    Nothing here is a second source of truth -- it is the entry read out flat,
+    so a citation can never drift from what the page says.
+    """
+    out = [p['authors'], ' (', str(p['year']), '). ', p['title']]
+    if p['title'][-1] not in '.?!':
+        out.append('.')
+    out.append(' ' + p['venue'])
+    if p.get('detail'):
+        out.append(', ' + p['detail'])
+    out.append('.')
+    if p.get('link'):
+        out.append(' ' + p['link'])
+    return ''.join(out)
+
+
 def pub_item(p, meta, full=True):
     title = a(p['title'])
     if p.get('link'):
@@ -634,7 +662,12 @@ def pub_item(p, meta, full=True):
     if p.get('topic') and p['topic'] in meta['topics']:
         pills.append('<span class="pill">{0}</span>'.format(a(meta['topics'][p['topic']])))
     # No Read button: when there is a link the title itself carries it, and two
-    # controls to the same URL is one too many.
+    # controls to the same URL is one too many. Cite is different -- it hands
+    # over something the page cannot otherwise give you.
+    pills.append(
+        '<button class="cite" type="button" data-cite="{0}" aria-label="Copy citation">'
+        '{1}{2}<span>Cite</span></button>'.format(
+            attr(citation(p)), ICON['copy'], ICON['tick']))
 
     hl = highlight(p.get('highlight'))
 
@@ -962,12 +995,20 @@ def verse(v):
     if not v:
         return ''
     lines = '<br>'.join(a(l) for l in v['lines'])
+    # line for line with the Devanagari, so the toggle swaps script without
+    # re-flowing the verse
+    roman = '<br>'.join(a(l) for l in v['roman'])
+    # the standing transliteration is that same text run together; hold the two
+    # to each other so an edit to one cannot quietly disagree with the other
+    if v.get('transliteration'):
+        assert v['transliteration'] == ' '.join(v['roman']), v['transliteration']
     tr = '<p class="verse-tl">{0}</p>'.format(a(v['transliteration'])) if v.get('transliteration') else ''
     return """<div class="verse rv">
-  <p class="verse-sa">{lines}</p>
+  <p class="verse-sa" data-script-sa>{lines}</p>
+  <p class="verse-sa" data-script-ro>{roman}</p>
   {tr}
   <p class="verse-en">{en}</p>
-</div>""".format(lines=lines, tr=tr, en=a(v['translation']))
+</div>""".format(lines=lines, roman=roman, tr=tr, en=a(v['translation']))
 
 
 def crs_section(sid, label, inner, alt=False):

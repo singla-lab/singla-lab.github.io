@@ -16,6 +16,12 @@
           "मूलं हि सर्वस्य भवन्ति मूलं",
           "मूलं न सन्देहकृतं हि लोके॥"
         ],
+        "roman": [
+          "mūlaṁ hi śasyaṁ vardhate nitāntaṁ",
+          "mūlaṁ hi vidyā vardhate nitāntam |",
+          "mūlaṁ hi sarvasya bhavanti mūlaṁ",
+          "mūlaṁ na sandehakṛtaṁ hi loke ||"
+        ],
         "translation": "Just as the root is essential for the growth of a plant, the fundamentals of knowledge are crucial for its development. The root is the basis of everything; there is no doubt about this in the world."
       },
       "info": [
@@ -122,7 +128,11 @@
           "आचार्यात् पादमादत्ते पादं शिष्यः स्वमेधया।",
           "पादं सब्रह्मचारिभ्यः पादं कालक्रमेण च॥"
         ],
-        "transliteration": "ācāryāt pādam ādatte pādaṃ śiṣyaḥ svamedhayā / pādaṃ sabrahmacāribhyaḥ pādaṃ kālakrameṇa ca",
+        "roman": [
+          "ācāryāt pādam ādatte pādaṁ śiṣyaḥ svamedhayā |",
+          "pādaṁ sabrahmacāribhyaḥ pādaṁ kālakrameṇa ca ||"
+        ],
+        "transliteration": "ācāryāt pādam ādatte pādaṁ śiṣyaḥ svamedhayā | pādaṁ sabrahmacāribhyaḥ pādaṁ kālakrameṇa ca ||",
         "translation": "A student gains one quarter of knowledge from the teacher, one quarter through their own intellect, one quarter from fellow students, and one quarter in the course of time."
       },
       "info": [
@@ -232,6 +242,12 @@
           "मूलं हि सर्वस्य भवन्ति मूलं",
           "मूलं न सन्देहकृतं हि लोके॥"
         ],
+        "roman": [
+          "mūlaṁ hi śasyaṁ vardhate nitāntaṁ",
+          "mūlaṁ hi vidyā vardhate nitāntam |",
+          "mūlaṁ hi sarvasya bhavanti mūlaṁ",
+          "mūlaṁ na sandehakṛtaṁ hi loke ||"
+        ],
         "translation": "Just as the root is essential for the growth of a plant, the fundamentals of knowledge are crucial for its development. The root is the basis of everything; there is no doubt about this in the world."
       },
       "info": [
@@ -336,6 +352,7 @@
       "blurb": "The completed 2025–26 run: nineteen lectures from the perceptron through CNNs and transformers to variational autoencoders.",
       "sanskrit": {
         "lines": ["विद्या नाम नरस्य रूपमधिकं"],
+        "roman": ["vidyā nāma narasya rūpam adhikaṁ"],
         "translation": "Knowledge is the greatest attribute of a person."
       },
       "info": [

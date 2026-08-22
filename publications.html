@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate'||a==='ochre')document.documentElement.dataset.accent=a;}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;var a=localStorage.getItem('accent');if(a==='plum'||a==='madder'||a==='slate'||a==='ochre')document.documentElement.dataset.accent=a;if(localStorage.getItem('script')==='iast')document.documentElement.dataset.script='iast';}catch(e){}})();</script>
 <title>Publications â€” Singla Lab</title>
 <meta name="description" content="Publications from the Singla Lab at IIT Roorkee â€” journals, preprints, conference papers, book chapters and posters.">
 <link rel="canonical" href="https://www.jitinsingla.in/publications.html">
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=JetBrains+Mono:wght@400..600&amp;family=Newsreader:ital,wght@0,300..600;1,300..600&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;family=Noto+Serif+Devanagari:wght@400..600&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=fb3abd59">
+<link rel="stylesheet" href="assets/css/site.css?v=811bf570">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -44,6 +44,8 @@
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html" aria-current="page">Publications</a><a href="projects.html">Projects</a><a href="team.html">Team</a><a href="alumni.html">Alumni</a><a href="teaching.html">Teaching</a><a href="news.html">News</a><a href="recommended.html">Recommended</a><a href="contact.html">Join Us</a></nav>
+    <button class="theme-toggle" type="button" data-script-toggle
+            aria-label="Show the Sanskrit in Roman letters" title="Show the Sanskrit in Roman letters"><svg class="ic-sa" viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18.4" text-anchor="middle" font-size="17.5" fill="currentColor" font-family="&apos;Tiro Devanagari Hindi&apos;,&apos;Noto Serif Devanagari&apos;,serif">&#2309;</text></svg><svg class="ic-ro" viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="16.5" fill="currentColor" font-family="Georgia,&apos;Times New Roman&apos;,serif">A</text></svg></button>
     <button class="theme-toggle" type="button" data-theme-toggle
             aria-label="Switch to dark theme" title="Switch to dark theme"><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 019.8 4a8.4 8.4 0 102.4 16.4A8.2 8.2 0 0020 14.2z"/></svg></button>
     <div class="accent" data-accent-picker>
@@ -72,7 +74,7 @@
     <p class="pub-a">Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., &amp; Singla, J.</p>
     <p class="pub-v"><em>Structure</em>, Accepted</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., &amp; Singla, J. (2026). Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks. Structure, Accepted. https://www.cell.com/structure/fulltext/S0969-2126%2826%2900224-8" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Mitochondrial networks in whole β-cells are resolved into distinct morphotypes and measured in three dimensions from soft X-ray tomograms. Across the population, structure, density and subcellular location are found to vary together rather than independently — a coupling that a population-averaged measurement would miss.</p>
   </div>
   <figure class="pub-fig">﻿<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: mitochondria of three morphotypes segmented in a whole beta cell, beside a triangle joining structure, density and location to show the three are coupled rather than independent" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +166,7 @@
     <p class="pub-a">Verma, S., Aggarwal, D., Ashar, M., Pandey, A. K., Sutradhar, A., Pandey, S., Sircar, D., Singla, J., &amp; Kumar, P.</p>
     <p class="pub-v"><em>Journal of Structural Biology</em>, 108342</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Verma, S., Aggarwal, D., Ashar, M., Pandey, A. K., Sutradhar, A., Pandey, S., Sircar, D., Singla, J., &amp; Kumar, P. (2026). Structural and functional characterization of thermostable EstS1 esterase for BHET degradation. Journal of Structural Biology, 108342. https://www.sciencedirect.com/science/article/pii/S1047847726000584" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> BHET is the bottleneck intermediate in breaking PET plastic back down to its monomers. Crystal structures of the thermostable esterase EstS1 from <em>Sulfobacillus acidophilus</em> catch BHET and its products in the active-site tunnel, and the biochemistry shows the enzyme carries the reaction through to terephthalate rather than stalling at MHET — a single enzyme for a step usually split between two.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: the EstS1 esterase with a substrate caught in its active-site tunnel, beside the reaction it runs — BHET to MHET to terephthalate, releasing ethylene glycol at each step" xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +265,7 @@
     <p class="pub-a">Yadav, A., Singh, A., Deshmukh, A., Bharadwaj, P., Baliyan, A., White, K., &amp; Singla, J.</p>
     <p class="pub-v"><em>Journal of Structural Biology</em>, 108291</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Yadav, A., Singh, A., Deshmukh, A., Bharadwaj, P., Baliyan, A., White, K., &amp; Singla, J. (2026). Robust mitochondria segmentation and morphological profiling using soft X-ray tomography. Journal of Structural Biology, 108291. https://www.sciencedirect.com/science/article/pii/S1047847726000079" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A pipeline for turning soft X-ray tomograms into measurable biology: mitochondria are separated from the surrounding volume, the mask is split into individual organelles, and each one is profiled for size, shape and connectivity. The emphasis is on segmentation that holds up across volumes rather than being tuned to a single dataset.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary of a pipeline: a stack of soft X-ray tomograms is segmented into a mitochondrial mask, the mask is split into individual organelles, and each organelle is profiled for volume, surface, sphericity and branching" xmlns="http://www.w3.org/2000/svg">
@@ -372,7 +374,7 @@
     <p class="pub-a">Bathla, D., Singla, P., &amp; Singla, J.</p>
     <p class="pub-v"><em>Submitted to AAAI-27</em></p>
     
-    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Bathla, D., Singla, P., &amp; Singla, J. (2026). RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation. Submitted to AAAI-27." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Low-resource translation has far more monolingual text than parallel text, so most of the data carries no reference to train against. RECAST translates a sentence and then reconstructs it, and uses the agreement between the original and the reconstruction as the training signal — the round trip stands in for the reference the unlabelled half does not have.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a small parallel corpus beside a much larger monolingual one, and a round trip in which a sentence is translated and then reconstructed, the agreement between original and reconstruction standing in for the missing reference" xmlns="http://www.w3.org/2000/svg">
@@ -444,7 +446,7 @@
     <p class="pub-a">Shukla, H., Verma, R., &amp; Singla, J.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2606.29414</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Shukla, H., Verma, R., &amp; Singla, J. (2026). FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations. arXiv preprint, arXiv:2606.29414. https://arxiv.org/abs/2606.29414" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Periodic implicit neural representations such as SIREN give every neuron the same global frequency, which spends the representational budget badly when local signal content varies. FiRe gives each neuron a bounded, input-dependent frequency through a separate low-rank gate, leaving the activation function itself untouched. The gate acts as an implicit preconditioner that improves the conditioning of the problem at initialisation, so optimisation converges sooner at a fixed budget.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a periodic network in which every neuron shares one global frequency, contrasted with one where a low-rank gate gives each neuron its own, and the effect on optimization conditioning shown as elongated contours becoming near-circular" xmlns="http://www.w3.org/2000/svg">
@@ -516,7 +518,7 @@
     <p class="pub-a">Youssef, Y., &amp; Singla, J.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.17248</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Youssef, Y., &amp; Singla, J. (2026). Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction. arXiv preprint, arXiv:2603.17248. https://arxiv.org/abs/2603.17248" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -526,7 +528,7 @@
     <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K. (2026). Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation. arXiv preprint, arXiv:2603.24307. https://arxiv.org/abs/2603.24307" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> The same argument carried to a second language pair: 92,196 Hindi–Sanskrit parallel sentences, aggregated from spoken tutorials, children's magazines, radio conversations and instruction material rather than from classical texts. Fine-tuning ByT5, NLLB and IndicTrans-v2 on it gives significant in-domain gains while holding up on the usual test sets, and a comparison against existing corpora shows minimal semantic and lexical overlap — the resource is new, not a repackaging.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a Hindi-Sanskrit corpus of ninety-two thousand pairs drawn from spoken tutorials, children's magazines, radio and instruction material, overlapping barely at all with existing corpora" xmlns="http://www.w3.org/2000/svg">
@@ -600,7 +602,7 @@
     <p class="pub-a">Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S.</p>
     <p class="pub-v"><em>IEEE Open Journal of the Computer Society</em>, 1–12</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S. (2025). DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model. IEEE Open Journal of the Computer Society, 1–12. https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A single intrusion detector carries its own bias and variance into every decision, and on traffic at internet scale that shows up as false alarms and missed attacks. DSEM-NIDS stacks several different base models under a nested meta-learner that learns how to combine them, rather than averaging or voting. It is evaluated across four datasets — 5G-NIDD, UNR-IDD, N-BaIoT and NSL-KDD — spanning 5G, enterprise, IoT and classical traffic.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: network traffic feeds several different base models, whose outputs are stacked into a meta-learner that decides benign or attack, evaluated across four intrusion-detection datasets" xmlns="http://www.w3.org/2000/svg">
@@ -688,7 +690,7 @@
     <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
     <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S. (2025). Structural Virology: The Key Determinants in Development of Antiviral Therapeutics. Viruses, 17(3), 417. https://www.mdpi.com/1999-4915/17/3/417" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A review of what structure buys antiviral development. Resolving capsids, envelope proteins, replication machinery and host-interaction interfaces at atomic or near-atomic resolution is what turned viral proteases, polymerases and integrases into drug targets for HIV, SARS-CoV-2 and influenza. X-ray crystallography, NMR, cryo-EM and cryo-electron tomography each contribute, and the structural diversity and high mutation rates of viruses are precisely why that work has to keep pace.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a virion whose capsid, envelope proteins, replication machinery and host interfaces are resolved by X-ray, NMR, cryo-EM and cryo-electron tomography, and turned into therapeutics" xmlns="http://www.w3.org/2000/svg">
@@ -752,7 +754,7 @@
     <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Gupta, S., &amp; Singla, J. (2025). YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives. arXiv preprint, arXiv:2509.19166. https://arxiv.org/abs/2509.19166" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a colonoscopy frame with a polyp inside a detection box, beside the three levers the method tunes — an intersection-over-union loss, data augmentations, and negative frames containing no polyp" xmlns="http://www.w3.org/2000/svg">
@@ -826,7 +828,7 @@
     <p class="pub-a">KP, S., Sharma, A. K., &amp; Singla, J.</p>
     <p class="pub-v"><em>bioRxiv</em>, 2025-04</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="KP, S., Sharma, A. K., &amp; Singla, J. (2025). In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas. bioRxiv, 2025-04. https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Candidatus Liberibacter asiaticus causes citrus greening, and its long association with the host has cost it essential metabolic genes — including transaldolase, whose loss breaks the pentose phosphate pathway and is part of why the bacterium resists culture in a host-free environment. Sequence analysis, structure prediction and molecular dynamics here suggest PFP can bypass that loss: it binds both fructose 6-phosphate and sedoheptulose 7-phosphate, and together with fructose bisphosphate aldolase it reconstructs the disrupted route.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: with transaldolase lost from the pathway, PFP and FBPA provide a detour that reconnects central carbon metabolism, PFP binding two different sugar phosphates" xmlns="http://www.w3.org/2000/svg">
@@ -907,7 +909,7 @@
     <p class="pub-a">Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al.</p>
     <p class="pub-v"><em>Structure</em>, 33(2), 247–261.e3</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Verma, S., Choudhary, S., Kumar, K. A., Mahto, J. K., Mishra, I., Prakash, V. B., et al. (2024). Mechanistic and structural insights into EstS1 esterase: A potent broad-spectrum phthalate diester degrading enzyme. Structure, 33(2), 247–261.e3. https://www.cell.com/structure/abstract/S0969-2126%2824%2900496-9" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Phthalate diesters are important pollutants and act as endocrine disruptors, and while certain bacterial esterases degrade them to monoesters, the structural and mechanistic basis was largely unexplored. High-resolution structures of the thermostable, pH-tolerant EstS1 — apo, and with substrates, products and analogs bound — show a catalytic tunnel carrying substrate in and product out, and a central Ser-His-Asp triad running a bi-bi ping-pong mechanism through a tetrahedral intermediate. Mutating Met207 to alanine abolishes DEHP binding at the active site altogether.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: the Ser-His-Asp triad of EstS1 attacking a phthalate diester, beside a Cleland diagram of the bi-bi ping-pong mechanism in which the enzyme returns unchanged" xmlns="http://www.w3.org/2000/svg">
@@ -981,7 +983,7 @@
     <p class="pub-a">Singh, V., Choudhary, S., Bhutkar, M., Nehul, S., Ali, S., Singla, J., et al.</p>
     <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 290, 138751</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Singh, V., Choudhary, S., Bhutkar, M., Nehul, S., Ali, S., Singla, J., et al. (2024). Designing and bioengineering of CDRs with higher affinity against receptor-binding domain (RBD) of SARS-CoV-2 Omicron variant. International Journal of Biological Macromolecules, 290, 138751. https://www.sciencedirect.com/science/article/pii/S014181302409562X" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -991,7 +993,7 @@
     <p class="pub-a">Singh, V., Bhutkar, M., Choudhary, S., Nehul, S., Kumar, R., Singla, J., et al.</p>
     <p class="pub-v"><em>Biochemical and Biophysical Research Communications</em>, 734, 150746</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Singh, V., Bhutkar, M., Choudhary, S., Nehul, S., Kumar, R., Singla, J., et al. (2024). Structure-guided mutations in CDRs for enhancing the affinity of neutralizing SARS-CoV-2 nanobody. Biochemical and Biophysical Research Communications, 734, 150746. https://www.sciencedirect.com/science/article/pii/S0006291X24012828" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -1001,7 +1003,7 @@
     <p class="pub-a">Verma, S., Singh, A., Kumar, P., &amp; Singla, J.</p>
     <p class="pub-v"><em>International Journal of Biological Macromolecules</em>, 280, 136006</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Verma, S., Singh, A., Kumar, P., &amp; Singla, J. (2024). In-silico characterization of a hypothetical protein of Sulfobacillus sp. hq2 for degradation of phthalate diesters. International Journal of Biological Macromolecules, 280, 136006. https://www.sciencedirect.com/science/article/pii/S0141813024068156" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Phthalate plasticizers leach out of PVC and disrupt endocrine function, but few esterases degrade a wide enough range of them, and thermostability — needed for in-situ use — narrows the field further. This study takes an unannotated protein, POB10642.1 from a thermostable Sulfobacillus strain, and argues that it is one: 42.67% sequence identity and 0.557 Å RMSD to the known EstS1 esterase, a Tm of 55–66 °C, two surface cavities forming a catalytic tunnel, and stable binding to eight different phthalate diesters across 100 ns of simulation.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: an unannotated protein sequence is matched to the known EstS1 esterase by identity and structural superposition, shown to be thermostable, and docked against eight phthalate diesters" xmlns="http://www.w3.org/2000/svg">
@@ -1066,7 +1068,7 @@
     <p class="pub-a">Kaur, H., Rode, S., Sandra, K. P., Mahto, J. K., Alam, M. S., Gupta, D. N., et al.</p>
     <p class="pub-v"><em>Archives of Biochemistry and Biophysics</em>, 753, 109888</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Kaur, H., Rode, S., Sandra, K. P., Mahto, J. K., Alam, M. S., Gupta, D. N., et al. (2024). Characterization of haloacid dehalogenase superfamily acid phosphatase from Staphylococcus lugdunensis. Archives of Biochemistry and Biophysics, 753, 109888. https://www.sciencedirect.com/science/article/pii/S0003986124000079" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -1076,7 +1078,7 @@
     <p class="pub-a">Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., &amp; Singla, J.</p>
     <p class="pub-v"><em>LREC-COLING 2024</em>, 14298–14304</p>
     
-    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span></div>
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Maheshwari, A., Gupta, A., Krishna, A., Singh, A. K., Ramakrishnan, G., Kumar, G. A., &amp; Singla, J. (2024). Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation. LREC-COLING 2024, 14298–14304. https://arxiv.org/abs/2305.14004" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Sanskrit is a classical language still in sustenance, but the digitised Sanskrit that exists is overwhelmingly poetry, which leaves models poorly matched to how the language is written now. Sāmayik is around 53,000 English–Sanskrit sentence pairs in contemporary prose, curated from language instruction material, teaching pedagogy and online tutorials. Models trained on it improve significantly on out-of-domain contemporary text, outperforming models trained on classical-era poetry.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: existing Sanskrit corpora are classical verse while this one is contemporary prose, fifty-three thousand English-Sanskrit sentence pairs benchmarked on four pretrained models" xmlns="http://www.w3.org/2000/svg">
@@ -1142,7 +1144,7 @@
     <p class="pub-a">Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J.</p>
     <p class="pub-v"><em>Advances in Antiviral Research, Springer Nature Singapore</em>, 41–71</p>
     
-    <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span></div>
+    <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J. (2024). Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs. Advances in Antiviral Research, Springer Nature Singapore, 41–71. https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -1155,7 +1157,7 @@
     <p class="pub-a">Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., &amp; Kesselman, C.</p>
     <p class="pub-v"><em>2023 IEEE 19th International Conference on e-Science</em>, 1–10</p>
     
-    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Schuler, R. E., Singla, J., Vallat, B., White, K. L., Berman, H. M., &amp; Kesselman, C. (2023). Database Evolution, by Scientists, for Scientists: A Case Study. 2023 IEEE 19th International Conference on e-Science, 1–10. https://ieeexplore.ieee.org/abstract/document/10254872" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Scientific database designs go stale within months of use, and there is little evidence that scientists have the tools or the process to evolve them without leaning on a database administrator. This paper offers a simplified evolution methodology aimed at scientists, then follows one scientist evolving a research database for cell modeling as new requirements arrived, with a detailed analysis of what they actually did — showing that a complex information system can be evolved by the researcher who depends on it.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a research database schema before and after a scientist evolves it, gaining a column, a new table and a rewired relation, without a database administrator" xmlns="http://www.w3.org/2000/svg">
@@ -1227,7 +1229,7 @@
     <p class="pub-a">Jothishwaran, C. A., Srivastava, B., Singla, J., &amp; Gangopadhyay, S.</p>
     <p class="pub-v"><em>arXiv preprint</em>, arXiv:2309.16630</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Jothishwaran, C. A., Srivastava, B., Singla, J., &amp; Gangopadhyay, S. (2023). On Learning with LAD. arXiv preprint, arXiv:2309.16630. https://arxiv.org/abs/2309.16630" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Logical analysis of data yields two-class classifiers as Boolean functions in disjunctive normal form. Those rules are found by optimization, which ought to invite overfitting, and yet it does not happen. The justification offered here is an estimate of the VC dimension for LAD models whose hypothesis sets are DNFs with a small number of cubic monomials — the capacity to overfit simply is not there — illustrated and confirmed empirically.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: binary patterns in two classes are separated by a disjunctive normal form rule of three-literal terms, whose VC dimension stays under a bound and so does not overfit" xmlns="http://www.w3.org/2000/svg">
@@ -1316,7 +1318,7 @@
     <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., et al.</p>
     <p class="pub-v"><em>Microscopy and Microanalysis</em>, 29, Supplement 1, p. 1181</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., et al. (2023). Soft X-ray Tomography for Mapping and Quantifying Intracellular Organelle Interactions. Microscopy and Microanalysis, 29, Supplement 1, p. 1181. https://academic.oup.com/mam/article/29/Supplement_1/1181/7228625" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -1329,7 +1331,7 @@
     <p class="pub-a">Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al.</p>
     <p class="pub-v"><em>Structure</em>, 30(4), 485–497.e3</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span><button class="cite" type="button" data-cite="Singla, J., Burdsall, K., Cantrell, B., Halsey, J. R., McDowell, A., McGregor, C., et al. (2022). A New Visual Design Language for Biological Structures in a Cell. Structure, 30(4), 485–497.e3. https://www.cell.com/structure/fulltext/S0969-2126%2822%2900002-8" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Part of the effort to build a spatiotemporal model of the pancreatic β-cell is an immersive experience, World in a Cell. It needs a way to draw molecules and organelles in crowded cellular environments that a machine can also animate in real time: a visual design language built from tetrahedral blocks, which carries the structural features while staying cheap enough for animation and user interaction.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a molecule drawn as a crowd of atoms alongside the same form rebuilt from tetrahedral building blocks, the visual language behind the World in a Cell experience" xmlns="http://www.w3.org/2000/svg">
@@ -1390,7 +1392,7 @@
     <p class="pub-a">Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., Sali, A., White, K. L., &amp; Larabell, C. A.</p>
     <p class="pub-v"><em>Structure</em>, 30(4), 510–521.e3</p>
     <p class="pub-hl">Highlighted in <b>Nature</b> &mdash; <a href="https://www.nature.com/articles/d41586-022-00420-z" target="_blank" rel="noopener">&ldquo;Soft X-rays capture the dance of the organelles&rdquo;</a></p>
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Loconte, V., Singla, J., Li, A., Chen, J. H., Ekman, A., McDermott, G., Sali, A., White, K. L., &amp; Larabell, C. A. (2022). Soft X-ray tomography to map and quantify organelle interactions at the mesoscale. Structure, 30(4), 510–521.e3. https://www.cell.com/structure/fulltext/S0969-2126%2822%2900006-5" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Soft X-ray tomography sees an intact cell with no stain at all: the contrast is the differential absorption of the carbon-rich compounds in each organelle. Here it follows insulin vesicles and their interaction with mitochondria in β cells during secretion, quantifying morphology, composition and relative position from one reconstruction.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: soft X-rays pass through an unstained intact cell, and the distances between insulin vesicles and mitochondria are measured, together with their morphology, composition and position" xmlns="http://www.w3.org/2000/svg">
@@ -1475,7 +1477,7 @@
     <p class="pub-a">Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.</p>
     <p class="pub-v"><em>PLOS ONE</em>, 17(3), e0265567</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al. (2022). Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion. PLOS ONE, 17(3), e0265567. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> The bottleneck in soft X-ray tomography is not the imaging but the labour-intensive manual segmentation that follows it. This pipeline pairs semantic segmentation with a first-applied instance step to give separate organelle masks at high Dice and Recall, then locates those organelles by their radial distribution. Across INS-1E β-cells at several time points it recovers the effect of glucose on insulin vesicles and mitochondria.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a tomogram is segmented first semantically then into instances without manual tracing, and the resulting organelles are analysed by their radial distribution from the centre of the cell" xmlns="http://www.w3.org/2000/svg">
@@ -1561,7 +1563,7 @@
     <p class="pub-a">Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L.</p>
     <p class="pub-v"><em>PLOS ONE</em>, 17(9), e0269887</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L. (2022). An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms. PLOS ONE, 17(9), e0269887. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A semantic mask says which voxels are mitochondrion and which are insulin vesicle; it does not say where one organelle ends and the next begins. This post-processing tool separates touching instances from the raw tomogram's intensity together with the mask and the organelle's own morphology, handling sphere-like vesicles and columnar mitochondria alike — more accurately, on synthetic and β-cell data, than connected-region labelling or watershed.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: organelles fused into a single mask are split into separate instances using the intensity dip between them in the raw tomogram" xmlns="http://www.w3.org/2000/svg">
@@ -1624,7 +1626,7 @@
     <p class="pub-a">Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al.</p>
     <p class="pub-v"><em>Proceedings of the National Academy of Sciences</em>, 118(35), e2104559118</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Raveh, B., Sun, L., White, K. L., Sanyal, T., Tempkin, J., Zheng, D., et al. (2021). Bayesian metamodeling of complex biological systems across varying representations. Proceedings of the National Academy of Sciences, 118(35), e2104559118. https://www.pnas.org/doi/10.1073/pnas.2104559118" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Modelling a whole cell means integrating models that agree on neither scale, granularity, data type, nor even mathematical representation. Bayesian metamodeling divides that problem: each input model is converted to a standardized statistical form as a probabilistic graphical model, coupled to the others through their mutual relations with the physical world, and then harmonized against them. The proof of principle assembles six such models — from vesicle trafficking to systemic insulin response — into one account of glucose-stimulated insulin secretion, resolving the places where they conflict.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: models of different kinds and scales are converted, coupled and harmonized into a single metamodel that reconciles inputs which disagree with one another" xmlns="http://www.w3.org/2000/svg">
@@ -1703,7 +1705,7 @@
     <p class="pub-a">Singla, J., &amp; White, K. L.</p>
     <p class="pub-v"><em>Current Opinion in Systems Biology</em>, 26, 33–38</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span><button class="cite" type="button" data-cite="Singla, J., &amp; White, K. L. (2021). A community approach to whole-cell modeling. Current Opinion in Systems Biology, 26, 33–38. https://www.sciencedirect.com/science/article/pii/S2452310021000111" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -1713,7 +1715,7 @@
     <p class="pub-a">Singla, J., White, K. L., Stevens, R. C., &amp; Alber, F.</p>
     <p class="pub-v"><em>Journal of Structural Biology</em>, 213(2), 107727</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Singla, J., White, K. L., Stevens, R. C., &amp; Alber, F. (2021). Assessment of scoring functions to rank the quality of 3D subtomogram clusters from cryo-electron tomography. Journal of Structural Biology, 213(2), 107727. https://www.sciencedirect.com/science/article/pii/S1047847721000320" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Template-free clustering of subtomograms can turn up complexes nobody thought to look for — but only if the clusters can be ranked, and real ones carry both alignment error and contamination from misclassified complexes. Of the more than fifteen scoring functions assessed here, most proved sensitive to signal-to-noise ratio and needed Gaussian filtering first; two did not, and spectral-SNR-based Fourier shell correlation is also the fastest to compute.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a cluster of subtomograms containing both misaligned particles and a wrong complex, and a ranking of more than fifteen scoring functions in which two come out on top" xmlns="http://www.w3.org/2000/svg">
@@ -1790,7 +1792,7 @@
     <p class="pub-a">White, K. L., Singla, J., Loconte, V., Chen, J. H., Ekman, A., Sun, L., et al.</p>
     <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8262</p>
     <p class="pub-hl">Highlighted in <b>Science</b> &mdash; <a href="https://science.sciencemag.org/content/370/6522/twis" target="_blank" rel="noopener">&ldquo;Subcellular map of vesicle maturation&rdquo;</a></p>
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="White, K. L., Singla, J., Loconte, V., Chen, J. H., Ekman, A., Sun, L., et al. (2020). Visualizing subcellular rearrangements in intact β cells using soft X-ray tomography. Science Advances, 6(50), eabc8262. https://advances.sciencemag.org/content/6/50/eabc8262" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Whole pancreatic β cells reconstructed in three dimensions by soft X-ray tomography at time points after glucose-stimulated insulin secretion. Glucose rapidly changes the density of insulin packing, increases mitochondrial volume, and brings vesicles closer to mitochondria; exendin-4 prolongs those effects and raises vesicle maturation.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: whole beta cells imaged at rest, after glucose, and after glucose with exendin-4, showing mitochondria enlarging, insulin vesicles moving closer to them, and insulin packing becoming denser" xmlns="http://www.w3.org/2000/svg">
@@ -1866,7 +1868,7 @@
     <p class="pub-a">Zhang, X., Carter, S. D., Singla, J., White, K. L., Butler, P. C., Stevens, R. C., &amp; Jensen, G. J.</p>
     <p class="pub-v"><em>Science Advances</em>, 6(50), eabc8258</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Zhang, X., Carter, S. D., Singla, J., White, K. L., Butler, P. C., Stevens, R. C., &amp; Jensen, G. J. (2020). Visualizing insulin vesicle neighborhoods in β cells by cryo-electron tomography. Science Advances, 6(50), eabc8258. https://advances.sciencemag.org/content/6/50/eabc8258.full" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> Subcellular neighborhoods — local mixtures of organelles and proteins in particular ratios — matter most in cells that secrete, yet their part in insulin vesicle maturation was unclear. Several distinct tomograms per single β cell put it in reach: sampling from near the nucleus outward to the plasma membrane, both the volume fraction occupied by insulin vesicles and their average diameter rise.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: several cryo-electron tomograms sampled across one beta cell, from the nucleus out to the plasma membrane, in which insulin vesicles become both more numerous and larger toward the membrane" xmlns="http://www.w3.org/2000/svg">
@@ -1931,7 +1933,7 @@
     <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
     <p class="pub-v"><em>Structure</em>, 27(4), 679–691</p>
     <p class="pub-hl">Highlighted in <b>Nature Methods</b> &mdash; <a href="https://www.nature.com/articles/s41592-019-0382-2" target="_blank" rel="noopener">&ldquo;Template-free visual proteomics&rdquo;</a></p>
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F. (2019). De novo structural pattern mining in cellular electron cryotomograms. Structure, 27(4), 679–691. https://www.cell.com/structure/fulltext/S0969-2126%2819%2930005-X" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A cellular cryotomogram holds a plethora of macromolecular complexes at once, and the usual way to pull them out is to match against a template of something already known — which by construction cannot find anything new. Multi-Pattern Pursuit works the other way round, discovering complexes de novo from the heterogeneous particles extracted from entire tomograms, and the classes it finds are good enough to seed more targeted refinement.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a heterogeneous set of particles picked from a whole cryotomogram is sorted by Multi-Pattern Pursuit into classes and their averages, without any template of a known structure" xmlns="http://www.w3.org/2000/svg">
@@ -2017,7 +2019,7 @@
     <p class="pub-a">White, K. L., Singla, J., Francis, J. P., Chen, J. H., Ekman, A., Xu, M., Alber, F., Larabell, C., &amp; Stevens, R. C.</p>
     <p class="pub-v"><em>63rd Annual Meeting of the Biophysical Society, Baltimore, Maryland</em>, March 2–6, 2019</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="White, K. L., Singla, J., Francis, J. P., Chen, J. H., Ekman, A., Xu, M., Alber, F., Larabell, C., &amp; Stevens, R. C. (2019). Multi-scale architecture of β-cells using soft X-ray and cryo-electron tomography. 63rd Annual Meeting of the Biophysical Society, Baltimore, Maryland, March 2–6, 2019." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2030,7 +2032,7 @@
     <p class="pub-a">Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., &amp; Stevens, R. C.</p>
     <p class="pub-v"><em>Cell</em>, 173(1), 11–19</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Visualization &amp; modelling</span><button class="cite" type="button" data-cite="Singla, J., McClary, K. M., White, K. L., Alber, F., Sali, A., &amp; Stevens, R. C. (2018). Opportunities and challenges in building a spatiotemporal multi-scale model of the human pancreatic β cell. Cell, 173(1), 11–19. https://www.cell.com/cell/fulltext/S0092-8674%2818%2930294-0" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     <p class="pub-sum"><b>Summary:</b> A predictive model of an entire eukaryotic cell — its dynamic structure from atomic to cellular scales — is a grand challenge sitting at the intersection of biology, chemistry, physics and computer science. This sets out the vision for one such model of the pancreatic β cell, a target relevant to understanding and modulating the pathogenesis of diabetes, and argues that the experimental and modelling methods it needs are best developed as a community effort.</p>
   </div>
   <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a single predictive model spanning four scales, from an atom through a molecular complex and an organelle to a whole pancreatic beta cell" xmlns="http://www.w3.org/2000/svg">
@@ -2091,7 +2093,7 @@
     <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
     <p class="pub-v"><em>4th Annual QCBio Retreat, Malibu, California</em>, September 25, 2018</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F. (2018). De novo structural pattern mining in cellular electron cryo-tomograms. 4th Annual QCBio Retreat, Malibu, California, September 25, 2018." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2101,7 +2103,7 @@
     <p class="pub-a">White, K. L., McClary, K. M., Singla, J., &amp; Stevens, R. C.</p>
     <p class="pub-v"><em>American Diabetes Association 78th Scientific Sessions, Orlando, Florida</em>, June 22–26, 2018</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Visualization &amp; modelling</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Visualization &amp; modelling</span><button class="cite" type="button" data-cite="White, K. L., McClary, K. M., Singla, J., &amp; Stevens, R. C. (2018). Towards Generating Spatiotemporal Multiscale Models of Human Pancreatic Beta Cells. American Diabetes Association 78th Scientific Sessions, Orlando, Florida, June 22–26, 2018. https://diabetes.diabetesjournals.org/content/68/Supplement_1/335-LB.abstract" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2114,7 +2116,7 @@
     <p class="pub-a">Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F.</p>
     <p class="pub-v"><em>5th Annual Shanghai iHuman Forum, Shanghai, China</em>, November 5–10, 2017</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Xu, M., Singla, J., Tocheva, E. I., Chang, Y. W., Stevens, R. C., Jensen, G. J., &amp; Alber, F. (2017). De novo structural pattern mining in cellular electron cryo-tomograms. 5th Annual Shanghai iHuman Forum, Shanghai, China, November 5–10, 2017." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2124,7 +2126,7 @@
     <p class="pub-a">Elizabeth, V., Watanabe, R., Buschauer, R., Khanna, K., Lam, V., Singla, J., &amp; Alber, F.</p>
     <p class="pub-v"><em>Microscopy and Microanalysis</em>, 23(S1), 1248–1249</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Cryo-ET</span><button class="cite" type="button" data-cite="Elizabeth, V., Watanabe, R., Buschauer, R., Khanna, K., Lam, V., Singla, J., &amp; Alber, F. (2017). Revealing the Native Molecular Architecture of the Nuclear Periphery using Cryo-Focused-Ion-Beam Milling, Light Microscopy and Electron Tomography. Microscopy and Microanalysis, 23(S1), 1248–1249." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2137,7 +2139,7 @@
     <p class="pub-a">Srihari, S., Kalimutho, M., Lal, S., Singla, J., Patel, D., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
     <p class="pub-v"><em>Molecular BioSystems</em>, 12(3), 963–972</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Srihari, S., Kalimutho, M., Lal, S., Singla, J., Patel, D., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A. (2016). Understanding the functional impact of copy number alterations in breast cancer using a network modeling approach. Molecular BioSystems, 12(3), 963–972. https://pubs.rsc.org/en/content/articlelanding/2016/MB/C5MB00655D#!divAbstract" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2150,7 +2152,7 @@
     <p class="pub-a">Srihari, S., Singla, J., Wong, L., &amp; Ragan, M. A.</p>
     <p class="pub-v"><em>Biology Direct</em>, 10(1), 1–18</p>
     
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Srihari, S., Singla, J., Wong, L., &amp; Ragan, M. A. (2015). Inferring synthetic lethal interactions from mutual exclusivity of genetic events in cancer. Biology Direct, 10(1), 1–18. https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0086-1" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2160,7 +2162,7 @@
     <p class="pub-a">Srihari, S., Singla, J., Wong, L., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A.</p>
     <p class="pub-v"><em>San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research</em>, Abstract PD6-05</p>
     
-    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Machine learning</span></div>
+    <div class="pub-meta"><span class="pill pill-poster">Poster</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Srihari, S., Singla, J., Wong, L., Simpson, P. T., Khanna, K. K., &amp; Ragan, M. A. (2015). Identifying genetic vulnerabilities in cancers driven by defects in DNA-damage response. San Antonio Breast Cancer Symposium (SABCS 2015), AACR Cancer Research, Abstract PD6-05. https://cancerres.aacrjournals.org/content/76/4_Supplement/PD6-05" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
     
   </div>
   
@@ -2219,7 +2221,8 @@
   <text class="lg-sub" x="8.5" y="117" font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
         font-size="13.5" fill="var(--ink-3)">@BSBE, IIT Roorkee</text>
 </svg></a>
-        <p class="sanskrit-line" style="margin-top:1.6rem">परं वैभवं नेतुमेतत् स्वराष्ट्रम्</p>
+        <p class="sanskrit-line" data-script-sa style="margin-top:1.6rem">परं वैभवं नेतुमेतत् स्वराष्ट्रम्</p>
+        <p class="sanskrit-line" data-script-ro style="margin-top:1.6rem">paraṁ vaibhavaṁ netum etat svarāṣṭram</p>
         <p class="sanskrit-tr">May you be empowered to lead Bharat to param vaibhav</p>
       </div>
       <div><p class="ftr-h">Explore</p><ul class="ftr-l"><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="projects.html">Projects</a></li><li><a href="gallery.html">Gallery</a></li></ul></div><div><p class="ftr-h">People</p><ul class="ftr-l"><li><a href="team.html">Team</a></li><li><a href="alumni.html">Alumni</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li></ul></div><div><p class="ftr-h">More</p><ul class="ftr-l"><li><a href="recommended.html">Recommended</a></li><li><a href="contact.html">Join Us</a></li></ul></div>
@@ -2230,6 +2233,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=63c097b4" defer></script>
+<script src="assets/js/site.js?v=1d9e97c4" defer></script>
 </body>
 </html>

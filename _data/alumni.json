@@ -2,6 +2,8 @@
   "sanskrit": {
     "lines": ["यान्यनवद्यानि कर्माणि । तानि सेवितव्यानि । नो इतराणि ॥",
               "यान्यस्माकं सुचरितानि । तानि त्वयोपास्यानि । नो इतराणि ॥"],
+    "roman": ["yāny anavadyāni karmāṇi | tāni sevitavyāni | no itarāṇi ||",
+              "yāny asmākaṁ sucaritāni | tāni tvayopāsyāni | no itarāṇi ||"],
     "transliteration": "yāny anavadyāni karmāṇi | tāni sevitavyāni | no itarāṇi || yāny asmākaṁ sucaritāni | tāni tvayopāsyāni | no itarāṇi ||",
     "translation": "Those acts that are blameless — practise those, and not the others. Whatever we did well — take up that, and nothing else. — Taittirīya Upaniṣad, Śikṣāvallī 1.11.2, the charge given to a student on the day they leave"
   },

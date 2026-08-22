@@ -3,6 +3,10 @@
   "past_intro": "Lines of work the lab has taken as far as it means to for now. The methods and the papers stand; we are simply not adding to them this year.",
   "sanskrit": {
     "lines": ["तत्कर्म यन्न बन्धाय सा विद्या या विमुक्तये।", "आयासायापरं कर्म विद्यान्या शिल्पनैपुणम्॥"],
+    "roman": [
+      "tat karma yan na bandhāya sā vidyā yā vimuktaye |",
+      "āyāsāyāparaṁ karma vidyānyā śilpanaipuṇam ||"
+    ],
     "transliteration": "tat karma yan na bandhāya sā vidyā yā vimuktaye | āyāsāyāparaṁ karma vidyānyā śilpanaipuṇam ||",
     "translation": "That is work which does not bind; that is knowledge which sets free. Other work is only labour, other knowledge only craft. — Viṣṇu Purāṇa 1.19.41"
   },

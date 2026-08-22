@@ -92,6 +92,78 @@
     });
   }
 
+  /* ---- Devanagari / Roman ----
+     Both scripts are in the page; this only decides which one is shown, so a
+     reader with no JavaScript still gets the verse as written. */
+  var scriptBtn = document.querySelector('[data-script-toggle]');
+  if (scriptBtn) {
+    var setScript = function (mode) {
+      if (mode === 'iast') root.dataset.script = 'iast';
+      else delete root.dataset.script;
+      var label = mode === 'iast'
+        ? 'Show the Sanskrit in Devanagari'
+        : 'Show the Sanskrit in Roman letters';
+      scriptBtn.setAttribute('aria-label', label);
+      scriptBtn.setAttribute('title', label);
+    };
+    setScript(root.dataset.script === 'iast' ? 'iast' : 'devanagari');
+    scriptBtn.addEventListener('click', function () {
+      var next = root.dataset.script === 'iast' ? 'devanagari' : 'iast';
+      try { localStorage.setItem('script', next); } catch (e) { /* private mode */ }
+      setScript(next);
+    });
+  }
+
+  /* ---- copy a citation ----
+     The text is on the button, put there at build time, so the citation can
+     never disagree with the entry it sits under. */
+  var copyText = function (text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      ok ? resolve() : reject();
+    });
+  };
+
+  var citeState = function (btn, cls, word, label) {
+    btn.classList.remove('is-copied', 'is-failed');
+    if (cls) btn.classList.add(cls);
+    var span = btn.querySelector('span');
+    if (span) span.textContent = word;
+    btn.setAttribute('aria-label', label);
+  };
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.cite') : null;
+    if (!btn) return;
+    var text = btn.getAttribute('data-cite');
+    if (!text) return;
+    var settle = function () {
+      if (btn._t) clearTimeout(btn._t);
+      btn._t = setTimeout(function () {
+        citeState(btn, null, 'Cite', 'Copy citation');
+      }, 1800);
+    };
+    copyText(text).then(function () {
+      citeState(btn, 'is-copied', 'Copied', 'Citation copied');
+      settle();
+    }, function () {
+      /* say so rather than look like it worked */
+      citeState(btn, 'is-failed', 'Failed', 'Could not copy the citation');
+      settle();
+    });
+  });
+
   /* ---- sticky header shadow ---- */
   var hdr = document.querySelector('.hdr');
   if (hdr) {
