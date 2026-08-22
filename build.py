@@ -167,15 +167,17 @@ def header(slug):
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">{links}</nav>
-    <button class="theme-toggle" type="button" data-script-toggle
-            aria-label="Show the Sanskrit in Roman letters" title="Show the Sanskrit in Roman letters">{sa}{ro}</button>
-    <button class="theme-toggle" type="button" data-theme-toggle
-            aria-label="Switch to dark theme" title="Switch to dark theme">{sun}{moon}</button>
-    <div class="accent" data-accent-picker>
-      <button class="theme-toggle" type="button" aria-expanded="false" aria-haspopup="true"
-              aria-label="Colour theme" title="Colour theme">{swatch}</button>
-      <div class="accent-menu" hidden role="menu" aria-label="Colour theme">
-        <p class="accent-h">Colour</p>{swatches}
+    <div class="hdr-tools">
+      <button class="theme-toggle" type="button" data-script-toggle
+              aria-label="Show the Sanskrit in Roman letters" title="Show the Sanskrit in Roman letters">{sa}{ro}</button>
+      <button class="theme-toggle" type="button" data-theme-toggle
+              aria-label="Switch to dark theme" title="Switch to dark theme">{sun}{moon}</button>
+      <div class="accent" data-accent-picker>
+        <button class="theme-toggle" type="button" aria-expanded="false" aria-haspopup="true"
+                aria-label="Colour theme" title="Colour theme">{swatch}</button>
+        <div class="accent-menu" hidden role="menu" aria-label="Colour theme">
+          <p class="accent-h">Colour</p>{swatches}
+        </div>
       </div>
     </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">{menu}{x}</button>

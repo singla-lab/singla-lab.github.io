@@ -322,11 +322,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .hdr.is-stuck { border-bottom-color: var(--rule); }
 .hdr-in {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 1.5rem; height: 68px;
+  gap: 1.15rem; height: 68px;
 }
-/* the nav takes the slack so the two buttons stay pinned to the right */
+/* the nav takes the slack so the controls stay pinned to the right */
 .hdr-in .nav { margin-left: auto; }
-.hdr-in .theme-toggle { margin-left: -.4rem; }
+/* one group, not three header items: the header's gap belongs between the nav
+   and the controls, not between one control and the next */
+.hdr-tools { display: flex; align-items: center; gap: .28rem; flex: none; margin-left: -.55rem; }
 
 /* The mark is drawn with literal colours because it doubles as the favicon,
    so the inline copy is re-pointed at the tokens here. */
@@ -449,15 +451,17 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .nav-toggle[aria-expanded='true'] .ic-x { display: block; }
 .nav-toggle[aria-expanded='true'] .ic-menu { display: none; }
 
-@media (max-width: 1040px) {
+/* 1200, not 1040: brand + ten links + three controls measure 1055px against a
+   header that .wrap caps at 1084 however wide the screen gets. Below 1200 the
+   gutter has not yet reached its ceiling, so the margin thins with the screen;
+   at 1200 and up it is a steady 29px. The nav hands over to the burger while
+   it still fits rather than after it has started wrapping. */
+@media (max-width: 1200px) {
   .nav-toggle { display: flex; }
   /* the nav goes fixed here, so it leaves the flex row and space-between
      strands the toggle mid-header; this walks it back beside the burger */
   .hdr-in { gap: .6rem; }
-  /* exactly one auto margin, or the free space is split between the buttons
-     and they drift apart */
-  .hdr-in .theme-toggle { margin-left: 0; margin-right: 0; }
-  .hdr-in [data-script-toggle] { margin-left: auto; }
+  .hdr-tools { margin-left: auto; }
   .nav {
     position: fixed; inset: 68px 0 auto 0;
     flex-direction: column; align-items: stretch; gap: 0;
