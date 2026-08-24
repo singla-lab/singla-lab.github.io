@@ -211,7 +211,7 @@ def footer():
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="ftr-logo" href="index.html" aria-label="{name} â€” home">{logofull}</a>
+        <a class="ftr-logo" href="index.html" aria-label="{name} - home">{logofull}</a>
         <p class="sanskrit-line" data-script-sa style="margin-top:1.6rem">{sans}</p>
         <p class="sanskrit-line" data-script-ro style="margin-top:1.6rem">{sansro}</p>
         <p class="sanskrit-tr">{sanstr}</p>
@@ -232,7 +232,7 @@ def footer():
 
 def page(slug, title, desc, body, body_class='', nav=None):
     """nav lets a sub-page (a course, say) keep its parent lit in the header."""
-    full = title if title == SITE['name'] else '{0} â€” {1}'.format(title, SITE['name'])
+    full = title if title == SITE['name'] else '{0} - {1}'.format(title, SITE['name'])
     html = """<!doctype html>
 <html lang="en">
 <head>
@@ -272,7 +272,15 @@ def page(slug, title, desc, body, body_class='', nav=None):
                        cls=(' class="' + body_class + '"') if body_class else '')
 
 
+# The lead characters a UTF-8 run turns into when something reads a source
+# file as cp1252. They have no business in the output, and the last time one
+# got in it rode the title bar of every page for months.
+MOJIBAKE = (chr(0x00C2), chr(0x00C3), chr(0x00E2) + chr(0x20AC))
+
+
 def write(slug, content):
+    for m in MOJIBAKE:
+        assert m not in content, '{0}: mojibake {1!r}'.format(slug, m)
     with io.open(os.path.join(ROOT, slug), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(content)
     return slug
@@ -751,7 +759,7 @@ def build_publications():
 </section>""".format(talks)
 
     return write('publications.html', page('publications.html', 'Publications',
-                                           'Publications from the Singla Lab at IIT Roorkee â€” journals, preprints, conference papers, book chapters and posters.', body))
+                                           'Publications from the Singla Lab at IIT Roorkee - journals, preprints, conference papers, book chapters and posters.', body))
 
 
 def build_projects():
@@ -785,7 +793,7 @@ def build_projects():
         '<section class="section-tight"><div class="wrap">{0}</div></section>'.format(''.join(blocks)) + \
         cta_band()
     return write('projects.html', page('projects.html', 'Sponsored Projects',
-                                       'Sponsored research projects led by or involving the Singla Lab â€” ICMR, SERB-DST, MeitY, MoE-IKS and STARS.', body))
+                                       'Sponsored research projects led by or involving the Singla Lab - ICMR, SERB-DST, MeitY, MoE-IKS and STARS.', body))
 
 
 def build_team():
@@ -867,7 +875,7 @@ def build_team():
                      groups=''.join(groups), collab=collab, arrow=ICON['arrow'])
 
     return write('team.html', page('team.html', 'Team',
-                                   'Members of the Singla Lab at IIT Roorkee â€” doctoral researchers, undergraduate researchers and collaborators.', body))
+                                   'Members of the Singla Lab at IIT Roorkee - doctoral researchers, undergraduate researchers and collaborators.', body))
 
 
 def build_alumni():
@@ -1130,7 +1138,7 @@ def build_course(c):
   </div>
 </section>""".format(arrow=ICON['arrow'])
 
-    desc = '{0} {1}, {2} â€” course page for {3} at IIT Roorkee: schedule, slides, reading and evaluation.'.format(
+    desc = '{0} {1}, {2} - course page for {3} at IIT Roorkee: schedule, slides, reading and evaluation.'.format(
         c['code'], c['name'], c['term'], SITE['name'])
     return write(slug, page(slug, '{0} {1}'.format(c['code'], c['name']),
                             desc, body, nav='teaching.html'))
@@ -1349,7 +1357,7 @@ def build_404():
 def build_extras():
     written = []
 
-    # favicon â€” a miniature of the lab mark
+    # favicon - a miniature of the lab mark
     fav = svg('logo')
     with io.open(os.path.join(ROOT, 'assets', 'img', 'favicon.svg'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(fav + '\n')
