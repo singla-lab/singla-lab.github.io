@@ -7,7 +7,9 @@
       "title": "Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling",
       "venue": "bioRxiv",
       "detail": "Submitted",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "amp-tabpfn",
+      "summary": "Antimicrobial peptides usually act on more than one class of pathogen, so the question worth asking of a candidate is which activities it has, not whether it is antimicrobial at all. The leading methods on the ESCAPE benchmark answer it with multimodal, structure-conditioned deep models. Pairing 330 interpretable sequence descriptors with TabPFN — a tabular foundation model that predicts in a single forward pass, with no gradient training and no hyperparameter search — beats them, reaching 77.8% five-label macro average precision against a previous best of 72.1%, with the largest gains on remote homologues. Predicted structure turns out to be unnecessary at inference, and ten global physicochemical scalars alone recover 91% of the full-feature performance."
     },
     {
       "year": 2026, "type": "conference",
@@ -244,17 +246,6 @@
     },
     {
       "year": 2022, "type": "journal",
-      "authors": "Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.",
-      "title": "Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion",
-      "venue": "PLOS ONE",
-      "detail": "17(3), e0265567",
-      "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567",
-      "topic": "sxt",
-      "graphic": "autoseg",
-      "summary": "The bottleneck in soft X-ray tomography is not the imaging but the labour-intensive manual segmentation that follows it. This pipeline pairs semantic segmentation with a first-applied instance step to give separate organelle masks at high Dice and Recall, then locates those organelles by their radial distribution. Across INS-1E β-cells at several time points it recovers the effect of glucose on insulin vesicles and mitochondria."
-    },
-    {
-      "year": 2022, "type": "journal",
       "authors": "Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., & Sun, L.",
       "title": "An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms",
       "venue": "PLOS ONE",
@@ -263,6 +254,17 @@
       "topic": "sxt",
       "graphic": "instance",
       "summary": "A semantic mask says which voxels are mitochondrion and which are insulin vesicle; it does not say where one organelle ends and the next begins. This post-processing tool separates touching instances from the raw tomogram's intensity together with the mask and the organelle's own morphology, handling sphere-like vesicles and columnar mitochondria alike — more accurately, on synthetic and β-cell data, than connected-region labelling or watershed."
+    },
+    {
+      "year": 2022, "type": "journal",
+      "authors": "Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.",
+      "title": "Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion",
+      "venue": "PLOS ONE",
+      "detail": "17(3), e0265567",
+      "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567",
+      "topic": "sxt",
+      "graphic": "autoseg",
+      "summary": "The bottleneck in soft X-ray tomography is not the imaging but the labour-intensive manual segmentation that follows it. This pipeline pairs semantic segmentation with a first-applied instance step to give separate organelle masks at high Dice and Recall, then locates those organelles by their radial distribution. Across INS-1E β-cells at several time points it recovers the effect of glucose on insulin vesicles and mitochondria."
     },
     {
       "year": 2021, "type": "journal",

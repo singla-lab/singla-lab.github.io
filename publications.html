@@ -70,7 +70,228 @@
   </div>
 </section><section class="section-tight"><div class="wrap"><div class="pub-year" data-year-block>
   <div class="pub-year-n">2026</div>
-  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt" data-pub-year="2026">
+  <div><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t">Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling</p>
+    <p class="pub-a">Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., &amp; Singla, J.</p>
+    <p class="pub-v"><em>bioRxiv</em>, Submitted</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., &amp; Singla, J. (2026). Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling. bioRxiv, Submitted." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Antimicrobial peptides usually act on more than one class of pathogen, so the question worth asking of a candidate is which activities it has, not whether it is antimicrobial at all. The leading methods on the ESCAPE benchmark answer it with multimodal, structure-conditioned deep models. Pairing 330 interpretable sequence descriptors with TabPFN — a tabular foundation model that predicts in a single forward pass, with no gradient training and no hyperparameter search — beats them, reaching 77.8% five-label macro average precision against a previous best of 72.1%, with the largest gains on remote homologues. Predicted structure turns out to be unnecessary at inference, and ten global physicochemical scalars alone recover 91% of the full-feature performance.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a peptide sequence is reduced to 330 interpretable descriptors, of which ten physicochemical scalars alone recover 91 per cent of the performance; a tabular foundation model reads them in context in one forward pass and returns five activity labels, reaching 77.8 mean average precision against 72.1 for the previous best" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="16">peptide sequence</text>
+    <text x="286" y="16" text-anchor="end">82,359 peptides</text>
+  </g>
+
+  <!-- ===== the only input: residues. no structure, predicted or otherwise ===== -->
+  <rect x="14" y="22" width="272" height="15" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="150" y="32.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" letter-spacing="1.6" fill="var(--ink-3)">GIGKFLHSAKKFGKAFVGEIMNS</text>
+
+  <path d="M150 39v6 m-3-3 3 3 3-3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== 330 columns, drawn to scale: the eight families are wildly uneven ===== -->
+  <text x="14" y="55" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">330 interpretable descriptors</text>
+
+  <g stroke-width="1.1">
+    <rect x="14" y="60" width="105.5" height="14" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45"/>
+    <rect x="119.5" y="60" width="121.2" height="14" rx="2" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".45"/>
+    <rect x="240.7" y="60" width="16.5" height="14" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".5"/>
+    <rect x="257.2" y="60" width="12.4" height="14" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".5"/>
+    <rect x="269.6" y="60" width="8.2" height="14" rx="2" fill="var(--saffron-soft)" stroke="var(--saffron)"/>
+    <rect x="277.8" y="60" width="8.2" height="14" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".5"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" text-anchor="middle">
+    <text x="66.8" y="69.5" fill="var(--indigo)">ESM 128</text>
+    <text x="180.1" y="69.5" fill="var(--teal)">CTD 147</text>
+  </g>
+
+  <!-- the ten scalars are the paper's whole point, so they get the colour and the leader -->
+  <path d="M273.7 75v7 h-50" fill="none" stroke="var(--saffron)" stroke-width="1"
+        stroke-opacity=".8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="219" y="84.5" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--saffron)">10 scalars alone: 91%</text>
+
+  <path d="M150 90v7 m-3-3 3 3 3-3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== no gradient reaches this box: the labelled peptides ride in as context ===== -->
+  <rect x="62" y="101" width="176" height="21" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".55" stroke-width="1.2"/>
+  <text x="150" y="115" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--indigo)">TabPFN, one forward pass</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-4)">
+    <text x="14" y="109">labelled</text>
+    <text x="14" y="119.5">peptides</text>
+  </g>
+  <path d="M50 112h8 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M150 124v7 m-3-3 3 3 3-3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-2)"
+     text-anchor="middle">
+    <text x="150" y="140">antibacterial &#183; antifungal &#183; antiviral</text>
+    <text x="150" y="151">antiparasitic &#183; antimicrobial</text>
+  </g>
+
+  <line x1="14" y1="157" x2="286" y2="157" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="171" font-size="8.5" fill="var(--ink-3)">mAP-5 77.8, against 72.1 before</text>
+    <text x="14" y="184" font-size="8" fill="var(--ink-4)">no gradients &#183; no tuning &#183; no structure</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="conference" data-topic="sanskrit" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t">RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation</p>
+    <p class="pub-a">Bathla, D., Singla, P., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Submitted to AAAI-27</em></p>
+    
+    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Bathla, D., Singla, P., &amp; Singla, J. (2026). RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation. Submitted to AAAI-27." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Low-resource translation has far more monolingual text than parallel text, so most of the data carries no reference to train against. RECAST translates a sentence and then reconstructs it, and uses the agreement between the original and the reconstruction as the training signal — the round trip stands in for the reference the unlabelled half does not have.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a small parallel corpus beside a much larger monolingual one, and a round trip in which a sentence is translated and then reconstructed, the agreement between original and reconstruction standing in for the missing reference" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ============ left: what low-resource actually means ============ -->
+  <text x="12" y="20" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">low-resource</text>
+
+  <text x="12" y="38" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--indigo)">parallel</text>
+  <g stroke="var(--indigo)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".8">
+    <path d="M13 46h51"/><path d="M13 52h43"/><path d="M13 58h49"/>
+  </g>
+
+  <text x="12" y="78" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-3)">monolingual</text>
+  <g stroke="var(--ink-4)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".38">
+    <path d="M13 86h51"/><path d="M13 92h39"/><path d="M13 98h47"/><path d="M13 104h55"/>
+    <path d="M13 110h35"/><path d="M13 116h50"/><path d="M13 122h44"/><path d="M13 128h53"/>
+    <path d="M13 134h38"/><path d="M13 140h48"/><path d="M13 146h42"/><path d="M13 152h51"/>
+  </g>
+
+  <line x1="88" y1="26" x2="88" y2="162" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ============ right: the round trip that stands in for a reference ============ -->
+  <rect x="98" y="34" width="58" height="24" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+        stroke-opacity=".45" stroke-width="1.1"/>
+  <text x="127" y="51" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
+        font-size="11" fill="var(--indigo)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
+
+  <rect x="170" y="34" width="64" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="202" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">translate</text>
+
+  <rect x="246" y="34" width="44" height="24" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="268" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">output</text>
+
+  <rect x="200" y="80" width="88" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <text x="244" y="96" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-2)">reconstruct</text>
+
+  <!-- the reconstruction comes back dashed: it is a guess at the input, not the input -->
+  <rect x="98" y="80" width="58" height="24" rx="6" fill="none" stroke="var(--saffron)"
+        stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="127" y="97" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
+        font-size="11" fill="var(--saffron)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 46h10 M164 43l3.5 3-3.5 3"/>
+    <path d="M236 46h8 M240 43l3.5 3-3.5 3"/>
+    <path d="M268 58v20 M265 74l3 4 3-4"/>
+    <path d="M196 92h-38 M162 89l-3.5 3 3.5 3"/>
+  </g>
+
+  <!-- the anchor: with no reference translation, agreement with the input is the signal -->
+  <circle cx="127" cy="69" r="9" fill="var(--surface)" stroke="var(--rule)"/>
+  <text x="127" y="73" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="11" fill="var(--saffron)">&#8776;</text>
+  <text x="143" y="72" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">anchor</text>
+
+  <text x="194" y="128" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">the round trip is the label</text>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2606.29414" target="_blank" rel="noopener">FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations</a></p>
+    <p class="pub-a">Shukla, H., Verma, R., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2606.29414</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Shukla, H., Verma, R., &amp; Singla, J. (2026). FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations. arXiv preprint, arXiv:2606.29414. https://arxiv.org/abs/2606.29414" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Periodic implicit neural representations such as SIREN give every neuron the same global frequency, which spends the representational budget badly when local signal content varies. FiRe gives each neuron a bounded, input-dependent frequency through a separate low-rank gate, leaving the activation function itself untouched. The gate acts as an implicit preconditioner that improves the conditioning of the problem at initialisation, so optimisation converges sooner at a fixed budget.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a periodic network in which every neuron shares one global frequency, contrasted with one where a low-rank gate gives each neuron its own, and the effect on optimization conditioning shown as elongated contours becoming near-circular" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="18" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">per-neuron frequency</text>
+
+  <!-- every neuron on the same global omega -->
+  <text x="14" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-3)">SIREN</text>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1.4" stroke-linecap="round">
+    <path d="M66 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
+    <path d="M122 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
+    <path d="M178 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
+    <path d="M234 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
+  </g>
+
+  <!-- each neuron gets its own, bounded and input-dependent -->
+  <text x="14" y="79" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-2)">FiRe</text>
+  <g fill="none" stroke-width="1.4" stroke-linecap="round">
+    <path d="M66 76 q11 -11 22 0 t22 0" stroke="var(--indigo)"/>
+    <path d="M122 76 q5.5 -9 11 0 t11 0 t11 0 t11 0" stroke="var(--teal)"/>
+    <path d="M178 76 q3.14 -8 6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0"
+          stroke="var(--saffron)"/>
+    <path d="M234 76 q2.2 -7 4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0"
+          stroke="var(--indigo)"/>
+  </g>
+
+  <text x="66" y="98" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">a low-rank gate sets each &#969;</text>
+
+  <line x1="14" y1="110" x2="286" y2="110" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- what that buys: the loss surface the optimiser actually sees at init -->
+  <text x="14" y="126" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">conditioning at init</text>
+  <text x="286" y="126" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--ink-3)">converges sooner</text>
+
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1">
+    <ellipse cx="100" cy="152" rx="42" ry="13"/>
+    <ellipse cx="100" cy="152" rx="29" ry="9"/>
+    <ellipse cx="100" cy="152" rx="16" ry="5"/>
+  </g>
+  <path d="M62 144 L84 160 L74 148 L92 157 L88 150 L100 152" fill="none" stroke="var(--saffron)"
+        stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M154 152h20 M168 149l3.5 3-3.5 3"/>
+  </g>
+
+  <g fill="none" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1">
+    <circle cx="214" cy="152" r="24"/><circle cx="214" cy="152" r="16"/><circle cx="214" cy="152" r="8"/>
+  </g>
+  <path d="M192 138 L214 152" fill="none" stroke="var(--teal)" stroke-width="1.6"
+        stroke-linecap="round"/>
+  <path d="M209 147l5 5-1 -6.6" fill="var(--teal)"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
+     text-anchor="middle">
+    <text x="100" y="182">ill-conditioned</text>
+    <text x="214" y="182">preconditioned</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt" data-pub-year="2026">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.cell.com/structure/fulltext/S0969-2126%2826%2900224-8" target="_blank" rel="noopener">Morphotype-Resolved 3D Morphometry Reveals a Structure–Density–Location Coupling in Mitochondrial Networks</a></p>
     <p class="pub-a">Singh, A., Yadav, A., Deshmukh, A., Singh, A., Verma, R., White, K., &amp; Singla, J.</p>
@@ -161,6 +382,87 @@
   <circle cx="272" cy="138" r="2.6" fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2"/>
   <text x="266" y="148" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
         font-size="8.5" fill="var(--ink-2)">location</text>
+</svg></figure>
+</article><article class="pub" data-pub data-type="preprint" data-topic="health" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2603.17248" target="_blank" rel="noopener">Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction</a></p>
+    <p class="pub-a">Youssef, Y., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.17248</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Youssef, Y., &amp; Singla, J. (2026). Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction. arXiv preprint, arXiv:2603.17248. https://arxiv.org/abs/2603.17248" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    
+  </div>
+  
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="sanskrit" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2603.24307" target="_blank" rel="noopener">Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation</a></p>
+    <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K. (2026). Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation. arXiv preprint, arXiv:2603.24307. https://arxiv.org/abs/2603.24307" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> The same argument carried to a second language pair: 92,196 Hindi–Sanskrit parallel sentences, aggregated from spoken tutorials, children's magazines, radio conversations and instruction material rather than from classical texts. Fine-tuning ByT5, NLLB and IndicTrans-v2 on it gives significant in-domain gains while holding up on the usual test sets, and a comparison against existing corpora shows minimal semantic and lexical overlap — the resource is new, not a repackaging.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a Hindi-Sanskrit corpus of ninety-two thousand pairs drawn from spoken tutorials, children's magazines, radio and instruction material, overlapping barely at all with existing corpora" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">Hindi &#8596; Sanskrit</text>
+    <text x="286" y="24" text-anchor="end">92,196 pairs</text>
+  </g>
+
+  <rect x="14" y="38" width="48" height="20" rx="6" fill="var(--saffron-soft)" stroke="var(--saffron)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="38" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--saffron)">Hindi</text>
+  <rect x="84" y="38" width="56" height="20" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <text x="112" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8" fill="var(--teal)">Sanskrit</text>
+  <path d="M66 48h14 M70 44.5l-3.5 3.5 3.5 3.5 M76 51.5l3.5-3.5-3.5-3.5" fill="none"
+        stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== not classical poetry: the everyday registers ===== -->
+  <text x="14" y="70" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">curated from</text>
+
+  <path d="M18 76 h11 a3 3 0 0 1 3 3 v5 a3 3 0 0 1 -3 3 h-6 l-4 4 v-4 h-1 a3 3 0 0 1 -3 -3 v-5
+           a3 3 0 0 1 3 -3 z" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6"
+        stroke-width="1"/>
+  <g fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
+    <rect x="15" y="92" width="15" height="12" rx="1.5"/>
+    <rect x="15" y="124" width="15" height="12" rx="1.5"/>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
+    <path d="M22.5 92v12"/>
+    <path d="M16 114a7 7 0 0 1 13 0 M19 114a4 4 0 0 1 7 0"/>
+    <path d="M18 128h9 M18 131h9 M18 134h6"/>
+  </g>
+  <circle cx="22.5" cy="114" r="1.6" fill="var(--ink-4)"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
+    <text x="38" y="87">spoken tutorials</text>
+    <text x="38" y="103">children's magazines</text>
+    <text x="38" y="119">radio conversations</text>
+    <text x="38" y="135">instruction material</text>
+  </g>
+
+  <!-- ===== and it barely overlaps what already existed ===== -->
+  <circle cx="196" cy="62" r="30" fill="var(--teal-soft)" fill-opacity=".65" stroke="var(--teal)"
+          stroke-width="1.3"/>
+  <circle cx="248" cy="62" r="26" fill="var(--ink-4)" fill-opacity=".16" stroke="var(--ink-4)"
+          stroke-opacity=".6" stroke-width="1.2"/>
+  <line x1="222" y1="112" x2="222" y2="70" stroke="var(--ink-4)" stroke-opacity=".5"
+        stroke-width="1" stroke-dasharray="3 3"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
+    <text x="190" y="104" fill="var(--teal)">Samas&#257;mayik</text>
+    <text x="252" y="104" fill="var(--ink-4)">existing</text>
+    <text x="222" y="122" fill="var(--ink-4)">minimal overlap</text>
+  </g>
+
+  <line x1="14" y1="142" x2="286" y2="142" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="160" font-size="8.5" fill="var(--ink-3)">contemporary Sanskrit, not classical</text>
+    <text x="14" y="178" font-size="8" fill="var(--ink-4)">ByT5 &#183; NLLB &#183; IndicTrans-v2</text>
+  </g>
 </svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio" data-pub-year="2026">
   <div class="pub-main">
@@ -370,245 +672,84 @@
     <text x="247" y="174">branching</text>
   </g>
 </svg></figure>
-</article><article class="pub pub-wide" data-pub data-type="conference" data-topic="sanskrit" data-pub-year="2026">
-  <div class="pub-main">
-    <p class="pub-t">RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation</p>
-    <p class="pub-a">Bathla, D., Singla, P., &amp; Singla, J.</p>
-    <p class="pub-v"><em>Submitted to AAAI-27</em></p>
-    
-    <div class="pub-meta"><span class="pill pill-conference">Conference</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Bathla, D., Singla, P., &amp; Singla, J. (2026). RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation. Submitted to AAAI-27." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> Low-resource translation has far more monolingual text than parallel text, so most of the data carries no reference to train against. RECAST translates a sentence and then reconstructs it, and uses the agreement between the original and the reconstruction as the training signal — the round trip stands in for the reference the unlabelled half does not have.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a small parallel corpus beside a much larger monolingual one, and a round trip in which a sentence is translated and then reconstructed, the agreement between original and reconstruction standing in for the missing reference" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- ============ left: what low-resource actually means ============ -->
-  <text x="12" y="20" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">low-resource</text>
-
-  <text x="12" y="38" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
-        fill="var(--indigo)">parallel</text>
-  <g stroke="var(--indigo)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".8">
-    <path d="M13 46h51"/><path d="M13 52h43"/><path d="M13 58h49"/>
-  </g>
-
-  <text x="12" y="78" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
-        fill="var(--ink-3)">monolingual</text>
-  <g stroke="var(--ink-4)" stroke-width="2.6" stroke-linecap="round" stroke-opacity=".38">
-    <path d="M13 86h51"/><path d="M13 92h39"/><path d="M13 98h47"/><path d="M13 104h55"/>
-    <path d="M13 110h35"/><path d="M13 116h50"/><path d="M13 122h44"/><path d="M13 128h53"/>
-    <path d="M13 134h38"/><path d="M13 140h48"/><path d="M13 146h42"/><path d="M13 152h51"/>
-  </g>
-
-  <line x1="88" y1="26" x2="88" y2="162" stroke="var(--rule)" stroke-width="1"/>
-
-  <!-- ============ right: the round trip that stands in for a reference ============ -->
-  <rect x="98" y="34" width="58" height="24" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
-        stroke-opacity=".45" stroke-width="1.1"/>
-  <text x="127" y="51" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
-        font-size="11" fill="var(--indigo)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
-
-  <rect x="170" y="34" width="64" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <text x="202" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8.5" fill="var(--ink-2)">translate</text>
-
-  <rect x="246" y="34" width="44" height="24" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <text x="268" y="50" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8.5" fill="var(--ink-3)">output</text>
-
-  <rect x="200" y="80" width="88" height="24" rx="7" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <text x="244" y="96" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8.5" fill="var(--ink-2)">reconstruct</text>
-
-  <!-- the reconstruction comes back dashed: it is a guess at the input, not the input -->
-  <rect x="98" y="80" width="58" height="24" rx="6" fill="none" stroke="var(--saffron)"
-        stroke-width="1.2" stroke-dasharray="3 3"/>
-  <text x="127" y="97" text-anchor="middle" font-family="'Tiro Devanagari Hindi','Noto Serif Devanagari',serif"
-        font-size="11" fill="var(--saffron)">&#2357;&#2366;&#2325;&#2381;&#2351;&#2350;&#2381;</text>
-
-  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M158 46h10 M164 43l3.5 3-3.5 3"/>
-    <path d="M236 46h8 M240 43l3.5 3-3.5 3"/>
-    <path d="M268 58v20 M265 74l3 4 3-4"/>
-    <path d="M196 92h-38 M162 89l-3.5 3 3.5 3"/>
-  </g>
-
-  <!-- the anchor: with no reference translation, agreement with the input is the signal -->
-  <circle cx="127" cy="69" r="9" fill="var(--surface)" stroke="var(--rule)"/>
-  <text x="127" y="73" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="11" fill="var(--saffron)">&#8776;</text>
-  <text x="143" y="72" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
-        fill="var(--ink-4)">anchor</text>
-
-  <text x="194" y="128" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8.5" fill="var(--ink-3)">the round trip is the label</text>
-</svg></figure>
-</article><article class="pub" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
-  <div class="pub-main">
-    <p class="pub-t">Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling</p>
-    <p class="pub-a">Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., &amp; Singla, J.</p>
-    <p class="pub-v"><em>bioRxiv</em>, Submitted</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., &amp; Singla, J. (2026). Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling. bioRxiv, Submitted." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    
-  </div>
-  
-</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://arxiv.org/abs/2606.29414" target="_blank" rel="noopener">FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations</a></p>
-    <p class="pub-a">Shukla, H., Verma, R., &amp; Singla, J.</p>
-    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2606.29414</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Shukla, H., Verma, R., &amp; Singla, J. (2026). FiRe: Frequency Reparameterization as a Preconditioner for Periodic Implicit Neural Representations. arXiv preprint, arXiv:2606.29414. https://arxiv.org/abs/2606.29414" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> Periodic implicit neural representations such as SIREN give every neuron the same global frequency, which spends the representational budget badly when local signal content varies. FiRe gives each neuron a bounded, input-dependent frequency through a separate low-rank gate, leaving the activation function itself untouched. The gate acts as an implicit preconditioner that improves the conditioning of the problem at initialisation, so optimisation converges sooner at a fixed budget.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a periodic network in which every neuron shares one global frequency, contrasted with one where a low-rank gate gives each neuron its own, and the effect on optimization conditioning shown as elongated contours becoming near-circular" xmlns="http://www.w3.org/2000/svg">
-
-  <text x="14" y="18" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">per-neuron frequency</text>
-
-  <!-- every neuron on the same global omega -->
-  <text x="14" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-3)">SIREN</text>
-  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".55" stroke-width="1.4" stroke-linecap="round">
-    <path d="M66 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
-    <path d="M122 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
-    <path d="M178 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
-    <path d="M234 40 q5.5 -9 11 0 t11 0 t11 0 t11 0"/>
-  </g>
-
-  <!-- each neuron gets its own, bounded and input-dependent -->
-  <text x="14" y="79" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-2)">FiRe</text>
-  <g fill="none" stroke-width="1.4" stroke-linecap="round">
-    <path d="M66 76 q11 -11 22 0 t22 0" stroke="var(--indigo)"/>
-    <path d="M122 76 q5.5 -9 11 0 t11 0 t11 0 t11 0" stroke="var(--teal)"/>
-    <path d="M178 76 q3.14 -8 6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0 t6.29 0"
-          stroke="var(--saffron)"/>
-    <path d="M234 76 q2.2 -7 4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0 t4.4 0"
-          stroke="var(--indigo)"/>
-  </g>
-
-  <text x="66" y="98" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
-        fill="var(--ink-4)">a low-rank gate sets each &#969;</text>
-
-  <line x1="14" y1="110" x2="286" y2="110" stroke="var(--rule)" stroke-width="1"/>
-
-  <!-- what that buys: the loss surface the optimiser actually sees at init -->
-  <text x="14" y="126" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">conditioning at init</text>
-  <text x="286" y="126" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8.5" fill="var(--ink-3)">converges sooner</text>
-
-  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".5" stroke-width="1">
-    <ellipse cx="100" cy="152" rx="42" ry="13"/>
-    <ellipse cx="100" cy="152" rx="29" ry="9"/>
-    <ellipse cx="100" cy="152" rx="16" ry="5"/>
-  </g>
-  <path d="M62 144 L84 160 L74 148 L92 157 L88 150 L100 152" fill="none" stroke="var(--saffron)"
-        stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
-
-  <g stroke="var(--ink-4)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M154 152h20 M168 149l3.5 3-3.5 3"/>
-  </g>
-
-  <g fill="none" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1">
-    <circle cx="214" cy="152" r="24"/><circle cx="214" cy="152" r="16"/><circle cx="214" cy="152" r="8"/>
-  </g>
-  <path d="M192 138 L214 152" fill="none" stroke="var(--teal)" stroke-width="1.6"
-        stroke-linecap="round"/>
-  <path d="M209 147l5 5-1 -6.6" fill="var(--teal)"/>
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
-     text-anchor="middle">
-    <text x="100" y="182">ill-conditioned</text>
-    <text x="214" y="182">preconditioned</text>
-  </g>
-</svg></figure>
-</article><article class="pub" data-pub data-type="preprint" data-topic="health" data-pub-year="2026">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://arxiv.org/abs/2603.17248" target="_blank" rel="noopener">Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction</a></p>
-    <p class="pub-a">Youssef, Y., &amp; Singla, J.</p>
-    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.17248</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Youssef, Y., &amp; Singla, J. (2026). Pathology-Aware Multi-View Contrastive Learning for Patient-Independent ECG Reconstruction. arXiv preprint, arXiv:2603.17248. https://arxiv.org/abs/2603.17248" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    
-  </div>
-  
-</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="sanskrit" data-pub-year="2026">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://arxiv.org/abs/2603.24307" target="_blank" rel="noopener">Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation</a></p>
-    <p class="pub-a">Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K.</p>
-    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2603.24307</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Sanskrit AI</span><button class="cite" type="button" data-cite="Karthika, N. J., Suryanarayanan, K., Purohit, J., Ramakrishnan, G., Singla, J., &amp; Gourishetty, A. K. (2026). Samasamayik: A Parallel Dataset for Hindi–Sanskrit Machine Translation. arXiv preprint, arXiv:2603.24307. https://arxiv.org/abs/2603.24307" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> The same argument carried to a second language pair: 92,196 Hindi–Sanskrit parallel sentences, aggregated from spoken tutorials, children's magazines, radio conversations and instruction material rather than from classical texts. Fine-tuning ByT5, NLLB and IndicTrans-v2 on it gives significant in-domain gains while holding up on the usual test sets, and a comparison against existing corpora shows minimal semantic and lexical overlap — the resource is new, not a repackaging.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a Hindi-Sanskrit corpus of ninety-two thousand pairs drawn from spoken tutorials, children's magazines, radio and instruction material, overlapping barely at all with existing corpora" xmlns="http://www.w3.org/2000/svg">
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
-    <text x="14" y="24">Hindi &#8596; Sanskrit</text>
-    <text x="286" y="24" text-anchor="end">92,196 pairs</text>
-  </g>
-
-  <rect x="14" y="38" width="48" height="20" rx="6" fill="var(--saffron-soft)" stroke="var(--saffron)"
-        stroke-opacity=".5" stroke-width="1.1"/>
-  <text x="38" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8" fill="var(--saffron)">Hindi</text>
-  <rect x="84" y="38" width="56" height="20" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
-        stroke-opacity=".5" stroke-width="1.1"/>
-  <text x="112" y="52" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8" fill="var(--teal)">Sanskrit</text>
-  <path d="M66 48h14 M70 44.5l-3.5 3.5 3.5 3.5 M76 51.5l3.5-3.5-3.5-3.5" fill="none"
-        stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- ===== not classical poetry: the everyday registers ===== -->
-  <text x="14" y="70" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
-        fill="var(--ink-4)">curated from</text>
-
-  <path d="M18 76 h11 a3 3 0 0 1 3 3 v5 a3 3 0 0 1 -3 3 h-6 l-4 4 v-4 h-1 a3 3 0 0 1 -3 -3 v-5
-           a3 3 0 0 1 3 -3 z" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6"
-        stroke-width="1"/>
-  <g fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
-    <rect x="15" y="92" width="15" height="12" rx="1.5"/>
-    <rect x="15" y="124" width="15" height="12" rx="1.5"/>
-  </g>
-  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1">
-    <path d="M22.5 92v12"/>
-    <path d="M16 114a7 7 0 0 1 13 0 M19 114a4 4 0 0 1 7 0"/>
-    <path d="M18 128h9 M18 131h9 M18 134h6"/>
-  </g>
-  <circle cx="22.5" cy="114" r="1.6" fill="var(--ink-4)"/>
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
-    <text x="38" y="87">spoken tutorials</text>
-    <text x="38" y="103">children's magazines</text>
-    <text x="38" y="119">radio conversations</text>
-    <text x="38" y="135">instruction material</text>
-  </g>
-
-  <!-- ===== and it barely overlaps what already existed ===== -->
-  <circle cx="196" cy="62" r="30" fill="var(--teal-soft)" fill-opacity=".65" stroke="var(--teal)"
-          stroke-width="1.3"/>
-  <circle cx="248" cy="62" r="26" fill="var(--ink-4)" fill-opacity=".16" stroke="var(--ink-4)"
-          stroke-opacity=".6" stroke-width="1.2"/>
-  <line x1="222" y1="112" x2="222" y2="70" stroke="var(--ink-4)" stroke-opacity=".5"
-        stroke-width="1" stroke-dasharray="3 3"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
-    <text x="190" y="104" fill="var(--teal)">Samas&#257;mayik</text>
-    <text x="252" y="104" fill="var(--ink-4)">existing</text>
-    <text x="222" y="122" fill="var(--ink-4)">minimal overlap</text>
-  </g>
-
-  <line x1="14" y1="142" x2="286" y2="142" stroke="var(--rule)" stroke-width="1"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace">
-    <text x="14" y="160" font-size="8.5" fill="var(--ink-3)">contemporary Sanskrit, not classical</text>
-    <text x="14" y="178" font-size="8" fill="var(--ink-4)">ByT5 &#183; NLLB &#183; IndicTrans-v2</text>
-  </g>
-</svg></figure>
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2025</div>
-  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="ml" data-pub-year="2025">
+  <div><article class="pub pub-wide" data-pub data-type="preprint" data-topic="health" data-pub-year="2025">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
+    <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
+    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
+    
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Gupta, S., &amp; Singla, J. (2025). YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives. arXiv preprint, arXiv:2509.19166. https://arxiv.org/abs/2509.19166" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a colonoscopy frame with a polyp inside a detection box, beside the three levers the method tunes — an intersection-over-union loss, data augmentations, and negative frames containing no polyp" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="26" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">colonoscopy frame</text>
+
+  <!-- the lumen, receding, with a polyp on the near wall -->
+  <rect x="14" y="34" width="112" height="92" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1.1">
+    <ellipse cx="74" cy="84" rx="42" ry="34"/>
+    <ellipse cx="76" cy="84" rx="29" ry="23"/>
+    <ellipse cx="78" cy="84" rx="16" ry="12"/>
+  </g>
+  <ellipse cx="46" cy="61" rx="13" ry="10" fill="var(--saffron-soft)" stroke="var(--saffron)"
+           stroke-width="1.3"/>
+  <path d="M42 70 C44 75, 50 75, 52 70" fill="none" stroke="var(--saffron)" stroke-width="1.2"
+        stroke-opacity=".7"/>
+
+  <rect x="29" y="46" width="34" height="30" rx="2" fill="none" stroke="var(--teal)"
+        stroke-width="1.4" stroke-dasharray="4 2.5"/>
+  <text x="29" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--teal)">polyp</text>
+
+  <!-- ============ the three levers the name spells out ============ -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+
+    <rect x="142" y="36" width="18" height="18" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="49" text-anchor="middle" font-size="9.5" fill="var(--indigo)">L</text>
+    <text x="168" y="49" font-size="8" fill="var(--ink-2)">M2IoU loss</text>
+    <g fill="none" stroke="var(--ink-4)" stroke-width="1.1">
+      <rect x="250" y="38" width="22" height="15" rx="2"/>
+      <rect x="262" y="42" width="22" height="15" rx="2"/>
+    </g>
+    <rect x="262" y="42" width="10" height="11" fill="var(--indigo)" fill-opacity=".22"/>
+
+    <rect x="142" y="68" width="18" height="18" rx="5" fill="var(--teal-soft)" stroke="var(--teal)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="81" text-anchor="middle" font-size="9.5" fill="var(--teal)">A</text>
+    <text x="168" y="81" font-size="8" fill="var(--ink-2)">augmentations</text>
+    <g stroke="var(--ink-4)" stroke-width="1" fill="var(--paper-2)">
+      <rect x="242" y="68" width="14" height="18" rx="2"/>
+      <rect x="260" y="68" width="14" height="18" rx="2" transform="rotate(9 267 77)"/>
+      <rect x="278" y="68" width="14" height="18" rx="2" fill="var(--ink-4)" fill-opacity=".18"/>
+    </g>
+    <g fill="var(--saffron)" fill-opacity=".55">
+      <circle cx="249" cy="76" r="2.6"/><circle cx="267" cy="76" r="2.6"/><circle cx="285" cy="76" r="2.6"/>
+    </g>
+
+    <rect x="142" y="100" width="18" height="18" rx="5" fill="var(--saffron-soft)" stroke="var(--saffron)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="113" text-anchor="middle" font-size="9.5" fill="var(--saffron)">N</text>
+    <text x="168" y="113" font-size="8" fill="var(--ink-2)">negative frames</text>
+    <rect x="262" y="100" width="22" height="18" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)"
+          stroke-width="1"/>
+    <g fill="none" stroke="var(--ink-4)" stroke-width="1.3" stroke-opacity=".7">
+      <circle cx="273" cy="109" r="5"/><path d="M269.5 105.5l7 7"/>
+    </g>
+  </g>
+
+  <line x1="14" y1="140" x2="286" y2="140" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="158">Kvasir-seg &#183; BKAI-IGH NeoPolyp</text>
+    <text x="286" y="158" text-anchor="end">gains at high IoU</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="ml" data-pub-year="2025">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC" target="_blank" rel="noopener">DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model</a></p>
     <p class="pub-a">Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S.</p>
@@ -696,144 +837,6 @@
   <text x="14" y="164" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
         fill="var(--ink-3)">a nested stack, not one model</text>
 </svg></figure>
-</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio" data-pub-year="2025">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://www.mdpi.com/1999-4915/17/3/417" target="_blank" rel="noopener">Structural Virology: The Key Determinants in Development of Antiviral Therapeutics</a></p>
-    <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
-    <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
-    
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S. (2025). Structural Virology: The Key Determinants in Development of Antiviral Therapeutics. Viruses, 17(3), 417. https://www.mdpi.com/1999-4915/17/3/417" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> A review of what structure buys antiviral development. Resolving capsids, envelope proteins, replication machinery and host-interaction interfaces at atomic or near-atomic resolution is what turned viral proteases, polymerases and integrases into drug targets for HIV, SARS-CoV-2 and influenza. X-ray crystallography, NMR, cryo-EM and cryo-electron tomography each contribute, and the structural diversity and high mutation rates of viruses are precisely why that work has to keep pace.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a virion whose capsid, envelope proteins, replication machinery and host interfaces are resolved by X-ray, NMR, cryo-EM and cryo-electron tomography, and turned into therapeutics" xmlns="http://www.w3.org/2000/svg">
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
-    <text x="14" y="24">resolve the virus</text>
-    <text x="286" y="24" text-anchor="end">then design against it</text>
-  </g>
-
-  <!-- ===== the particle, and the four parts that get solved ===== -->
-  <g stroke="var(--ink-4)" stroke-width="1.3" fill="none">
-    <path d="M89 88.1 L98.5 93.6"/><path d="M68 100.25 L68 111.25"/>
-    <path d="M47 88.1 L37.5 93.6"/><path d="M47 63.9 L37.5 58.4"/>
-    <path d="M68 51.75 L68 40.75"/><path d="M89 63.9 L98.5 58.4"/>
-  </g>
-  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
-    <circle cx="98.5" cy="93.6" r="3.2"/><circle cx="68" cy="111.25" r="3.2"/>
-    <circle cx="37.5" cy="93.6" r="3.2"/><circle cx="37.5" cy="58.4" r="3.2"/>
-    <circle cx="68" cy="40.75" r="3.2"/><circle cx="98.5" cy="58.4" r="3.2"/>
-  </g>
-  <path d="M96 76 L82 100.25 L54 100.25 L40 76 L54 51.75 L82 51.75 Z"
-        fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="1.3"/>
-  <path d="M56 70 C64 63, 78 70, 76 79 C74 88, 58 87, 58 78" fill="none" stroke="var(--saffron)"
-        stroke-width="1.5"/>
-
-  <g fill="var(--teal)">
-    <circle cx="106" cy="45" r="2.4"/><circle cx="106" cy="59" r="2.4"/>
-    <circle cx="106" cy="73" r="2.4"/><circle cx="106" cy="87" r="2.4"/>
-  </g>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
-    <text x="114" y="48">capsid</text>
-    <text x="114" y="62">envelope proteins</text>
-    <text x="114" y="76">replication machinery</text>
-    <text x="114" y="90">host interfaces</text>
-  </g>
-
-  <line x1="14" y1="122" x2="286" y2="122" stroke="var(--rule)" stroke-width="1"/>
-
-  <text x="14" y="141" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
-        fill="var(--ink-4)">resolved by</text>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
-     text-anchor="middle">
-    <rect x="76" y="128" width="44" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
-    <text x="98" y="141">X-ray</text>
-    <rect x="126" y="128" width="40" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
-    <text x="146" y="141">NMR</text>
-    <rect x="172" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
-    <text x="198" y="141">cryo-EM</text>
-    <rect x="230" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
-    <text x="256" y="141">cryo-ET</text>
-  </g>
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace">
-    <text x="14" y="166" font-size="8.5" fill="var(--ink-3)">therapeutics, vaccines, antibodies</text>
-    <text x="14" y="182" font-size="8" fill="var(--ink-4)">for threats that keep mutating</text>
-  </g>
-</svg></figure>
-</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="health" data-pub-year="2025">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
-    <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
-    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Gupta, S., &amp; Singla, J. (2025). YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives. arXiv preprint, arXiv:2509.19166. https://arxiv.org/abs/2509.19166" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a colonoscopy frame with a polyp inside a detection box, beside the three levers the method tunes — an intersection-over-union loss, data augmentations, and negative frames containing no polyp" xmlns="http://www.w3.org/2000/svg">
-
-  <text x="14" y="26" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">colonoscopy frame</text>
-
-  <!-- the lumen, receding, with a polyp on the near wall -->
-  <rect x="14" y="34" width="112" height="92" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1.1">
-    <ellipse cx="74" cy="84" rx="42" ry="34"/>
-    <ellipse cx="76" cy="84" rx="29" ry="23"/>
-    <ellipse cx="78" cy="84" rx="16" ry="12"/>
-  </g>
-  <ellipse cx="46" cy="61" rx="13" ry="10" fill="var(--saffron-soft)" stroke="var(--saffron)"
-           stroke-width="1.3"/>
-  <path d="M42 70 C44 75, 50 75, 52 70" fill="none" stroke="var(--saffron)" stroke-width="1.2"
-        stroke-opacity=".7"/>
-
-  <rect x="29" y="46" width="34" height="30" rx="2" fill="none" stroke="var(--teal)"
-        stroke-width="1.4" stroke-dasharray="4 2.5"/>
-  <text x="29" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
-        fill="var(--teal)">polyp</text>
-
-  <!-- ============ the three levers the name spells out ============ -->
-  <g font-family="'JetBrains Mono',ui-monospace,monospace">
-
-    <rect x="142" y="36" width="18" height="18" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="49" text-anchor="middle" font-size="9.5" fill="var(--indigo)">L</text>
-    <text x="168" y="49" font-size="8" fill="var(--ink-2)">M2IoU loss</text>
-    <g fill="none" stroke="var(--ink-4)" stroke-width="1.1">
-      <rect x="250" y="38" width="22" height="15" rx="2"/>
-      <rect x="262" y="42" width="22" height="15" rx="2"/>
-    </g>
-    <rect x="262" y="42" width="10" height="11" fill="var(--indigo)" fill-opacity=".22"/>
-
-    <rect x="142" y="68" width="18" height="18" rx="5" fill="var(--teal-soft)" stroke="var(--teal)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="81" text-anchor="middle" font-size="9.5" fill="var(--teal)">A</text>
-    <text x="168" y="81" font-size="8" fill="var(--ink-2)">augmentations</text>
-    <g stroke="var(--ink-4)" stroke-width="1" fill="var(--paper-2)">
-      <rect x="242" y="68" width="14" height="18" rx="2"/>
-      <rect x="260" y="68" width="14" height="18" rx="2" transform="rotate(9 267 77)"/>
-      <rect x="278" y="68" width="14" height="18" rx="2" fill="var(--ink-4)" fill-opacity=".18"/>
-    </g>
-    <g fill="var(--saffron)" fill-opacity=".55">
-      <circle cx="249" cy="76" r="2.6"/><circle cx="267" cy="76" r="2.6"/><circle cx="285" cy="76" r="2.6"/>
-    </g>
-
-    <rect x="142" y="100" width="18" height="18" rx="5" fill="var(--saffron-soft)" stroke="var(--saffron)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="113" text-anchor="middle" font-size="9.5" fill="var(--saffron)">N</text>
-    <text x="168" y="113" font-size="8" fill="var(--ink-2)">negative frames</text>
-    <rect x="262" y="100" width="22" height="18" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)"
-          stroke-width="1"/>
-    <g fill="none" stroke="var(--ink-4)" stroke-width="1.3" stroke-opacity=".7">
-      <circle cx="273" cy="109" r="5"/><path d="M269.5 105.5l7 7"/>
-    </g>
-  </g>
-
-  <line x1="14" y1="140" x2="286" y2="140" stroke="var(--rule)" stroke-width="1"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
-    <text x="14" y="158">Kvasir-seg &#183; BKAI-IGH NeoPolyp</text>
-    <text x="286" y="158" text-anchor="end">gains at high IoU</text>
-  </g>
-</svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="structbio" data-pub-year="2025">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2" target="_blank" rel="noopener">In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas</a></p>
@@ -910,6 +913,70 @@
   <g font-family="'JetBrains Mono',ui-monospace,monospace">
     <text x="14" y="146" font-size="8.5" fill="var(--ink-3)">PFP and FBPA rebuild the broken route</text>
     <text x="14" y="166" font-size="8" fill="var(--ink-4)">citrus greening; CLas still resists culture</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="structbio" data-pub-year="2025">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://www.mdpi.com/1999-4915/17/3/417" target="_blank" rel="noopener">Structural Virology: The Key Determinants in Development of Antiviral Therapeutics</a></p>
+    <p class="pub-a">Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S.</p>
+    <p class="pub-v"><em>Viruses</em>, 17(3), 417</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Handa, T., Saha, A., Narayanan, A., Ronzier, E., Kumar, P., Singla, J., &amp; Tomar, S. (2025). Structural Virology: The Key Determinants in Development of Antiviral Therapeutics. Viruses, 17(3), 417. https://www.mdpi.com/1999-4915/17/3/417" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> A review of what structure buys antiviral development. Resolving capsids, envelope proteins, replication machinery and host-interaction interfaces at atomic or near-atomic resolution is what turned viral proteases, polymerases and integrases into drug targets for HIV, SARS-CoV-2 and influenza. X-ray crystallography, NMR, cryo-EM and cryo-electron tomography each contribute, and the structural diversity and high mutation rates of viruses are precisely why that work has to keep pace.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a virion whose capsid, envelope proteins, replication machinery and host interfaces are resolved by X-ray, NMR, cryo-EM and cryo-electron tomography, and turned into therapeutics" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">resolve the virus</text>
+    <text x="286" y="24" text-anchor="end">then design against it</text>
+  </g>
+
+  <!-- ===== the particle, and the four parts that get solved ===== -->
+  <g stroke="var(--ink-4)" stroke-width="1.3" fill="none">
+    <path d="M89 88.1 L98.5 93.6"/><path d="M68 100.25 L68 111.25"/>
+    <path d="M47 88.1 L37.5 93.6"/><path d="M47 63.9 L37.5 58.4"/>
+    <path d="M68 51.75 L68 40.75"/><path d="M89 63.9 L98.5 58.4"/>
+  </g>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2">
+    <circle cx="98.5" cy="93.6" r="3.2"/><circle cx="68" cy="111.25" r="3.2"/>
+    <circle cx="37.5" cy="93.6" r="3.2"/><circle cx="37.5" cy="58.4" r="3.2"/>
+    <circle cx="68" cy="40.75" r="3.2"/><circle cx="98.5" cy="58.4" r="3.2"/>
+  </g>
+  <path d="M96 76 L82 100.25 L54 100.25 L40 76 L54 51.75 L82 51.75 Z"
+        fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="1.3"/>
+  <path d="M56 70 C64 63, 78 70, 76 79 C74 88, 58 87, 58 78" fill="none" stroke="var(--saffron)"
+        stroke-width="1.5"/>
+
+  <g fill="var(--teal)">
+    <circle cx="106" cy="45" r="2.4"/><circle cx="106" cy="59" r="2.4"/>
+    <circle cx="106" cy="73" r="2.4"/><circle cx="106" cy="87" r="2.4"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)">
+    <text x="114" y="48">capsid</text>
+    <text x="114" y="62">envelope proteins</text>
+    <text x="114" y="76">replication machinery</text>
+    <text x="114" y="90">host interfaces</text>
+  </g>
+
+  <line x1="14" y1="122" x2="286" y2="122" stroke="var(--rule)" stroke-width="1"/>
+
+  <text x="14" y="141" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8"
+        fill="var(--ink-4)">resolved by</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-3)"
+     text-anchor="middle">
+    <rect x="76" y="128" width="44" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="98" y="141">X-ray</text>
+    <rect x="126" y="128" width="40" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="146" y="141">NMR</text>
+    <rect x="172" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="198" y="141">cryo-EM</text>
+    <rect x="230" y="128" width="52" height="18" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="256" y="141">cryo-ET</text>
+  </g>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="166" font-size="8.5" fill="var(--ink-3)">therapeutics, vaccines, antibodies</text>
+    <text x="14" y="182" font-size="8" fill="var(--ink-4)">for threats that keep mutating</text>
   </g>
 </svg></figure>
 </article></div>
@@ -1084,6 +1151,16 @@
     
   </div>
   
+</article><article class="pub" data-pub data-type="chapter" data-topic="structbio" data-pub-year="2024">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" target="_blank" rel="noopener">Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs</a></p>
+    <p class="pub-a">Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J.</p>
+    <p class="pub-v"><em>Advances in Antiviral Research, Springer Nature Singapore</em>, 41–71</p>
+    
+    <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J. (2024). Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs. Advances in Antiviral Research, Springer Nature Singapore, 41–71. https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    
+  </div>
+  
 </article><article class="pub pub-wide" data-pub data-type="conference" data-topic="sanskrit" data-pub-year="2024">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2305.14004" target="_blank" rel="noopener">Sāmayik: A Benchmark and Dataset for English–Sanskrit Translation</a></p>
@@ -1150,16 +1227,6 @@
     <text x="14" y="172" font-size="8" fill="var(--ink-4)">and the gains show on contemporary text</text>
   </g>
 </svg></figure>
-</article><article class="pub" data-pub data-type="chapter" data-topic="structbio" data-pub-year="2024">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" target="_blank" rel="noopener">Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs</a></p>
-    <p class="pub-a">Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J.</p>
-    <p class="pub-v"><em>Advances in Antiviral Research, Springer Nature Singapore</em>, 41–71</p>
-    
-    <div class="pub-meta"><span class="pill pill-chapter">Book chapter</span><span class="pill">Structural biology</span><button class="cite" type="button" data-cite="Singh, A., Dhaka, P., Kumar, P., Tomar, S., &amp; Singla, J. (2024). Bioinformatics Databases and Tools Available for the Development of Antiviral Drugs. Advances in Antiviral Research, Springer Nature Singapore, 41–71. https://link.springer.com/chapter/10.1007/978-981-99-9195-2_2" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    
-  </div>
-  
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2023</div>
@@ -1485,6 +1552,66 @@
 </svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt" data-pub-year="2022">
   <div class="pub-main">
+    <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" target="_blank" rel="noopener">An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms</a></p>
+    <p class="pub-a">Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L.</p>
+    <p class="pub-v"><em>PLOS ONE</em>, 17(9), e0269887</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L. (2022). An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms. PLOS ONE, 17(9), e0269887. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> A semantic mask says which voxels are mitochondrion and which are insulin vesicle; it does not say where one organelle ends and the next begins. This post-processing tool separates touching instances from the raw tomogram's intensity together with the mask and the organelle's own morphology, handling sphere-like vesicles and columnar mitochondria alike — more accurately, on synthetic and β-cell data, than connected-region labelling or watershed.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: organelles fused into a single mask are split into separate instances using the intensity dip between them in the raw tomogram" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
+    <text x="14" y="24">one merged mask</text>
+    <text x="286" y="24" text-anchor="end">separate instances</text>
+  </g>
+
+  <!-- ===== two organelles that the mask cannot tell apart ===== -->
+  <rect x="14" y="32" width="120" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <path d="M58 40 C66 40, 70 44, 74 47 C78 44, 82 40, 90 40 C100 40, 106 47, 106 55
+           C106 63, 100 70, 90 70 C82 70, 78 66, 74 63 C70 66, 66 70, 58 70
+           C48 70, 42 63, 42 55 C42 47, 48 40, 58 40 Z"
+        fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4"/>
+  <rect x="40" y="78" width="68" height="13" rx="6.5" fill="var(--saffron-soft)"
+        stroke="var(--saffron)" stroke-width="1.4"/>
+
+  <path d="M140 64h10 M146 60.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== after the split ===== -->
+  <rect x="160" y="32" width="126" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
+    <circle cx="205" cy="55" r="16"/><circle cx="241" cy="55" r="16"/>
+  </g>
+  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4">
+    <rect x="168" y="78" width="52" height="13" rx="6.5"/>
+    <rect x="226" y="78" width="52" height="13" rx="6.5"/>
+  </g>
+
+  <line x1="14" y1="104" x2="286" y2="104" stroke="var(--rule)" stroke-width="1"/>
+
+  <!-- ===== the raw grey values decide where the cut goes ===== -->
+  <text x="14" y="120" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">raw intensity decides the split</text>
+  <text x="14" y="138" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">intensity</text>
+
+  <line x1="62" y1="164" x2="282" y2="164" stroke="var(--rule)" stroke-width="1"/>
+  <path d="M66 160 C80 160, 88 130, 106 130 C124 130, 130 152, 148 152 C166 152, 174 130, 192 130
+           C210 130, 218 160, 232 160 C252 160, 262 161, 280 161"
+        fill="none" stroke="var(--ink-3)" stroke-width="1.5"/>
+  <line x1="148" y1="124" x2="148" y2="170" stroke="var(--teal)" stroke-width="1.3"
+        stroke-dasharray="3 3"/>
+  <text x="148" y="180" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--teal)">split</text>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-4)">
+    <text x="14" y="180">sphere-like and columnar</text>
+    <text x="286" y="180" text-anchor="end">improves on watershed</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt" data-pub-year="2022">
+  <div class="pub-main">
     <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0265567" target="_blank" rel="noopener">Auto-segmentation and time-dependent systematic analysis of mesoscale cellular structure in β-cells during insulin secretion</a></p>
     <p class="pub-a">Li, A., Zhang, X., Singla, J., White, K. L., Loconte, V., Hu, C., et al.</p>
     <p class="pub-v"><em>PLOS ONE</em>, 17(3), e0265567</p>
@@ -1568,66 +1695,6 @@
   </g>
   <text x="132" y="182" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
         fill="var(--ink-4)">distance from cell centre</text>
-</svg></figure>
-</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="sxt" data-pub-year="2022">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" target="_blank" rel="noopener">An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms</a></p>
-    <p class="pub-a">Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L.</p>
-    <p class="pub-v"><em>PLOS ONE</em>, 17(9), e0269887</p>
-    
-    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">Soft X-ray tomography</span><button class="cite" type="button" data-cite="Li, A., Zhang, S., Loconte, V., Liu, Y., Ekman, A., Thompson, G. J., Sali, A., Stevens, R. C., White, K., Singla, J., &amp; Sun, L. (2022). An intensity-based post-processing tool for 3D instance segmentation of organelles in soft X-ray tomograms. PLOS ONE, 17(9), e0269887. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269887" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> A semantic mask says which voxels are mitochondrion and which are insulin vesicle; it does not say where one organelle ends and the next begins. This post-processing tool separates touching instances from the raw tomogram's intensity together with the mask and the organelle's own morphology, handling sphere-like vesicles and columnar mitochondria alike — more accurately, on synthetic and β-cell data, than connected-region labelling or watershed.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: organelles fused into a single mask are split into separate instances using the intensity dip between them in the raw tomogram" xmlns="http://www.w3.org/2000/svg">
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="var(--ink-4)">
-    <text x="14" y="24">one merged mask</text>
-    <text x="286" y="24" text-anchor="end">separate instances</text>
-  </g>
-
-  <!-- ===== two organelles that the mask cannot tell apart ===== -->
-  <rect x="14" y="32" width="120" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <path d="M58 40 C66 40, 70 44, 74 47 C78 44, 82 40, 90 40 C100 40, 106 47, 106 55
-           C106 63, 100 70, 90 70 C82 70, 78 66, 74 63 C70 66, 66 70, 58 70
-           C48 70, 42 63, 42 55 C42 47, 48 40, 58 40 Z"
-        fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4"/>
-  <rect x="40" y="78" width="68" height="13" rx="6.5" fill="var(--saffron-soft)"
-        stroke="var(--saffron)" stroke-width="1.4"/>
-
-  <path d="M140 64h10 M146 60.5l3.5 3.5-3.5 3.5" fill="none" stroke="var(--ink-4)"
-        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- ===== after the split ===== -->
-  <rect x="160" y="32" width="126" height="64" rx="4" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.4">
-    <circle cx="205" cy="55" r="16"/><circle cx="241" cy="55" r="16"/>
-  </g>
-  <g fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.4">
-    <rect x="168" y="78" width="52" height="13" rx="6.5"/>
-    <rect x="226" y="78" width="52" height="13" rx="6.5"/>
-  </g>
-
-  <line x1="14" y1="104" x2="286" y2="104" stroke="var(--rule)" stroke-width="1"/>
-
-  <!-- ===== the raw grey values decide where the cut goes ===== -->
-  <text x="14" y="120" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">raw intensity decides the split</text>
-  <text x="14" y="138" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
-        fill="var(--ink-4)">intensity</text>
-
-  <line x1="62" y1="164" x2="282" y2="164" stroke="var(--rule)" stroke-width="1"/>
-  <path d="M66 160 C80 160, 88 130, 106 130 C124 130, 130 152, 148 152 C166 152, 174 130, 192 130
-           C210 130, 218 160, 232 160 C252 160, 262 161, 280 161"
-        fill="none" stroke="var(--ink-3)" stroke-width="1.5"/>
-  <line x1="148" y1="124" x2="148" y2="170" stroke="var(--teal)" stroke-width="1.3"
-        stroke-dasharray="3 3"/>
-  <text x="148" y="180" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="7.5" fill="var(--teal)">split</text>
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" fill="var(--ink-4)">
-    <text x="14" y="180">sphere-like and columnar</text>
-    <text x="286" y="180" text-anchor="end">improves on watershed</text>
-  </g>
 </svg></figure>
 </article></div>
 </div><div class="pub-year" data-year-block>

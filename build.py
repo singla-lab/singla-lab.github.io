@@ -713,7 +713,6 @@ def pub_item(p, meta, full=True):
 def build_publications():
     d = load('publications')
     pubs = d['publications']
-    order = {'journal': 0, 'conference': 1, 'chapter': 2, 'preprint': 3, 'poster': 4}
 
     chips = ['<button class="chip" data-group="type" data-value="all" aria-pressed="true">All</button>']
     for key, label in d['types'].items():
@@ -728,7 +727,11 @@ def build_publications():
     years = sorted({p['year'] for p in pubs}, reverse=True)
     blocks = []
     for y in years:
-        group = sorted([p for p in pubs if p['year'] == y], key=lambda p: order.get(p['type'], 9))
+        # Order within a year is the order of the file, which is kept newest
+        # first. It used to be sorted by type, which read as arbitrary: the
+        # newest paper of a year could land fifth behind three older journal
+        # articles simply because it was a preprint.
+        group = [p for p in pubs if p['year'] == y]
         blocks.append("""<div class="pub-year" data-year-block>
   <div class="pub-year-n">{y}</div>
   <div>{items}</div>
