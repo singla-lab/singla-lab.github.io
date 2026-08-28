@@ -2,6 +2,14 @@
   "note": "Author lists are printed as given, with no name emphasised over the others.",
   "publications": [
     {
+      "year": 2026, "type": "preprint",
+      "authors": "Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., & Singla, J.",
+      "title": "Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling",
+      "venue": "bioRxiv",
+      "detail": "Submitted",
+      "topic": "ml"
+    },
+    {
       "year": 2026, "type": "conference",
       "authors": "Bathla, D., Singla, P., & Singla, J.",
       "title": "RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation",
