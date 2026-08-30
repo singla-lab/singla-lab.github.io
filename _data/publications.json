@@ -6,7 +6,8 @@
       "authors": "Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., & Singla, J.",
       "title": "Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling",
       "venue": "bioRxiv",
-      "detail": "Submitted",
+      "detail": "2026-08",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.27.747591v1",
       "topic": "ml",
       "graphic": "amp-tabpfn",
       "summary": "Antimicrobial peptides usually act on more than one class of pathogen, so the question worth asking of a candidate is which activities it has, not whether it is antimicrobial at all. The leading methods on the ESCAPE benchmark answer it with multimodal, structure-conditioned deep models. Pairing 330 interpretable sequence descriptors with TabPFN — a tabular foundation model that predicts in a single forward pass, with no gradient training and no hyperparameter search — beats them, reaching 77.8% five-label macro average precision against a previous best of 72.1%, with the largest gains on remote homologues. Predicted structure turns out to be unnecessary at inference, and ten global physicochemical scalars alone recover 91% of the full-feature performance."
