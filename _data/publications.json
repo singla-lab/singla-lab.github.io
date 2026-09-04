@@ -3,6 +3,17 @@
   "publications": [
     {
       "year": 2026, "type": "preprint",
+      "authors": "Sandra, K. P., Arun, E., Rathore, K., Gubyad, M., Ghosh, D. K., Sharma, A. K., & Singla, J.",
+      "title": "From genome to function: Identification and characterization of bifunctional pyrophosphate-fructose-6-phosphate 1-phosphotransferase from Candidatus Liberibacter asiaticus",
+      "venue": "bioRxiv",
+      "detail": "2026-09",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.04.04.647159v4",
+      "topic": "structbio",
+      "graphic": "clas",
+      "summary": "Candidatus Liberibacter asiaticus causes citrus greening, and long association with its host has left central carbon metabolism broken in two places — no phosphoglucose isomerase in glycolysis, no transaldolase in the pentose phosphate pathway. PFP is the enzyme that bridges them, and it turns out to do two jobs. Recombinant CLas PFP was expressed, purified and measured: it binds fructose 6-phosphate and sedoheptulose 7-phosphate with comparable affinity, Kₘ 66.6 and 57.5 µM, which confirms the second reaction and with it the sedoheptulose bisphosphate route. The protein loses conformational stability above 50 °C and at pH 11."
+    },
+    {
+      "year": 2026, "type": "preprint",
       "authors": "Kumar, R., Pal, A., Solanki, D., Pareek, P., Singh, J., & Singla, J.",
       "title": "Coarse composition suffices: tabular in-context learning for multi-activity antimicrobial peptide profiling",
       "venue": "bioRxiv",
@@ -107,17 +118,6 @@
       "topic": "ml",
       "graphic": "dsem",
       "summary": "A single intrusion detector carries its own bias and variance into every decision, and on traffic at internet scale that shows up as false alarms and missed attacks. DSEM-NIDS stacks several different base models under a nested meta-learner that learns how to combine them, rather than averaging or voting. It is evaluated across four datasets — 5G-NIDD, UNR-IDD, N-BaIoT and NSL-KDD — spanning 5G, enterprise, IoT and classical traffic."
-    },
-    {
-      "year": 2025, "type": "preprint",
-      "authors": "KP, S., Sharma, A. K., & Singla, J.",
-      "title": "In silico characterization of pyrophosphate-fructose 6-phosphate 1-phosphotransferase reveals dual catalytic role in restoring central carbon metabolism in CLas",
-      "venue": "bioRxiv",
-      "detail": "2025-04",
-      "link": "https://www.biorxiv.org/content/10.1101/2025.04.04.647159v2",
-      "topic": "structbio",
-      "graphic": "clas",
-      "summary": "Candidatus Liberibacter asiaticus causes citrus greening, and its long association with the host has cost it essential metabolic genes — including transaldolase, whose loss breaks the pentose phosphate pathway and is part of why the bacterium resists culture in a host-free environment. Sequence analysis, structure prediction and molecular dynamics here suggest PFP can bypass that loss: it binds both fructose 6-phosphate and sedoheptulose 7-phosphate, and together with fructose bisphosphate aldolase it reconstructs the disrupted route."
     },
     {
       "year": 2025, "type": "journal",
