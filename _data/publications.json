@@ -3,6 +3,16 @@
   "publications": [
     {
       "year": 2026, "type": "preprint",
+      "authors": "Gupta, S., & Singla, J.",
+      "title": "Cross-Model Agreement as a Deployment-Time Reliability Signal for Automatic Polyp Segmentation",
+      "venue": "arXiv preprint",
+      "detail": "arXiv:2609.10495",
+      "link": "https://arxiv.org/abs/2609.10495",
+      "topic": "health",
+      "summary": "In real-time colonoscopy there is no ground truth at inference, so a segmentation model that fails does so silently. RBQE scores a prediction by how far a second, independently trained referee agrees with it on the same image, needing no reference mask. Independent training alone turns out to be enough: a referee identical in architecture and differing only in random initialisation reaches ROC-AUC 0.923, while a cross-architecture SegFormer-B0 referee reaches 0.960 and beats test-time augmentation by 0.055 under the same protocol. Rejecting the low-agreement cases raises the mean Dice of what is kept, at the cost of one extra forward pass."
+    },
+    {
+      "year": 2026, "type": "preprint",
       "authors": "Sandra, K. P., Arun, E., Rathore, K., Gubyad, M., Ghosh, D. K., Sharma, A. K., & Singla, J.",
       "title": "From genome to function: Identification and characterization of bifunctional pyrophosphate-fructose-6-phosphate 1-phosphotransferase from Candidatus Liberibacter asiaticus",
       "venue": "bioRxiv",
