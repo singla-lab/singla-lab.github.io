@@ -1,0 +1,68 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: the first of more than ten haloacid dehalogenase superfamily proteins in the Staphylococcus lugdunensis genome to be characterised, solved at 1.7 angstrom as a homodimer, a metal-dependent acid phosphatase that strips phosphate from intermediates of four pathways and is tentatively assigned to thiamine metabolism" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="16">S. lugdunensis HAD proteins</text>
+    <text x="286" y="16" text-anchor="end">one characterised</text>
+  </g>
+
+  <!-- ===== ten in the genome, none of them known until this one ===== -->
+  <g>
+    <rect x="14" y="24" width="14" height="14" rx="3" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.2"/>
+    <rect x="32" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="50" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="68" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="86" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="104" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="122" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="140" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="158" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+    <rect x="176" y="24" width="14" height="14" rx="3" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+  </g>
+  <text x="196" y="35" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--ink-4)">and more</text>
+  <text x="14" y="50" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--teal)">SLHAD1</text>
+
+  <!-- ===== the structure: a homodimer, minus a tail it removes itself ===== -->
+  <g>
+    <ellipse cx="48" cy="84" rx="20" ry="15" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.2"/>
+    <ellipse cx="76" cy="84" rx="20" ry="15" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.2"/>
+  </g>
+  <text x="62" y="87" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--indigo)">homodimer</text>
+  <text x="62" y="110" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--ink-3)">1.7 &#8491;</text>
+  <g stroke="var(--saffron)" stroke-width="1.3" stroke-linecap="round">
+    <path d="M96 96l8 6"/>
+  </g>
+  <text x="107" y="106" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5"
+        fill="var(--saffron)">self-cleaves, 49 residues</text>
+
+  <!-- ===== what it does: takes the phosphate off, across four pathways ===== -->
+  <circle cx="152" cy="70" r="8" fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-width="1.2"/>
+  <text x="152" y="73" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="7.5" fill="var(--saffron)">P</text>
+  <path d="M164 70h12 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="152" y="88" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="6.5" fill="var(--ink-4)">removed</text>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7">
+    <rect x="182" y="40" width="104" height="14" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="234" y="50" text-anchor="middle" fill="var(--ink-3)">glycolysis</text>
+    <rect x="182" y="58" width="104" height="14" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="234" y="68" text-anchor="middle" fill="var(--ink-3)">gluconeogenesis</text>
+    <rect x="182" y="76" width="104" height="14" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
+    <text x="234" y="86" text-anchor="middle" fill="var(--ink-3)">nucleotides</text>
+    <rect x="182" y="94" width="104" height="14" rx="5" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".6" stroke-width="1.2"/>
+    <text x="234" y="104" text-anchor="middle" fill="var(--teal)">thiamine</text>
+  </g>
+  <text x="228" y="120" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="6.2" fill="var(--teal)">the likely physiological one</text>
+
+  <line x1="14" y1="136" x2="286" y2="136" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="154" font-size="8.5" fill="var(--ink-3)">a metal-dependent acid phosphatase</text>
+    <text x="14" y="172" font-size="8" fill="var(--ink-4)">first of its superfamily here to be named</text>
+  </g>
+</svg>

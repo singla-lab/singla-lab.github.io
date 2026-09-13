@@ -1,0 +1,67 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a library of 112 single mutations in the complementarity-determining regions narrows through docking, molecular dynamics and calorimetry to six that bind better, and the neutralisation curve of the best, Leu106Thr, shifts from an IC50 of 0.77 to 0.03 micromolar" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="16">112 single CDR mutations</text>
+    <text x="286" y="16" text-anchor="end">six that bind better</text>
+  </g>
+
+  <!-- ===== the screen, as four stages that each throw most of it away ===== -->
+  <g>
+    <rect x="14" y="26" width="60" height="22" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1.1"/>
+    <rect x="84" y="29" width="48" height="16" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1.1"/>
+    <rect x="142" y="31" width="36" height="12" rx="4" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".5" stroke-width="1.1"/>
+    <rect x="188" y="32" width="28" height="10" rx="4" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".6" stroke-width="1.1"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" text-anchor="middle">
+    <text x="44" y="41" fill="var(--indigo)">112</text>
+    <text x="108" y="41" fill="var(--indigo)">32</text>
+    <text x="160" y="40" fill="var(--teal)">9</text>
+    <text x="202" y="40" fill="var(--teal)">6</text>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" fill="var(--ink-4)" text-anchor="middle">
+    <text x="44" y="58">library</text>
+    <text x="108" y="58">docking</text>
+    <text x="160" y="58">MD</text>
+    <text x="202" y="58">ITC</text>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M76 37h6 m-2-2 2 2-2 2"/>
+    <path d="M134 37h6 m-2-2 2 2-2 2"/>
+    <path d="M180 37h6 m-2-2 2 2-2 2"/>
+  </g>
+  <rect x="228" y="26" width="58" height="22" rx="6" fill="none" stroke="var(--saffron)" stroke-width="1.3"/>
+  <text x="257" y="40" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="8.5" fill="var(--saffron)">L106T</text>
+
+  <!-- ===== and what that does to the virus: the curve moves left ===== -->
+  <text x="14" y="76" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
+        fill="var(--ink-4)">pseudovirus neutralisation</text>
+
+  <line x1="40" y1="134" x2="272" y2="134" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+  <line x1="40" y1="134" x2="40" y2="84" stroke="var(--ink-4)" stroke-opacity=".4" stroke-width="1"/>
+
+  <path d="M46 130 C74 130, 92 120, 104 106 C116 92, 130 88, 160 87" fill="none"
+        stroke="var(--saffron)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M120 130 C160 130, 186 120, 200 106 C214 92, 232 88, 266 87" fill="none"
+        stroke="var(--ink-4)" stroke-opacity=".65" stroke-width="1.5" stroke-linecap="round"
+        stroke-dasharray="4 3"/>
+
+  <g stroke-width="1" stroke-dasharray="2 2">
+    <line x1="104" y1="134" x2="104" y2="106" stroke="var(--saffron)" stroke-opacity=".7"/>
+    <line x1="200" y1="134" x2="200" y2="106" stroke="var(--ink-4)" stroke-opacity=".5"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" text-anchor="middle">
+    <text x="104" y="145" fill="var(--saffron)">0.03 &#181;M</text>
+    <text x="200" y="145" fill="var(--ink-4)">0.77 &#181;M</text>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5">
+    <text x="166" y="85" fill="var(--saffron)">L106T</text>
+    <text x="248" y="99" fill="var(--ink-4)">native</text>
+  </g>
+
+  <line x1="14" y1="154" x2="286" y2="154" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="169" font-size="8.5" fill="var(--ink-3)">one residue, twenty-five-fold</text>
+    <text x="14" y="183" font-size="8" fill="var(--ink-4)">screened in silico, confirmed in vitro</text>
+  </g>
+</svg>

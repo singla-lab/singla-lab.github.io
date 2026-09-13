@@ -1,0 +1,63 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: nearly two thousand mutations across the complementarity-determining regions of three nanobodies are narrowed by docking and molecular dynamics to seventeen candidates, and calorimetry confirms binding to the Omicron receptor-binding domain improving from 32 to 8.8 micromolar" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="16">nanobodies raised on Wuhan RBD</text>
+    <text x="286" y="16" text-anchor="end">re-pointed at Omicron</text>
+  </g>
+
+  <!-- ===== the three that were rebuilt, and how many ways each was tried ===== -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5">
+    <text x="14" y="34" fill="var(--ink-3)">H11-H4</text>
+    <text x="14" y="49" fill="var(--ink-3)">C5</text>
+    <text x="14" y="64" fill="var(--ink-3)">H3</text>
+  </g>
+  <g>
+    <rect x="60" y="27" width="74" height="9" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1"/>
+    <rect x="60" y="42" width="55" height="9" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1"/>
+    <rect x="60" y="57" width="68" height="9" rx="2" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".45" stroke-width="1"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-4)">
+    <text x="139" y="34">741</text>
+    <text x="120" y="49">551</text>
+    <text x="133" y="64">684</text>
+  </g>
+  <text x="14" y="79" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
+        fill="var(--ink-4)">CDR mutations tried in silico</text>
+
+  <!-- ===== the funnel: docking, then dynamics, then the bench ===== -->
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M170 46h10 m-3-3 3 3-3 3"/>
+    <path d="M232 46h10 m-3-3 3 3-3 3"/>
+  </g>
+  <rect x="186" y="26" width="44" height="40" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" text-anchor="middle" fill="var(--ink-3)">
+    <text x="208" y="41">docking</text>
+    <text x="208" y="55">MD</text>
+  </g>
+  <rect x="248" y="34" width="38" height="24" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
+        stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="267" y="46" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="9" fill="var(--teal)">17</text>
+  <text x="267" y="55" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="6.5" fill="var(--teal)">shortlist</text>
+
+  <!-- ===== measured, not predicted: dissociation constants by calorimetry ===== -->
+  <text x="14" y="100" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
+        fill="var(--ink-4)">K&#7500; against Omicron RBD, by ITC</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-3)">
+    <text x="14" y="116">native</text>
+    <text x="14" y="134">best mutant</text>
+  </g>
+  <rect x="84" y="109" width="176" height="10" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".45" stroke-width="1"/>
+  <rect x="84" y="127" width="48" height="10" rx="2" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7">
+    <text x="265" y="117" fill="var(--ink-4)">32 &#181;M</text>
+    <text x="138" y="135" fill="var(--teal)">8.8 &#181;M</text>
+  </g>
+
+  <line x1="14" y1="148" x2="286" y2="148" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="164" font-size="8.5" fill="var(--ink-3)">a threefold gain, five mutations</text>
+    <text x="14" y="180" font-size="8" fill="var(--ink-4)">repurposing beats raising a new one</text>
+  </g>
+</svg>

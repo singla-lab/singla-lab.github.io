@@ -9,6 +9,7 @@
       "detail": "arXiv:2609.10495",
       "link": "https://arxiv.org/abs/2609.10495",
       "topic": "health",
+      "graphic": "rbqe",
       "summary": "In real-time colonoscopy there is no ground truth at inference, so a segmentation model that fails does so silently. RBQE scores a prediction by how far a second, independently trained referee agrees with it on the same image, needing no reference mask. Independent training alone turns out to be enough: a referee identical in architecture and differing only in random initialisation reaches ROC-AUC 0.923, while a cross-architecture SegFormer-B0 referee reaches 0.960 and beats test-time augmentation by 0.055 under the same protocol. Rejecting the low-agreement cases raises the mean Dice of what is kept, at the cost of one extra forward pass."
     },
     {
@@ -71,7 +72,9 @@
       "venue": "arXiv preprint",
       "detail": "arXiv:2603.17248",
       "link": "https://arxiv.org/abs/2603.17248",
-      "topic": "health"
+      "topic": "health",
+      "graphic": "ecg",
+      "summary": "Reconstructing a full 12-lead ECG from a handful of leads is ill-posed: anatomy differs from patient to patient, so a model fitted to one person's geometry does not transfer to the next. Methods that ignore the underlying pathology lose exactly the morphology the precordial leads are read for. This regularises the latent space against a pathological manifold instead, aligning waveform features with clinical labels by supervised contrastive learning so that anatomy is treated as the nuisance variable it is. On PTB-XL the patient-independent RMSE falls by about 76% against the previous best, and the gain holds on the PTB Diagnostic Database."
     },
     {
       "year": 2026, "type": "preprint",
@@ -158,7 +161,9 @@
       "venue": "International Journal of Biological Macromolecules",
       "detail": "290, 138751",
       "link": "https://www.sciencedirect.com/science/article/pii/S014181302409562X",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "cdr-omicron",
+      "summary": "Nanobodies raised against the original Wuhan RBD bind the Omicron RBD poorly, and raising a new one for every variant is slow. Three of them — H11-H4, C5 and H3 — are rebuilt instead: close to two thousand mutations across their complementarity-determining regions, screened by protein-protein docking and then tested for complex stability under molecular dynamics, leaving seventeen candidates. Those were expressed and measured by isothermal titration calorimetry, and five H11-H4 mutants bind Omicron RBD at Kᴅ 8.8–27 µM against the parent's 32 µM. The pipeline is the result: repurposing an existing nanobody is cheaper than finding a new one."
     },
     {
       "year": 2024, "type": "journal",
@@ -167,7 +172,9 @@
       "venue": "Biochemical and Biophysical Research Communications",
       "detail": "734, 150746",
       "link": "https://www.sciencedirect.com/science/article/pii/S0006291X24012828",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "nanobody",
+      "summary": "The same question approached from a single structure rather than a whole library: 112 structure-guided single mutations across the CDRs, docked against the spike RBD, narrowed to 32, then to nine under molecular dynamics, then to six that calorimetry confirms bind more tightly than the native nanobody. The one that matters is Leu106Thr, which neutralises SARS-CoV-2 pseudovirus at IC₅₀ 0.03 µM where the parent needs 0.77 µM — roughly twenty-five-fold, from one residue."
     },
     {
       "year": 2024, "type": "journal",
@@ -187,7 +194,9 @@
       "venue": "Archives of Biochemistry and Biophysics",
       "detail": "753, 109888",
       "link": "https://www.sciencedirect.com/science/article/pii/S0003986124000079",
-      "topic": "structbio"
+      "topic": "structbio",
+      "graphic": "slhad1",
+      "summary": "Staphylococcus lugdunensis carries more than ten haloacid dehalogenase superfamily proteins in its genome and, before this, not one of them had been characterised. SLHAD1 turns out to be a metal-dependent acid phosphatase that strips phosphate from intermediates of glycolysis, gluconeogenesis, nucleotide and thiamine metabolism; the substrate preferences and the genomic context together point to thiamine metabolism as its physiological job. The crystal structure was solved at 1.7 Å with a homodimer in the asymmetric unit — of a form missing 49 C-terminal residues, because the protein cleaves itself at one specific point over time."
     },
     {
       "year": 2024, "type": "chapter",
@@ -295,7 +304,9 @@
       "venue": "Current Opinion in Systems Biology",
       "detail": "26, 33–38",
       "link": "https://www.sciencedirect.com/science/article/pii/S2452310021000111",
-      "topic": "vdl"
+      "topic": "vdl",
+      "graphic": "wholecell",
+      "summary": "A model of a whole cell has to hold everything at once — structure across scales, metabolic networks, protein signalling — which puts it beyond any one discipline and any one group. This review takes stock of where the field has reached and argues that the binding constraint is not the modelling but the data: the inputs such a model needs have to be organised, annotated and archived before they can be used at all, and that is work no single lab can do. The case it makes is for community standards, drawing on earlier efforts that solved the same problem by agreeing on them."
     },
     {
       "year": 2021, "type": "journal",
@@ -363,7 +374,9 @@
       "venue": "Molecular BioSystems",
       "detail": "12(3), 963–972",
       "link": "https://pubs.rsc.org/en/content/articlelanding/2016/MB/C5MB00655D#!divAbstract",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "cna",
+      "summary": "Copy-number alterations account for most of the expression variation between breast tumours, but the genes they move are not all next to the alteration — some are affected from across the genome. This integrates copy-number and expression profiles in one network to separate the two, and the genes it picks out reconstruct all ten METABRIC subtypes, each driven by its own set. Alongside known drivers such as CCND1, ERBB2 and MDM2 it recovers BRF2 and SF3B3; knocking BRF2 down costs ER-/HER2+ cells their viability and leaves normal breast cells alone, which makes it a candidate target rather than a correlate."
     },
     {
       "year": 2015, "type": "journal",
@@ -372,7 +385,9 @@
       "venue": "Biology Direct",
       "detail": "10(1), 1–18",
       "link": "https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0086-1",
-      "topic": "ml"
+      "topic": "ml",
+      "graphic": "synleth",
+      "summary": "Synthetic lethality is a good therapeutic idea with a poor record in prediction: most candidate pairs come from screens in model organisms and either fail in human cells or involve genes human tumours never alter. This infers the pairs from the tumours directly, on the argument that two genes almost never altered in the same tumour are the pair a cell cannot afford to lose at once. Across 3,980 breast, prostate, ovarian and uterine samples from TCGA it finds 718 genes likely to be synthetic lethal with six DNA-damage response genes, and those genes land in the top quartile of essentiality in ten DDR-deficient cell lines — TLK2 among them."
     },
 
     {
