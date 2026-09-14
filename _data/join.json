@@ -11,7 +11,7 @@
       "title": "Prospective PhD &amp; research students",
       "status": "open",
       "status_label": "Applications welcome",
-      "body": "Write to the lab with the subject line below. Include your research interests, a CV, and any relevant documents — and please look through the research and publications pages before you write, so we can have a substantive first exchange.",
+      "body": "The lab looks for a genuine working command of linear algebra and machine learning — concepts you can reason from and build with, not a stack of certificates and completed online courses. If that describes you, write with the subject line below. Include your research interests, a CV, and any relevant documents — and please look through the research and publications pages before you write, so we can have a substantive first exchange.",
       "subject": "Prospective Doctoral/Research Student Application — [Your Name]",
       "cta": "Email the lab"
     },
@@ -28,7 +28,7 @@
       "title": "External internships",
       "status": "closed",
       "status_label": "Closed through Summer 2027",
-      "body": "The lab is not taking external interns for the Winter 2026 or Summer 2027 cycles. This page is updated when that changes — please check back rather than writing to ask."
+      "body": "The lab is <strong>not</strong> taking external interns for the <strong>Winter 2026</strong> or <strong>Summer 2027</strong> cycles. This page is updated when that changes — please check back rather than writing to ask."
     }
   ]
 }
