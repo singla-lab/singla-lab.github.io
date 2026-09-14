@@ -951,14 +951,20 @@ def build_teaching():
                  note='<span class="crs-group-n{0}">{1}</span>'.format(
                      ' crs-group-now' if now else '', a(note)) if note else '')
 
-    groups = []
+    # each animated card art is handed its own starting point in its cycle, so
+    # two copies of the same drawing on one page never move in lockstep. The
+    # thumb carries it as a custom property because those inherit and
+    # animation-delay does not -- the class itself stays reusable elsewhere.
+    groups, art_i = [], 0
     for term in order:
         cards = []
         running = False
         for c in by_term[term]:
             running = running or bool(c.get('current'))
+            delay = round(2.9 * art_i + 1.3, 1)
+            art_i += 1
             cards.append("""<a class="crs-card" href="{href}">
-  <span class="crs-thumb" aria-hidden="true">{art}</span>
+  <span class="crs-thumb" style="--art-delay:-{delay}s" aria-hidden="true">{art}</span>
   <span class="crs-card-in">
     <span class="crs-code">{code}</span>
     <span class="crs-card-n">{name}</span>
@@ -966,10 +972,10 @@ def build_teaching():
     <span class="crs-card-b">{blurb}</span>
   </span>
 </a>""".format(href=course_slug(c), code=a(c['code']), name=a(c['name']),
-               art=svg('crs-' + c.get('art', 'ml')),
+               art=svg('crs-' + c.get('art', 'ml')), delay=delay,
                state='Running now' if c.get('current') else 'Completed',
                blurb=a(c['blurb'])))
-        groups.append(card_group(term, 'in progress' if running else 'completed', cards, now=running))
+        groups.append(card_group(term, 'ongoing' if running else 'completed', cards, now=running))
 
     groups.append(card_group('Any time', 'no enrolment, no deadline', ["""<a class="crs-card crs-card-alt" href="self-learning.html">
   <span class="crs-thumb" aria-hidden="true">{art}</span>
@@ -986,8 +992,8 @@ def build_teaching():
     stmt = ''
     if d.get('statement'):
         stmt = ('<p class="lede serif-em measure rv" style="color:var(--ink);'
-                'border-left:3px solid var(--saffron);padding-left:1.2rem;'
-                'margin-bottom:2.4rem">{0}</p>').format(a(d['statement']))
+                'font-weight:600;border-left:3px solid var(--saffron);'
+                'padding-left:1.2rem;margin-bottom:2.4rem">{0}</p>').format(a(d['statement']))
 
     body = page_head('Teaching', 'Courses', extra=verse(d.get('sanskrit')),
                      title_hidden=True) + """

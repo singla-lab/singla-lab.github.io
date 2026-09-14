@@ -1246,10 +1246,27 @@ a.course-link:hover .course-go, a.course-link:focus-visible .course-go { opacity
 @keyframes pulseO { 0%,100% { opacity:.35; } 50% { opacity:.9; } }
 .sweep { animation: sweep 7s var(--ease) infinite; }
 @keyframes sweep { 0% { transform: translateY(-6%); opacity:0; } 12% { opacity:.85; } 88% { opacity:.85; } 100% { transform: translateY(106%); opacity:0; } }
-.dash-run { stroke-dasharray: 5 7; animation: dashrun 3.4s linear infinite; }
+.dash-run { stroke-dasharray: 5 7; animation: dashrun 3.4s linear infinite; animation-delay: var(--art-delay, 0s); }
 @keyframes dashrun { to { stroke-dashoffset: -48; } }
 .trace { stroke-dasharray: 340; stroke-dashoffset: 340; animation: trace 5.5s var(--ease) infinite; }
 @keyframes trace { 0% { stroke-dashoffset: 340; } 45%,70% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -340; } }
+
+/* the ML card's decision boundary looking for where it belongs. Each keyframe is
+   one step and the easing lands on it, so the motion reads as iterations rather
+   than a drift; the overshoot halves each time and the line settles on the fit
+   it holds in the static drawing. Rotation is about that final line's midpoint,
+   in SVG user units. */
+.fit-search { transform-origin: 135px 95px; animation: fitSearch 9s var(--ease) infinite; animation-delay: var(--art-delay, 0s); }
+@keyframes fitSearch {
+  0%       { transform: rotate(34deg);   opacity: 0; }
+  5%       { transform: rotate(34deg);   opacity: 1; }
+  20%      { transform: rotate(-19deg); }
+  35%      { transform: rotate(11deg); }
+  48%      { transform: rotate(-5.5deg); }
+  60%      { transform: rotate(2.5deg); }
+  70%, 92% { transform: rotate(0deg);    opacity: 1; }
+  100%     { transform: rotate(0deg);    opacity: 0; }
+}
 
 /* hero scanning beam — px here are SVG user units (transform-box: view-box is the SVG default) */
 .hero-scan { animation: heroScan 8.5s cubic-bezier(.45,0,.55,1) infinite; }

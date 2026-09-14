@@ -5,9 +5,11 @@
     <path d="M64 0v180M128 0v180M192 0v180M256 0v180"/>
   </g>
 
-  <!-- the margin, then the boundary itself -->
-  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-4)" stroke-opacity=".16" stroke-width="22"/>
-  <path d="M30 165 L240 25" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <!-- the margin and the boundary, hunting for a position and settling on one -->
+  <g class="fit-search">
+    <path d="M30 165 L240 25" fill="none" stroke="var(--ink-4)" stroke-opacity=".16" stroke-width="22"/>
+    <path d="M30 165 L240 25" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="6 5"/>
+  </g>
 
   <!-- class one: inside the boundary -->
   <g fill="var(--indigo)" fill-opacity=".8">
