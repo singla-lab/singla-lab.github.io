@@ -290,16 +290,22 @@ def write(slug, content):
 # shared fragments
 # --------------------------------------------------------------------------
 
-def page_head(eyebrow, title, lede=None, extra=''):
-    """eyebrow may be None, for a page whose title says everything by itself."""
+def page_head(eyebrow, title, lede=None, extra='', title_hidden=False):
+    """eyebrow may be None, for a page whose title says everything by itself.
+
+    title_hidden keeps the h1 in the document outline -- the page still has one
+    heading for a screen reader and for search -- while taking it off the
+    screen, for a page that would rather open on something than on its own
+    name."""
     return """<section class="section-tight dotgrid">
   <div class="wrap">
     {eb}
-    <h1 class="h1 measure">{t}</h1>
+    <h1 class="{cls}">{t}</h1>
     {lede}
     {extra}
   </div>
 </section>""".format(eb='<p class="eyebrow">{0}</p>'.format(a(eyebrow)) if eyebrow else '',
+                     cls='vh' if title_hidden else 'h1 measure',
                      t=a(title),
                      lede='<p class="lede measure" style="margin-top:1.1rem">{0}</p>'.format(a(lede)) if lede else '',
                      extra=extra)
@@ -975,11 +981,19 @@ def build_teaching():
   </span>
 </a>""".format(art=svg('crs-self'))]))
 
-    # the verse opens the page, the way it opens each course page
-    body = page_head('Teaching', 'Courses', d['intro'],
-                     extra=verse(d.get('sanskrit'))) + """
+    # the verse opens the page -- no title, no standing intro line, the way a
+    # course page opens on its own verse
+    stmt = ''
+    if d.get('statement'):
+        stmt = ('<p class="lede serif-em measure rv" style="color:var(--ink);'
+                'border-left:3px solid var(--saffron);padding-left:1.2rem;'
+                'margin-bottom:2.4rem">{0}</p>').format(a(d['statement']))
+
+    body = page_head('Teaching', 'Courses', extra=verse(d.get('sanskrit')),
+                     title_hidden=True) + """
 <section class="section-tight">
   <div class="wrap">
+    {statement}
     <p class="eyebrow rv">Course pages</p>
     {groups}
   </div>
@@ -990,7 +1004,7 @@ def build_teaching():
     <p class="eyebrow rv">Everything taught, term by term</p>
     <div style="margin-top:1.2rem">{terms}</div>
   </div>
-</section>""".format(groups=''.join(groups), terms=''.join(terms))
+</section>""".format(statement=stmt, groups=''.join(groups), terms=''.join(terms))
 
     return write('teaching.html', page('teaching.html', 'Teaching',
                                        'Courses taught by Jitin Singla at IIT Roorkee in machine learning, deep learning, algorithms and computational biology.', body))
