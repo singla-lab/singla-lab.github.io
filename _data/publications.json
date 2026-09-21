@@ -2,6 +2,15 @@
   "note": "Author lists are printed as given, with no name emphasised over the others.",
   "publications": [
     {
+      "year": 2026, "type": "conference",
+      "authors": "Singla, J., Pareek, P., Jawanpuria, P., & Singla, P.",
+      "title": "Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback",
+      "venue": "Submitted to ICLR 2027",
+      "topic": "ml",
+      "graphic": "optiscribe",
+      "summary": "Benchmarking a solver needs instances that are both feasible and genuinely hard, and neither existing route supplies them: classical generators need seed instances or parameter tuning, LLM generators carry no measure of hardness at all, and reinforcement learning against a verifier scores only whether the answer is correct. The observation here is that a solver already reports what the search cost it, so branch-and-bound node counts and post-cut relaxation gaps can serve as the reward alongside feasibility. OptiScribe-12B is a GRPO-tuned Gemma-4-12B trained that way in challenger-solver self-play, with no seed MILP data at all: it writes instances from natural-language instructions that raise SCIP's median search nodes 1.7–5× over the base model, stay hard for HiGHS and Gurobi, and lift the feasibility rate by 9 to 19 points."
+    },
+    {
       "year": 2026, "type": "preprint",
       "authors": "Gupta, S., & Singla, J.",
       "title": "Cross-Model Agreement as a Deployment-Time Reliability Signal for Automatic Polyp Segmentation",
