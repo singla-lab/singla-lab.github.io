@@ -420,7 +420,11 @@ def build_home():
     # the teaser is five one-line entries; a graphical abstract in the middle of
     # it would tip the whole block over, so the drawn summaries stay on the
     # publications page where there is room for them
-    recent = [p for p in pubs['publications'] if p['type'] != 'poster'][:5]
+    # Work still under review is left off the home page: the front of the site
+    # should say what the lab has, not what it has sent out. It is still listed
+    # in full on the publications page, as a preprint.
+    recent = [p for p in pubs['publications']
+              if p['type'] != 'poster' and not p.get('submitted')][:5]
     pubhtml = ''.join(pub_item(p, pubs, full=False) for p in recent)
 
     newshtml = ''.join("""<div class="tl-item">
@@ -719,6 +723,14 @@ def pub_item(p, meta, full=True):
 def build_publications():
     d = load('publications')
     pubs = d['publications']
+
+    # A venue that says "Submitted to" and a missing submitted flag would put an
+    # unaccepted manuscript back on the home page, quietly. Hold the two together.
+    for q in pubs:
+        under_review = q['venue'].lower().startswith('submitted')
+        assert bool(q.get('submitted')) == under_review, q['title']
+        if under_review:
+            assert q['type'] == 'preprint', q['title']
 
     chips = ['<button class="chip" data-group="type" data-value="all" aria-pressed="true">All</button>']
     for key, label in d['types'].items():

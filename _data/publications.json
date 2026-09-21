@@ -2,10 +2,11 @@
   "note": "Author lists are printed as given, with no name emphasised over the others.",
   "publications": [
     {
-      "year": 2026, "type": "conference",
+      "year": 2026, "type": "preprint",
       "authors": "Singla, J., Pareek, P., Jawanpuria, P., & Singla, P.",
       "title": "Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback",
       "venue": "Submitted to ICLR 2027",
+      "submitted": true,
       "topic": "ml",
       "graphic": "optiscribe",
       "summary": "Benchmarking a solver needs instances that are both feasible and genuinely hard, and neither existing route supplies them: classical generators need seed instances or parameter tuning, LLM generators carry no measure of hardness at all, and reinforcement learning against a verifier scores only whether the answer is correct. The observation here is that a solver already reports what the search cost it, so branch-and-bound node counts and post-cut relaxation gaps can serve as the reward alongside feasibility. OptiScribe-12B is a GRPO-tuned Gemma-4-12B trained that way in challenger-solver self-play, with no seed MILP data at all: it writes instances from natural-language instructions that raise SCIP's median search nodes 1.7–5× over the base model, stay hard for HiGHS and Gurobi, and lift the feasibility rate by 9 to 19 points."
@@ -44,10 +45,11 @@
       "summary": "Antimicrobial peptides usually act on more than one class of pathogen, so the question worth asking of a candidate is which activities it has, not whether it is antimicrobial at all. The leading methods on the ESCAPE benchmark answer it with multimodal, structure-conditioned deep models. Pairing 330 interpretable sequence descriptors with TabPFN — a tabular foundation model that predicts in a single forward pass, with no gradient training and no hyperparameter search — beats them, reaching 77.8% five-label macro average precision against a previous best of 72.1%, with the largest gains on remote homologues. Predicted structure turns out to be unnecessary at inference, and ten global physicochemical scalars alone recover 91% of the full-feature performance."
     },
     {
-      "year": 2026, "type": "conference",
+      "year": 2026, "type": "preprint",
       "authors": "Bathla, D., Singla, P., & Singla, J.",
       "title": "RECAST: Reconstruction-Anchored Semi-Supervised Training for Low-Resource Machine Translation",
       "venue": "Submitted to AAAI-27",
+      "submitted": true,
       "topic": "sanskrit",
       "graphic": "recast",
       "summary": "Low-resource translation has far more monolingual text than parallel text, so most of the data carries no reference to train against. RECAST translates a sentence and then reconstructs it, and uses the agreement between the original and the reconstruction as the training signal — the round trip stands in for the reference the unlabelled half does not have."
