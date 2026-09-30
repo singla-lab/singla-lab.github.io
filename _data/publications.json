@@ -7,9 +7,11 @@
       "title": "Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback",
       "venue": "Submitted to ICLR 2027",
       "submitted": true,
+      "detail": "arXiv:2609.37356",
+      "link": "https://arxiv.org/abs/2609.37356",
       "topic": "ml",
       "graphic": "optiscribe",
-      "summary": "Benchmarking a solver needs instances that are both feasible and genuinely hard, and neither existing route supplies them: classical generators need seed instances or parameter tuning, LLM generators carry no measure of hardness at all, and reinforcement learning against a verifier scores only whether the answer is correct. The observation here is that a solver already reports what the search cost it, so branch-and-bound node counts and post-cut relaxation gaps can serve as the reward alongside feasibility. OptiScribe-12B is a GRPO-tuned Gemma-4-12B trained that way in challenger-solver self-play, with no seed MILP data at all: it writes instances from natural-language instructions that raise SCIP's median search nodes 1.7–5× over the base model, stay hard for HiGHS and Gurobi, and lift the feasibility rate by 9 to 19 points."
+      "summary": "Benchmarking a mixed-integer linear programming (MILP) solver needs feasible, hard instances, but most generators do not learn hardness; they inherit it from seed instances or search for it per family and size. Here a frozen SCIP solver scores each instance a language model writes by branch-and-bound nodes and the relaxation gap left after root cuts, so weaknesses the solver repairs earn little, while a validity gate rejects hardness bought with unbounded continuous variables, aggregated big-M links or extreme coefficient ranges. Trained by reinforcement learning without seed instances, OptiScribe-12B raises median nodes over base Gemma-4-12B 1.7–5.0× on capacitated facility location (CFL) and 1.9–4.5× on max-cut, and CFL feasibility by 9–19 points; the gains hold beyond training sizes and under held-out solvers, HiGHS and Gurobi. Multiple knapsack stays easy for every model."
     },
     {
       "year": 2026, "type": "preprint",

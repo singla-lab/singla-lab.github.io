@@ -72,84 +72,107 @@
   <div class="pub-year-n">2026</div>
   <div><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
   <div class="pub-main">
-    <p class="pub-t">Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback</p>
+    <p class="pub-t"><a href="https://arxiv.org/abs/2609.37356" target="_blank" rel="noopener">Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback</a></p>
     <p class="pub-a">Singla, J., Pareek, P., Jawanpuria, P., &amp; Singla, P.</p>
-    <p class="pub-v"><em>Submitted to ICLR 2027</em></p>
+    <p class="pub-v"><em>Submitted to ICLR 2027</em>, arXiv:2609.37356</p>
     
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Singla, J., Pareek, P., Jawanpuria, P., &amp; Singla, P. (2026). Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback. Submitted to ICLR 2027." aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> Benchmarking a solver needs instances that are both feasible and genuinely hard, and neither existing route supplies them: classical generators need seed instances or parameter tuning, LLM generators carry no measure of hardness at all, and reinforcement learning against a verifier scores only whether the answer is correct. The observation here is that a solver already reports what the search cost it, so branch-and-bound node counts and post-cut relaxation gaps can serve as the reward alongside feasibility. OptiScribe-12B is a GRPO-tuned Gemma-4-12B trained that way in challenger-solver self-play, with no seed MILP data at all: it writes instances from natural-language instructions that raise SCIP's median search nodes 1.7–5× over the base model, stay hard for HiGHS and Gurobi, and lift the feasibility rate by 9 to 19 points.</p>
+    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">Machine learning</span><button class="cite" type="button" data-cite="Singla, J., Pareek, P., Jawanpuria, P., &amp; Singla, P. (2026). Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback. Submitted to ICLR 2027, arXiv:2609.37356. https://arxiv.org/abs/2609.37356" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Benchmarking a mixed-integer linear programming (MILP) solver needs feasible, hard instances, but most generators do not learn hardness; they inherit it from seed instances or search for it per family and size. Here a frozen SCIP solver scores each instance a language model writes by branch-and-bound nodes and the relaxation gap left after root cuts, so weaknesses the solver repairs earn little, while a validity gate rejects hardness bought with unbounded continuous variables, aggregated big-M links or extreme coefficient ranges. Trained by reinforcement learning without seed instances, OptiScribe-12B raises median nodes over base Gemma-4-12B 1.7–5.0× on capacitated facility location (CFL) and 1.9–4.5× on max-cut, and CFL feasibility by 9–19 points; the gains hold beyond training sizes and under held-out solvers, HiGHS and Gurobi. Multiple knapsack stays easy for every model.</p>
   </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a language model writes a MILP instance from a natural-language instruction, a solver reports both whether it is feasible and what it cost to solve in branch-and-bound nodes and post-cut gap, and that cost becomes the reward that trains the model to write harder instances" xmlns="http://www.w3.org/2000/svg">
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: from a prompt naming a problem family and a size, the OptiScribe challenger writes 64 MILP instances; a frozen SCIP verifier checks that each is valid, then presolves it, solves the root relaxation, adds root cuts and runs branch-and-bound. The post-cut gap and the node count, read after the solver's own repairs, feed the GRPO reward that trains the challenger. Over base Gemma-4-12B, OptiScribe-12B raises median SCIP nodes 1.7 to 5.0 times and post-cut gap 1.1 to 1.7 times, and feasibility on capacitated facility location by 9 to 19 points, with no seed instances and no solver needed at generation; the gains hold up to 500 variables and under HiGHS and Gurobi" xmlns="http://www.w3.org/2000/svg">
 
   <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
-    <text x="14" y="16">an instruction in words</text>
-    <text x="286" y="16" text-anchor="end">an instance that is hard</text>
+    <text x="14" y="16">family + size, in words</text>
+    <text x="286" y="16" text-anchor="end">a hard, feasible MILP</text>
   </g>
 
-  <!-- ===== challenger and verifier, with nothing seeding either ===== -->
-  <rect x="14" y="24" width="58" height="20" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <text x="43" y="37" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="7.5" fill="var(--ink-3)">&#8220;max-cut&#8221;</text>
+  <!-- ===== the learner: the only part of the loop that is trained ===== -->
+  <rect x="14" y="23" width="64" height="24" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-3)" text-anchor="middle">
+    <text x="46" y="32.5">&#8220;max-cut,</text>
+    <text x="46" y="42">171&#8211;225 vars&#8221;</text>
+  </g>
 
-  <path d="M76 34h10 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+  <path d="M81 35h8 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
         stroke-linecap="round" stroke-linejoin="round"/>
 
-  <rect x="90" y="22" width="76" height="24" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
+  <rect x="92" y="22" width="90" height="26" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)"
         stroke-opacity=".55" stroke-width="1.2"/>
-  <text x="128" y="37" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8" fill="var(--indigo)">OptiScribe-12B</text>
-
-  <path d="M170 34h10 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
-        stroke-linecap="round" stroke-linejoin="round"/>
-
-  <rect x="184" y="24" width="30" height="20" rx="5" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <text x="199" y="37" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="7.5" fill="var(--ink-3)">MILP</text>
-
-  <path d="M218 34h10 m-3-3 3 3-3 3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
-        stroke-linecap="round" stroke-linejoin="round"/>
-
-  <rect x="232" y="22" width="54" height="24" rx="6" fill="var(--teal-soft)" stroke="var(--teal)"
-        stroke-opacity=".55" stroke-width="1.2"/>
-  <text x="259" y="37" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="8" fill="var(--teal)">solver</text>
-
-  <!-- what the solver already knows, and nobody was reading: the cost of the search -->
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" text-anchor="middle">
-    <rect x="190" y="56" width="96" height="14" rx="5" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".45" stroke-width="1"/>
-    <text x="238" y="66" fill="var(--teal)">branch-and-bound nodes</text>
-    <rect x="190" y="74" width="96" height="14" rx="5" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".45" stroke-width="1"/>
-    <text x="238" y="84" fill="var(--teal)">post-cut gap</text>
-  </g>
-  <path d="M259 48v6" fill="none" stroke="var(--teal)" stroke-opacity=".6" stroke-width="1.1" stroke-linecap="round"/>
-
-  <!-- the loop: cost becomes reward, and the challenger is asked again -->
-  <path d="M190 81 C156 81, 140 72, 128 52 m-3.5 5 3.5-5 4 4" fill="none" stroke="var(--saffron)"
-        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="166" y="76" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
-        font-size="7.5" fill="var(--saffron)">reward</text>
-  <text x="14" y="60" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
-        fill="var(--ink-4)">no seed instances,</text>
-  <text x="14" y="70" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
-        fill="var(--ink-4)">no MILP training data</text>
-
-  <!-- ===== what the self-play buys, against the base model ===== -->
-  <text x="14" y="104" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
-        fill="var(--ink-4)">against base Gemma, on SCIP</text>
-
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5" text-anchor="middle">
-    <rect x="14" y="110" width="84" height="18" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.1"/>
-    <text x="56" y="122" fill="var(--indigo)">nodes 1.7&#8211;5&#215;</text>
-    <rect x="106" y="110" width="84" height="18" rx="6" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.1"/>
-    <text x="148" y="122" fill="var(--indigo)">gap 1.1&#8211;1.7&#215;</text>
-    <rect x="198" y="110" width="88" height="18" rx="6" fill="var(--saffron-soft)" stroke="var(--saffron)" stroke-opacity=".6" stroke-width="1.1"/>
-    <text x="242" y="122" fill="var(--saffron)">feasible +9&#8211;19</text>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" fill="var(--indigo)" text-anchor="middle">
+    <text x="137" y="33.5" font-size="8.5">OptiScribe</text>
+    <text x="137" y="43" font-size="6.5">challenger, trained</text>
   </g>
 
-  <line x1="14" y1="144" x2="286" y2="144" stroke="var(--rule)" stroke-width="1"/>
+  <!-- the reward comes back into the challenger, and nowhere else -->
+  <rect x="202" y="24" width="84" height="22" rx="6" fill="none" stroke="var(--saffron)" stroke-width="1.3"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" fill="var(--saffron)" text-anchor="middle">
+    <text x="244" y="33.5" font-size="8">reward</text>
+    <text x="244" y="42.5" font-size="6.5">via GRPO</text>
+  </g>
+  <path d="M199 35H186 M189 32l-3 3 3 3" fill="none" stroke="var(--saffron)" stroke-width="1.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- down into the verifier: a group of instances per prompt, compared with each other -->
+  <path d="M107 50v14 M104 61l3 3 3-3" fill="none" stroke="var(--ink-4)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="113" y="59.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5"
+        fill="var(--ink-4)">64 per prompt</text>
+
+  <!-- ===== the verifier: SCIP at one fixed setting, never trained, so the scale never moves ===== -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" fill="var(--teal)">
+    <text x="14" y="75.5" font-size="8">SCIP</text>
+    <text x="14" y="84.5" font-size="6.5">verifier, frozen</text>
+  </g>
+
+  <rect x="92" y="68" width="30" height="18" rx="5" fill="none" stroke="var(--ink-4)"
+        stroke-opacity=".6" stroke-width="1.1"/>
+  <text x="107" y="79.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="6.5" fill="var(--ink-3)">valid?</text>
+  <path d="M124 77h5 M127 75l2 2-2 2" fill="none" stroke="var(--ink-4)" stroke-opacity=".7" stroke-width="1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- the solve, in the order it runs. what presolve and cuts repair earns little -->
+  <rect x="132" y="68" width="154" height="18" rx="5" fill="var(--paper-2)"/>
+  <path d="M230 68h51a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5h-51z" fill="var(--teal-soft)"/>
+  <line x1="186" y1="68" x2="186" y2="86" stroke="var(--rule)" stroke-width="1"/>
+  <line x1="230" y1="68" x2="230" y2="86" stroke="var(--teal)" stroke-opacity=".5" stroke-width="1"/>
+  <rect x="132" y="68" width="154" height="18" rx="5" fill="none" stroke="var(--teal)"
+        stroke-opacity=".5" stroke-width="1.1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" text-anchor="middle">
+    <text x="159" y="79.5" fill="var(--ink-3)">presolve, LP</text>
+    <text x="208" y="79.5" fill="var(--ink-3)">root cuts</text>
+    <text x="258" y="79.5" fill="var(--teal)">B&amp;B search</text>
+  </g>
+  <path d="M133 90v2.5H229V90" fill="none" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1"/>
+  <text x="181" y="100.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-size="6.5" fill="var(--ink-3)">the solver&#8217;s own repairs</text>
+
+  <!-- the readout, taken only once the repairs are done: what is left of the gap, and the search -->
+  <path d="M230 66V50 M227 53l3-3 3 3 M276 66V50 M273 53l3-3 3 3" fill="none" stroke="var(--teal)"
+        stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" fill="var(--teal)" text-anchor="end">
+    <text x="226" y="60">post-cut gap</text>
+    <text x="272" y="60">nodes</text>
+  </g>
+
+  <!-- ===== what the loop buys, against the model it started from ===== -->
+  <text x="14" y="116" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
+        fill="var(--ink-4)">OptiScribe-12B over base Gemma-4-12B, on SCIP</text>
+  <g stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1.1" fill="var(--indigo-soft)">
+    <rect x="14" y="121" width="78" height="16" rx="6"/>
+    <rect x="100" y="121" width="78" height="16" rx="6"/>
+    <rect x="186" y="121" width="100" height="16" rx="6"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--indigo)" text-anchor="middle">
+    <text x="53" y="131.5">nodes 1.7&#8211;5.0&#215;</text>
+    <text x="139" y="131.5">gap 1.1&#8211;1.7&#215;</text>
+    <text x="236" y="131.5">CFL feasible +9&#8211;19 pts</text>
+  </g>
+
+  <line x1="14" y1="147" x2="286" y2="147" stroke="var(--rule)" stroke-width="1"/>
   <g font-family="'JetBrains Mono',ui-monospace,monospace">
-    <text x="14" y="160" font-size="8.5" fill="var(--ink-3)">the solver grades its own challenger</text>
-    <text x="14" y="177" font-size="8" fill="var(--ink-4)">still hard for HiGHS and Gurobi</text>
+    <text x="14" y="163" font-size="8.5" fill="var(--ink-3)">no seed instances, no solver at generation</text>
+    <text x="14" y="179" font-size="8" fill="var(--ink-4)">gains hold to 500 vars, and on HiGHS and Gurobi</text>
   </g>
 </svg></figure>
 </article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="health" data-pub-year="2026">
