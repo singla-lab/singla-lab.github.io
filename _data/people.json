@@ -43,7 +43,7 @@
       "title": "Postgraduate Thesis",
       "blurb": "Master's thesis students working with the lab this year.",
       "members": [
-        { "name": "Parth Aggarwal", "role": "M.Tech. Structural and Computational Biology", "dept": "BSBE Department", "link": "https://www.linkedin.com/in/parth-agg/" }
+        { "name": "Parth Aggarwal", "role": "M.Tech. Structural and Computational Biology", "dept": "BSBE Department", "photo": "parth-aggarwal", "link": "https://www.linkedin.com/in/parth-agg/" }
       ]
     },
     {
