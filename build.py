@@ -378,10 +378,12 @@ def stat_count(s):
     key = s['count']
     if key == 'publications':
         # "types" narrows what the headline number counts; the publications
-        # page still lists everything, posters included.
+        # page still lists everything, posters included. Work under review is
+        # never counted, whatever it is typed as: the number is what the lab
+        # has published, and the submitted flag is what says a paper is not yet.
         types = s.get('types')
         return sum(1 for p in load('publications')['publications']
-                   if not types or p['type'] in types)
+                   if (not types or p['type'] in types) and not p.get('submitted'))
     if key == 'projects':
         return sum(len(g['projects']) for g in load('projects')['groups'])
     if key == 'doctoral':
@@ -420,11 +422,10 @@ def build_home():
     # the teaser is five one-line entries; a graphical abstract in the middle of
     # it would tip the whole block over, so the drawn summaries stay on the
     # publications page where there is room for them
-    # Work still under review is left off the home page: the front of the site
-    # should say what the lab has, not what it has sent out. It is still listed
-    # in full on the publications page, as a preprint.
-    recent = [p for p in pubs['publications']
-              if p['type'] != 'poster' and not p.get('submitted')][:5]
+    # Recent means recent: preprints and work under review are listed here like
+    # anything else, venue and all. The submitted flag only keeps them out of
+    # the publication count above.
+    recent = [p for p in pubs['publications'] if p['type'] != 'poster'][:5]
     pubhtml = ''.join(pub_item(p, pubs, full=False) for p in recent)
 
     newshtml = ''.join("""<div class="tl-item">
@@ -724,8 +725,9 @@ def build_publications():
     d = load('publications')
     pubs = d['publications']
 
-    # A venue that says "Submitted to" and a missing submitted flag would put an
-    # unaccepted manuscript back on the home page, quietly. Hold the two together.
+    # A venue that says "Submitted to" with no submitted flag would count an
+    # unaccepted manuscript in the home-page total, quietly. Hold the two
+    # together, and label anything under review a preprint.
     for q in pubs:
         under_review = q['venue'].lower().startswith('submitted')
         assert bool(q.get('submitted')) == under_review, q['title']
