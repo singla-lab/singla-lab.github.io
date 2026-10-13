@@ -1,0 +1,85 @@
+<svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: from a monolingual sentence, self-distillation trains on the model's own translation as the target and fails, while BackTransLLM uses the model's translation only as the input and trains on the original human-written sentence as the target. Each cycle takes one supervised step on 1K parallel pairs and four back-translation steps, then flips direction. Into the low-resource language, BackTransLLM gains 16 to 173 per cent XCOMET-XXL over fine-tuning on the parallel pairs alone, beats continued pretraining by 7.7 to 16.4 points in domain on Odia and Swahili, and with beam-decoded pivots beats ten times more parallel data; it holds across five low-resource languages and two backbones, and blind human judges agree" xmlns="http://www.w3.org/2000/svg">
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="16">a monolingual sentence m</text>
+    <text x="286" y="16" text-anchor="end">who wrote the target?</text>
+  </g>
+
+  <!-- ===== the same synthetic pair, built two ways: only the human side moves ===== -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" fill="var(--ink-4)" text-anchor="middle">
+    <text x="113" y="30">input</text>
+    <text x="192" y="30">target</text>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-3)">
+    <text x="14" y="46.5">self-distill</text>
+    <text x="14" y="70.5">BackTransLLM</text>
+  </g>
+
+  <!-- self-distillation: the human sentence goes in, the model learns its own guess -->
+  <rect x="80" y="35" width="66" height="16" rx="5" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6" stroke-width="1.1"/>
+  <rect x="162" y="35" width="60" height="16" rx="5" fill="none" stroke="var(--ink-4)" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 2.5"/>
+  <!-- back-translation: the guess goes in, the human sentence is what it must produce -->
+  <rect x="80" y="59" width="66" height="16" rx="5" fill="none" stroke="var(--ink-4)" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 2.5"/>
+  <rect x="162" y="59" width="60" height="16" rx="5" fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".6" stroke-width="1.2"/>
+
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" text-anchor="middle">
+    <text x="113" y="45.5" fill="var(--ink-3)">m &#183; human</text>
+    <text x="192" y="45.5" fill="var(--ink-4)">own output</text>
+    <text x="113" y="69.5" fill="var(--ink-4)">pivot &#183; model</text>
+    <text x="192" y="69.5" fill="var(--teal)">m &#183; human</text>
+  </g>
+  <g fill="none" stroke="var(--ink-4)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M149 43h10 m-3-3 3 3-3 3"/>
+    <path d="M149 67h10 m-3-3 3 3-3 3"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7">
+    <text x="230" y="45.5" fill="var(--ink-4)">fails</text>
+    <text x="230" y="69.5" fill="var(--teal)">anchored</text>
+  </g>
+
+  <!-- key: what solid and dashed mean, since that is the whole argument -->
+  <rect x="84" y="83" width="10" height="7" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)" stroke-opacity=".6"/>
+  <rect x="158" y="83" width="10" height="7" rx="2" fill="none" stroke="var(--ink-4)" stroke-opacity=".7" stroke-dasharray="2 1.5"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" fill="var(--ink-4)">
+    <text x="98" y="89.5">human-written</text>
+    <text x="172" y="89.5">model-generated</text>
+  </g>
+
+  <!-- ===== the training cycle: one supervised step, four back-translation steps, then the other way ===== -->
+  <text x="14" y="108" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--ink-3)">each cycle</text>
+  <rect x="84" y="99" width="30" height="13" rx="3" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-opacity=".5" stroke-width="1"/>
+  <g fill="var(--teal-soft)" stroke="var(--teal)" stroke-opacity=".5" stroke-width="1">
+    <rect x="117" y="99" width="24" height="13" rx="3"/>
+    <rect x="144" y="99" width="24" height="13" rx="3"/>
+    <rect x="171" y="99" width="24" height="13" rx="3"/>
+    <rect x="198" y="99" width="24" height="13" rx="3"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" text-anchor="middle">
+    <text x="99" y="108" fill="var(--indigo)">pairs</text>
+    <text x="129" y="108" fill="var(--teal)">BT</text>
+    <text x="156" y="108" fill="var(--teal)">BT</text>
+    <text x="183" y="108" fill="var(--teal)">BT</text>
+    <text x="210" y="108" fill="var(--teal)">BT</text>
+  </g>
+  <text x="230" y="108" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="6.5" fill="var(--ink-4)">flip direction</text>
+
+  <!-- ===== what it buys, where the weak prior hurts most ===== -->
+  <text x="14" y="126" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7"
+        fill="var(--ink-4)">into the low-resource language, XCOMET-XXL</text>
+  <g stroke="var(--teal)" stroke-opacity=".5" stroke-width="1.1" fill="var(--teal-soft)">
+    <rect x="14" y="131" width="96" height="16" rx="6"/>
+    <rect x="118" y="131" width="84" height="16" rx="6"/>
+    <rect x="210" y="131" width="76" height="16" rx="6"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7" fill="var(--teal)" text-anchor="middle">
+    <text x="62" y="141.5">+16&#8211;173% vs 1K pairs</text>
+    <text x="160" y="141.5">+7.7&#8211;16.4 vs CPT</text>
+    <text x="248" y="141.5">beats 10&#215; data</text>
+  </g>
+
+  <line x1="14" y1="155" x2="286" y2="155" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+    <text x="14" y="170" font-size="8.5" fill="var(--ink-3)">the pre-LLM recipe is still the default</text>
+    <text x="14" y="184" font-size="8" fill="var(--ink-4)">5 languages + Hindi, 2 backbones; humans agree</text>
+  </g>
+</svg>
