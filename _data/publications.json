@@ -52,6 +52,8 @@
       "title": "Back-Translation Still Matters: Leveraging Monolingual Data for Low-Resource Machine Translation with LLMs",
       "venue": "Submitted for Review",
       "submitted": true,
+      "detail": "arXiv:2610.18818",
+      "link": "https://arxiv.org/abs/2610.18818",
       "topic": "sanskrit",
       "graphic": "backtransllm",
       "summary": "Low-resource translation has little parallel text but more monolingual text, and an instruction-tuned LLM with a weak prior has to learn from it. Self-distillation, training on the model's own translations, fails here: after three cycles into Odia, 99% of outputs contain no Odia script. BackTransLLM ports back-translation instead: the current model translates a monolingual sentence, then learns to rebuild the original from that translation, interleaved with steps on 1K parallel pairs, so every target stays human-written. Into the low-resource language it beats continued pretraining by 7.7–16.4 XCOMET-XXL points in domain on Odia and Swahili, and with beam-decoded pivots beats ten times more parallel data. Across five low-resource languages and two 3B backbones it gains 16–173% over parallel-only fine-tuning into the low-resource language, less into English, and blind human judges agree."
