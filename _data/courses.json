@@ -225,6 +225,11 @@
             "[Word2Vec](https://arxiv.org/pdf/1301.3781.pdf)",
             "[BERT](https://arxiv.org/abs/1810.04805)",
             "[GPT-1](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf) &middot; [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) &middot; [GPT-3](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)"
+          ] },
+        { "heading": "Video playlists",
+          "items": [
+            "[Differential Equations](https://www.youtube.com/watch?v=p_di4Zn4wz4&list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6)",
+            "[Deep Learning](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)"
           ] }
       ],
       "evaluation": [
