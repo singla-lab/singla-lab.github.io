@@ -189,7 +189,13 @@
           ["9", "Early stopping", "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Section 7.8", ""],
           ["10", "Dropout",
            "[Chapter 7](https://www.deeplearningbook.org/contents/regularization.html), Sections 7.10–7.12", "[Practice-3](assets/BEL-483/2026-27/BEL-483-Practice-3.pdf)"],
-          ["11", "Optimization basics", "[Chapter 8](https://www.deeplearningbook.org/contents/optimization.html), Sections 8.1 and 8.2", ""]
+          ["11", "Optimization basics", "[Chapter 8](https://www.deeplearningbook.org/contents/optimization.html), Sections 8.1 and 8.2", ""],
+          ["12", "Batch normalization", "Section 8.7.1 &middot; [BN paper](https://arxiv.org/abs/1502.03167)", ""],
+          ["13", "CNN basics and backpropagation", "Sections 9.1–9.2 &middot; [AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)", ""],
+          ["14", "ResNets", "[ResNet paper](https://arxiv.org/abs/1512.03385)", ""],
+          ["15", "Recurrent neural networks (RNNs)", "", ""],
+          ["16", "GRUs and LSTMs", "[LSTM paper](https://www.bioinf.jku.at/publications/older/2604.pdf) &middot; [Bahdanau attention](https://arxiv.org/abs/1409.0473)", ""],
+          ["17", "Transformers", "[Paper](https://arxiv.org/abs/1706.03762) &middot; [Video 1](https://youtu.be/wjZofJX0v4M?si=tt5NKl-RXXjuP2jc) &middot; [Video 2](https://youtu.be/eMlx5fFNoYc?si=iHaD4clY6uJrE3TN)", ""]
         ]
       },
       "assignments": [
