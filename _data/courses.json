@@ -193,7 +193,7 @@
           ["12", "Batch normalization", "Section 8.7.1 &middot; [BN paper](https://arxiv.org/abs/1502.03167)", ""],
           ["13", "CNN basics and backpropagation", "[Chapter 9](https://www.deeplearningbook.org/contents/convnets.html), Sections 9.1–9.2 &middot; [AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)", ""],
           ["14", "ResNets", "[ResNet paper](https://arxiv.org/abs/1512.03385)", ""],
-          ["15", "Recurrent neural networks (RNNs)", "", ""],
+          ["15", "Recurrent neural networks (RNNs)", "[Chapter 10](https://www.deeplearningbook.org/contents/rnn.html)", ""],
           ["16", "GRUs and LSTMs", "[LSTM paper](https://www.bioinf.jku.at/publications/older/2604.pdf) &middot; [Bahdanau attention](https://arxiv.org/abs/1409.0473) &middot; [Video](https://www.youtube.com/watch?v=YCzL96nL7j0)", ""],
           ["17", "Transformers", "[Paper](https://arxiv.org/abs/1706.03762) &middot; [Video 1](https://youtu.be/wjZofJX0v4M?si=tt5NKl-RXXjuP2jc) &middot; [Video 2](https://youtu.be/eMlx5fFNoYc?si=iHaD4clY6uJrE3TN)", ""]
         ]
