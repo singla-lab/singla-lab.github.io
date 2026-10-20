@@ -747,11 +747,13 @@ def build_publications():
     years = sorted({p['year'] for p in pubs}, reverse=True)
     blocks = []
     for y in years:
-        # Order within a year is the order of the file, which is kept newest
-        # first. It used to be sorted by type, which read as arbitrary: the
-        # newest paper of a year could land fifth behind three older journal
-        # articles simply because it was a preprint.
-        group = [p for p in pubs if p['year'] == y]
+        # Within a year, published work comes first and preprints -- work under
+        # review included, since it is typed preprint -- go to the bottom. Each
+        # half keeps the order of the file, which is newest first. The sort is
+        # stable, so this is the only reordering. The home page's recent list
+        # reads the file directly and stays newest first.
+        group = sorted((p for p in pubs if p['year'] == y),
+                       key=lambda p: p['type'] == 'preprint')
         blocks.append("""<div class="pub-year" data-year-block>
   <div class="pub-year-n">{y}</div>
   <div>{items}</div>
