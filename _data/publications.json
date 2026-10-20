@@ -2,6 +2,17 @@
   "note": "Author lists are printed as given, with no name emphasised over the others.",
   "publications": [
     {
+      "year": 2026, "type": "journal",
+      "authors": "Gupta, S., & Singla, J.",
+      "title": "YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives",
+      "venue": "IEEE Access",
+      "detail": "arXiv:2509.19166",
+      "link": "https://arxiv.org/abs/2509.19166",
+      "topic": "health",
+      "graphic": "yololan",
+      "summary": "Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present."
+    },
+    {
       "year": 2026, "type": "preprint",
       "authors": "Singla, J., Pareek, P., Jawanpuria, P., & Singla, P.",
       "title": "Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback",
@@ -125,17 +136,6 @@
       "summary": "A pipeline for turning soft X-ray tomograms into measurable biology: mitochondria are separated from the surrounding volume, the mask is split into individual organelles, and each one is profiled for size, shape and connectivity. The emphasis is on segmentation that holds up across volumes rather than being tuned to a single dataset."
     },
 
-    {
-      "year": 2025, "type": "preprint",
-      "authors": "Gupta, S., & Singla, J.",
-      "title": "YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives",
-      "venue": "arXiv preprint",
-      "detail": "arXiv:2509.19166",
-      "link": "https://arxiv.org/abs/2509.19166",
-      "topic": "health",
-      "graphic": "yololan",
-      "summary": "Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present."
-    },
     {
       "year": 2025, "type": "journal",
       "authors": "Mahmoud, L., Liyanage, M., Singla, J., & Gangopadhyay, S.",
