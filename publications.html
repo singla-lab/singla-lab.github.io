@@ -70,7 +70,81 @@
   </div>
 </section><section class="section-tight"><div class="wrap"><div class="pub-year" data-year-block>
   <div class="pub-year-n">2026</div>
-  <div><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="health" data-pub-year="2026">
+  <div class="pub-main">
+    <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
+    <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
+    <p class="pub-v"><em>IEEE Access</em>, arXiv:2509.19166</p>
+    
+    <div class="pub-meta"><span class="pill pill-journal">Journal</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Gupta, S., &amp; Singla, J. (2026). YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives. IEEE Access, arXiv:2509.19166. https://arxiv.org/abs/2509.19166" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
+    <p class="pub-sum"><b>Summary:</b> Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present.</p>
+  </div>
+  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a colonoscopy frame with a polyp inside a detection box, beside the three levers the method tunes — an intersection-over-union loss, data augmentations, and negative frames containing no polyp" xmlns="http://www.w3.org/2000/svg">
+
+  <text x="14" y="26" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
+        fill="var(--ink-4)">colonoscopy frame</text>
+
+  <!-- the lumen, receding, with a polyp on the near wall -->
+  <rect x="14" y="34" width="112" height="92" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
+  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1.1">
+    <ellipse cx="74" cy="84" rx="42" ry="34"/>
+    <ellipse cx="76" cy="84" rx="29" ry="23"/>
+    <ellipse cx="78" cy="84" rx="16" ry="12"/>
+  </g>
+  <ellipse cx="46" cy="61" rx="13" ry="10" fill="var(--saffron-soft)" stroke="var(--saffron)"
+           stroke-width="1.3"/>
+  <path d="M42 70 C44 75, 50 75, 52 70" fill="none" stroke="var(--saffron)" stroke-width="1.2"
+        stroke-opacity=".7"/>
+
+  <rect x="29" y="46" width="34" height="30" rx="2" fill="none" stroke="var(--teal)"
+        stroke-width="1.4" stroke-dasharray="4 2.5"/>
+  <text x="29" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
+        fill="var(--teal)">polyp</text>
+
+  <!-- ============ the three levers the name spells out ============ -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace">
+
+    <rect x="142" y="36" width="18" height="18" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="49" text-anchor="middle" font-size="9.5" fill="var(--indigo)">L</text>
+    <text x="168" y="49" font-size="8" fill="var(--ink-2)">M2IoU loss</text>
+    <g fill="none" stroke="var(--ink-4)" stroke-width="1.1">
+      <rect x="250" y="38" width="22" height="15" rx="2"/>
+      <rect x="262" y="42" width="22" height="15" rx="2"/>
+    </g>
+    <rect x="262" y="42" width="10" height="11" fill="var(--indigo)" fill-opacity=".22"/>
+
+    <rect x="142" y="68" width="18" height="18" rx="5" fill="var(--teal-soft)" stroke="var(--teal)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="81" text-anchor="middle" font-size="9.5" fill="var(--teal)">A</text>
+    <text x="168" y="81" font-size="8" fill="var(--ink-2)">augmentations</text>
+    <g stroke="var(--ink-4)" stroke-width="1" fill="var(--paper-2)">
+      <rect x="242" y="68" width="14" height="18" rx="2"/>
+      <rect x="260" y="68" width="14" height="18" rx="2" transform="rotate(9 267 77)"/>
+      <rect x="278" y="68" width="14" height="18" rx="2" fill="var(--ink-4)" fill-opacity=".18"/>
+    </g>
+    <g fill="var(--saffron)" fill-opacity=".55">
+      <circle cx="249" cy="76" r="2.6"/><circle cx="267" cy="76" r="2.6"/><circle cx="285" cy="76" r="2.6"/>
+    </g>
+
+    <rect x="142" y="100" width="18" height="18" rx="5" fill="var(--saffron-soft)" stroke="var(--saffron)"
+          stroke-opacity=".4" stroke-width="1"/>
+    <text x="151" y="113" text-anchor="middle" font-size="9.5" fill="var(--saffron)">N</text>
+    <text x="168" y="113" font-size="8" fill="var(--ink-2)">negative frames</text>
+    <rect x="262" y="100" width="22" height="18" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)"
+          stroke-width="1"/>
+    <g fill="none" stroke="var(--ink-4)" stroke-width="1.3" stroke-opacity=".7">
+      <circle cx="273" cy="109" r="5"/><path d="M269.5 105.5l7 7"/>
+    </g>
+  </g>
+
+  <line x1="14" y1="140" x2="286" y2="140" stroke="var(--rule)" stroke-width="1"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
+    <text x="14" y="158">Kvasir-seg &#183; BKAI-IGH NeoPolyp</text>
+    <text x="286" y="158" text-anchor="end">gains at high IoU</text>
+  </g>
+</svg></figure>
+</article><article class="pub pub-wide" data-pub data-type="preprint" data-topic="ml" data-pub-year="2026">
   <div class="pub-main">
     <p class="pub-t"><a href="https://arxiv.org/abs/2609.37356" target="_blank" rel="noopener">Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback</a></p>
     <p class="pub-a">Singla, J., Pareek, P., Jawanpuria, P., &amp; Singla, P.</p>
@@ -1038,81 +1112,7 @@
 </article></div>
 </div><div class="pub-year" data-year-block>
   <div class="pub-year-n">2025</div>
-  <div><article class="pub pub-wide" data-pub data-type="preprint" data-topic="health" data-pub-year="2025">
-  <div class="pub-main">
-    <p class="pub-t"><a href="https://arxiv.org/abs/2509.19166" target="_blank" rel="noopener">YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives</a></p>
-    <p class="pub-a">Gupta, S., &amp; Singla, J.</p>
-    <p class="pub-v"><em>arXiv preprint</em>, arXiv:2509.19166</p>
-    
-    <div class="pub-meta"><span class="pill pill-preprint">Preprint</span><span class="pill">AI for healthcare</span><button class="cite" type="button" data-cite="Gupta, S., &amp; Singla, J. (2025). YOLO-LAN: Precise Polyp Detection via Optimized Loss, Augmentations and Negatives. arXiv preprint, arXiv:2509.19166. https://arxiv.org/abs/2509.19166" aria-label="Copy citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M5.5 15H5a1 1 0 01-1-1V5a1 1 0 011-1h9a1 1 0 011 1v.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Cite</span></button></div>
-    <p class="pub-sum"><b>Summary:</b> Polyps missed during colonoscopy are the ones that become colorectal cancer. YOLO-LAN is a detection pipeline tuned on the three things its name names — an M2IoU loss, wide-ranging augmentations, and negative frames containing no polyp at all, so the model sees the clinic rather than a curated set. On Kvasir-seg and BKAI-IGH NeoPolyp the gain lands where it matters, at strict IoU: detections that are precisely placed, not merely present.</p>
-  </div>
-  <figure class="pub-fig"><svg viewBox="0 0 300 190" role="img" aria-label="Graphical summary: a colonoscopy frame with a polyp inside a detection box, beside the three levers the method tunes — an intersection-over-union loss, data augmentations, and negative frames containing no polyp" xmlns="http://www.w3.org/2000/svg">
-
-  <text x="14" y="26" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5"
-        fill="var(--ink-4)">colonoscopy frame</text>
-
-  <!-- the lumen, receding, with a polyp on the near wall -->
-  <rect x="14" y="34" width="112" height="92" rx="6" fill="var(--paper-2)" stroke="var(--rule)"/>
-  <g fill="none" stroke="var(--ink-4)" stroke-opacity=".3" stroke-width="1.1">
-    <ellipse cx="74" cy="84" rx="42" ry="34"/>
-    <ellipse cx="76" cy="84" rx="29" ry="23"/>
-    <ellipse cx="78" cy="84" rx="16" ry="12"/>
-  </g>
-  <ellipse cx="46" cy="61" rx="13" ry="10" fill="var(--saffron-soft)" stroke="var(--saffron)"
-           stroke-width="1.3"/>
-  <path d="M42 70 C44 75, 50 75, 52 70" fill="none" stroke="var(--saffron)" stroke-width="1.2"
-        stroke-opacity=".7"/>
-
-  <rect x="29" y="46" width="34" height="30" rx="2" fill="none" stroke="var(--teal)"
-        stroke-width="1.4" stroke-dasharray="4 2.5"/>
-  <text x="29" y="43" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="7.5"
-        fill="var(--teal)">polyp</text>
-
-  <!-- ============ the three levers the name spells out ============ -->
-  <g font-family="'JetBrains Mono',ui-monospace,monospace">
-
-    <rect x="142" y="36" width="18" height="18" rx="5" fill="var(--indigo-soft)" stroke="var(--indigo)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="49" text-anchor="middle" font-size="9.5" fill="var(--indigo)">L</text>
-    <text x="168" y="49" font-size="8" fill="var(--ink-2)">M2IoU loss</text>
-    <g fill="none" stroke="var(--ink-4)" stroke-width="1.1">
-      <rect x="250" y="38" width="22" height="15" rx="2"/>
-      <rect x="262" y="42" width="22" height="15" rx="2"/>
-    </g>
-    <rect x="262" y="42" width="10" height="11" fill="var(--indigo)" fill-opacity=".22"/>
-
-    <rect x="142" y="68" width="18" height="18" rx="5" fill="var(--teal-soft)" stroke="var(--teal)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="81" text-anchor="middle" font-size="9.5" fill="var(--teal)">A</text>
-    <text x="168" y="81" font-size="8" fill="var(--ink-2)">augmentations</text>
-    <g stroke="var(--ink-4)" stroke-width="1" fill="var(--paper-2)">
-      <rect x="242" y="68" width="14" height="18" rx="2"/>
-      <rect x="260" y="68" width="14" height="18" rx="2" transform="rotate(9 267 77)"/>
-      <rect x="278" y="68" width="14" height="18" rx="2" fill="var(--ink-4)" fill-opacity=".18"/>
-    </g>
-    <g fill="var(--saffron)" fill-opacity=".55">
-      <circle cx="249" cy="76" r="2.6"/><circle cx="267" cy="76" r="2.6"/><circle cx="285" cy="76" r="2.6"/>
-    </g>
-
-    <rect x="142" y="100" width="18" height="18" rx="5" fill="var(--saffron-soft)" stroke="var(--saffron)"
-          stroke-opacity=".4" stroke-width="1"/>
-    <text x="151" y="113" text-anchor="middle" font-size="9.5" fill="var(--saffron)">N</text>
-    <text x="168" y="113" font-size="8" fill="var(--ink-2)">negative frames</text>
-    <rect x="262" y="100" width="22" height="18" rx="2" fill="var(--paper-2)" stroke="var(--ink-4)"
-          stroke-width="1"/>
-    <g fill="none" stroke="var(--ink-4)" stroke-width="1.3" stroke-opacity=".7">
-      <circle cx="273" cy="109" r="5"/><path d="M269.5 105.5l7 7"/>
-    </g>
-  </g>
-
-  <line x1="14" y1="140" x2="286" y2="140" stroke="var(--rule)" stroke-width="1"/>
-  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="var(--ink-4)">
-    <text x="14" y="158">Kvasir-seg &#183; BKAI-IGH NeoPolyp</text>
-    <text x="286" y="158" text-anchor="end">gains at high IoU</text>
-  </g>
-</svg></figure>
-</article><article class="pub pub-wide" data-pub data-type="journal" data-topic="ml" data-pub-year="2025">
+  <div><article class="pub pub-wide" data-pub data-type="journal" data-topic="ml" data-pub-year="2025">
   <div class="pub-main">
     <p class="pub-t"><a href="https://www.computer.org/csdl/journal/oj/2025/01/11045004/27FMiEZTjBC" target="_blank" rel="noopener">DSEM-NIDS: Enhanced Network Intrusion Detection System Using Deep Stacking Ensemble Model</a></p>
     <p class="pub-a">Mahmoud, L., Liyanage, M., Singla, J., &amp; Gangopadhyay, S.</p>
