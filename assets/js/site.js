@@ -143,32 +143,75 @@
     btn.setAttribute('aria-label', label);
   };
 
+  /* Cite and BibTeX open a popup that shows the text, with the copy button in
+     it. Browsers without <dialog> keep the old behaviour: the button copies
+     straight away and says so itself. */
+  var dlg = document.querySelector('.cite-dlg');
+  var popup = !!(dlg && typeof dlg.showModal === 'function');
+  if (popup) document.documentElement.classList.add('cite-pop');
+
+  var flash = function (btn, word, aria) {
+    return {
+      ok: function () { citeState(btn, 'is-copied', 'Copied', 'Copied'); this.later(); },
+      fail: function () { citeState(btn, 'is-failed', 'Failed', 'Could not copy'); this.later(); },
+      later: function () {
+        if (btn._t) clearTimeout(btn._t);
+        btn._t = setTimeout(function () { citeState(btn, null, word, aria); }, 1800);
+      }
+    };
+  };
+
+  if (popup) {
+    var dHead = dlg.querySelector('.cite-dlg-h');
+    var dPaper = dlg.querySelector('.cite-dlg-paper');
+    var dText = dlg.querySelector('.cite-dlg-text');
+    var dCopy = dlg.querySelector('.cite-dlg-copy');
+    var opener = null;
+
+    dCopy.addEventListener('click', function () {
+      var f = flash(dCopy, 'Copy', 'Copy');
+      copyText(dText.textContent).then(function () { f.ok(); }, function () { f.fail(); });
+    });
+    dlg.querySelector('.cite-dlg-x').addEventListener('click', function () { dlg.close(); });
+    /* a click on the backdrop lands on the dialog element itself */
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', function () {
+      if (dCopy._t) clearTimeout(dCopy._t);
+      citeState(dCopy, null, 'Copy', 'Copy');
+      if (opener && opener.focus) opener.focus();
+    });
+  }
+
   document.addEventListener('click', function (e) {
     var btn = e.target.closest ? e.target.closest('.cite') : null;
     if (!btn) return;
     var text = btn.getAttribute('data-cite');
     if (!text) return;
-    /* Cite and BibTeX share this handler, so each button goes back to its
-       own label rather than to "Cite". */
+
+    if (popup) {
+      var kind = btn.getAttribute('data-kind') || 'Citation';
+      var entry = btn.closest('.pub');
+      var title = entry ? entry.querySelector('.pub-t') : null;
+      dHead.textContent = kind;
+      dPaper.textContent = title ? title.textContent.trim() : '';
+      dText.textContent = text;
+      dText.classList.toggle('is-bib', kind === 'BibTeX');
+      dCopy.setAttribute('aria-label', 'Copy ' + (kind === 'BibTeX' ? 'BibTeX' : 'citation'));
+      opener = btn;
+      dlg.showModal();
+      dText.scrollTop = 0;
+      dCopy.focus();
+      return;
+    }
+
+    /* no popup: copy on click, and restore this button's own label after */
     if (!btn._word) {
       var own = btn.querySelector('span');
       btn._word = own ? own.textContent : 'Cite';
       btn._aria = btn.getAttribute('aria-label') || 'Copy citation';
     }
-    var settle = function () {
-      if (btn._t) clearTimeout(btn._t);
-      btn._t = setTimeout(function () {
-        citeState(btn, null, btn._word, btn._aria);
-      }, 1800);
-    };
-    copyText(text).then(function () {
-      citeState(btn, 'is-copied', 'Copied', 'Citation copied');
-      settle();
-    }, function () {
-      /* say so rather than look like it worked */
-      citeState(btn, 'is-failed', 'Failed', 'Could not copy the citation');
-      settle();
-    });
+    var f = flash(btn, btn._word, btn._aria);
+    copyText(text).then(function () { f.ok(); }, function () { f.fail(); });
   });
 
   /* ---- sticky header shadow ---- */

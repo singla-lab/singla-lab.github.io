@@ -827,6 +827,52 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .cite.is-copied > svg:first-child { display: none; }
 .cite.is-copied > svg + svg { display: block; }
 .cite.is-failed { color: var(--warm-ink); border-color: var(--warm-bd); background: var(--saffron-soft); }
+/* With the popup available the copy icon lives in the popup, not the button. */
+.cite-pop .cite > svg { display: none; }
+.cite-pop .cite { padding-left: .5rem; }
+
+/* The citation popup: the text, the paper it belongs to, and a copy button. */
+.cite-dlg {
+  padding: 0; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--surface); color: var(--ink); box-shadow: var(--shadow-3);
+  width: min(42rem, calc(100vw - 2rem)); max-height: calc(100vh - 3rem);
+}
+.cite-dlg::backdrop { background: rgba(23, 18, 14, .45); }
+.cite-dlg-in { padding: 1.1rem 1.25rem 1.25rem; display: grid; gap: .75rem; }
+.cite-dlg-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.cite-dlg-h {
+  margin: 0; font-family: var(--f-mono); font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.cite-dlg-x {
+  display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-right: -.4rem;
+  border: 0; border-radius: 7px; background: transparent; color: var(--ink-3); cursor: pointer;
+}
+.cite-dlg-x:hover { background: var(--paper-2); color: var(--ink); }
+.cite-dlg-x svg { width: 18px; height: 18px; }
+.cite-dlg-paper { margin: 0; font-size: .95rem; font-weight: 550; line-height: 1.4; color: var(--ink); }
+.cite-dlg-text {
+  margin: 0; padding: .85rem 1rem; max-height: 55vh; overflow: auto;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--r-sm);
+  font-family: var(--f-sans); font-size: .9rem; line-height: 1.6; color: var(--ink-2);
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.cite-dlg-text.is-bib { font-family: var(--f-mono); font-size: .78rem; line-height: 1.65; }
+.cite-dlg-foot { display: flex; justify-content: flex-end; }
+.cite-dlg-copy {
+  display: inline-flex; align-items: center; gap: .45rem; cursor: pointer;
+  font-family: var(--f-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .5rem .85rem; border-radius: 7px; border: 1px solid var(--indigo);
+  background: var(--indigo); color: var(--on-primary);
+  transition: background .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease);
+}
+.cite-dlg-copy:hover { background: var(--indigo-dk); border-color: var(--indigo-dk); }
+.cite-dlg-copy svg { width: 14px; height: 14px; flex: none; }
+.cite-dlg-copy > svg + svg { display: none; }
+.cite-dlg-copy.is-copied { background: var(--teal-soft); border-color: var(--teal-bd); color: var(--teal-ink); }
+.cite-dlg-copy.is-copied > svg:first-child { display: none; }
+.cite-dlg-copy.is-copied > svg + svg { display: block; }
+.cite-dlg-copy.is-failed { background: var(--saffron-soft); border-color: var(--warm-bd); color: var(--warm-ink); }
 
 .pill-journal { background: var(--indigo-soft); color: var(--tag-ink); border-color: var(--tag-bd); }
 .pill-preprint { background: var(--saffron-soft); color: var(--warm-ink); border-color: var(--warm-bd); }
