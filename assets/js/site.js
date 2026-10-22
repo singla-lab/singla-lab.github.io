@@ -148,10 +148,17 @@
     if (!btn) return;
     var text = btn.getAttribute('data-cite');
     if (!text) return;
+    /* Cite and BibTeX share this handler, so each button goes back to its
+       own label rather than to "Cite". */
+    if (!btn._word) {
+      var own = btn.querySelector('span');
+      btn._word = own ? own.textContent : 'Cite';
+      btn._aria = btn.getAttribute('aria-label') || 'Copy citation';
+    }
     var settle = function () {
       if (btn._t) clearTimeout(btn._t);
       btn._t = setTimeout(function () {
-        citeState(btn, null, 'Cite', 'Copy citation');
+        citeState(btn, null, btn._word, btn._aria);
       }, 1800);
     };
     copyText(text).then(function () {

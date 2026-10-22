@@ -14,11 +14,13 @@ about it.
 """
 
 import hashlib
+import html
 import io
 import json
 import os
 import re
 import sys
+import unicodedata
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, '_data')
@@ -668,6 +670,138 @@ def citation(p):
     return ''.join(out)
 
 
+# BibTeX, like the plain citation, is the entry read out -- nothing is looked
+# up or added. Every field comes from publications.json, so the two copies can
+# never disagree with each other or with the page.
+
+# Characters the data actually uses beyond ASCII. Anything else stops the build
+# rather than quietly writing BibTeX that some toolchains choke on.
+_TEX = {'\u2013': '--', '\u2014': '---', '\u03b2': '{$\\beta$}', '\u0101': '{\\=a}'}
+_ORDER = ['volume', 'number', 'pages', 'note']
+_TEX_ESC = {'&': '\\&', '%': '\\%', '_': '\\_', '#': '\\#', '$': '\\$'}
+_INITIALS = re.compile(r'^[A-Z]\.(?:[ -]?[A-Z]\.)*$')
+_STOP = {'a', 'an', 'the', 'on', 'of', 'in', 'for', 'to', 'and', 'de', 'via', 'with'}
+_MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+
+
+def tex(s, url=False):
+    s = html.unescape(re.sub(r'<[^>]+>', '', s))
+    if not url:
+        s = ''.join(_TEX_ESC.get(ch, ch) for ch in s)
+    s = ''.join(_TEX.get(ch, ch) for ch in s)
+    assert all(ord(ch) < 128 for ch in s), 'no BibTeX form for a character in: ' + s
+    return s
+
+
+def bib_authors(authors):
+    """'Singh, A., Yadav, A. K., & Singla, J.' -> 'Singh, A. and Yadav, A. K. and
+    Singla, J.'; a trailing 'et al.' becomes BibTeX's own 'and others'."""
+    others = authors.endswith(', et al.')
+    if others:
+        authors = authors[:-len(', et al.')]
+    parts = re.split(r',\s*(?:&\s*)?', authors.replace(' & ', ', '))
+    parts = [x for x in parts if x]
+    assert len(parts) % 2 == 0, 'cannot pair surnames and initials: ' + authors
+    names = []
+    for surname, given in zip(parts[0::2], parts[1::2]):
+        assert _INITIALS.match(given), 'not initials: {0!r} in {1}'.format(given, authors)
+        names.append('{0}, {1}'.format(surname, given))
+    return ' and '.join(names + (['others'] if others else []))
+
+
+def bib_detail(detail):
+    """'33(2), 247-261.e3' -> volume, number, pages; '290, 138751' -> volume and
+    an article number, which publishers export as pages; '1-12' -> pages."""
+    out = {}
+    m = re.match(r'^(\d+)\((\w+)\),\s*(.+)$', detail) or re.match(r'^(\d+)(),\s*(.+)$', detail)
+    if m:
+        out['volume'] = m.group(1)
+        if m.group(2):
+            out['number'] = m.group(2)
+        out['pages'] = m.group(3)
+    elif re.match('^[\\w.]+(?:\u2013[\\w.]+)?$', detail) and re.search(r'\d', detail):
+        out['pages'] = detail
+    else:
+        out['note'] = detail
+    return out
+
+
+def bib_key(p, used):
+    def fold(x):   # 'S\u0101mayik' -> 'samayik': keys stay plain letters
+        return unicodedata.normalize('NFKD', x).encode('ascii', 'ignore').decode().lower()
+    surname = re.sub(r'[^a-z]', '', fold(p['authors'].split(',')[0]))
+    words = [w for w in re.findall(r'[a-z0-9]+', fold(p['title'])) if w not in _STOP]
+    key = '{0}{1}{2}'.format(surname, p['year'], words[0] if words else '')
+    base, n = key, 1
+    while key in used:
+        n += 1
+        key = '{0}{1}'.format(base, 'abcdefghij'[n - 1])
+    used.add(key)
+    return key
+
+
+_BIBKEYS = {}
+
+
+def bib_keys(meta):
+    """One key per entry, assigned over the whole list in file order, so the
+    publications page and the home page hand out the same key for a paper."""
+    sig = tuple((q['title'], q['year'], q['venue']) for q in meta['publications'])
+    if sig not in _BIBKEYS:
+        used = set()
+        _BIBKEYS[sig] = {(q['title'], q['year'], q['venue']): bib_key(q, used)
+                         for q in meta['publications']}
+    return _BIBKEYS[sig]
+
+
+def bibtex(p, key):
+    t, venue, detail = p['type'], p['venue'], p.get('detail', '')
+    f = [('author', bib_authors(p['authors'])), ('title', '{' + tex(p['title']) + '}')]
+    eprint = re.match(r'^arXiv:(\d{4}\.\d{4,5})$', detail)
+    if t == 'journal':
+        kind = 'article'
+        f.append(('journal', tex(venue)))
+        f += [(k, tex(v)) for k, v in sorted(bib_detail(detail).items(), key=lambda kv: _ORDER.index(kv[0]))] if detail else []
+    elif t == 'conference':
+        kind = 'inproceedings'
+        f.append(('booktitle', tex(venue)))
+        f += [(k, tex(v)) for k, v in sorted(bib_detail(detail).items(), key=lambda kv: _ORDER.index(kv[0]))] if detail else []
+    elif t == 'chapter':
+        kind = 'incollection'
+        book, _, publisher = venue.partition(', ')
+        f.append(('booktitle', tex(book)))
+        if publisher:
+            f.append(('publisher', tex(publisher)))
+        f += [(k, tex(v)) for k, v in sorted(bib_detail(detail).items(), key=lambda kv: _ORDER.index(kv[0]))] if detail else []
+    elif t == 'preprint':
+        kind = 'misc'
+        if eprint:
+            f += [('eprint', eprint.group(1)), ('archivePrefix', 'arXiv')]
+        else:
+            f.append(('howpublished', tex(venue)))
+            month = re.match(r'^\d{4}-(\d{2})$', detail)
+            if month:
+                f.append(('month', _MONTHS[int(month.group(1)) - 1]))
+        if venue.lower().startswith('submitted'):
+            f.append(('note', tex(venue)))
+    else:   # poster
+        kind = 'misc'
+        f.append(('howpublished', tex(venue + (', ' + detail if detail else ''))))
+        f.append(('note', 'Poster'))
+    f.append(('year', str(p['year'])))
+    link = p.get('link')
+    doi = re.search(r'(10\.\d{4,9}/[^?#\s]+?)(?:v\d+)?$', link or '')
+    if doi and 'arxiv.org' not in link:
+        f.append(('doi', doi.group(1)))
+    if link:
+        f.append(('url', tex(link, url=True)))
+    bare = {'month'}   # month macros are written unbraced
+    body = ',\n'.join('  {0} = {1}'.format(k, v if k in bare else '{' + v + '}') for k, v in f)
+    out = '@{0}{{{1},\n{2}\n}}'.format(kind, key, body)
+    assert out.count('{') == out.count('}'), 'unbalanced braces in BibTeX for ' + key
+    return out
+
+
 def pub_item(p, meta, full=True):
     title = a(p['title'])
     if p.get('link'):
@@ -689,6 +823,11 @@ def pub_item(p, meta, full=True):
         '<button class="cite" type="button" data-cite="{0}" aria-label="Copy citation">'
         '{1}{2}<span>Cite</span></button>'.format(
             attr(citation(p)), ICON['copy'], ICON['tick']))
+    key = bib_keys(meta)[(p['title'], p['year'], p['venue'])]
+    pills.append(
+        '<button class="cite" type="button" data-cite="{0}" aria-label="Copy BibTeX">'
+        '{1}{2}<span>BibTeX</span></button>'.format(
+            attr(bibtex(p, key)), ICON['copy'], ICON['tick']))
 
     hl = highlight(p.get('highlight'))
 
