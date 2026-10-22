@@ -545,7 +545,7 @@ def build_home():
   </div>
 </section>
 
-{cta}""".format(desc=a(SITE['description']), arrow=ICON['arrow'], hero=svg('hero'),
+{cta}{dlg}""".format(desc=a(SITE['description']), arrow=ICON['arrow'], hero=svg('hero'), dlg=cite_dialog(),
                 stats=stats, qt=a(SITE['quote']['text']), qa=a(SITE['quote']['author']),
                 rows=''.join(rows), pubs=pubhtml, news=newshtml, partners=partners,
                 cta=cta_band(), pislug=pi['photo'], piname=a(pi['name']),
@@ -802,6 +802,26 @@ def bibtex(p, key):
     return out
 
 
+def cite_dialog():
+    """One popup per page, filled from whichever Cite or BibTeX button opened
+    it: the paper's title, the text itself, and a copy button. A native
+    <dialog>, so Escape closes it and focus stays inside while it is open."""
+    return """
+<dialog class="cite-dlg" aria-labelledby="cite-dlg-h">
+  <div class="cite-dlg-in">
+    <div class="cite-dlg-top">
+      <p class="cite-dlg-h" id="cite-dlg-h">Citation</p>
+      <button class="cite-dlg-x" type="button" aria-label="Close">{x}</button>
+    </div>
+    <p class="cite-dlg-paper"></p>
+    <pre class="cite-dlg-text" tabindex="0"></pre>
+    <div class="cite-dlg-foot">
+      <button class="cite-dlg-copy" type="button" aria-label="Copy">{copy}{tick}<span>Copy</span></button>
+    </div>
+  </div>
+</dialog>""".format(x=ICON['x'].replace(' class="ic-x"', ''), copy=ICON['copy'], tick=ICON['tick'])
+
+
 def pub_item(p, meta, full=True):
     title = a(p['title'])
     if p.get('link'):
@@ -819,15 +839,16 @@ def pub_item(p, meta, full=True):
     # No Read button: when there is a link the title itself carries it, and two
     # controls to the same URL is one too many. Cite is different -- it hands
     # over something the page cannot otherwise give you.
-    pills.append(
-        '<button class="cite" type="button" data-cite="{0}" aria-label="Copy citation">'
-        '{1}{2}<span>Cite</span></button>'.format(
-            attr(citation(p)), ICON['copy'], ICON['tick']))
+    # Cite and BibTeX open a popup showing the text, with the copy button in
+    # it (see cite_dialog). Without the popup they fall back to copying on
+    # click, so the copy and tick icons stay in the button for that case.
     key = bib_keys(meta)[(p['title'], p['year'], p['venue'])]
-    pills.append(
-        '<button class="cite" type="button" data-cite="{0}" aria-label="Copy BibTeX">'
-        '{1}{2}<span>BibTeX</span></button>'.format(
-            attr(bibtex(p, key)), ICON['copy'], ICON['tick']))
+    for kind, word, text in (('Citation', 'Cite', citation(p)), ('BibTeX', 'BibTeX', bibtex(p, key))):
+        pills.append(
+            '<button class="cite" type="button" data-kind="{0}" data-cite="{1}" '
+            'aria-haspopup="dialog" aria-label="Show {2}">{3}{4}<span>{5}</span></button>'.format(
+                kind, attr(text), 'citation' if kind == 'Citation' else 'BibTeX',
+                ICON['copy'], ICON['tick'], word))
 
     hl = highlight(p.get('highlight'))
 
@@ -920,7 +941,7 @@ def build_publications():
     <h2 class="h2 rv" style="margin-bottom:2.5rem">Speaking</h2>
     <div class="tl rv">{0}</div>
   </div>
-</section>""".format(talks)
+</section>""".format(talks) + cite_dialog()
 
     return write('publications.html', page('publications.html', 'Publications',
                                            'Publications from the Singla Lab at IIT Roorkee - journals, preprints, conference papers, book chapters and posters.', body))
