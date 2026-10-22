@@ -907,6 +907,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
 .status-done { color: var(--ink-3); }
 .status-done::before { background: var(--ink-4); }
+/* A finished project steps back, the way alumni portraits go grey: no card
+   ground, a dashed edge, the funder's badge in outline rather than filled, and
+   no lift on hover. The "Completed" label still says it in words. */
+.proj-done { background: transparent; border-style: dashed; }
+.proj-done:hover { box-shadow: none; border-color: var(--ink-4); }
+.proj-done .agency { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--rule); }
+.proj-done .proj-t { color: var(--ink-2); font-weight: 500; }
 
 /* ---------- Teaching ---------- */
 .term { display: grid; grid-template-columns: 11rem minmax(0,1fr); gap: 1.5rem; padding-block: 1.15rem; border-top: 1px solid var(--rule); align-items: baseline; }

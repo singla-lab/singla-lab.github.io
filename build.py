@@ -937,7 +937,8 @@ def build_projects():
                 meta.append('<p class="proj-p">{0}</p>'.format(a(p['partners'])))
             if p.get('summary'):
                 meta.append('<p class="proj-s">{0}</p>'.format(a(p['summary'])))
-            cards.append("""<article class="proj rv">
+            done = g['status'] == 'Completed'
+            cards.append("""<article class="proj{done} rv">
   <div class="proj-top">
     <span class="agency">{agency}</span>
     <span class="role">{role}</span>
@@ -946,7 +947,8 @@ def build_projects():
   <h3 class="proj-t">{title}</h3>
   {meta}
 </article>""".format(agency=a(p['agency']), role=a(p['role']), title=a(p['title']),
-                     status=a(g['status']), sc='status-done' if g['status'] == 'Completed' else '',
+                     status=a(g['status']), sc='status-done' if done else '',
+                     done=' proj-done' if done else '',
                      meta=''.join(meta)))
         blocks.append("""<div style="margin-bottom:3rem">
   <p class="eyebrow rv">{title}</p>
