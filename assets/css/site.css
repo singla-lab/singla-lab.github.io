@@ -953,13 +953,16 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
 .status-done { color: var(--ink-3); }
 .status-done::before { background: var(--ink-4); }
-/* A finished project steps back, the way alumni portraits go grey: no card
-   ground, a dashed edge, the funder's badge in outline rather than filled, and
-   no lift on hover. The "Completed" label still says it in words. */
-.proj-done { background: transparent; border-style: dashed; }
-.proj-done:hover { box-shadow: none; border-color: var(--ink-4); }
-.proj-done .agency { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--rule); }
-.proj-done .proj-t { color: var(--ink-2); font-weight: 500; }
+/* A finished project is the same card, slightly dulled: its contents a touch
+   faded and the funder's badge drained of most of its colour. They come back
+   to full on hover, the way alumni portraits regain their colour. The fade is
+   on the contents, not the card, because the scroll-reveal owns the card's own
+   opacity. It stops at .9: any further and the small role text drops below
+   4.5:1 on the light theme. The "Completed" label still says it in words. */
+.proj-done > * { opacity: .9; transition: opacity .22s var(--ease); }
+.proj-done .agency { filter: saturate(.25); transition: filter .22s var(--ease); }
+.proj-done:hover > * { opacity: 1; }
+.proj-done:hover .agency { filter: none; }
 
 /* ---------- Teaching ---------- */
 .term { display: grid; grid-template-columns: 11rem minmax(0,1fr); gap: 1.5rem; padding-block: 1.15rem; border-top: 1px solid var(--rule); align-items: baseline; }
