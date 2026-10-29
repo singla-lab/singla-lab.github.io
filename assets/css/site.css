@@ -887,6 +887,11 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   background: var(--surface); overflow: hidden;
 }
 .pub-fig svg { display: block; width: 100%; height: auto; }
+/* A figure taken from the paper keeps its own white ground in both themes,
+   as it would on the page it came from, and opens full size on click. */
+.pub-fig-img { background: #fff; }
+.pub-fig-img a { display: block; cursor: zoom-in; }
+.pub-fig-img img { display: block; width: 100%; height: auto; }
 
 /* The prose that goes with the drawing. It is last in the entry so that it runs
    down the column the figure's height leaves open, rather than pushing the
