@@ -676,7 +676,7 @@ def citation(p):
 
 # Characters the data actually uses beyond ASCII. Anything else stops the build
 # rather than quietly writing BibTeX that some toolchains choke on.
-_TEX = {'\u2013': '--', '\u2014': '---', '\u03b2': '{$\\beta$}', '\u0101': '{\\=a}'}
+_TEX = {'\u2013': '--', '\u2014': '---', '\u03b1': '{$\\alpha$}', '\u03b2': '{$\\beta$}', '\u0101': '{\\=a}'}
 _ORDER = ['volume', 'number', 'pages', 'note']
 _TEX_ESC = {'&': '\\&', '%': '\\%', '_': '\\_', '#': '\\#', '$': '\\$'}
 _INITIALS = re.compile(r'^[A-Z]\.(?:[ -]?[A-Z]\.)*$')
@@ -831,7 +831,14 @@ def pub_item(p, meta, full=True):
     if p.get('detail'):
         venue += ', ' + a(p['detail'])
 
+    # Corresponding authors, where an entry lists them, get an asterisk that
+    # names itself on hover and to a screen reader. The citation and BibTeX
+    # stay unmarked, as journals' own exports are.
     authors = a(p['authors'])
+    for name in p.get('corresponding', []):
+        assert authors.count(a(name)) == 1, 'corresponding author not found once: ' + name
+        authors = authors.replace(a(name), a(name) + '<sup class="corr" title="Corresponding author">*</sup>'
+                                  '<span class="vh"> (corresponding author)</span>', 1)
 
     pills = ['<span class="pill pill-{0}">{1}</span>'.format(p['type'], a(meta['types'][p['type']]))]
     if p.get('topic') and p['topic'] in meta['topics']:
@@ -928,8 +935,10 @@ def build_publications():
                  venue=a(t['venue'])) for t in d['talks'])
 
     extra = ('<div class="filters" data-filters style="margin-top:2rem">{0}</div>'
-             '<p class="small muted"><span data-pub-count>{1}</span> entries shown</p>').format(
-                 ''.join(chips), len(pubs))
+             '<p class="small muted"><span data-pub-count>{1}</span> entries shown{2}</p>').format(
+                 ''.join(chips), len(pubs),
+                 ' &middot; <sup class="corr">*</sup> corresponding author'
+                 if any(p.get('corresponding') for p in pubs) else '')
 
     body = page_head('Publications', 'Papers, preprints, chapters and posters',
                      'Peer-reviewed articles, preprints, conference papers, book chapters and posters. '
