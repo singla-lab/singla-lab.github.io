@@ -646,7 +646,19 @@ def highlight(h):
 def pub_fig(p):
     """A drawn summary of the paper, for the few that have one. It carries no
     caption: the prose summary sits in the text column instead, where it fills
-    the run of empty space the figure's height opens up beside it."""
+    the run of empty space the figure's height opens up beside it.
+
+    An "image" -- the paper's own graphical abstract or figure, a JPEG under
+    assets/img/media -- takes the place of the drawing. It keeps its own shape,
+    so its "w" and "h" are given, and it links to itself, because labels set
+    for a journal page are small at the column's width. The entry keeps its
+    "graphic", so dropping the image brings the drawing back."""
+    img = p.get('image')
+    if img:
+        src = 'assets/img/media/{0}.jpg'.format(img['file'])
+        return ('<figure class="pub-fig pub-fig-img"><a href="{0}" target="_blank" rel="noopener" '
+                'aria-label="Open the full-size figure"><img src="{0}" alt="{1}" loading="lazy" '
+                'width="{2}" height="{3}"></a></figure>').format(src, attr(img['alt']), img['w'], img['h'])
     if not p.get('graphic'):
         return ''
     return '<figure class="pub-fig">{0}</figure>'.format(svg('pub-' + p['graphic']))
