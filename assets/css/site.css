@@ -803,6 +803,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .pub-t a:hover, .pub-t a:focus-visible { color: var(--indigo-lit); }
 .pub-t a:hover::after, .pub-t a:focus-visible::after { color: var(--indigo-lit); }
 .pub-a { font-size: .87rem; color: var(--ink-2); line-height: 1.42; margin: .16rem 0 0; }
+.corr { font-size: .78em; line-height: 0; margin-left: .06em; color: var(--ink-3); cursor: help; }
 .pub-v { font-size: .85rem; color: var(--ink-3); line-height: 1.42; margin: .08rem 0 0; }
 .pub-v em { color: var(--ink-2); font-style: italic; }
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-top: .42rem; }
